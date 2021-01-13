@@ -1,4 +1,5 @@
 import { Button } from "./index";
+import { FC } from "react";
 
 const Icon = () => (
   <svg
@@ -13,7 +14,7 @@ const Icon = () => (
   </svg>
 );
 
-const AnimateButtons = () => (
+const AnimateButtons: FC = () => (
   <div className="mb-20">
     <h2 className="font-bold text-gray-600 text-lg md:text-2xl mb-3">
       Animate
