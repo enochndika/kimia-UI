@@ -84,7 +84,7 @@ export const Button = forwardRef(
         {...props}
         type={submit ? "submit" : "button"}
         disabled={disabled}
-        className={`${disabled} ${block ? "flex justify-center w-full" : ""} ${
+        className={`${block ? "flex justify-center w-full" : ""} ${
           disabled ? "opacity-60 cursor-not-allowed" : ""
         } ${color ? colors(outline)[color] : colors(outline).dark} ${
           size ? sizes[size] : sizes.md
