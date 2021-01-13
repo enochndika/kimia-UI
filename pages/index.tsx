@@ -1,10 +1,6 @@
 import Head from "next/head";
 import DefaultButtons from "../components/general/button/defaultButton";
-import {
-  ColoredListGroupComponent,
-  ListGroupComponent,
-  ListGroupLinkComponent,
-} from "../components/general/list-group";
+
 export default function Home() {
   return (
     <>
@@ -13,9 +9,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <DefaultButtons />
-      <ListGroupComponent />
-      <ColoredListGroupComponent />
-      <ListGroupLinkComponent />
     </>
   );
 }
