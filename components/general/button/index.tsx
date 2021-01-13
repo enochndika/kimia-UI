@@ -2,6 +2,12 @@ import React, { ForwardedRef, forwardRef, ReactNode } from "react";
 
 interface BtnPropsWithChildren {}
 
+interface BtnSizes {
+  sm: string;
+  md: string;
+  lg: string;
+}
+
 export interface BtnProps
   extends React.HTMLAttributes<HTMLElement>,
     BtnPropsWithChildren {
@@ -56,7 +62,7 @@ const colors = (rounded: boolean) => ({
   } `,
 });
 
-const sizes = {
+const sizes: BtnSizes = {
   sm: "px-6 py-1 text-sm",
   md: "px-6 py-2",
   lg: "px-6 py-3 text-lg",
