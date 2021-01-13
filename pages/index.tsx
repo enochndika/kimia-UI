@@ -1,6 +1,9 @@
 import Head from "next/head";
 import DefaultButtons from "../components/general/button/defaultButton";
-import { ToastContainer } from "../components/extra/toast/example";
+import {
+  CurtainMenuLeft,
+  CurtainMenuTop,
+} from "../components/navigation/curtain_menu";
 
 export default function Home() {
   return (
@@ -10,7 +13,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <DefaultButtons />
-      <ToastContainer />
+      <CurtainMenuTop />
+      <CurtainMenuLeft />
     </>
   );
 }
