@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Host: https://kimia-ui.vercel.app
+Sitemap: https://kimia-ui.vercel.app/sitemap.xml
