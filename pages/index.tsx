@@ -1,6 +1,6 @@
 import Head from "next/head";
 import DefaultButtons from "../components/general/button/defaultButton";
-import { CollapseComponent } from "../components/general/collapse";
+import { DropdownComponent } from "../components/general/dropdown";
 
 export default function Home() {
   return (
@@ -10,7 +10,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <DefaultButtons />
-      <CollapseComponent />
+      <DropdownComponent />
     </>
   );
 }
