@@ -1,6 +1,9 @@
 import Head from "next/head";
 import DefaultButtons from "../components/general/button/defaultButton";
-import { DropdownComponent } from "../components/general/dropdown";
+import {
+  JumbotronComponent,
+  JumbotronWithBackgroundComponent,
+} from "../components/general/jumbotron";
 
 export default function Home() {
   return (
@@ -10,7 +13,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <DefaultButtons />
-      <DropdownComponent />
+      <JumbotronComponent />
+      <JumbotronWithBackgroundComponent />
     </>
   );
 }
