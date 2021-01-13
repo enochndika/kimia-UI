@@ -1,6 +1,6 @@
 import Head from "next/head";
 import DefaultButtons from "../components/general/button/defaultButton";
-import { SingleCard, ThreeCard } from "../components/general/card";
+import { CollapseComponent } from "../components/general/collapse";
 
 export default function Home() {
   return (
@@ -10,8 +10,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <DefaultButtons />
-      <SingleCard />
-      <ThreeCard />
+      <CollapseComponent />
     </>
   );
 }
