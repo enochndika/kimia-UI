@@ -1,0 +1,10 @@
+.code {
+  height: 500px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
