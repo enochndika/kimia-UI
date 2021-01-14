@@ -13,7 +13,10 @@ const Jumbotron = ({ className, children }: Props) => (
 );
 
 export const JumbotronComponent: FC = () => (
-  <div className="container">
+  <div>
+    <h2 className="font-bold text-gray-600 text-lg md:text-2xl mt-12 mb-6">
+      Simple Jumbotron
+    </h2>
     <Jumbotron>
       <h1 className="text-2xl md:text-4xl text-gray-800 mb-3">
         Kitoko-UI Tutorial
@@ -30,7 +33,10 @@ export const JumbotronComponent: FC = () => (
 );
 
 export const JumbotronWithBackgroundComponent: FC = () => (
-  <div className="container">
+  <div>
+    <h2 className="font-bold text-gray-600 text-lg md:text-2xl mt-20 mb-6">
+      Jumbotron with Background
+    </h2>
     <Jumbotron className="text-white bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500">
       <h1 className="text-2xl md:text-4xl mb-3">Kitoko-UI Tutorial</h1>
       <p className="mb-3">
