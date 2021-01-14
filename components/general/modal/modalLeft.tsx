@@ -5,6 +5,9 @@ export const ModalLeft = () => {
   const { toggle, open, ref } = useOpenModal();
   return (
     <>
+      <h2 className="font-bold text-gray-600 text-lg md:text-2xl mt-12 mb-3">
+        Left
+      </h2>
       <button
         type="button"
         onClick={toggle}
