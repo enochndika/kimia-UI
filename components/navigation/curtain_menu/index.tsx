@@ -1,4 +1,5 @@
 import { ReactNode, useState } from "react";
+import { Container } from "../../../site/container";
 
 interface Props {
   children: ReactNode;
@@ -37,6 +38,9 @@ export const CurtainMenuTop = () => {
 
   return (
     <>
+      <h2 className="font-bold text-gray-600 text-lg md:text-2xl mt-20 mb-3">
+        Transition from top
+      </h2>
       <button
         onClick={toggle}
         className="text-white focus:outline-none shadow m-1.5 rounded px-6 py-2 font-medium transition ease-in duration-200 bg-indigo-900"
@@ -70,6 +74,9 @@ export const CurtainMenuLeft = () => {
 
   return (
     <>
+      <h2 className="font-bold text-gray-600 text-lg md:text-2xl mt-12 mb-3">
+        Transition from left
+      </h2>
       <button
         onClick={toggle}
         className="text-white focus:outline-none shadow m-1.5 rounded px-6 py-2 font-medium transition ease-in duration-200 bg-indigo-900"
