@@ -1,5 +1,7 @@
 import Head from "next/head";
 import DefaultButtons from "../components/general/button/defaultButton";
+import { SidenavLeft } from "../components/navigation/sidenav/sidenavLeft";
+import { SidenavRight } from "../components/navigation/sidenav/sidenavRight";
 
 export default function Home() {
   return (
@@ -9,6 +11,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <DefaultButtons />
+      <SidenavLeft />
+      <SidenavRight />
     </>
   );
 }
