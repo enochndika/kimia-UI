@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { Container } from "../../../site/container";
 
 interface Props {
   size: string | number;
@@ -19,23 +20,33 @@ const Spinner = ({ size, color }: Props) => (
 );
 
 export const SpinnerComponent: FC = () => (
-  <div className="flex space-x-3 md:space-x-6 ">
-    <Spinner size={45} color="#1d4ed8" />
-    <Spinner size={45} color="#047857" />
-    <Spinner size={45} color="#dc2626" />
-    <Spinner size={45} color="#f59e0b" />
-    <Spinner size={45} />
-    <Spinner size={45} color="#312e81" />
-  </div>
+  <>
+    <h2 className="font-bold text-gray-600 text-lg md:text-2xl mt-12 mb-4">
+      Normal
+    </h2>
+    <div className="flex space-x-3 md:space-x-6 ">
+      <Spinner size={45} color="#1d4ed8" />
+      <Spinner size={45} color="#047857" />
+      <Spinner size={45} color="#dc2626" />
+      <Spinner size={45} color="#f59e0b" />
+      <Spinner size={45} />
+      <Spinner size={45} color="#312e81" />
+    </div>
+  </>
 );
 
 export const LargeSpinnerComponent: FC = () => (
-  <div className="flex space-x-3 md:space-x-6 ">
-    <Spinner size={115} color="#1d4ed8" />
-    <Spinner size={115} color="#047857" />
-    <Spinner size={115} color="#dc2626" />
-    <Spinner size={115} color="#f59e0b" />
-    <Spinner size={115} />
-    <Spinner size={115} color="#312e81" />
-  </div>
+  <>
+    <h2 className="font-bold text-gray-600 text-lg md:text-2xl mt-20 mb-4">
+      Large
+    </h2>
+    <div className="flex space-x-3 md:space-x-6 ">
+      <Spinner size={115} color="#1d4ed8" />
+      <Spinner size={115} color="#047857" />
+      <Spinner size={115} color="#dc2626" />
+      <Spinner size={115} color="#f59e0b" />
+      <Spinner size={115} />
+      <Spinner size={115} color="#312e81" />
+    </div>
+  </>
 );
