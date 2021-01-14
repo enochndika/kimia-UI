@@ -30,7 +30,7 @@ const ToastTopLeft = () => {
         onClick={open}
         className="bg-green-700 text-white focus:outline-none rounded px-6 py-2 font-medium"
       >
-        Voir
+        Success
       </button>
       <Toast
         show={show}
@@ -52,7 +52,7 @@ const ToastTopRight = () => {
         className="bg-blue-700 text-white focus:outline-none rounded px-6 py-2 font-medium"
         onClick={open}
       >
-        Voir
+        Info
       </button>
       <Toast
         show={show}
@@ -74,7 +74,7 @@ export const ToastBottomLeft = () => {
         className="bg-yellow-500 text-white focus:outline-none rounded px-6 py-2 font-medium"
         onClick={open}
       >
-        Voir
+        Warning
       </button>
       <Toast
         show={show}
@@ -96,7 +96,7 @@ export const ToastBottomRight = () => {
         className="bg-red-600 text-white focus:outline-none rounded px-6 py-2 font-medium"
         onClick={open}
       >
-        Voir
+        Danger
       </button>
       <Toast
         show={show}
