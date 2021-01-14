@@ -1,4 +1,4 @@
-import style from "../../styles/global.module.css";
+import style from "../styles/global.module.css";
 import { ReactNode } from "react";
 
 interface Props {

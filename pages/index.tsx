@@ -1,18 +1,77 @@
 import Head from "next/head";
-import DefaultButtons from "../components/general/button/defaultButton";
-import { SidenavLeft } from "../components/navigation/sidenav/sidenavLeft";
-import { SidenavRight } from "../components/navigation/sidenav/sidenavRight";
+import Link from "next/link";
+import Layout from "../site/layout/desktop";
+import { Container } from "../site/container";
 
 export default function Home() {
   return (
     <>
       <Head>
         <title>Kimia-UI</title>
-        <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="title"
+          content="Kimia-UI — A collection of React components built with tailwindcss"
+          key="title"
+        />
+        <meta
+          name="description"
+          content="Kimia-ui provides fully customizable React components compatible with Next.js and you won't end up with unused resources that will decrease your apps performance. All you have to do is copy and paste the source code of the component you want to use"
+          key="description"
+        />
+
+        {/* Open Graph / Facebook*/}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://kimia-ui.vercel.app" />
+        <meta
+          property="og:title"
+          content="Kimia-UI — A collection of React components built with tailwindcss"
+        />
+        <meta
+          property="og:description"
+          content="Kimia ui provides fully customizable React components compatible with Next.js and you won't end up with unused resources that will decrease your apps performance. All you have to do is copy and paste the source code of the component you want to use"
+        />
+        <meta
+          property="og:image"
+          content="https://kimia-ui.vercel.app/kimia-facebook.png"
+        />
+        <meta property="og:image:alt" content="Kimia-UI" />
+
+        {/* Twitter*/}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://kimia-ui.vercel.app" />
+        <meta
+          property="twitter:title"
+          content="Kimia-UI — A collection of React components built with tailwindcss"
+        />
+        <meta
+          property="twitter:description"
+          content="Kimia ui provides fully customizable React components compatible with Next.js and you won't end up with unused resources that will decrease your apps performance. All you have to do is copy and paste the source code of the component you want to use"
+        />
+        <meta
+          property="twitter:image"
+          content="https://kimia-ui.vercel.app/kimia-twitter.png"
+        />
       </Head>
-      <DefaultButtons />
-      <SidenavLeft />
-      <SidenavRight />
+      <Container>
+        <h1 className="text-4xl md:text-7xl font-bold text-gray-900 mt-8">
+          A collection of React components built with tailwindcss 2.0
+        </h1>
+        <p className="my-12 text-gray-500 font-medium">
+          Provides fully customizable React components compatible with Next.js
+          and create-react-app.
+        </p>
+        <div className="mt-12 mb-24 md:mb-12">
+          <Link href="/configuration">
+            <a>
+              <button className="px-6 font-bold py-3 active:bg-purple-800 bg-purple-900 rounded-lg text-white focus:outline-none">
+                Get Started
+              </button>
+            </a>
+          </Link>
+        </div>
+      </Container>
     </>
   );
 }
+
+Home.Layout = Layout;
