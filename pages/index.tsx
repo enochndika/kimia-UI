@@ -1,9 +1,8 @@
 import Head from "next/head";
 import DefaultButtons from "../components/general/button/defaultButton";
-import {
-  CurtainMenuLeft,
-  CurtainMenuTop,
-} from "../components/navigation/curtain_menu";
+import { HamburgerMenuVariantOne } from "../components/navigation/hamburger_menu/variantOne";
+import { HamburgerMenuTwo } from "../components/navigation/hamburger_menu/variantTwo";
+import { HamburgerMenuVariantThree } from "../components/navigation/hamburger_menu/variantThree";
 
 export default function Home() {
   return (
@@ -13,8 +12,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <DefaultButtons />
-      <CurtainMenuTop />
-      <CurtainMenuLeft />
+      <HamburgerMenuVariantOne />
+      <HamburgerMenuTwo />
+      <HamburgerMenuVariantThree />
     </>
   );
 }
