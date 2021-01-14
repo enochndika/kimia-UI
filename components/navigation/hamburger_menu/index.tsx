@@ -15,11 +15,7 @@ interface HamburgerCollapseProps extends Props {
 interface HamburgerTogglerProps {
   toggle: () => void;
 }
-export const HamburgerMenu = ({
-  color,
-  textColor,
-  children,
-}: HamburgerMenuProps) => {
+const HamburgerMenu = ({ color, textColor, children }: HamburgerMenuProps) => {
   return (
     <nav
       className={`${color ? color : "bg-black"} ${
@@ -74,3 +70,5 @@ HamburgerMenu.Link = ({ children }: Props) => (
     {children}
   </div>
 );
+
+export default HamburgerMenu;

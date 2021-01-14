@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { HamburgerMenu } from "./index";
+import HamburgerMenu from "./index";
 
 export const HamburgerMenuTwo = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
