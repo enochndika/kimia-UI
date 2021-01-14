@@ -9,6 +9,9 @@ export const SidenavLeft = () => {
 
   return (
     <>
+      <h2 className="font-bold text-gray-600 text-lg md:text-2xl mt-12 mb-3">
+        Left
+      </h2>
       <Sidenav isOpen={isOpen} toggle={toggle}>
         <Sidenav.Item>
           <svg
