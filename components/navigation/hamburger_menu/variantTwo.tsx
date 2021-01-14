@@ -1,7 +1,7 @@
 import { useState } from "react";
 import HamburgerMenu from "./index";
 
-export const HamburgerMenuTwo = () => {
+export const HamburgerMenuVariantTwo = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const toggle = () => {
