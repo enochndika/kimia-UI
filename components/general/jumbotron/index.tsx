@@ -19,10 +19,10 @@ export const JumbotronComponent: FC = () => (
     </h2>
     <Jumbotron>
       <h1 className="text-2xl md:text-4xl text-gray-800 mb-3">
-        Kitoko-UI Tutorial
+        Kimia-UI Tutorial
       </h1>
       <p className="text-gray-600">
-        Kitoko-ui is a collection of React components built with tailwindcss and
+        Kimia-ui is a collection of React components built with tailwindcss and
         fully customizable that allows you to be more productive
       </p>
       <button className="text-sm px-6 py-1 mt-4 text-white focus:outline-none bg-blue-500">
@@ -38,9 +38,9 @@ export const JumbotronWithBackgroundComponent: FC = () => (
       Jumbotron with Background
     </h2>
     <Jumbotron className="text-white bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500">
-      <h1 className="text-2xl md:text-4xl mb-3">Kitoko-UI Tutorial</h1>
+      <h1 className="text-2xl md:text-4xl mb-3">Kimia-UI Tutorial</h1>
       <p className="mb-3">
-        Kitoko-ui is a collection of React components built with tailwindcss and
+        Kimia-ui is a collection of React components built with tailwindcss and
         fully customizable that allows you to be more productive
       </p>
       <p>This is some text.</p>

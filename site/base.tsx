@@ -47,7 +47,7 @@ const Sidenav: FC = () => (
             width={100}
             height={100}
             priority={true}
-            alt="kitoko-ui"
+            alt="kimia-ui"
           />
         </a>
       </Link>
