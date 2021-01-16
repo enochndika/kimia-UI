@@ -1,4 +1,4 @@
-import React, { ForwardedRef, forwardRef, ReactNode } from "react";
+import { HTMLAttributes, ForwardedRef, forwardRef, ReactNode } from "react";
 
 interface BtnPropsWithChildren {}
 
@@ -9,7 +9,7 @@ interface BtnSizes {
 }
 
 export interface BtnProps
-  extends React.HTMLAttributes<HTMLElement>,
+  extends HTMLAttributes<HTMLElement>,
     BtnPropsWithChildren {
   block?: boolean;
   children: ReactNode;
