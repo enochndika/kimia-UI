@@ -4,14 +4,17 @@ interface Props {
   children: ReactNode;
 }
 
-interface DropdownProps extends Props {
-  title: string;
-  btnClassName: string;
+interface DropdownToggleProps extends Props {
+  className?: string;
 }
 
-const Dropdown = ({ children, btnClassName, title }: DropdownProps) => {
+const useToggle = () => {
   const [show, setShow] = useState<boolean>(false);
   const ref = useRef<HTMLDivElement>(null);
+
+  const toggle = () => {
+    setShow(!show);
+  };
 
   useEffect(() => {
     const handleOutsideClick = (event) => {
@@ -36,52 +39,80 @@ const Dropdown = ({ children, btnClassName, title }: DropdownProps) => {
     return () => document.removeEventListener("keyup", handleEscape);
   }, [show]);
 
+  return {
+    show,
+    toggle,
+    ref,
+  };
+};
+
+const Dropdown = ({ children }: Props) => {
+  const firstChild = children[0];
+  const secondChild = children[1];
+  const { ref, show, toggle } = useToggle();
+
   return (
-    <>
-      <button
-        onClick={() => setShow(!show)}
-        className={`${btnClassName} text-white focus:outline-none shadow rounded px-6 py-2 font-medium transition ease-in duration-200`}
-      >
-        {title}
-      </button>
-      <div className="relative" ref={ref}>
-        {show && children}
+    <div>
+      <div onClick={toggle} className="cursor-pointer">
+        {firstChild}
       </div>
-    </>
+      {show && (
+        <div className="relative block" ref={ref}>
+          {secondChild}
+        </div>
+      )}
+    </div>
   );
 };
 
+Dropdown.Toggle = ({ children, className }: DropdownToggleProps) => (
+  <div className={className}>{children}</div>
+);
+
 Dropdown.Menu = ({ children }: Props) => (
-  <ul className="absolute z-20 mt-2 py-2 px-4 border border-solid text-xs md:text-sm bg-white rounded shadow-md">
+  <div
+    style={{ transform: "translate3d(0px, 3px, 0px)" }}
+    className="block z-30 absolute top-0 left-0  bg-white float-left py-2 px-0 text-left border border-gray-300 rounded-sm mt-0.5 mb-0 mx-0 bg-clip-padding"
+  >
     {children}
-  </ul>
+  </div>
 );
 
 Dropdown.Item = ({ children }: Props) => (
-  <li className="block py-2 px-4 hover:bg-gray-200 cursor-pointer">
+  <div className="block w-full py-1 px-8 mb-2 text-sm font-normal clear-both whitespace-nowrap border-0 hover:bg-gray-200 cursor-pointer">
     {children}
-  </li>
+  </div>
 );
 
 export const DropdownComponent: FC = () => (
-  <div className="row">
-    <div className="col-12 mb-12 md:col-6">
+  <div className="flex flex-wrap">
+    <div className="w-full mb-12 md:w-6/12">
       <h2 className="font-bold text-gray-600 text-lg md:text-2xl mb-4">
         Basic Dropdown
       </h2>
-      <Dropdown title="Click me" btnClassName="bg-indigo-900">
+      <Dropdown>
+        <Dropdown.Toggle>
+          <button className="bg-black text-white focus:outline-none shadow rounded px-6 py-2 font-medium">
+            Click on me
+          </button>
+        </Dropdown.Toggle>
         <Dropdown.Menu>
           <Dropdown.Item>Enoch Ndika</Dropdown.Item>
-          <Dropdown.Item>Next.js</Dropdown.Item>
+          <Dropdown.Item>Josue Kazenga</Dropdown.Item>
           <Dropdown.Item>Business</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
     </div>
-    <div className="col-12 mb-6 md:mb-0 md:col-6">
+    <div className="w-full mb-12 md:w-6/12">
       <h2 className="font-bold text-gray-600 text-lg md:text-2xl mb-4">
         Dropdown with separator
       </h2>
-      <Dropdown title="Click me" btnClassName="bg-green-700">
+      <Dropdown>
+        <Dropdown.Toggle>
+          <button className="bg-green-700 text-white focus:outline-none shadow rounded px-6 py-2 font-medium">
+            See me
+          </button>
+        </Dropdown.Toggle>
         <Dropdown.Menu>
           <Dropdown.Item>Heroku</Dropdown.Item>
           <Dropdown.Item>Postgres</Dropdown.Item>

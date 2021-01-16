@@ -6,7 +6,7 @@ interface Props {
 
 interface TabsProps {
   variant: 1 | 2 | 3;
-  children: any;
+  children: ReactNode | any;
 }
 
 interface TabsContent extends Props {
