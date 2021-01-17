@@ -7,5 +7,5 @@
 5. Run `yarn dev` to build and watch for code changes
 6. Push your contribution to the branch you created `git push origin MY_BRANCH_NAME`
 7. Navigate to the original repository where you created your fork
-8. Go to the Pull requests section and click on create a new pull Request
-9. Select your branch and confirm your pull request
+8. Click on `Compare and pull request` to view changes
+9. Then click on `create pull request`
