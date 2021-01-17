@@ -74,7 +74,7 @@ export const Header: FC = () => {
         </Navbar.Brand>
         <Navbar.Nav>
           <Navbar.Item>
-            <Navbar.Link href="/" title="Contribute">
+            <Navbar.Link href="/contribution-guide" title="Contribute">
               <CodeBranchIcon className="h-4 md:h-5" />
             </Navbar.Link>
           </Navbar.Item>

@@ -4,7 +4,10 @@ import { FC } from "react";
 export const Footer: FC = () => {
   const router = useRouter();
   const { asPath } = router;
-  const fixed = asPath === `/configuration` ? `relative` : `absolute  w-full`;
+  const fixed =
+    asPath === `/configuration` || `contribution`
+      ? `relative`
+      : `relative md:absolute  md:w-full`;
   return (
     <footer className={`${fixed} py-4 border-t text-gray-500 bottom-0`}>
       <div className="overflow-hidden text-center">
