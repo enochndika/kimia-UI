@@ -6,7 +6,7 @@ const SizedButtons: FC = () => (
     <h2 className="font-bold text-gray-600 text-lg md:text-2xl mb-3">
       Different sizes
     </h2>
-    <div className="space-x-3 mb-4 md:space-x-6 space-y-3">
+    <div className="space-x-1 mb-4 md:space-x-6 space-y-3">
       <Button color="primary">Primary</Button>
       <Button color="success" size="lg">
         Success

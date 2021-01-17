@@ -15,9 +15,9 @@ const globalConfig = `module.exports = {
       animation: {
         left: "left 0.4s",
         right: "right 0.4s",
-        "modal-right": "modal-right 0.4s",
-        "modal-top": "modal-top 0.4s",
-        "modal-left": "modal-left 0.4s",
+        "modal-right": "modal-right 0.3s",
+        "modal-top": "modal-top 0.3s",
+        "modal-left": "modal-left 0.3s",
       },
       keyframes: {
         left: {
