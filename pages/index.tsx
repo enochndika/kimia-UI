@@ -15,7 +15,7 @@ export default function Home() {
         />
         <meta
           name="description"
-          content="Kimia-ui provides fully customizable React components compatible with Next.js and you won't end up with unused resources that will decrease your apps performance. All you have to do is copy and paste the source code of the component you want to use"
+          content="Kimia ui provides fully customizable React components built with tailwindcss compatible with Next.js, Gatsby and create-react-app. Just copy and paste the source code of the component you want to use"
           key="description"
         />
 
@@ -28,7 +28,7 @@ export default function Home() {
         />
         <meta
           property="og:description"
-          content="Kimia ui provides fully customizable React components compatible with Next.js and you won't end up with unused resources that will decrease your apps performance. All you have to do is copy and paste the source code of the component you want to use"
+          content="Kimia ui provides fully customizable React components built with tailwindcss compatible with Next.js, Gatsby and create-react-app. Just copy and paste the source code of the component you want to use"
         />
         <meta
           property="og:image"
@@ -45,7 +45,7 @@ export default function Home() {
         />
         <meta
           property="twitter:description"
-          content="Kimia ui provides fully customizable React components compatible with Next.js and you won't end up with unused resources that will decrease your apps performance. All you have to do is copy and paste the source code of the component you want to use"
+          content="Kimia ui provides fully customizable React components built with tailwindcss compatible with Next.js, Gatsby and create-react-app. Just copy and paste the source code of the component you want to use"
         />
         <meta
           property="twitter:image"
@@ -57,8 +57,8 @@ export default function Home() {
           A collection of React components built with tailwindcss 2.0
         </h1>
         <p className="my-12 text-gray-500 font-medium">
-          Provides fully customizable React components compatible with Next.js
-          and create-react-app.
+          Provides fully customizable React components compatible with Next.js,
+          Gatsby and create-react-app.
         </p>
         <div className="mt-12 mb-24 md:mb-12">
           <Link href="/configuration">
