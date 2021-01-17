@@ -1,4 +1,3 @@
-import style from "../styles/global.module.css";
 import { ReactNode } from "react";
 
 interface Props {
@@ -6,5 +5,5 @@ interface Props {
 }
 
 export const Container = ({ children }: Props) => (
-  <div className={`${style.container} container-fluid`}>{children}</div>
+  <div className="px-container container-fluid">{children}</div>
 );

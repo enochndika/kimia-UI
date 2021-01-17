@@ -16,6 +16,7 @@ Router.events.on("routeChangeError", () => NProgress.done());
 
 function MyApp({ Component, pageProps }: AppProps) {
   const Layout = (Component as any).Layout || Noop;
+
   return (
     <>
       <Head>
