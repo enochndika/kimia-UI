@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@reach/portal": "^0.12.1",
     "next": "10.0.5",
     "nprogress": "^0.2.0",
     "react": "17.0.1",

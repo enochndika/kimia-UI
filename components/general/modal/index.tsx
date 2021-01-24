@@ -1,5 +1,5 @@
-import { ForwardedRef, forwardRef, ReactNode } from "react";
-import Portal from "./portal";
+import Portal from "@reach/portal";
+import { ReactNode, useEffect, useRef } from "react";
 
 interface Props {
   children: ReactNode;
@@ -7,10 +7,9 @@ interface Props {
 
 interface ModalProps extends Props {
   isOpen: boolean;
-}
-
-interface ModalContentProps extends Props {
   position?: "left" | "right" | "default";
+  toggle: (isOpen?: boolean) => void;
+  backdrop: boolean;
 }
 
 const positions = {
@@ -25,46 +24,58 @@ const animations = {
   default: "animate-modal-top",
 };
 
-export const Modal = ({ children, isOpen }: ModalProps) => (
-  <>
-    {isOpen && (
-      <Portal selector="#modal">
+/* Modal logic*/
+const Modal = ({
+  children,
+  isOpen,
+  toggle,
+  backdrop,
+  position,
+}: ModalProps) => {
+  const ref = useRef<HTMLDivElement>();
+
+  const animation =
+    position === "left"
+      ? animations.left
+      : position === "right"
+      ? animations.right
+      : animations.default;
+
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (backdrop && !ref.current?.contains(event.target)) {
+        if (!isOpen) return;
+        toggle(false);
+      }
+    };
+    window.addEventListener("click", handleOutsideClick);
+    return () => window.removeEventListener("click", handleOutsideClick);
+  }, [isOpen, ref]);
+
+  return (
+    <Portal>
+      {isOpen && (
         <div className="container">
           <div className="fixed top-0 left-0 z-40 w-screen h-screen bg-black opacity-50" />
           <div className="fixed top-0 left-0 z-40 w-full h-full m-0">
-            {children}
+            <div
+              className={positions[position]}
+              ref={backdrop ? ref : null}
+              role="dialogue"
+              aria-modal={true}
+            >
+              <div
+                className={`${animation} relative flex flex-col bg-white pointer-events-auto`}
+              >
+                {children}
+              </div>
+            </div>
           </div>
         </div>
-      </Portal>
-    )}
-  </>
-);
-
-Modal.Content = forwardRef(
-  (
-    { children, position }: ModalContentProps,
-    ref: ForwardedRef<HTMLDivElement>
-  ) => {
-    const animation =
-      position === "left"
-        ? animations.left
-        : position === "right"
-        ? animations.right
-        : animations.default;
-    return (
-      <div
-        className={!position ? positions.default : positions[position]}
-        ref={ref}
-      >
-        <div
-          className={`${animation} relative flex flex-col bg-white pointer-events-auto`}
-        >
-          {children}
-        </div>
-      </div>
-    );
-  }
-);
+      )}
+    </Portal>
+  );
+};
 
 Modal.Header = ({ children }: Props) => (
   <div className="items-start justify-between p-4 border-b border-gray-300">
@@ -81,3 +92,5 @@ Modal.Footer = ({ children }: Props) => (
     {children}
   </div>
 );
+
+export default Modal;

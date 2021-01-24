@@ -2,12 +2,12 @@ import Modal from "./index";
 import { useOpenModal } from "./openModal";
 import { FC } from "react";
 
-export const DefaultModal: FC = () => {
+export const ModalBackdrop: FC = () => {
   const { toggle, isOpen } = useOpenModal();
   return (
     <>
       <h2 className="font-bold text-gray-600 text-lg md:text-2xl mt-12 mb-3">
-        Top
+        Without backdrop
       </h2>
       <button
         type="button"
@@ -16,9 +16,18 @@ export const DefaultModal: FC = () => {
       >
         Click to open me
       </button>
-      <Modal isOpen={isOpen} toggle={toggle} position="default" backdrop={true}>
+      <Modal
+        isOpen={isOpen}
+        toggle={toggle}
+        position="default"
+        backdrop={false}
+      >
         <Modal.Header>Modal title</Modal.Header>
         <Modal.Body>
+          <span className="font-bold text-lg text-gray-700">
+            This modal will not be closed when clicked outside
+          </span>
+          <br />
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
