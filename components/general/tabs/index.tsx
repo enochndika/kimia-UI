@@ -1,114 +1,79 @@
-import { ReactNode, useState } from "react";
+import React, { useState, ReactNode, ReactElement, ReactChild } from "react";
 
 interface Props {
   children: ReactNode;
 }
 
-interface TabsProps {
-  variant: 1 | 2 | 3;
-  children: ReactNode | any;
+interface TabsProps extends Props {
+  variant: number;
 }
 
-interface TabsContent extends Props {
-  id: string;
-}
-
-interface TabContainerProps {
-  onClick: (id: string) => void;
-  id: string;
-  activeTab: any;
-  activeClass: string;
-  inactiveClass: string;
+interface TabProps extends Props {
+  selected?: boolean;
+  title: string;
 }
 
 const variants = {
   first: {
-    active: `text-gray-700  border-b-2 border-indigo-700 -mb-2 px-4 md:px-8 text-sm  py-4 md:py-1 inline-block `,
+    active: `text-gray-700  border-b-2 border-indigo-700 -mb-2 px-4 md:px-8 text-sm  py-4 md:py-1 inline-block`,
     inactive: `-mb-2 px-4 md:px-8 text-sm  py-4 md:py-1 inline-block border-b`,
   },
   second: {
-    active: `inline-block py-2 px-4 border-solid  border-gray-300 border-t bg-white border-b-0 border-l border-r text-blue-700`,
+    active: `inline-block py-2 px-4 border-gray-300 border-t bg-white border-b-0 border-l border-r text-blue-700`,
     inactive: "inline-block py-2 px-4 text-gray-800 border-b",
   },
-  three: {
-    active: `text-white mx-2 py-2 px-4 bg-indigo-900 inline-block`,
-    inactive: `-mb-2 py-2 px-4 bg-white text-black  inline-block`,
+  third: {
+    active: `text-white py-2 px-4 mx-1 rounded bg-indigo-900 inline-block`,
+    inactive: `-mb-2 py-2 px-4 mx-1 bg-white text-black inline-block `,
   },
 };
 
 export const Tabs = ({ children, variant }: TabsProps) => {
-  const [activeTab, setActiveTab] = useState<any>(children[0].props.id);
-
-  const activeClassName =
-    variant === 1
-      ? variants.first.active
-      : variant === 2
-      ? variants.second.active
-      : variant === 3
-      ? variants.three.active
-      : variants.first.active;
-
-  const inactiveClassName =
-    variant === 1
-      ? variants.first.inactive
-      : variant === 2
-      ? variants.second.inactive
-      : variant === 3
-      ? variants.three.inactive
-      : variants.first.inactive;
-
-  const onClickTabItem = (tab) => {
-    setActiveTab(tab);
+  const childrenArray: Array<any> = React.Children.toArray(children);
+  const [current, setCurrent] = useState<ReactChild>(childrenArray[0].key);
+  const newChildren = childrenArray.map((child) =>
+    React.cloneElement(child as ReactElement, {
+      selected: child.key === current,
+    })
+  );
+  const classNames = (child, current) => {
+    if (variant === 1) {
+      return current === child.key
+        ? variants.first.active
+        : variants.first.inactive;
+    } else if (variant === 2) {
+      return current === child.key
+        ? variants.second.active
+        : variants.second.inactive;
+    } else if (variant === 3) {
+      return current === child.key
+        ? variants.third.active
+        : variants.third.inactive;
+    } else {
+      throw Error("Please choose a variant");
+    }
   };
-
   return (
-    <div>
-      <ol>
-        {children.map((child) => {
-          const { id } = child.props;
-          return (
-            <Tabs.Container
-              activeTab={activeTab}
-              key={id}
-              id={id}
-              onClick={onClickTabItem}
-              activeClass={activeClassName}
-              inactiveClass={inactiveClassName}
-            />
-          );
-        })}
-      </ol>
-      <div className="pt-6">
-        {children.map((child) => {
-          if (child.props.id !== activeTab) return undefined;
-          return child.props.children;
-        })}
-      </div>
+    <nav>
+      {childrenArray.map((child) => (
+        <div
+          onClick={() => setCurrent(child.key)}
+          key={child.key}
+          className={classNames(child, current)}
+          role="button"
+        >
+          {child.props.title}
+        </div>
+      ))}
+      <section>{newChildren}</section>
+    </nav>
+  );
+};
+
+export const Tab = ({ children, selected }: TabProps) => {
+  return (
+    <div hidden={!selected} className="mt-4">
+      {children}
     </div>
   );
 };
-
-Tabs.Container = ({
-  onClick,
-  id,
-  activeTab,
-  activeClass,
-  inactiveClass,
-}: TabContainerProps) => {
-  const isClick = () => {
-    onClick(id);
-  };
-
-  let className = inactiveClass;
-  if (activeTab === id) {
-    className = activeClass;
-  }
-
-  return (
-    <li className={className} onClick={isClick}>
-      {id}
-    </li>
-  );
-};
-
-Tabs.Content = ({ id, children }: TabsContent) => <div id={id}>{children}</div>;
