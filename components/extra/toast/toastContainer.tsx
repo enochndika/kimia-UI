@@ -1,48 +1,60 @@
-import { ReactNode, useEffect } from "react";
+import React, { useState, useEffect, ReactNode } from "react";
+import ReactDOM from "react-dom";
+import { setTimeout } from "timers";
 
-interface Props {
-  show: boolean;
-  position?: "topLeft" | "topRight" | "bottomLeft" | "bottomRight";
-  hideToast: () => void;
-  variant?: "success" | "danger" | "warning" | "info";
-  children: ReactNode;
+interface MessageType {
+  messageType: "success" | "info" | "danger" | "warning";
 }
 
-export const Toast = ({
-  show,
+interface ToastContainerProps extends MessageType {
+  children: ReactNode;
+  placement: "topLeft" | "topRight" | "bottomLeft" | "bottomRight";
+  duration: number;
+}
+const ToastContainer = ({
   children,
-  variant,
-  position,
-  hideToast,
-}: Props) => {
-  let timeOut;
-
-  const className = show
-    ? `${variants[variant]} ${
-        position ? positions[position] : positions.topRight
-      } flex fixed bg-white shadow-lg rounded text-sm py-3 z-10 px-4 border-l-4`
-    : "invisible h-0 w-0";
+  placement,
+  messageType,
+  duration,
+}: ToastContainerProps) => {
+  const [closeTimeout, setCloseTimeout] = useState<any>(0);
 
   useEffect(() => {
-    if (show) {
-      timeOut = setTimeout(() => {
-        hideToast();
-      }, 3000);
-    }
+    beginCloseTimeout();
+  }, []);
 
-    return () => clearTimeout(timeOut);
-  }, [hideToast]);
+  const closeSnackBar = () => {
+    clearTimeout(closeTimeout);
+    ReactDOM.unmountComponentAtNode(document.getElementById("toast"));
+  };
+
+  const beginCloseTimeout = () => {
+    if (duration) {
+      const timeout = setTimeout(() => closeSnackBar(), duration);
+      setCloseTimeout(timeout);
+    }
+  };
+
+  const className = `${messageTypes[messageType]} ${
+    placement ? placements[placement] : placements.topRight
+  } flex fixed bg-white shadow-lg rounded text-sm py-3 z-10 px-4 border-l-4`;
 
   return (
-    <div className={className}>
-      <IconContainer variant={variant} />
+    <div
+      className={className}
+      onMouseEnter={() => clearTimeout(closeTimeout)}
+      onMouseLeave={() => beginCloseTimeout()}
+    >
+      <div className="pr-1">
+        <IconContainer messageType={messageType} />
+      </div>
       {children}
     </div>
   );
 };
 
 /* The position of the toast*/
-const positions = {
+const placements = {
   topLeft: "animate-left top-6 left-4",
   topRight: "animate-right top-6 right-4",
   bottomLeft: "animate-left bottom-6 left-4",
@@ -50,7 +62,7 @@ const positions = {
 };
 
 /* Border color according to toast variant*/
-const variants = {
+const messageTypes = {
   success: "border-green-600",
   info: "border-blue-700",
   danger: "border-red-500",
@@ -58,14 +70,14 @@ const variants = {
 };
 
 /* Display icon according to toast variant*/
-const IconContainer = ({ variant }) => {
-  if (variant === "success") {
+const IconContainer = ({ messageType }: MessageType) => {
+  if (messageType === "success") {
     return <SuccessIcon />;
-  } else if (variant === "danger") {
+  } else if (messageType === "danger") {
     return <DangerIcon />;
-  } else if (variant === "info") {
+  } else if (messageType === "info") {
     return <InfoIcon />;
-  } else if (variant === "warning") {
+  } else if (messageType === "warning") {
     return <WarningIcon />;
   }
 };
@@ -149,3 +161,5 @@ const WarningIcon = () => (
     <path d="M12,2C6.477,2,2,6.477,2,12s4.477,10,10,10s10-4.477,10-10S17.523,2,12,2z M13,17h-2v-6h2V17z M13,9h-2V7h2V9z" />
   </svg>
 );
+
+export default ToastContainer;
