@@ -1,4 +1,9 @@
-import { HTMLAttributes, ForwardedRef, forwardRef, ReactNode } from "react";
+import {
+  ForwardedRef,
+  forwardRef,
+  ReactNode,
+  ButtonHTMLAttributes,
+} from "react";
 
 interface BtnPropsWithChildren {}
 
@@ -9,7 +14,7 @@ interface BtnSizes {
 }
 
 export interface BtnProps
-  extends HTMLAttributes<HTMLElement>,
+  extends ButtonHTMLAttributes<HTMLButtonElement>,
     BtnPropsWithChildren {
   block?: boolean;
   children: ReactNode;

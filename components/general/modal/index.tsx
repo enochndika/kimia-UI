@@ -32,7 +32,7 @@ const Modal = ({
   backdrop,
   position,
 }: ModalProps) => {
-  const ref = useRef<HTMLDivElement>();
+  const ref = useRef<HTMLDivElement>(null);
 
   const animation =
     position === "left"
