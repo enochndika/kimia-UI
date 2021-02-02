@@ -2,8 +2,18 @@ import Head from "next/head";
 import Link from "next/link";
 import Layout from "../site/layout/desktop";
 import { Container } from "../site/container";
+import dynamic from "next/dynamic";
+import { useInView } from "react-intersection-observer";
+
+const LottieControl = dynamic(() => import("../site/lottie"), {
+  ssr: false,
+});
 
 export default function Home() {
+  //const x = "b" + "a" + +"a" + "a";
+  const { ref, inView } = useInView({
+    threshold: 0,
+  });
   return (
     <>
       <Head>
@@ -53,21 +63,28 @@ export default function Home() {
         />
       </Head>
       <Container>
-        <h1 className="text-4xl md:text-7xl font-bold text-gray-900 mt-8">
-          A collection of React components built with tailwindcss 2.0
-        </h1>
-        <p className="my-12 text-gray-500 font-medium">
-          Provides fully customizable React components compatible with Next.js,
-          Gatsby and create-react-app.
-        </p>
-        <div className="mt-12 mb-24 md:mb-12">
-          <Link href="/configuration">
-            <a>
-              <button className="px-6 font-bold py-3 active:bg-purple-800 bg-purple-900 rounded-lg text-white focus:outline-none">
-                Get Started
-              </button>
-            </a>
-          </Link>
+        <div className="flex flex-wrap">
+          <div className="w-full p-2 md:w-6/12">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mt-8">
+              A collection of React components built with tailwindcss 2.0
+            </h1>
+            <p className="my-12 text-gray-500 font-medium">
+              Provides fully customizable React components compatible with
+              Next.js, Gatsby and create-react-app.
+            </p>
+            <div className="mt-12 mb-24 md:mb-12" id="lotie">
+              <Link href="/configuration">
+                <a>
+                  <button className="px-6 font-bold py-3 active:bg-purple-800 bg-purple-900 rounded-lg text-white focus:outline-none">
+                    Get Started
+                  </button>
+                </a>
+              </Link>
+            </div>
+          </div>
+          <div className="hidden md:w-6/12 md:block" ref={ref}>
+            {inView && <LottieControl />}
+          </div>
         </div>
       </Container>
     </>

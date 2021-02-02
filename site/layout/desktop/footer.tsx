@@ -4,20 +4,17 @@ import { FC } from "react";
 export const Footer: FC = () => {
   const router = useRouter();
   const { asPath } = router;
-  const fixed =
-    asPath === `/configuration` || `contribution`
-      ? `relative`
-      : `relative md:absolute  md:w-full`;
+  const fixed = asPath === "/" ? "absolute w-full xl:relative" : "relative";
   return (
-    <footer className={`${fixed} py-4 border-t text-gray-500 bottom-0`}>
+    <footer
+      className={`py-4 border-t text-gray-500 bottom-0 left-0 right-0 ${fixed}`}
+    >
       <div className="overflow-hidden text-center">
         <div className="container">
           <span className="mx-1">Made with love by</span>
           <a
-            href="https://enochndika.vercel.app"
+            href="https://github.com/enochndika"
             className="text-gray-700 font-bold cursor-pointer"
-            rel="noreferrer"
-            target="_blank"
           >
             Enoch Ndika
           </a>
