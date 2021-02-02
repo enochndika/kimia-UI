@@ -1,4 +1,11 @@
-import { FC, ReactNode, useEffect, useRef, useState } from "react";
+import {
+  FC,
+  LiHTMLAttributes,
+  ReactNode,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
 interface Props {
   children: ReactNode;
@@ -6,6 +13,10 @@ interface Props {
 
 interface DropdownToggleProps extends Props {
   className?: string;
+}
+
+interface DropdownItemProps extends LiHTMLAttributes<HTMLLIElement> {
+  children: ReactNode;
 }
 
 const useToggle = () => {
@@ -70,18 +81,18 @@ Dropdown.Toggle = ({ children, className }: DropdownToggleProps) => (
 );
 
 Dropdown.Menu = ({ children }: Props) => (
-  <div
+  <ul
     style={{ transform: "translate3d(0px, 3px, 0px)" }}
     className="block z-30 absolute top-0 left-0  bg-white float-left py-2 px-0 text-left border border-gray-300 rounded-sm mt-0.5 mb-0 mx-0 bg-clip-padding"
   >
     {children}
-  </div>
+  </ul>
 );
 
-Dropdown.Item = ({ children }: Props) => (
-  <div className="block w-full py-1 px-8 mb-2 text-sm font-normal clear-both whitespace-nowrap border-0 hover:bg-gray-200 cursor-pointer">
+Dropdown.Item = ({ children }: DropdownItemProps) => (
+  <li className="block w-full py-1 px-8 mb-2 text-sm font-normal clear-both whitespace-nowrap border-0 hover:bg-gray-200 cursor-pointer">
     {children}
-  </div>
+  </li>
 );
 
 export const DropdownComponent: FC = () => (

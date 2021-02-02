@@ -26,8 +26,8 @@ const Sidenav = ({ isOpen, position, toggle, children }: SidenavProps) => {
         toggle(false);
       }
     };
-    window.addEventListener("click", handleOutsideClick);
-    return () => window.removeEventListener("click", handleOutsideClick);
+    window.addEventListener("mousedown", handleOutsideClick);
+    return () => window.removeEventListener("mousedown", handleOutsideClick);
   }, [isOpen, ref]);
 
   const left = isOpen ? positions.activeLeft : positions.inactiveLeft;

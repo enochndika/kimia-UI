@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { FC, ReactNode } from "react";
+import { FC, HTMLAttributes, ReactNode } from "react";
 
-interface Props {
+interface Props extends HTMLAttributes<HTMLDivElement> {
   className?: string;
   children: ReactNode;
 }
@@ -57,7 +57,6 @@ export const SingleCard: FC = () => (
 
 export const ThreeCard: FC = () => (
   <>
-    {" "}
     <h2 className="font-bold text-gray-600 text-lg md:text-2xl mt-20 mb-3">
       3 Cards
     </h2>
