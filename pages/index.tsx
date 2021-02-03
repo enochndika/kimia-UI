@@ -2,18 +2,9 @@ import Head from "next/head";
 import Link from "next/link";
 import Layout from "../site/layout/desktop";
 import { Container } from "../site/container";
-import dynamic from "next/dynamic";
-import { useInView } from "react-intersection-observer";
-
-const LottieControl = dynamic(() => import("../site/lottie"), {
-  ssr: false,
-});
+import Image from "next/image";
 
 export default function Home() {
-  //const x = "b" + "a" + +"a" + "a";
-  const { ref, inView } = useInView({
-    threshold: 0,
-  });
   return (
     <>
       <Head>
@@ -82,8 +73,10 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="hidden md:w-6/12 md:block" ref={ref}>
-            {inView && <LottieControl />}
+          <div className="hidden md:w-6/12 md:block">
+            <div className="relative w-full h-full">
+              <Image src="/animation.gif" layout="fill" objectFit="cover" />
+            </div>
           </div>
         </div>
       </Container>
