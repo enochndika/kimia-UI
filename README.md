@@ -1,7 +1,7 @@
 # React Components with Tailwindcss
 ![Tailwind-Kit](https://res.cloudinary.com/beloved/image/upload/v1612391435/Assets/kimia_d8zp9s.png)
 
-##Why using Kimia-UI?
+## Why using Kimia-UI?
 
 Tailwind CSS is a utility-first CSS framework for rapidly building custom user interfaces. Il allows you writing your style without leaving your HTML.
 
@@ -19,7 +19,7 @@ These components are compatible with all browsers
 |:---:|:---:|:---:|:---:|:---:|
 | <img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/chrome-logo.png?raw=true" width="64" height="64"> | <img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/firefox-logo.png" width="64" height="64"> | <img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/edge-logo.png" width="64" height="64"> | <img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/safari-logo.png" width="64" height="64"> | <img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/opera-logo.png" width="64" height="64"> |
 
-##Contribution
+## Contribution
 If you would like to contribute on the project, fixing bugs, improve accessibility or open an issue, please follow our [Contribution guide](https://github.com/enochndika/kimia-UI/blob/main/contributing.md)
 
 First, run the development server:
