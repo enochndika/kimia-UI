@@ -13,7 +13,7 @@ interface BtnSizes {
   lg: string;
 }
 
-export interface BtnProps
+interface BtnProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
     BtnPropsWithChildren {
   block?: boolean;
