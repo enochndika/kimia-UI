@@ -8,7 +8,7 @@ interface Props {
 
 const Collapse = ({ children, title, btnClassName }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const ref = useRef<HTMLDivElement>();
+  const ref = useRef<HTMLDivElement>(null);
   const style = isOpen ? { height: ref.current?.scrollHeight } : { height: 0 };
 
   return (
