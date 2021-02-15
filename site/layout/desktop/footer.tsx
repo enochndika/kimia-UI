@@ -4,7 +4,7 @@ import { FC } from "react";
 export const Footer: FC = () => {
   const router = useRouter();
   const { asPath } = router;
-  const fixed = asPath === "/" ? "absolute w-full xl:relative" : "relative";
+  const fixed = asPath === "/" ? "absolute w-full xl:absolute " : "relative";
   return (
     <footer
       className={`py-4 border-t text-gray-500 bottom-0 left-0 right-0 ${fixed}`}
