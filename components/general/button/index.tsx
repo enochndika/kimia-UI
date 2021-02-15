@@ -95,13 +95,12 @@ export const Button = forwardRef(
         {...props}
         type={submit ? "submit" : "button"}
         disabled={disabled}
-        className={`${block ? "flex justify-center w-full" : ""} ${
-          disabled ? "opacity-60 cursor-not-allowed" : ""
-        } ${color ? colors(outline)[color] : colors(outline).dark} ${
-          size ? sizes[size] : sizes.md
-        }  ${
-          rounded ? "rounded-full" : "rounded"
-        } ${block} ${className} text-white focus:outline-none shadow font-medium transition ease-in duration-200`}
+        className={`${block ? "flex justify-center w-full" : ""} 
+          ${disabled ? "opacity-60 cursor-not-allowed" : ""} 
+          ${color ? colors(outline)[color] : colors(outline).dark} 
+          ${size ? sizes[size] : sizes.md}  
+          ${rounded ? "rounded-full" : "rounded"} ${className} 
+        text-white focus:outline-none shadow font-medium transition ease-in duration-200`}
       >
         {children}
       </button>
