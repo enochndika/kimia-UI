@@ -1,6 +1,6 @@
 import NProgress from "nprogress";
+import "tailwindcss/tailwind.css";
 import "nprogress/nprogress.css";
-import "../styles/tailwind.css";
 import Head from "next/head";
 import Router from "next/router";
 import { AppProps } from "next/app";
