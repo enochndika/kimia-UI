@@ -16,7 +16,12 @@ export const ModalLeft: FC = () => {
       >
         Click to open me
       </button>
-      <Modal isOpen={isOpen} toggle={toggle} position="left" backdrop={true}>
+      <Modal
+        isOpen={isOpen}
+        toggle={toggle}
+        position="left"
+        closeOnClickOutside={true}
+      >
         <Modal.Header>Modal title</Modal.Header>
         <Modal.Body>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do

@@ -16,7 +16,12 @@ export const DefaultModal: FC = () => {
       >
         Click to open me
       </button>
-      <Modal isOpen={isOpen} toggle={toggle} position="default" backdrop={true}>
+      <Modal
+        isOpen={isOpen}
+        toggle={toggle}
+        position="default"
+        closeOnClickOutside={true}
+      >
         <Modal.Header>Modal title</Modal.Header>
         <Modal.Body>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do

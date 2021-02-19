@@ -9,7 +9,7 @@ interface ModalProps extends Props {
   isOpen: boolean;
   position?: "left" | "right" | "default";
   toggle: (isOpen?: boolean) => void;
-  backdrop: boolean;
+  closeOnClickOutside: boolean;
 }
 
 const positions = {
@@ -29,7 +29,7 @@ const Modal = ({
   children,
   isOpen,
   toggle,
-  backdrop,
+  closeOnClickOutside,
   position,
 }: ModalProps) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -43,7 +43,7 @@ const Modal = ({
 
   useEffect(() => {
     const handleOutsideClick = (event) => {
-      if (backdrop && !ref.current?.contains(event.target)) {
+      if (closeOnClickOutside && !ref.current?.contains(event.target)) {
         if (!isOpen) return;
         toggle(false);
       }
@@ -60,7 +60,7 @@ const Modal = ({
           <div className="fixed top-0 left-0 z-40 w-full h-full m-0">
             <div
               className={positions[position]}
-              ref={backdrop ? ref : null}
+              ref={closeOnClickOutside ? ref : null}
               role="dialogue"
               aria-modal={true}
             >

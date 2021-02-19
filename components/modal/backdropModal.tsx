@@ -20,7 +20,7 @@ export const ModalBackdrop: FC = () => {
         isOpen={isOpen}
         toggle={toggle}
         position="default"
-        backdrop={false}
+        closeOnClickOutside={false}
       >
         <Modal.Header>Modal title</Modal.Header>
         <Modal.Body>
