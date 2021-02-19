@@ -7,7 +7,7 @@ interface Props {
 
 interface ModalProps extends Props {
   isOpen: boolean;
-  position?: "left" | "right" | "default";
+  position?: "left" | "right" | "top";
   toggle: (isOpen?: boolean) => void;
   closeOnClickOutside: boolean;
 }
@@ -15,13 +15,13 @@ interface ModalProps extends Props {
 const positions = {
   left: `mt-12 mx-8 md:flex md:w-96 md:h-full md:m-0 md:left-0 md:mx-0 md:my-0 md:absolute`,
   right: `mt-12 mx-8 md:flex md:w-96 md:h-full md:m-0 md:right-0 md:mx-0 md:my-0 md:absolute`,
-  default: "mt-12 mx-8 md:m-auto md:w-4/12 md:pt-12",
+  top: "mt-12 mx-8 md:m-auto md:w-4/12 md:pt-12",
 };
 
 const animations = {
   left: "animate-modal-left",
   right: "animate-modal-right",
-  default: "animate-modal-top",
+  top: "animate-modal-top",
 };
 
 /* Modal logic*/
@@ -39,7 +39,7 @@ const Modal = ({
       ? animations.left
       : position === "right"
       ? animations.right
-      : animations.default;
+      : animations.top;
 
   useEffect(() => {
     const handleOutsideClick = (event) => {

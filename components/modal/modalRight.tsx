@@ -1,6 +1,7 @@
 import Modal from "./index";
 import { useOpenModal } from "./openModal";
 import { FC } from "react";
+import { Button } from "../button";
 
 export const ModalRight: FC = () => {
   const { toggle, isOpen } = useOpenModal();
@@ -9,13 +10,9 @@ export const ModalRight: FC = () => {
       <h2 className="font-bold text-gray-600 text-lg md:text-2xl mt-12 mb-3">
         Right
       </h2>
-      <button
-        type="button"
-        onClick={toggle}
-        className="text-white focus:outline-none shadow m-1.5 rounded px-6 py-2 font-medium transition ease-in duration-200 bg-blue-600"
-      >
+      <Button onClick={toggle} color="primary">
         Click to open me
-      </button>
+      </Button>
       <Modal
         isOpen={isOpen}
         toggle={toggle}
@@ -30,18 +27,12 @@ export const ModalRight: FC = () => {
           aliquip ex ea commodo consequat.
         </Modal.Body>
         <Modal.Footer>
-          <button
-            onClick={toggle}
-            className="text-white focus:outline-none shadow m-1.5 rounded px-6 py-2 font-medium transition ease-in duration-200 bg-red-500"
-          >
+          <Button onClick={toggle} color="danger" className="mr-1">
             Close
-          </button>
-          <button
-            onClick={toggle}
-            className="text-white focus:outline-none shadow m-1.5 rounded px-6 py-2 font-medium transition ease-in duration-200 bg-blue-600"
-          >
+          </Button>
+          <Button onClick={toggle} color="primary">
             Confirm
-          </button>
+          </Button>
         </Modal.Footer>
       </Modal>
     </>
