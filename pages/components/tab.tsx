@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { Container } from "../../site/container";
-import { Tab, Tabs } from "../../components/general/tabs";
+import { Tab, Tabs } from "../../components/tabs";
 import MobileLayout from "../../site/layout/mobile";
 
 export default function TabPage() {

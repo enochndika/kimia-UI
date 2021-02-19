@@ -1,10 +1,10 @@
 import Head from "next/head";
 import MobileLayout from "../../site/layout/mobile";
-import { ModalRight } from "../../components/general/modal/modalRight";
-import { ModalLeft } from "../../components/general/modal/modalLeft";
-import { DefaultModal } from "../../components/general/modal/defaultModal";
+import { ModalRight } from "../../components/modal/modalRight";
+import { ModalLeft } from "../../components/modal/modalLeft";
+import { DefaultModal } from "../../components/modal/defaultModal";
 import { Container } from "../../site/container";
-import { ModalBackdrop } from "../../components/general/modal/backdropModal";
+import { ModalBackdrop } from "../../components/modal/backdropModal";
 
 export default function ModalPage() {
   return (

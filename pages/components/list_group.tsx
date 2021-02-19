@@ -5,7 +5,7 @@ import {
   ColoredListGroupComponent,
   ListGroupComponent,
   ListGroupLinkComponent,
-} from "../../components/general/list-group";
+} from "../../components/list-group";
 
 export default function ListGroupPage() {
   return (

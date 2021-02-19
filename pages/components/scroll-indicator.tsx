@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { Container } from "../../site/container";
 import MobileLayout from "../../site/layout/mobile";
-import { ScrollIndicator } from "../../components/extra/scrollIndicator";
+import { ScrollIndicator } from "../../components/scrollIndicator";
 
 export default function ScrollIndicatorPage() {
   return (

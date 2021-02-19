@@ -1,9 +1,6 @@
 import Head from "next/head";
 import { Container } from "../../site/container";
-import {
-  CurtainMenuLeft,
-  CurtainMenuTop,
-} from "../../components/navigation/curtain_menu";
+import { CurtainMenuLeft, CurtainMenuTop } from "../../components/curtain_menu";
 import MobileLayout from "../../site/layout/mobile";
 
 export default function CurtainMenuPage() {

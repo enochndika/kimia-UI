@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { DropdownComponent } from "../../components/general/dropdown";
+import { DropdownComponent } from "../../components/dropdown";
 import MobileLayout from "../../site/layout/mobile";
 import { Container } from "../../site/container";
 

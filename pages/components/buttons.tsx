@@ -1,12 +1,12 @@
 import Head from "next/head";
 import { Container } from "../../site/container";
 import MobileLayout from "../../site/layout/mobile";
-import DefaultButtons from "../../components/general/button/defaultButton";
-import AnimateButtons from "../../components/general/button/animateButton";
-import RoundedButtons from "../../components/general/button/RoundedButton";
-import SizedButtons from "../../components/general/button/SizedButton";
-import DisabledButtons from "../../components/general/button/disabledButton";
-import OutlineButtons from "../../components/general/button/outlineButton";
+import DefaultButtons from "../../components/button/defaultButton";
+import AnimateButtons from "../../components/button/animateButton";
+import RoundedButtons from "../../components/button/RoundedButton";
+import SizedButtons from "../../components/button/SizedButton";
+import DisabledButtons from "../../components/button/disabledButton";
+import OutlineButtons from "../../components/button/outlineButton";
 
 export default function ButtonPage() {
   return (

@@ -3,7 +3,7 @@ import { Container } from "../../site/container";
 import {
   LargeSpinnerComponent,
   SpinnerComponent,
-} from "../../components/general/spinner";
+} from "../../components/spinner";
 import MobileLayout from "../../site/layout/mobile";
 
 export default function SpinnerPage() {

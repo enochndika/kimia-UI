@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { Container } from "../../site/container";
-import { SingleCard, ThreeCard } from "../../components/general/card";
+import { SingleCard, ThreeCard } from "../../components/card";
 import MobileLayout from "../../site/layout/mobile";
 
 export default function CardPage() {

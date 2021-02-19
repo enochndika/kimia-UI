@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { TooltipComponent } from "../../components/general/tooltip";
+import { TooltipComponent } from "../../components/tooltip";
 import MobileLayout from "../../site/layout/mobile";
 import { Container } from "../../site/container";
 

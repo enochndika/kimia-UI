@@ -2,7 +2,7 @@ import Head from "next/head";
 import {
   JumbotronComponent,
   JumbotronWithBackgroundComponent,
-} from "../../components/general/jumbotron";
+} from "../../components/jumbotron";
 import { Container } from "../../site/container";
 import MobileLayout from "../../site/layout/mobile";
 
