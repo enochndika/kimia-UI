@@ -6,6 +6,7 @@ import {
   useRef,
   useState,
 } from "react";
+import { Button } from "../button";
 
 interface Props {
   children: ReactNode;
@@ -103,9 +104,7 @@ export const DropdownComponent: FC = () => (
       </h2>
       <Dropdown>
         <Dropdown.Toggle>
-          <button className="bg-black text-white focus:outline-none shadow rounded px-6 py-2 font-medium">
-            Click on me
-          </button>
+          <Button color="success">Click on me</Button>
         </Dropdown.Toggle>
         <Dropdown.Menu>
           <Dropdown.Item>Enoch Ndika</Dropdown.Item>
@@ -120,9 +119,7 @@ export const DropdownComponent: FC = () => (
       </h2>
       <Dropdown>
         <Dropdown.Toggle>
-          <button className="bg-green-700 text-white focus:outline-none shadow rounded px-6 py-2 font-medium">
-            See me
-          </button>
+          <Button color="indigo">Click on me</Button>
         </Dropdown.Toggle>
         <Dropdown.Menu>
           <Dropdown.Item>Heroku</Dropdown.Item>

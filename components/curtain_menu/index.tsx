@@ -1,4 +1,5 @@
 import { ReactNode, useState } from "react";
+import { Button } from "../button";
 
 interface Props {
   children: ReactNode;
@@ -8,13 +9,26 @@ interface MenuProps extends Props {
   isOpen: boolean;
   top?: boolean;
 }
+
+const className = {
+  default: `bg-black fixed z-10 top-0 left-0 overflow-x-hidden md:overflow-hidden transition-all duration-500`,
+  active: `h-full w-full`,
+};
+
 const Menu = ({ children, isOpen, top }: MenuProps) => {
-  const position = top ? "h-0 w-full" : "w-0 h-full";
+  const disabled = top ? "h-0 w-full" : "w-0 h-full";
 
-  const active = `bg-black h-full w-full fixed z-10 top-0 left-0 overflow-x-hidden md:overflow-hidden transition-all duration-500`;
-  const inactive = `bg-black ${position}  fixed z-10 top-0 left-0 overflow-x-hidden md:overflow-hidden transition-all duration-500 `;
-
-  return <div className={isOpen ? active : inactive}>{children}</div>;
+  return (
+    <div
+      className={
+        isOpen
+          ? `${className.default} ${className.active}`
+          : `${className.default} ${disabled}`
+      }
+    >
+      {children}
+    </div>
+  );
 };
 Menu.Container = ({ children }: Props) => (
   <div className="relative top-1/4 w-full text-center mt-8">{children}</div>
@@ -40,12 +54,9 @@ export const CurtainMenuTop = () => {
       <h2 className="font-bold text-gray-600 text-lg md:text-2xl mt-20 mb-3">
         Transition from top
       </h2>
-      <button
-        onClick={toggle}
-        className="text-white focus:outline-none shadow m-1.5 rounded px-6 py-2 font-medium transition ease-in duration-200 bg-indigo-900"
-      >
+      <Button color="indigo" onClick={toggle}>
         Open
-      </button>
+      </Button>
       <Menu isOpen={isOpen} top={true}>
         <button
           className="absolute top-3 right-3 text-5xl text-white cursor-pointer"
@@ -76,12 +87,9 @@ export const CurtainMenuLeft = () => {
       <h2 className="font-bold text-gray-600 text-lg md:text-2xl mt-12 mb-3">
         Transition from left
       </h2>
-      <button
-        onClick={toggle}
-        className="text-white focus:outline-none shadow m-1.5 rounded px-6 py-2 font-medium transition ease-in duration-200 bg-indigo-900"
-      >
+      <Button color="dark" onClick={toggle}>
         Open
-      </button>
+      </Button>
       <Menu isOpen={isOpen}>
         <button
           className="absolute top-3 right-3 text-5xl text-white cursor-pointer"
