@@ -1,9 +1,9 @@
-import Head from "next/head";
-import { Container } from "../../site/container";
-import { NavbarVariantOne } from "../../components/navbar/variantOne";
-import { NavbarVariantTwo } from "../../components/navbar/variantTwo";
-import { NavbarVariantThree } from "../../components/navbar/variantThree";
-import MobileLayout from "../../site/layout/mobile";
+import Head from 'next/head';
+import { Container } from '../../site/container';
+import { NavbarVariantOne } from '../../components/navbar/variantOne';
+import { NavbarVariantTwo } from '../../components/navbar/variantTwo';
+import { NavbarVariantThree } from '../../components/navbar/variantThree';
+import MobileLayout from '../../site/layout/mobile';
 
 export default function NavbarPage() {
   return (

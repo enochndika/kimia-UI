@@ -1,8 +1,8 @@
-import Head from "next/head";
-import Link from "next/link";
-import Layout from "../site/layout/desktop";
-import { Container } from "../site/container";
-import Image from "next/image";
+import Head from 'next/head';
+import Link from 'next/link';
+import Layout from '../site/layout/desktop';
+import { Container } from '../site/container';
+import Image from 'next/image';
 
 export default function Home() {
   return (

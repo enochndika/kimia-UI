@@ -1,5 +1,5 @@
-import { Button } from "./index";
-import { FC } from "react";
+import { Button } from './index';
+import { FC } from 'react';
 
 const SizedButtons: FC = () => (
   <div className="mb-20">

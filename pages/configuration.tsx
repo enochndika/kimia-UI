@@ -1,8 +1,8 @@
-import Head from "next/head";
-import Link from "next/link";
-import { Container } from "../site/container";
-import Layout from "../site/layout/desktop";
-import Editor from "../site/editor";
+import Head from 'next/head';
+import Link from 'next/link';
+import { Container } from '../site/container';
+import Layout from '../site/layout/desktop';
+import Editor from '../site/editor';
 
 const globalConfig = `module.exports = {
   future: {
@@ -73,7 +73,7 @@ export default function ConfigurationPage() {
           Configuration
         </h1>
         <p className="mb-5 md:mb-2.5 text-gray-600">
-          After installing tailwindcss in your React project, you can overwrite{" "}
+          After installing tailwindcss in your React project, you can overwrite{' '}
           <code className="px-1 font-bold">tailwind.config.js</code>with the
           configuration below.
         </p>

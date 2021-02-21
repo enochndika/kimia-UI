@@ -1,7 +1,7 @@
-import Link from "next/link";
-import { useRef, useEffect } from "react";
-import Image from "next/image";
-import { Item } from "../../base";
+import Link from 'next/link';
+import { useRef, useEffect } from 'react';
+import Image from 'next/image';
+import { Item } from '../../base';
 
 interface Props {
   isOpen: boolean;
@@ -20,8 +20,8 @@ export const MobileNav = ({ isOpen, toggle }: Props) => {
         toggle(false);
       }
     };
-    window.addEventListener("click", handleOutsideClick);
-    return () => window.removeEventListener("click", handleOutsideClick);
+    window.addEventListener('click', handleOutsideClick);
+    return () => window.removeEventListener('click', handleOutsideClick);
   }, [isOpen, ref]);
 
   return (

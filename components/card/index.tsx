@@ -1,5 +1,5 @@
-import Image from "next/image";
-import { FC, HTMLAttributes, ReactNode } from "react";
+import Image from 'next/image';
+import { FC, HTMLAttributes, ReactNode } from 'react';
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   className?: string;

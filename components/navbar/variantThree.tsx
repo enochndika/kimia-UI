@@ -1,5 +1,5 @@
-import { useState } from "react";
-import Navbar from "./index";
+import { useState } from 'react';
+import Navbar from './index';
 
 export const NavbarVariantThree = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);

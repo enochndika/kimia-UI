@@ -5,8 +5,8 @@ import {
   useEffect,
   useRef,
   useState,
-} from "react";
-import { Button } from "../button";
+} from 'react';
+import { Button } from '../button';
 
 interface Props {
   children: ReactNode;
@@ -35,20 +35,20 @@ const useToggle = () => {
         setShow(false);
       }
     };
-    window.addEventListener("click", handleOutsideClick);
-    return () => window.removeEventListener("click", handleOutsideClick);
+    window.addEventListener('click', handleOutsideClick);
+    return () => window.removeEventListener('click', handleOutsideClick);
   }, [show, ref]);
 
   useEffect(() => {
     const handleEscape = (event) => {
       if (!show) return;
 
-      if (event.key === "Escape") {
+      if (event.key === 'Escape') {
         setShow(false);
       }
     };
-    document.addEventListener("keyup", handleEscape);
-    return () => document.removeEventListener("keyup", handleEscape);
+    document.addEventListener('keyup', handleEscape);
+    return () => document.removeEventListener('keyup', handleEscape);
   }, [show]);
 
   return {
@@ -83,7 +83,7 @@ Dropdown.Toggle = ({ children, className }: DropdownToggleProps) => (
 
 Dropdown.Menu = ({ children }: Props) => (
   <ul
-    style={{ transform: "translate3d(0px, 3px, 0px)" }}
+    style={{ transform: 'translate3d(0px, 3px, 0px)' }}
     className="block z-30 absolute top-0 left-0  bg-white float-left py-2 px-0 text-left border border-gray-300 rounded-sm mt-0.5 mb-0 mx-0 bg-clip-padding"
   >
     {children}

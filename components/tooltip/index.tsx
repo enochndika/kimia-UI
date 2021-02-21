@@ -1,16 +1,16 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
 interface Props {
   title: string;
-  position: "top" | "bottom";
+  position: 'top' | 'bottom';
   children: ReactNode;
   className: string;
   iconClassName?: string;
 }
 
 const positions = {
-  top: "bottom-full",
-  bottom: "top-full",
+  top: 'bottom-full',
+  bottom: 'top-full',
 };
 
 const Tooltip = ({

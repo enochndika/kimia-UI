@@ -1,7 +1,7 @@
-import Head from "next/head";
-import { Container } from "../../site/container";
-import { SingleCard, ThreeCard } from "../../components/card";
-import MobileLayout from "../../site/layout/mobile";
+import Head from 'next/head';
+import { Container } from '../../site/container';
+import { SingleCard, ThreeCard } from '../../components/card';
+import MobileLayout from '../../site/layout/mobile';
 
 export default function CardPage() {
   return (

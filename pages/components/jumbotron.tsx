@@ -1,10 +1,10 @@
-import Head from "next/head";
+import Head from 'next/head';
 import {
   JumbotronComponent,
   JumbotronWithBackgroundComponent,
-} from "../../components/jumbotron";
-import { Container } from "../../site/container";
-import MobileLayout from "../../site/layout/mobile";
+} from '../../components/jumbotron';
+import { Container } from '../../site/container';
+import MobileLayout from '../../site/layout/mobile';
 
 export default function JumbotronPage() {
   return (

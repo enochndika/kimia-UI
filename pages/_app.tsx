@@ -1,18 +1,18 @@
-import NProgress from "nprogress";
-import "tailwindcss/tailwind.css";
-import "nprogress/nprogress.css";
-import Head from "next/head";
-import Router from "next/router";
-import { AppProps } from "next/app";
-import { FC } from "react";
+import NProgress from 'nprogress';
+import 'tailwindcss/tailwind.css';
+import 'nprogress/nprogress.css';
+import Head from 'next/head';
+import Router from 'next/router';
+import { AppProps } from 'next/app';
+import { FC } from 'react';
 
 const Noop: FC = ({ children }) => <>{children}</>;
 
-Router.events.on("routeChangeStart", () => {
+Router.events.on('routeChangeStart', () => {
   NProgress.start();
 });
-Router.events.on("routeChangeComplete", () => NProgress.done());
-Router.events.on("routeChangeError", () => NProgress.done());
+Router.events.on('routeChangeComplete', () => NProgress.done());
+Router.events.on('routeChangeError', () => NProgress.done());
 
 function MyApp({ Component, pageProps }: AppProps) {
   const Layout = (Component as any).Layout || Noop;

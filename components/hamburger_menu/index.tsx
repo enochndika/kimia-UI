@@ -1,4 +1,4 @@
-import { CSSProperties, ReactNode, useRef } from "react";
+import { CSSProperties, ReactNode, useRef } from 'react';
 
 interface Props {
   children: ReactNode;
@@ -18,8 +18,8 @@ interface HamburgerTogglerProps {
 const HamburgerMenu = ({ color, textColor, children }: HamburgerMenuProps) => {
   return (
     <nav
-      className={`${color ? color : "bg-black"} ${
-        textColor ? textColor : "text-white"
+      className={`${color ? color : 'bg-black'} ${
+        textColor ? textColor : 'text-white'
       } font-light shadow py-2 px-4`}
     >
       {children}
@@ -46,7 +46,7 @@ HamburgerMenu.Collapse = ({ children, isOpen }: HamburgerCollapseProps) => {
   const ref = useRef<HTMLDivElement>();
   const style: CSSProperties = isOpen
     ? { height: ref.current?.scrollHeight }
-    : { height: 0, visibility: "hidden", opacity: 0 };
+    : { height: 0, visibility: 'hidden', opacity: 0 };
 
   return (
     <div

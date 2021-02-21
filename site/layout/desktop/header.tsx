@@ -1,12 +1,12 @@
-import Link from "next/link";
-import Image from "next/image";
-import { FC, HTMLAttributes, ReactNode } from "react";
+import Link from 'next/link';
+import Image from 'next/image';
+import { FC, HTMLAttributes, ReactNode } from 'react';
 import {
   CodeBranchIcon,
   ConfigIcon,
   GithubIcon,
   ToolboxIcon,
-} from "../../icons";
+} from '../../icons';
 
 interface Props {
   children: ReactNode;

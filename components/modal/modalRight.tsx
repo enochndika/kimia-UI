@@ -1,7 +1,7 @@
-import Modal from "./index";
-import { useOpenModal } from "./openModal";
-import { FC } from "react";
-import { Button } from "../button";
+import Modal from './index';
+import { useOpenModal } from './openModal';
+import { FC } from 'react';
+import { Button } from '../button';
 
 export const ModalRight: FC = () => {
   const { toggle, isOpen } = useOpenModal();

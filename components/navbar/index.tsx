@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
 interface Props {
   children: ReactNode;
@@ -24,8 +24,8 @@ interface NavbarTogglerProps {
 const Navbar = ({ color, textColor, children }: NavbarProps) => {
   return (
     <nav
-      className={`${color ? color : "bg-black"} ${
-        textColor ? textColor : "text-white"
+      className={`${color ? color : 'bg-black'} ${
+        textColor ? textColor : 'text-white'
       } font-light text-white md:relative md:flex md:items-center shadow py-2 px-4 md:flex md:flex-row md:justify-start`}
     >
       {children}
@@ -50,8 +50,8 @@ Navbar.Toggler = ({ toggle }: NavbarTogglerProps) => (
 
 Navbar.Collapse = ({ children, isOpen }: NavbarCollapseProps) => {
   const className = isOpen
-    ? "visible opacity-1 transition-all ease-out duration-500 md:transition-none"
-    : "invisible h-0 opacity-0 md:visible md:opacity-100 md:h-auto ";
+    ? 'visible opacity-1 transition-all ease-out duration-500 md:transition-none'
+    : 'invisible h-0 opacity-0 md:visible md:opacity-100 md:h-auto ';
   return (
     <div className={`${className} md:flex-grow md:items-center md:flex`}>
       {children}
@@ -61,12 +61,12 @@ Navbar.Collapse = ({ children, isOpen }: NavbarCollapseProps) => {
 
 Navbar.Nav = ({ children, left, right, center }: NavbarNavProps) => {
   const className = left
-    ? "block pl-0 mb-0 mr-auto md:flex md:pl-0 md:mb-0"
+    ? 'block pl-0 mb-0 mr-auto md:flex md:pl-0 md:mb-0'
     : right
-    ? "block pl-0 mb-0 ml-auto md:flex md:pl-0 md:mb-0"
+    ? 'block pl-0 mb-0 ml-auto md:flex md:pl-0 md:mb-0'
     : center
-    ? "block pl-0 mb-0 ml-auto md:flex md:pl-0 md:mb-0 md:mx-auto "
-    : "block pl-0 mb-0 mr-auto md:flex md:pl-0 md:mb-0";
+    ? 'block pl-0 mb-0 ml-auto md:flex md:pl-0 md:mb-0 md:mx-auto '
+    : 'block pl-0 mb-0 mr-auto md:flex md:pl-0 md:mb-0';
   return <ul className={className}>{children}</ul>;
 };
 

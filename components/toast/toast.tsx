@@ -1,11 +1,11 @@
-import ReactDOM from "react-dom";
-import React, { ReactNode } from "react";
-import ToastContainer from "./toastContainer";
+import ReactDOM from 'react-dom';
+import React, { ReactNode } from 'react';
+import ToastContainer from './toastContainer';
 
 const triggerToast = (messageType, message, placement, duration) => {
-  const validMessageTypes = ["success", "info", "danger", "warning"];
+  const validMessageTypes = ['success', 'info', 'danger', 'warning'];
   if (!validMessageTypes.includes(messageType)) {
-    throw Error("Invalid Toast message type");
+    throw Error('Invalid Toast message type');
   }
   ReactDOM.render(
     <ToastContainer
@@ -15,22 +15,22 @@ const triggerToast = (messageType, message, placement, duration) => {
     >
       {message}
     </ToastContainer>,
-    document.getElementById("toast")
+    document.getElementById('toast'),
   );
 };
 
 const toast = {
   success: (message: ReactNode, placement: string, duration?: number) => {
-    triggerToast("success", message, placement, duration);
+    triggerToast('success', message, placement, duration);
   },
   info: (message: ReactNode, placement: string, duration?: number) => {
-    triggerToast("info", message, placement, duration);
+    triggerToast('info', message, placement, duration);
   },
   danger: (message: ReactNode, placement: string, duration?: number) => {
-    triggerToast("danger", message, placement, duration);
+    triggerToast('danger', message, placement, duration);
   },
   warning: (message: ReactNode, placement: string, duration?: number) => {
-    triggerToast("warning", message, placement, duration);
+    triggerToast('warning', message, placement, duration);
   },
 };
 

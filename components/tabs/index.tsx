@@ -1,4 +1,4 @@
-import React, { useState, ReactNode, ReactElement, ReactChild } from "react";
+import React, { useState, ReactNode, ReactElement, ReactChild } from 'react';
 
 interface Props {
   children: ReactNode;
@@ -20,7 +20,7 @@ const variants = {
   },
   second: {
     active: `inline-block py-2 px-4 border-gray-300 border-t bg-white border-b-0 border-l border-r text-blue-700`,
-    inactive: "inline-block py-2 px-4 text-gray-800 border-b",
+    inactive: 'inline-block py-2 px-4 text-gray-800 border-b',
   },
   third: {
     active: `text-white py-2 px-4 mx-1 rounded bg-indigo-900 inline-block`,
@@ -34,7 +34,7 @@ export const Tabs = ({ children, variant }: TabsProps) => {
   const newChildren = childrenArray.map((child) =>
     React.cloneElement(child as ReactElement, {
       selected: child.key === current,
-    })
+    }),
   );
   const classNames = (child, current) => {
     if (variant === 1) {
@@ -50,7 +50,7 @@ export const Tabs = ({ children, variant }: TabsProps) => {
         ? variants.third.active
         : variants.third.inactive;
     } else {
-      throw Error("Please choose a variant");
+      throw Error('Please choose a variant');
     }
   };
   return (

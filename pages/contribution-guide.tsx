@@ -1,6 +1,6 @@
-import Head from "next/head";
-import Layout from "../site/layout/desktop";
-import { Container } from "../site/container";
+import Head from 'next/head';
+import Layout from '../site/layout/desktop';
+import { Container } from '../site/container';
 
 const Code = ({ children }) => (
   <pre className="inline-block font-mono text-sm py-1 px-2 bg-gray-100 rounded">
@@ -42,7 +42,7 @@ export default function ConfigurationPage() {
               className="font-bold mx-1"
             >
               this
-            </a>{" "}
+            </a>{' '}
             repository to your own GitHub account and then clone it to your
             local device.
           </li>
@@ -56,7 +56,7 @@ export default function ConfigurationPage() {
             Run <Code>yarn dev</Code> to build and watch for code changes
           </li>
           <li className="list-decimal pb-4">
-            Push your contribution to the branch you created{" "}
+            Push your contribution to the branch you created{' '}
             <Code>git push origin MY_BRANCH_NAME</Code>
           </li>
           <li className="list-decimal pb-4">

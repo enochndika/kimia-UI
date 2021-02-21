@@ -1,5 +1,5 @@
-import { useState } from "react";
-import Sidenav from "./index";
+import { useState } from 'react';
+import Sidenav from './index';
 
 export const SidenavLeft = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);

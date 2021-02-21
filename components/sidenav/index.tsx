@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useRef } from "react";
+import { ReactNode, useEffect, useRef } from 'react';
 
 interface Props {
   children: ReactNode;
@@ -6,7 +6,7 @@ interface Props {
 
 interface SidenavProps extends Props {
   isOpen: boolean;
-  position?: "left" | "right";
+  position?: 'left' | 'right';
   toggle: (value: boolean) => void;
 }
 const positions = {
@@ -26,8 +26,8 @@ const Sidenav = ({ isOpen, position, toggle, children }: SidenavProps) => {
         toggle(false);
       }
     };
-    window.addEventListener("mousedown", handleOutsideClick);
-    return () => window.removeEventListener("mousedown", handleOutsideClick);
+    window.addEventListener('mousedown', handleOutsideClick);
+    return () => window.removeEventListener('mousedown', handleOutsideClick);
   }, [isOpen, ref]);
 
   const left = isOpen ? positions.activeLeft : positions.inactiveLeft;
@@ -37,7 +37,7 @@ const Sidenav = ({ isOpen, position, toggle, children }: SidenavProps) => {
     : positions.inactiveLeft;
 
   const className =
-    position === "left" ? left : position === "right" ? right : defaultPosition;
+    position === 'left' ? left : position === 'right' ? right : defaultPosition;
   return (
     <aside className={className} ref={ref}>
       <div className="mt-12">{children}</div>

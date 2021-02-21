@@ -1,4 +1,4 @@
-import { useState, useEffect, FC } from "react";
+import { useState, useEffect, FC } from 'react';
 
 export const ScrollIndicator: FC = () => {
   const [scroll, setScroll] = useState<number | string>(0);
@@ -13,16 +13,16 @@ export const ScrollIndicator: FC = () => {
     setScroll(scrolled);
   };
   useEffect(() => {
-    window.addEventListener("scroll", onScrollProgress);
+    window.addEventListener('scroll', onScrollProgress);
 
     return () => {
-      window.removeEventListener("scroll", onScrollProgress);
+      window.removeEventListener('scroll', onScrollProgress);
     };
   }, []);
 
   const progressBarStyle = {
-    height: "6px",
-    background: "#4C1D95",
+    height: '6px',
+    background: '#4C1D95',
     width: scroll,
   };
 

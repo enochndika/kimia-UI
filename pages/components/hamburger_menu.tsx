@@ -1,9 +1,9 @@
-import Head from "next/head";
-import { Container } from "../../site/container";
-import { HamburgerMenuVariantOne } from "../../components/hamburger_menu/variantOne";
-import MobileLayout from "../../site/layout/mobile";
-import { HamburgerMenuVariantThree } from "../../components/hamburger_menu/variantThree";
-import { HamburgerMenuVariantTwo } from "../../components/hamburger_menu/variantTwo";
+import Head from 'next/head';
+import { Container } from '../../site/container';
+import { HamburgerMenuVariantOne } from '../../components/hamburger_menu/variantOne';
+import MobileLayout from '../../site/layout/mobile';
+import { HamburgerMenuVariantThree } from '../../components/hamburger_menu/variantThree';
+import { HamburgerMenuVariantTwo } from '../../components/hamburger_menu/variantTwo';
 
 export default function HamburgerMenuPage() {
   return (

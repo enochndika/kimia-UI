@@ -1,5 +1,5 @@
-import { ReactNode, useState } from "react";
-import { Button } from "../button";
+import { ReactNode, useState } from 'react';
+import { Button } from '../button';
 
 interface Props {
   children: ReactNode;
@@ -16,7 +16,7 @@ const className = {
 };
 
 const Menu = ({ children, isOpen, top }: MenuProps) => {
-  const disabled = top ? "h-0 w-full" : "w-0 h-full";
+  const disabled = top ? 'h-0 w-full' : 'w-0 h-full';
 
   return (
     <div

@@ -1,11 +1,11 @@
-import Head from "next/head";
-import MobileLayout from "../../site/layout/mobile";
-import { Container } from "../../site/container";
+import Head from 'next/head';
+import MobileLayout from '../../site/layout/mobile';
+import { Container } from '../../site/container';
 import {
   ColoredListGroupComponent,
   ListGroupComponent,
   ListGroupLinkComponent,
-} from "../../components/list-group";
+} from '../../components/list-group';
 
 export default function ListGroupPage() {
   return (

@@ -1,8 +1,8 @@
-import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { Container } from "./container";
-import { FC, ReactNode } from "react";
+import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { Container } from './container';
+import { FC, ReactNode } from 'react';
 
 interface Props {
   children: ReactNode;
@@ -20,12 +20,12 @@ export const Item = ({ children, href, onClick }: ItemProps) => {
   const { pathname } = router;
   const className =
     pathname === href
-      ? "text-purple-800 font-bold hover:text-purple-800"
-      : "text-gray-700 font-medium hover:text-black";
+      ? 'text-purple-800 font-bold hover:text-purple-800'
+      : 'text-gray-700 font-medium hover:text-black';
 
   return (
     <div className="mb-2">
-      <Link href={href ? href : "/"}>
+      <Link href={href ? href : '/'}>
         <a
           onClick={click}
           className={`${className} pl-6 pb-3 text-sm text-gray-700 cursor-pointer`}

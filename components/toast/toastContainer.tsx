@@ -1,14 +1,14 @@
-import React, { useState, useEffect, ReactNode } from "react";
-import ReactDOM from "react-dom";
-import { setTimeout } from "timers";
+import React, { useState, useEffect, ReactNode } from 'react';
+import ReactDOM from 'react-dom';
+import { setTimeout } from 'timers';
 
 interface MessageType {
-  messageType: "success" | "info" | "danger" | "warning";
+  messageType: 'success' | 'info' | 'danger' | 'warning';
 }
 
 interface ToastContainerProps extends MessageType {
   children: ReactNode;
-  placement: "topLeft" | "topRight" | "bottomLeft" | "bottomRight";
+  placement: 'topLeft' | 'topRight' | 'bottomLeft' | 'bottomRight';
   duration: number;
 }
 const ToastContainer = ({
@@ -25,7 +25,7 @@ const ToastContainer = ({
 
   const closeSnackBar = () => {
     clearTimeout(closeTimeout);
-    ReactDOM.unmountComponentAtNode(document.getElementById("toast"));
+    ReactDOM.unmountComponentAtNode(document.getElementById('toast'));
   };
 
   const beginCloseTimeout = () => {
@@ -55,29 +55,29 @@ const ToastContainer = ({
 
 /* The position of the toast*/
 const placements = {
-  topLeft: "animate-left top-6 left-4",
-  topRight: "animate-right top-6 right-4",
-  bottomLeft: "animate-left bottom-6 left-4",
-  bottomRight: "animate-right bottom-6 right-4",
+  topLeft: 'animate-left top-6 left-4',
+  topRight: 'animate-right top-6 right-4',
+  bottomLeft: 'animate-left bottom-6 left-4',
+  bottomRight: 'animate-right bottom-6 right-4',
 };
 
 /* Border color according to toast variant*/
 const messageTypes = {
-  success: "border-green-600",
-  info: "border-blue-700",
-  danger: "border-red-500",
-  warning: "border-yellow-400",
+  success: 'border-green-600',
+  info: 'border-blue-700',
+  danger: 'border-red-500',
+  warning: 'border-yellow-400',
 };
 
 /* Display icon according to toast variant*/
 const IconContainer = ({ messageType }: MessageType) => {
-  if (messageType === "success") {
+  if (messageType === 'success') {
     return <SuccessIcon />;
-  } else if (messageType === "danger") {
+  } else if (messageType === 'danger') {
     return <DangerIcon />;
-  } else if (messageType === "info") {
+  } else if (messageType === 'info') {
     return <InfoIcon />;
-  } else if (messageType === "warning") {
+  } else if (messageType === 'warning') {
     return <WarningIcon />;
   }
 };

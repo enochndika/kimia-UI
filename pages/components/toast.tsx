@@ -1,10 +1,10 @@
-import Head from "next/head";
-import { Container } from "../../site/container";
-import MobileLayout from "../../site/layout/mobile";
-import SuccessToast from "../../components/toast/successToast";
-import InfoToast from "../../components/toast/infoToast";
-import DangerToast from "../../components/toast/dangerToast";
-import WarningToast from "../../components/toast/warningToast";
+import Head from 'next/head';
+import { Container } from '../../site/container';
+import MobileLayout from '../../site/layout/mobile';
+import SuccessToast from '../../components/toast/successToast';
+import InfoToast from '../../components/toast/infoToast';
+import DangerToast from '../../components/toast/dangerToast';
+import WarningToast from '../../components/toast/warningToast';
 
 export default function ToastPage() {
   return (
