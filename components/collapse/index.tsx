@@ -31,7 +31,7 @@ const Collapse = ({ children, title, btnClassName }: Props) => {
 };
 
 export const CollapseComponent: FC = () => (
-  <div>
+  <div className="mb-12">
     <div className="mb-6">
       <Collapse title="Click to see me" btnClassName="bg-blue-700">
         <h2>Next.js</h2>
