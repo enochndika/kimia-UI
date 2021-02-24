@@ -28,13 +28,7 @@ Router.events.on('routeChangeError', () => NProgress.done());
 const components = {
   pre: (preProps) => {
     const props = preToCodeBlock(preProps);
-    // if there's a codeString and some props, we passed the test
-    if (props) {
-      return <Copyboard {...props} />;
-    } else {
-      // it's possible to have a pre without a code in it
-      return <pre {...preProps} />;
-    }
+    return <Copyboard {...props} />;
   },
 };
 
