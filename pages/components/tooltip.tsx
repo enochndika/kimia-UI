@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { TooltipComponent } from '../../components/tooltip';
-import MobileLayout from '../../site/layout/mobile';
-import { Container } from '../../site/container';
+import MobileLayout from '../../website/layout/mobile';
+import { Container } from '../../website/container';
 
 export default function TooltipPage() {
   return (

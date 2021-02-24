@@ -1,8 +1,8 @@
 import Head from 'next/head';
-import { Container } from '../../site/container';
+import { Container } from '../../website/container';
 import { SidenavLeft } from '../../components/sidenav/sidenavLeft';
 import { SidenavRight } from '../../components/sidenav/sidenavRight';
-import MobileLayout from '../../site/layout/mobile';
+import MobileLayout from '../../website/layout/mobile';
 
 export default function SidenavPage() {
   return (

@@ -1,10 +1,10 @@
 import Head from 'next/head';
-import { Container } from '../../site/container';
+import { Container } from '../../website/container';
 import {
   LargeSpinnerComponent,
   SpinnerComponent,
 } from '../../components/spinner';
-import MobileLayout from '../../site/layout/mobile';
+import MobileLayout from '../../website/layout/mobile';
 
 export default function SpinnerPage() {
   return (

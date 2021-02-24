@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { CollapseComponent } from '../../components/collapse';
-import MobileLayout from '../../site/layout/mobile';
-import { Container } from '../../site/container';
+import MobileLayout from '../../website/layout/mobile';
+import { Container } from '../../website/container';
 
 export default function CollapsePage() {
   return (

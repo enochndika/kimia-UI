@@ -1,7 +1,7 @@
 import Head from 'next/head';
-import { Container } from '../../site/container';
+import { Container } from '../../website/container';
 import { PricingTable } from '../../components/ecommerce/pricing-table';
-import MobileLayout from '../../site/layout/mobile';
+import MobileLayout from '../../website/layout/mobile';
 
 export default function PricingTablePage() {
   return (

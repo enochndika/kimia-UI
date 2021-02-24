@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { Container } from '../site/container';
-import Layout from '../site/layout/desktop';
-import Editor from '../site/editor';
+import { Container } from '../website/container';
+import Layout from '../website/layout/desktop';
+import Editor from '../website/editor';
 
 const globalConfig = `module.exports = {
   future: {

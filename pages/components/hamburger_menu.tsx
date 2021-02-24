@@ -1,7 +1,7 @@
 import Head from 'next/head';
-import { Container } from '../../site/container';
+import { Container } from '../../website/container';
 import { HamburgerMenuVariantOne } from '../../components/hamburger_menu/variantOne';
-import MobileLayout from '../../site/layout/mobile';
+import MobileLayout from '../../website/layout/mobile';
 import { HamburgerMenuVariantThree } from '../../components/hamburger_menu/variantThree';
 import { HamburgerMenuVariantTwo } from '../../components/hamburger_menu/variantTwo';
 

@@ -3,8 +3,8 @@ import {
   JumbotronComponent,
   JumbotronWithBackgroundComponent,
 } from '../../components/jumbotron';
-import { Container } from '../../site/container';
-import MobileLayout from '../../site/layout/mobile';
+import { Container } from '../../website/container';
+import MobileLayout from '../../website/layout/mobile';
 
 export default function JumbotronPage() {
   return (
