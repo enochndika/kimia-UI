@@ -4,7 +4,7 @@ import {
   JumbotronWithBackgroundComponent,
 } from '@/components/jumbotron/example';
 import { Container } from '@/website/components/container';
-import MobileLayout from '@/website/layout/mobile';
+import MobileLayout from '@/website/components/layout/mobile';
 import JumbotronSnippet from '@/website/snippets/jumbotron/simple.mdx';
 import JumbotronBackgroundSnippet from '@/website/snippets/jumbotron/withBackground.mdx';
 

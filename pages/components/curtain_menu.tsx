@@ -4,7 +4,7 @@ import {
   CurtainMenuLeft,
   CurtainMenuTop,
 } from '@/components/curtain-menu/example';
-import MobileLayout from '@/website/layout/mobile';
+import MobileLayout from '@/website/components/layout/mobile';
 import CurtainMenuLeftSnippet from '@/website/snippets/curtain_menu/left.mdx';
 import CurtainMenuTopSnippet from '@/website/snippets/curtain_menu/top.mdx';
 

@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { ModalRight } from '@/components/modal/example/right';
 import { ModalLeft } from '@/components/modal/example/left';
 import { ModalTop } from '@/components/modal/example/top';
-import MobileLayout from '@/website/layout/mobile';
+import MobileLayout from '@/website/components/layout/mobile';
 import { Container } from '@/website/components/container';
 import { ModalNotClosedOutside } from '@/components/modal/example/notClosedOutside';
 import ModalTopSnippet from '@/website/snippets/modal/top.mdx';

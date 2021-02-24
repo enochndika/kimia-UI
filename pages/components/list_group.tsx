@@ -4,7 +4,7 @@ import {
   ListGroupComponent,
   ListGroupLinkComponent,
 } from '@/components/list-group/example';
-import MobileLayout from '@/website/layout/mobile';
+import MobileLayout from '@/website/components/layout/mobile';
 import { Container } from '@/website/components/container';
 import ListGroupSnippet from '@/website/snippets/list-group/simple.mdx';
 import ColoredListGroupSnippet from '@/website/snippets/list-group/colored.mdx';

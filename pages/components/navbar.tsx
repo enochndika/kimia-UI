@@ -3,7 +3,7 @@ import { Container } from '@/website/components/container';
 import { NavbarVariantOne } from '@/components/navbar/examples/variantOne';
 import { NavbarVariantTwo } from '@/components/navbar/examples/variantTwo';
 import { NavbarVariantThree } from '@/components/navbar/examples/variantThree';
-import MobileLayout from '@/website/layout/mobile';
+import MobileLayout from '@/website/components/layout/mobile';
 import NavbarVariantOneSnippet from '@/website/snippets/navbar/variantOne.mdx';
 import NavbarVariantTwoSnippet from '@/website/snippets/navbar/variantTwo.mdx';
 import NavbarVariantThreeSnippet from '@/website/snippets/navbar/variantThree.mdx';

@@ -1,7 +1,7 @@
 import { MobileNav } from './mobileNav';
 import { ReactNode, useState } from 'react';
 import { MobileHeader } from './mobileHeader';
-import Base from '../../components/base';
+import Base from '../../base';
 
 interface Props {
   children: ReactNode;

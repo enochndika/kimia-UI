@@ -4,7 +4,7 @@ import {
   LargeSpinnerComponent,
   SpinnerComponent,
 } from '@/components/spinner/example';
-import MobileLayout from '@/website/layout/mobile';
+import MobileLayout from '@/website/components/layout/mobile';
 import SpinnerSnippet from '@/website/snippets/spinner/normal.mdx';
 import LargeSpinnerSnippet from '@/website/snippets/spinner/large.mdx';
 

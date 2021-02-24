@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { Container } from '@/website/components/container';
-import MobileLayout from '../../website/layout/mobile';
+import MobileLayout from '../../website/components/layout/mobile';
 import DefaultButtons from '@/components/button/example/defaultButton';
 import AnimateButtons from '@/components/button/example/animateButton';
 import RoundedButtons from '@/components/button/example/RoundedButton';

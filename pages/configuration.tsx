@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { Container } from '@/website/components/container';
-import Layout from '../website/layout/desktop';
+import Layout from '../website/components/layout/desktop';
 import TailwindConfig from '@/website/snippets/tailwindConfig.mdx';
 
 export default function ConfigurationPage() {
@@ -36,6 +36,7 @@ export default function ConfigurationPage() {
           </Link>
         </div>
         <TailwindConfig />
+        <div className="mb-4" />
       </Container>
     </>
   );
