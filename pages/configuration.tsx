@@ -2,7 +2,6 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { Container } from '@/website/components/container';
 import Layout from '../website/layout/desktop';
-import { CodeWrapper } from '@/website/components/codeWrapper';
 import TailwindConfig from '@/website/snippets/tailwindConfig.mdx';
 
 export default function ConfigurationPage() {
@@ -32,9 +31,7 @@ export default function ConfigurationPage() {
             </a>
           </Link>
         </div>
-        <CodeWrapper>
-          <TailwindConfig />
-        </CodeWrapper>
+        <TailwindConfig />
       </Container>
     </>
   );

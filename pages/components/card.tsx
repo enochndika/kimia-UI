@@ -1,10 +1,9 @@
 import Head from 'next/head';
 import { Container } from '@/website/components/container';
-import { MultipleCard, SingleCard } from '../../components/card';
-import MobileLayout from '../../website/layout/mobile';
-import SingleCardExample from '../../website/snippets/card/single.mdx';
-import MultipleCardExample from '../../website/snippets/card/multiple.mdx';
-import { CodeWrapper } from '@/website/components/codeWrapper';
+import { MultipleCard, SingleCard } from '@/components/card';
+import MobileLayout from '@/website/layout/mobile';
+import SingleCardSnippet from '@/website/snippets/card/single.mdx';
+import MultipleCardSnippet from '@/website/snippets/card/multiple.mdx';
 
 export default function CardPage() {
   return (
@@ -21,13 +20,9 @@ export default function CardPage() {
           Card
         </h1>
         <SingleCard />
-        <CodeWrapper>
-          <SingleCardExample />
-        </CodeWrapper>
+        <SingleCardSnippet />
         <MultipleCard />
-        <CodeWrapper>
-          <MultipleCardExample />
-        </CodeWrapper>
+        <MultipleCardSnippet />
       </Container>
     </>
   );

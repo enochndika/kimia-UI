@@ -4,6 +4,7 @@ import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import Confetti from 'react-dom-confetti';
 import s from './copyboard.module.css';
 import dracula from 'prism-react-renderer/themes/nightOwl';
+import { CodeWrapper } from '@/website/components/codeWrapper';
 
 export interface CopyboardProps {
   codeString: string;
@@ -34,12 +35,6 @@ const copyToClipboard = (str) => {
   document.execCommand('copy');
   document.body.removeChild(el);
 };
-
-const Wrapper = (props) => <div style={{ position: 'relative' }} {...props} />;
-
-const ConfettiWrapper = (props) => (
-  <div style={{ position: 'absolute', top: 0, right: 0 }} {...props} />
-);
 
 const Button = (props) => (
   <button
@@ -77,47 +72,53 @@ export function Copyboard({ codeString, language, ...props }: CopyboardProps) {
     );
   } else {
     return (
-      <Wrapper>
-        <Highlight
-          {...defaultProps}
-          code={codeString}
-          language={language}
-          theme={dracula}
-        >
-          {({ className, style, tokens, getLineProps, getTokenProps }) => (
-            <pre
-              className={`${className} ${s.pre}`}
-              style={{
-                ...style,
-                padding: '2rem',
-                position: 'relative',
-              }}
-            >
-              <Button
-                className="focus:outline-none"
-                onClick={() => {
-                  copyToClipboard(codeString);
-                  setIsCopied(true);
-                  setTimeout(() => setIsCopied(false), 5000);
+      <CodeWrapper>
+        <div className="relative">
+          <Highlight
+            {...defaultProps}
+            code={codeString}
+            language={language}
+            theme={dracula}
+          >
+            {({ className, style, tokens, getLineProps, getTokenProps }) => (
+              <pre
+                className={`${className} ${s.pre}`}
+                style={{
+                  ...style,
+                  padding: '2rem',
+                  position: 'relative',
                 }}
               >
-                {isCopied ? '🎉 Copied!' : 'Copy'}
-              </Button>
+                <Button
+                  className="focus:outline-none"
+                  onClick={() => {
+                    copyToClipboard(codeString);
+                    setIsCopied(true);
+                    setTimeout(() => setIsCopied(false), 5000);
+                  }}
+                >
+                  {isCopied ? '🎉 Copied!' : 'Copy'}
+                </Button>
 
-              {tokens.map((line, i) => (
-                <div {...getLineProps({ line, key: i })} style={style} key={i}>
-                  {line.map((token, key) => (
-                    <span {...getTokenProps({ token, key })} key={key} />
-                  ))}
-                </div>
-              ))}
-            </pre>
-          )}
-        </Highlight>
-        <ConfettiWrapper>
-          <Confetti active={isCopied} config={config} />
-        </ConfettiWrapper>
-      </Wrapper>
+                {tokens.map((line, i) => (
+                  <div
+                    {...getLineProps({ line, key: i })}
+                    style={style}
+                    key={i}
+                  >
+                    {line.map((token, key) => (
+                      <span {...getTokenProps({ token, key })} key={key} />
+                    ))}
+                  </div>
+                ))}
+              </pre>
+            )}
+          </Highlight>
+          <div className="absolute top-0 right-0">
+            <Confetti active={isCopied} config={config} />
+          </div>
+        </div>
+      </CodeWrapper>
     );
   }
 }

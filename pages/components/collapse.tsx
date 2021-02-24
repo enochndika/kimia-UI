@@ -1,9 +1,8 @@
 import Head from 'next/head';
 import { CollapseComponent } from '@/components/collapse';
-import MobileLayout from '../../website/layout/mobile';
+import MobileLayout from '@/website/layout/mobile';
 import { Container } from '@/website/components/container';
-import CollapseExample from '../../website/snippets/collapse/index.mdx';
-import { CodeWrapper } from '@/website/components/codeWrapper';
+import CollapseSnippet from '@/website/snippets/collapse/index.mdx';
 
 export default function CollapsePage() {
   return (
@@ -20,9 +19,7 @@ export default function CollapsePage() {
           Collapse
         </h1>
         <CollapseComponent />
-        <CodeWrapper>
-          <CollapseExample />
-        </CodeWrapper>
+        <CollapseSnippet />
       </Container>
     </>
   );

@@ -2,12 +2,11 @@ import Head from 'next/head';
 import {
   JumbotronComponent,
   JumbotronWithBackgroundComponent,
-} from '../../components/jumbotron';
+} from '@/components/jumbotron';
 import { Container } from '@/website/components/container';
 import MobileLayout from '@/website/layout/mobile';
-import JumbotronExample from '@/website/snippets/jumbotron/simple.mdx';
-import JumbotronBackgroundExample from '@/website/snippets/jumbotron/withBackground.mdx';
-import { CodeWrapper } from '@/website/components/codeWrapper';
+import JumbotronSnippet from '@/website/snippets/jumbotron/simple.mdx';
+import JumbotronBackgroundSnippet from '@/website/snippets/jumbotron/withBackground.mdx';
 
 export default function JumbotronPage() {
   return (
@@ -24,13 +23,9 @@ export default function JumbotronPage() {
           Jumbotron
         </h1>
         <JumbotronComponent />
-        <CodeWrapper>
-          <JumbotronExample />
-        </CodeWrapper>
+        <JumbotronSnippet />
         <JumbotronWithBackgroundComponent />
-        <CodeWrapper>
-          <JumbotronBackgroundExample />
-        </CodeWrapper>
+        <JumbotronBackgroundSnippet />
       </Container>
     </>
   );

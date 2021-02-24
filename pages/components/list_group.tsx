@@ -1,15 +1,14 @@
 import Head from 'next/head';
-import MobileLayout from '../../website/layout/mobile';
-import { Container } from '@/website/components/container';
 import {
   ColoredListGroupComponent,
   ListGroupComponent,
   ListGroupLinkComponent,
-} from '../../components/list-group';
-import ListGroupExample from '@/website/snippets/list-group/simple.mdx';
-import ColoredListGroupExample from '@/website/snippets/list-group/colored.mdx';
-import LinkListGroupExample from '@/website/snippets/list-group/link.mdx';
-import { CodeWrapper } from '@/website/components/codeWrapper';
+} from '@/components/list-group';
+import MobileLayout from '@/website/layout/mobile';
+import { Container } from '@/website/components/container';
+import ListGroupSnippet from '@/website/snippets/list-group/simple.mdx';
+import ColoredListGroupSnippet from '@/website/snippets/list-group/colored.mdx';
+import LinkListGroupSnippet from '@/website/snippets/list-group/link.mdx';
 
 export default function ListGroupPage() {
   return (
@@ -26,17 +25,11 @@ export default function ListGroupPage() {
           List Group
         </h1>
         <ListGroupComponent />
-        <CodeWrapper>
-          <ListGroupExample />
-        </CodeWrapper>
+        <ListGroupSnippet />
         <ColoredListGroupComponent />
-        <CodeWrapper>
-          <ColoredListGroupExample />
-        </CodeWrapper>
+        <ColoredListGroupSnippet />
         <ListGroupLinkComponent />
-        <CodeWrapper>
-          <LinkListGroupExample />
-        </CodeWrapper>
+        <LinkListGroupSnippet />
       </Container>
     </>
   );

@@ -7,13 +7,12 @@ import RoundedButtons from '../../components/button/RoundedButton';
 import SizedButtons from '../../components/button/SizedButton';
 import DisabledButtons from '../../components/button/disabledButton';
 import OutlineButtons from '../../components/button/outlineButton';
-import { CodeWrapper } from '@/website/components/codeWrapper';
-import DefaultButtonExample from '../../website/snippets/buttons/default.mdx';
-import AnimateButtonExample from '../../website/snippets/buttons/animate.mdx';
-import RoundedButtonExample from '../../website/snippets/buttons/rounded.mdx';
-import SizesButtonExample from '../../website/snippets/buttons/sizes.mdx';
-import DisabledButtonExample from '../../website/snippets/buttons/disabled.mdx';
-import OutlineButtonExample from '../../website/snippets/buttons/outline.mdx';
+import DefaultButtonSnippet from '../../website/snippets/buttons/default.mdx';
+import AnimateButtonSnippet from '../../website/snippets/buttons/animate.mdx';
+import RoundedButtonSnippet from '../../website/snippets/buttons/rounded.mdx';
+import SizesButtonSnippet from '../../website/snippets/buttons/sizes.mdx';
+import DisabledButtonSnippet from '../../website/snippets/buttons/disabled.mdx';
+import OutlineButtonSnippet from '../../website/snippets/buttons/outline.mdx';
 
 export default function ButtonPage() {
   return (
@@ -30,29 +29,17 @@ export default function ButtonPage() {
           Buttons
         </h1>
         <DefaultButtons />
-        <CodeWrapper>
-          <DefaultButtonExample />
-        </CodeWrapper>
+        <DefaultButtonSnippet />
         <AnimateButtons />
-        <CodeWrapper>
-          <AnimateButtonExample />
-        </CodeWrapper>
+        <AnimateButtonSnippet />
         <RoundedButtons />
-        <CodeWrapper>
-          <RoundedButtonExample />
-        </CodeWrapper>
+        <RoundedButtonSnippet />
         <SizedButtons />
-        <CodeWrapper>
-          <SizesButtonExample />
-        </CodeWrapper>
+        <SizesButtonSnippet />
         <DisabledButtons />
-        <CodeWrapper>
-          <DisabledButtonExample />
-        </CodeWrapper>
+        <DisabledButtonSnippet />
         <OutlineButtons />
-        <CodeWrapper>
-          <OutlineButtonExample />
-        </CodeWrapper>
+        <OutlineButtonSnippet />
       </Container>
     </>
   );

@@ -1,9 +1,8 @@
 import Head from 'next/head';
 import { DropdownComponent } from '@/components/dropdown';
-import MobileLayout from '../../website/layout/mobile';
+import MobileLayout from '@/website/layout/mobile';
 import { Container } from '@/website/components/container';
-import DropdownExample from '../../website/snippets/dropdown/index.mdx';
-import { CodeWrapper } from '@/website/components/codeWrapper';
+import DropdownSnippet from '@/website/snippets/dropdown/index.mdx';
 
 export default function DropdownPage() {
   return (
@@ -20,9 +19,7 @@ export default function DropdownPage() {
           Dropdown
         </h1>
         <DropdownComponent />
-        <CodeWrapper>
-          <DropdownExample />
-        </CodeWrapper>
+        <DropdownSnippet />
       </Container>
     </>
   );
