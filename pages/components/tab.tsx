@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { Container } from '../../website/container';
+import { Container } from '@/website/components/container';
 import { Tab, Tabs } from '../../components/tabs';
 import MobileLayout from '../../website/layout/mobile';
 

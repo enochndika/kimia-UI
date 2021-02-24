@@ -23,6 +23,7 @@ module.exports = {
     // e.g. "@typescript-eslint/explicit-function-return-type": "off",
     // suppress errors for missing 'import React' in files
     '@typescript-eslint/no-empty-interface': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/no-unescaped-entities': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',

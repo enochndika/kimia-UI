@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Layout from '../website/layout/desktop';
-import { Container } from '../website/container';
+import { Container } from '@/website/components/container';
 
 const Code = ({ children }) => (
   <pre className="inline-block font-mono text-sm py-1 px-2 bg-gray-100 rounded">

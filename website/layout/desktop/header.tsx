@@ -6,7 +6,7 @@ import {
   ConfigIcon,
   GithubIcon,
   ToolboxIcon,
-} from '../../icons';
+} from '../../components/icons';
 
 interface Props {
   children: ReactNode;

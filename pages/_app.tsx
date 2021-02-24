@@ -2,9 +2,13 @@ import NProgress from 'nprogress';
 import 'tailwindcss/tailwind.css';
 import 'nprogress/nprogress.css';
 import Head from 'next/head';
-import Router from 'next/router';
+import Router, { useRouter } from 'next/router';
 import { AppProps } from 'next/app';
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
+import { preToCodeBlock } from 'mdx-utils';
+import { MDXProvider } from '@mdx-js/react';
+import { Copyboard } from '@/website/components/copyboard';
+import * as gtag from '../website/utils/gtag';
 
 const Noop: FC = ({ children }) => <>{children}</>;
 
@@ -14,9 +18,33 @@ Router.events.on('routeChangeStart', () => {
 Router.events.on('routeChangeComplete', () => NProgress.done());
 Router.events.on('routeChangeError', () => NProgress.done());
 
+const components = {
+  pre: (preProps) => {
+    const props = preToCodeBlock(preProps);
+    // if there's a codeString and some props, we passed the test
+    if (props) {
+      return <Copyboard {...props} />;
+    } else {
+      // it's possible to have a pre without a code in it
+      return <pre {...preProps} />;
+    }
+  },
+};
+
 function MyApp({ Component, pageProps }: AppProps) {
   const Layout = (Component as any).Layout || Noop;
+  const router = useRouter();
 
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      gtag.pageView(url);
+    };
+    router.events.on('routeChangeComplete', handleRouteChange);
+
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
   return (
     <>
       <Head>
@@ -26,15 +54,12 @@ function MyApp({ Component, pageProps }: AppProps) {
           key="viewport"
         />
         <meta name="author" content="Enoch Ndika" key="author" />
-        <meta
-          name="keywords"
-          content="Enoch Ndika, Kimia, Kimia-UI, Kimia ui, kimia-ui, ui library, React, Next.js, Components"
-          key="keywords"
-        />
       </Head>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <MDXProvider components={components}>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </MDXProvider>
     </>
   );
 }

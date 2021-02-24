@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { Container } from '../../website/container';
+import { Container } from '@/website/components/container';
 import { SingleCard, ThreeCard } from '../../components/card';
 import MobileLayout from '../../website/layout/mobile';
 

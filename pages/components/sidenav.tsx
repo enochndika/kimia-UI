@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { Container } from '../../website/container';
+import { Container } from '@/website/components/container';
 import { SidenavLeft } from '../../components/sidenav/sidenavLeft';
 import { SidenavRight } from '../../components/sidenav/sidenavRight';
 import MobileLayout from '../../website/layout/mobile';

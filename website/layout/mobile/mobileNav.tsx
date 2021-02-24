@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useRef, useEffect } from 'react';
 import Image from 'next/image';
-import { Item } from '../../base';
+import { Item } from '../../components/base';
 
 interface Props {
   isOpen: boolean;

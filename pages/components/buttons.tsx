@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { Container } from '../../website/container';
+import { Container } from '@/website/components/container';
 import MobileLayout from '../../website/layout/mobile';
 import DefaultButtons from '../../components/button/defaultButton';
 import AnimateButtons from '../../components/button/animateButton';

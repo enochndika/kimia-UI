@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { Container } from '../../website/container';
+import { Container } from '@/website/components/container';
 import { CurtainMenuLeft, CurtainMenuTop } from '../../components/curtain_menu';
 import MobileLayout from '../../website/layout/mobile';
 

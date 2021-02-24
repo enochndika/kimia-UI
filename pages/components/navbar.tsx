@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { Container } from '../../website/container';
+import { Container } from '@/website/components/container';
 import { NavbarVariantOne } from '../../components/navbar/variantOne';
 import { NavbarVariantTwo } from '../../components/navbar/variantTwo';
 import { NavbarVariantThree } from '../../components/navbar/variantThree';

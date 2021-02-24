@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { DropdownComponent } from '../../components/dropdown';
 import MobileLayout from '../../website/layout/mobile';
-import { Container } from '../../website/container';
+import { Container } from '@/website/components/container';
 
 export default function DropdownPage() {
   return (

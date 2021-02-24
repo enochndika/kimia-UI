@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { Container } from '../../website/container';
+import { Container } from '@/website/components/container';
 import MobileLayout from '../../website/layout/mobile';
 import SuccessToast from '../../components/toast/successToast';
 import InfoToast from '../../components/toast/infoToast';
