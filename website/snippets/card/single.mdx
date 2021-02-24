@@ -1,0 +1,40 @@
+```jsx
+export const SingleCardPage = () => (
+  <Card className="w-full md:w-4/12">
+    <img
+      src="https://res.cloudinary.com/beloved/image/upload/v1608682938/Assets/632198_sgrp38.jpg"
+      alt="image"
+      width={1200}
+      height={600}
+      className="max-w-full h-auto"
+    />
+    <Card.Body>
+      <Card.Title>Card title</Card.Title>
+      <Card.Text>
+        Some quick example text to build on the card title and make up the bulk
+        of the card&apos;s content.
+      </Card.Text>
+    </Card.Body>
+  </Card>
+);
+
+const Card = ({ className, children }) => (
+  <div
+    className={`${className} relative flex flex-col border-2 border-gray-200 rounded-lg`}
+  >
+    {children}
+  </div>
+);
+
+Card.Body = ({ children }) => (
+  <div className="block flex-grow flex-shrink p-5">{children}</div>
+);
+
+Card.Title = ({ className, children }) => (
+  <div className={`${className} font-medium text-gray-700 mb-3`}>
+    {children}
+  </div>
+);
+
+Card.Text = ({ children }) => <div className="text-gray-500">{children}</div>;
+```

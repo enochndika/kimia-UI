@@ -8,12 +8,12 @@ import SizedButtons from '../../components/button/SizedButton';
 import DisabledButtons from '../../components/button/disabledButton';
 import OutlineButtons from '../../components/button/outlineButton';
 import { CodeWrapper } from '@/website/components/codeWrapper';
-import DefaultButtonExample from '../../website/examples/buttons/default.mdx';
-import AnimateButtonExample from '../../website/examples/buttons/animate.mdx';
-import RoundedButtonExample from '../../website/examples/buttons/rounded.mdx';
-import SizesButtonExample from '../../website/examples/buttons/sizes.mdx';
-import DisabledButtonExample from '../../website/examples/buttons/disabled.mdx';
-import OutlineButtonExample from '../../website/examples/buttons/outline.mdx';
+import DefaultButtonExample from '../../website/snippets/buttons/default.mdx';
+import AnimateButtonExample from '../../website/snippets/buttons/animate.mdx';
+import RoundedButtonExample from '../../website/snippets/buttons/rounded.mdx';
+import SizesButtonExample from '../../website/snippets/buttons/sizes.mdx';
+import DisabledButtonExample from '../../website/snippets/buttons/disabled.mdx';
+import OutlineButtonExample from '../../website/snippets/buttons/outline.mdx';
 
 export default function ButtonPage() {
   return (
