@@ -2,65 +2,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { Container } from '@/website/components/container';
 import Layout from '../website/layout/desktop';
-import Editor from '@/website/components/editor';
-
-const globalConfig = `module.exports = {
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true,
-  },
-  purge: ["./components/**/*.{js,ts,jsx,tsx}", "./pages/**/*.{js,ts,jsx,tsx}"],
-  theme: {
-    extend: {
-      animation: {
-        left: "left 0.4s",
-        right: "right 0.4s",
-        "modal-right": "modal-right 0.3s",
-        "modal-top": "modal-top 0.3s",
-        "modal-left": "modal-left 0.3s",
-      },
-      keyframes: {
-        left: {
-          "0%, 100%": { transform: "translateX(-100%)" },
-          "100%": { transform: "translateX(0)" },
-        },
-        right: {
-          "0%, 100%": { transform: "translateX(100%)" },
-          "100%": { transform: "translateX(0)" },
-        },
-
-        "modal-top": {
-          "0%, 100%": { top: "-500px" },
-          "100%": { top: "0" },
-        },
-        "modal-right": {
-          "0%, 100%": { right: "-500px" },
-          "100%": { right: "0" },
-        },
-        "modal-left": {
-          "0%, 100%": { left: "-500px" },
-          "100%": { left: "0" },
-        },
-      },
-    },
-    variants: {
-      transitionProperty: {
-        height: "height",
-      },
-    },
-  },
-  variants: {
-    extend: {
-      backgroundColor: ["active"],
-      borderWidth: ["hover"],
-      opacity: ["disabled"],
-      textColor: ["active"],
-      overflow: ["hover"],
-    },
-  },
-  plugins: [],
-};
-`;
+import { CodeWrapper } from '@/website/components/codeWrapper';
+import TailwindConfig from '@/website/snippets/tailwindConfig.mdx';
 
 export default function ConfigurationPage() {
   return (
@@ -89,7 +32,9 @@ export default function ConfigurationPage() {
             </a>
           </Link>
         </div>
-        <Editor code={globalConfig} />
+        <CodeWrapper>
+          <TailwindConfig />
+        </CodeWrapper>
       </Container>
     </>
   );

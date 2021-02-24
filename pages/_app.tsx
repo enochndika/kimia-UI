@@ -4,12 +4,17 @@ import 'nprogress/nprogress.css';
 import Head from 'next/head';
 import Router, { useRouter } from 'next/router';
 import { AppProps } from 'next/app';
-import { FC, useEffect } from 'react';
+import { ComponentType, FC, useEffect } from 'react';
 import { preToCodeBlock } from 'mdx-utils';
 import { MDXProvider } from '@mdx-js/react';
-import { Copyboard } from '@/website/components/copyboard';
 import * as gtag from '../website/utils/gtag';
+import dynamic from 'next/dynamic';
+import { CopyboardProps } from '@/website/components/copyboard';
 
+const Copyboard: ComponentType<CopyboardProps> = dynamic(
+  () => import('../website/components/copyboard').then((mod) => mod.Copyboard),
+  { ssr: false },
+);
 const Noop: FC = ({ children }) => <>{children}</>;
 
 Router.events.on('routeChangeStart', () => {

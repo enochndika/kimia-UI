@@ -5,7 +5,7 @@ import Confetti from 'react-dom-confetti';
 import s from './copyboard.module.css';
 import dracula from 'prism-react-renderer/themes/nightOwl';
 
-interface CopyboardProps {
+export interface CopyboardProps {
   codeString: string;
   language: Language;
 }
