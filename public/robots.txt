@@ -1,4 +1,9 @@
+# *
 User-agent: *
 Allow: /
+
+# Host
 Host: https://kimia-ui.vercel.app
+
+# Sitemaps
 Sitemap: https://kimia-ui.vercel.app/sitemap.xml

@@ -2,7 +2,7 @@ import { Button } from './index';
 import { FC } from 'react';
 
 const DisabledButtons: FC = () => (
-  <div className="mb-20">
+  <div className="mb-12">
     <h2 className="font-bold text-gray-600 text-lg md:text-2xl mb-3">
       Disable
     </h2>
