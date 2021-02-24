@@ -3,7 +3,7 @@ import {
   ColoredListGroupComponent,
   ListGroupComponent,
   ListGroupLinkComponent,
-} from '@/components/list-group';
+} from '@/components/list-group/example';
 import MobileLayout from '@/website/layout/mobile';
 import { Container } from '@/website/components/container';
 import ListGroupSnippet from '@/website/snippets/list-group/simple.mdx';

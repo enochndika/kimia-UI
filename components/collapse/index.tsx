@@ -1,4 +1,4 @@
-import { useState, useRef, ReactNode, FC } from 'react';
+import { useState, useRef, ReactNode } from 'react';
 
 interface Props {
   title: string;
@@ -6,7 +6,7 @@ interface Props {
   btnClassName: string;
 }
 
-const Collapse = ({ children, title, btnClassName }: Props) => {
+export const Collapse = ({ children, title, btnClassName }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const ref = useRef<HTMLDivElement>(null);
   const style = isOpen ? { height: ref.current?.scrollHeight } : { height: 0 };
@@ -29,29 +29,3 @@ const Collapse = ({ children, title, btnClassName }: Props) => {
     </div>
   );
 };
-
-export const CollapseComponent: FC = () => (
-  <div className="mb-12">
-    <div className="mb-6">
-      <Collapse title="Click to see me" btnClassName="bg-blue-700">
-        <h2>Next.js</h2>
-        <h3>React</h3>
-        <h4>JavaScript</h4>
-        <h5>Chakra-UI</h5>
-      </Collapse>
-    </div>
-    <div className="mb-6 ">
-      <Collapse title="Click to see me" btnClassName="bg-green-700">
-        <h2>Tailwindcss</h2>
-        <h3>Vercel</h3>
-        <h4>Docker</h4>
-      </Collapse>
-    </div>
-    <div className="mb-6">
-      <Collapse title="Click to see me" btnClassName="bg-indigo-900">
-        <h1>Netlify</h1>
-        <h2>Typescript</h2>
-      </Collapse>
-    </div>
-  </div>
-);

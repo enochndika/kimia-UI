@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { CollapseComponent } from '@/components/collapse';
+import { CollapseComponent } from '@/components/collapse/example';
 import MobileLayout from '@/website/layout/mobile';
 import { Container } from '@/website/components/container';
 import CollapseSnippet from '@/website/snippets/collapse/index.mdx';

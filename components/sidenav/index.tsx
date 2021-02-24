@@ -16,7 +16,12 @@ const positions = {
   inactiveRight: `block h-screen fixed z-20 top-0 right-0 w-0  bg-gray-800 text-white overflow-x-hidden transition-all ease duration-200`,
 };
 
-const Sidenav = ({ isOpen, position, toggle, children }: SidenavProps) => {
+export const Sidenav = ({
+  isOpen,
+  position,
+  toggle,
+  children,
+}: SidenavProps) => {
   const ref = useRef<HTMLDivElement>();
 
   useEffect(() => {
@@ -50,5 +55,3 @@ Sidenav.Item = ({ children }: Props) => (
     {children}
   </div>
 );
-
-export default Sidenav;

@@ -7,6 +7,7 @@ interface Props {
 interface NavbarProps extends Props {
   textColor?: string;
   color?: string;
+  className?: string;
 }
 
 interface NavbarNavProps extends Props {
@@ -21,12 +22,17 @@ interface NavbarTogglerProps {
   toggle: () => void;
 }
 
-const Navbar = ({ color, textColor, children }: NavbarProps) => {
+export const Navbar = ({
+  color,
+  textColor,
+  children,
+  className,
+}: NavbarProps) => {
   return (
     <nav
-      className={`${color ? color : 'bg-black'} ${
-        textColor ? textColor : 'text-white'
-      } font-light text-white md:relative md:flex md:items-center shadow py-2 px-4 md:flex md:flex-row md:justify-start`}
+      className={`${color ? color : 'bg-black'}
+       ${textColor ? textColor : 'text-white'} 
+       ${className} font-light text-white md:relative md:flex md:items-center shadow py-2 px-4 md:flex md:flex-row md:justify-start`}
     >
       {children}
     </nav>
@@ -77,5 +83,3 @@ Navbar.Link = ({ children }: Props) => (
     {children}
   </div>
 );
-
-export default Navbar;

@@ -10,11 +10,13 @@ import { MDXProvider } from '@mdx-js/react';
 import * as gtag from '../website/utils/gtag';
 import dynamic from 'next/dynamic';
 import { CopyboardProps } from '@/website/components/copyboard';
+import { Loader } from '@/website/components/loader';
 
 const Copyboard: ComponentType<CopyboardProps> = dynamic(
   () => import('../website/components/copyboard').then((mod) => mod.Copyboard),
-  { ssr: false },
+  { ssr: false, loading: () => <Loader /> },
 );
+
 const Noop: FC = ({ children }) => <>{children}</>;
 
 Router.events.on('routeChangeStart', () => {

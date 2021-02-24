@@ -13,7 +13,7 @@ const positions = {
   bottom: 'top-full',
 };
 
-const Tooltip = ({
+export const Tooltip = ({
   position,
   title,
   children,
@@ -35,41 +35,6 @@ const Tooltip = ({
       >
         <polygon className="fill-current" points="0,0 127.5,127.5 255,0" />
       </svg>
-    </div>
-  </div>
-);
-
-export const TooltipComponent = () => (
-  <div className="flex justify-center md:justify-start">
-    <div className="m-4">
-      <Tooltip
-        className="bg-green-700 w-28"
-        iconClassName="text-green-700"
-        position="top"
-        title="Hover me"
-      >
-        Enoch Ndika
-      </Tooltip>
-    </div>
-    <div className="m-4">
-      <Tooltip
-        className="bg-black w-24"
-        iconClassName="text-black"
-        position="top"
-        title="Hover me"
-      >
-        Next.js
-      </Tooltip>
-    </div>
-    <div className="m-4">
-      <Tooltip
-        className="bg-blue-700 w-24"
-        iconClassName="text-blue-700"
-        position="bottom"
-        title="Hover me"
-      >
-        React
-      </Tooltip>
     </div>
   </div>
 );

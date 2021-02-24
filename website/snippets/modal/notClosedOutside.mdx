@@ -1,0 +1,86 @@
+```jsx
+import { useState } from 'react';
+/* You'll need to install @reach/portal which simplify creating portal*/
+import Portal from '@reach/portal';
+
+export const ModalPage = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  };
+
+  return (
+    <>
+      <button
+        type="button"
+        onClick={toggle}
+        className="text-white focus:outline-none m-1.5 rounded px-6 py-2 font-medium bg-blue-600"
+      >
+        Click to open me
+      </button>
+      <Modal isOpen={isOpen}>
+        <Modal.Header>Modal title</Modal.Header>
+        <Modal.Body>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </Modal.Body>
+        <Modal.Footer>
+          <button
+            onClick={toggle}
+            className="text-white focus:outline-none shadow m-1.5 rounded px-6 py-2 font-medium transition ease-in duration-200 bg-red-500"
+          >
+            Close
+          </button>
+          <button
+            onClick={toggle}
+            className="text-white focus:outline-none shadow m-1.5 rounded px-6 py-2 font-medium transition ease-in duration-200 bg-blue-600"
+          >
+            Confirm
+          </button>
+        </Modal.Footer>
+      </Modal>
+    </>
+  );
+};
+
+/* Modal logic*/
+const Modal = ({ children, isOpen }) => {
+  const position = `mt-12 mx-8 md:m-auto md:w-4/12 md:pt-12`;
+
+  return (
+    <Portal>
+      {isOpen && (
+        <div className="container">
+          <div className="fixed top-0 left-0 z-40 w-screen h-screen bg-black opacity-50" />
+          <div className="fixed top-0 left-0 z-40 w-full h-full m-0">
+            <div className={position} role="dialogue" aria-modal={true}>
+              <div className="animate-modal-top relative flex flex-col bg-white pointer-events-auto">
+                {children}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </Portal>
+  );
+};
+
+Modal.Header = ({ children }) => (
+  <div className="items-start justify-between p-4 border-b border-gray-300">
+    <h4 className="text-2xl md:text-3xl font-light">{children}</h4>
+  </div>
+);
+
+Modal.Body = ({ children }) => (
+  <div className="flex-shrink flex-grow p-4">{children}</div>
+);
+
+Modal.Footer = ({ children }) => (
+  <div className="flex flex-wrap items-center justify-end p-3 border-t border-gray-300">
+    {children}
+  </div>
+);
+```
