@@ -104,7 +104,9 @@ export const DropdownComponent: FC = () => (
       </h2>
       <Dropdown>
         <Dropdown.Toggle>
-          <Button color="success">Click on me</Button>
+          <Button color="success" block={false}>
+            Click on me
+          </Button>
         </Dropdown.Toggle>
         <Dropdown.Menu>
           <Dropdown.Item>Enoch Ndika</Dropdown.Item>

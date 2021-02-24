@@ -22,8 +22,8 @@ ListGroup.Item = ({ children, className }: Props) => (
 );
 
 export const ListGroupComponent: FC = () => (
-  <>
-    <h2 className="font-bold text-gray-600 text-lg md:text-2xl mt-12 mb-3">
+  <div className="mb-12">
+    <h2 className="font-bold text-gray-600 text-lg md:text-2xl mb-3">
       Simple List Group
     </h2>
     <ListGroup>
@@ -31,12 +31,12 @@ export const ListGroupComponent: FC = () => (
       <ListGroup.Item>Second Item</ListGroup.Item>
       <ListGroup.Item>Third Item</ListGroup.Item>
     </ListGroup>
-  </>
+  </div>
 );
 
 export const ColoredListGroupComponent: FC = () => (
-  <>
-    <h2 className="font-bold text-gray-600 text-lg md:text-2xl mt-20 mb-3">
+  <div className="mb-12">
+    <h2 className="font-bold text-gray-600 text-lg md:text-2xl mb-3">
       Colored List Group
     </h2>
     <ListGroup>
@@ -44,12 +44,12 @@ export const ColoredListGroupComponent: FC = () => (
       <ListGroup.Item className="bg-green-700">Second Item</ListGroup.Item>
       <ListGroup.Item className="bg-purple-900">Third Item</ListGroup.Item>
     </ListGroup>
-  </>
+  </div>
 );
 
 export const ListGroupLinkComponent = () => (
-  <div className="mb-6">
-    <h2 className="font-bold text-gray-600 text-lg md:text-2xl mt-20 mb-3">
+  <div className="mb-12">
+    <h2 className="font-bold text-gray-600 text-lg md:text-2xl mb-3">
       List Group as Link
     </h2>
     <ListGroup>

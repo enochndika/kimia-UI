@@ -1,0 +1,88 @@
+```jsx
+import { useEffect, useRef, useState } from 'react';
+
+export const DropdownPage = () => (
+  <Dropdown>
+    <Dropdown.Toggle>
+      <button className="bg-black text-white focus:outline-none shadow rounded px-6 py-2 font-medium">
+        Click on me
+      </button>
+    </Dropdown.Toggle>
+    <Dropdown.Menu>
+      <Dropdown.Item>Enoch Ndika</Dropdown.Item>
+      <Dropdown.Item>Josue Kazenga</Dropdown.Item>
+      <Dropdown.Item>Business</Dropdown.Item>
+    </Dropdown.Menu>
+  </Dropdown>
+);
+
+const Dropdown = ({ children }) => {
+  /* First child contains the dropdown toggle */
+  const firstChild = children[0];
+
+  /* Second child contains the dropdown menu with his children */
+  const secondChild = children[1];
+
+  const [show, setShow] = useState(false);
+  const ref = useRef(null);
+
+  const toggle = () => {
+    setShow(!show);
+  };
+
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (!ref.current?.contains(event.target)) {
+        if (!show) return;
+        setShow(false);
+      }
+    };
+    window.addEventListener('click', handleOutsideClick);
+    return () => window.removeEventListener('click', handleOutsideClick);
+  }, [show, ref]);
+
+  useEffect(() => {
+    const handleEscape = (event) => {
+      if (!show) return;
+
+      if (event.key === 'Escape') {
+        setShow(false);
+      }
+    };
+    document.addEventListener('keyup', handleEscape);
+    return () => document.removeEventListener('keyup', handleEscape);
+  }, [show]);
+
+  return (
+    <div>
+      <div onClick={toggle} className="cursor-pointer">
+        {firstChild}
+      </div>
+      {show && (
+        <div className="relative block" ref={ref}>
+          {secondChild}
+        </div>
+      )}
+    </div>
+  );
+};
+
+Dropdown.Toggle = ({ children, className }) => (
+  <div className={className}>{children}</div>
+);
+
+Dropdown.Menu = ({ children }) => (
+  <div
+    style={{ transform: 'translate3d(0px, 3px, 0px)' }}
+    className="block z-30 absolute top-0 left-0  bg-white float-left py-2 px-0 text-left border border-gray-300 rounded-sm mt-0.5 mb-0 mx-0 bg-clip-padding"
+  >
+    {children}
+  </div>
+);
+
+Dropdown.Item = ({ children }) => (
+  <div className="block w-full py-1 px-8 mb-2 text-sm font-normal clear-both whitespace-nowrap border-0 hover:bg-gray-200 cursor-pointer">
+    {children}
+  </div>
+);
+```

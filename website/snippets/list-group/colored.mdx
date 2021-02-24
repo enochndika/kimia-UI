@@ -1,0 +1,23 @@
+```jsx
+export const ColoredListGroupPage = () => (
+  <ListGroup>
+    <ListGroup.Item className="bg-blue-700">First Item</ListGroup.Item>
+    <ListGroup.Item className="bg-green-700">Second Item</ListGroup.Item>
+    <ListGroup.Item className="bg-purple-900">Third Item</ListGroup.Item>
+  </ListGroup>
+);
+
+const ListGroup = ({ children }) => (
+  <ul className="list-reset flex flex-col pl-0 mb-0 w-full md:w-4/12">
+    {children}
+  </ul>
+);
+
+ListGroup.Item = ({ children, className }) => (
+  <li
+    className={`${className} relative block py-3 px-5 relative -mb-px block border border-grey`}
+  >
+    {children}
+  </li>
+);
+```
