@@ -31,7 +31,7 @@ Card.Text = ({ children, className }: Props) => (
 );
 
 export const SingleCard: FC = () => (
-  <>
+  <div className="mb-12">
     <h2 className="font-bold text-gray-600 text-lg md:text-2xl mt-12 mb-3">
       Single Card
     </h2>
@@ -52,13 +52,13 @@ export const SingleCard: FC = () => (
         </Card.Text>
       </Card.Body>
     </Card>
-  </>
+  </div>
 );
 
-export const ThreeCard: FC = () => (
-  <>
+export const MultipleCard: FC = () => (
+  <div className="mb-12">
     <h2 className="font-bold text-gray-600 text-lg md:text-2xl mt-20 mb-3">
-      3 Cards
+      Multiple Cards
     </h2>
     <div className="flex flex-wrap">
       <div className="w-full md:w-4/12 mb-6 md:mb-0 md:p-3">
@@ -129,7 +129,7 @@ export const ThreeCard: FC = () => (
         </Card>
       </div>
     </div>
-  </>
+  </div>
 );
 
 const ArrowIcon = () => (

@@ -20,6 +20,10 @@ export default function ButtonPage() {
     <>
       <Head>
         <title>Buttons</title>
+        <meta
+          name="description"
+          content="Kimia-ui provides many variants of buttons component including rounded, animated, outline and fully customisable according to your need"
+        />
       </Head>
       <Container>
         <h1 className="text-center text-3xl md:text-5xl font-bold text-gray-600 mb-16 mt-12">
