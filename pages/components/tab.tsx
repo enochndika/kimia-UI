@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { Container } from '@/website/components/container';
-import MobileLayout from '../../website/components/layout/mobile';
+import MobileLayout from '@/website/components/layout/mobile';
 import TabVariantOneSnippet from '@/website/snippets/tab/variantOne.mdx';
 import TabVariantTwoSnippet from '@/website/snippets/tab/variantTwo.mdx';
 import TabVariantThreeSnippet from '@/website/snippets/tab/variantThree.mdx';

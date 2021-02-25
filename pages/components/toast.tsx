@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { Container } from '@/website/components/container';
-import MobileLayout from '../../website/components/layout/mobile';
+import MobileLayout from '@/website/components/layout/mobile';
 import SuccessToast from '@/components/toast/examples/successToast';
 import InfoToast from '@/components/toast/examples/infoToast';
 import DangerToast from '@/components/toast/examples/dangerToast';
