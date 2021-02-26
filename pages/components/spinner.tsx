@@ -1,12 +1,12 @@
 import Head from 'next/head';
 import { Container } from '@/website/components/container';
+import MobileLayout from '@/website/components/layout/mobile';
 import {
   LargeSpinnerComponent,
   SpinnerComponent,
 } from '@/components/spinner/example';
-import MobileLayout from '@/website/components/layout/mobile';
-import SpinnerSnippet from '@/website/snippets/spinner/normal.mdx';
-import LargeSpinnerSnippet from '@/website/snippets/spinner/large.mdx';
+import SpinnerSnippet from '@/components/spinner/snippets/normal.mdx';
+import LargeSpinnerSnippet from '@/components/spinner/snippets/large.mdx';
 
 export default function SpinnerPage() {
   return (

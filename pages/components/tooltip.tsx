@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { TooltipComponent } from '@/components/tooltip/example';
 import MobileLayout from '@/website/components/layout/mobile';
 import { Container } from '@/website/components/container';
-import TooltipSnippet from '@/website/snippets/tooltip/index.mdx';
+import TooltipSnippet from '@/components/tooltip/snippets/index.mdx';
 
 export default function TooltipPage() {
   return (

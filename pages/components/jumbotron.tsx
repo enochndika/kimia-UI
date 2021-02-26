@@ -1,12 +1,12 @@
 import Head from 'next/head';
+import { Container } from '@/website/components/container';
+import MobileLayout from '@/website/components/layout/mobile';
 import {
   JumbotronComponent,
   JumbotronWithBackgroundComponent,
 } from '@/components/jumbotron/example';
-import { Container } from '@/website/components/container';
-import MobileLayout from '@/website/components/layout/mobile';
-import JumbotronSnippet from '@/website/snippets/jumbotron/simple.mdx';
-import JumbotronBackgroundSnippet from '@/website/snippets/jumbotron/withBackground.mdx';
+import JumbotronSnippet from '@/components/jumbotron/snippets/simple.mdx';
+import JumbotronBackgroundSnippet from '@/components/jumbotron/snippets/withBackground.mdx';
 
 export default function JumbotronPage() {
   return (

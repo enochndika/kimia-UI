@@ -25,7 +25,7 @@ const ToastContainer = ({
 
   const closeSnackBar = () => {
     clearTimeout(closeTimeout);
-    ReactDOM.unmountComponentAtNode(document.getElementById('toast'));
+    ReactDOM.unmountComponentAtNode(document.getElementById('snippets'));
   };
 
   const beginCloseTimeout = () => {
@@ -53,7 +53,7 @@ const ToastContainer = ({
   );
 };
 
-/* The position of the toast*/
+/* The position of the snippets*/
 const placements = {
   topLeft: 'animate-left top-6 left-4',
   topRight: 'animate-right top-6 right-4',
@@ -61,7 +61,7 @@ const placements = {
   bottomRight: 'animate-right bottom-6 right-4',
 };
 
-/* Border color according to toast variant*/
+/* Border color according to snippets variant*/
 const messageTypes = {
   success: 'border-green-600',
   info: 'border-blue-700',
@@ -69,7 +69,7 @@ const messageTypes = {
   warning: 'border-yellow-400',
 };
 
-/* Display icon according to toast variant*/
+/* Display icon according to snippets variant*/
 const IconContainer = ({ messageType }: MessageType) => {
   if (messageType === 'success') {
     return <SuccessIcon />;

@@ -3,8 +3,8 @@ import { Container } from '@/website/components/container';
 import { SidenavLeft } from '@/components/sidenav/examples/left';
 import { SidenavRight } from '@/components/sidenav/examples/right';
 import MobileLayout from '@/website/components/layout/mobile';
-import SidenavLeftSnippet from '@/website/snippets/sidenav/left.mdx';
-import SidenavRightSnippet from '@/website/snippets/sidenav/right.mdx';
+import SidenavLeftSnippet from '@/components/sidenav/snippets/left.mdx';
+import SidenavRightSnippet from '@/components/sidenav/snippets/right.mdx';
 
 export default function SidenavPage() {
   return (

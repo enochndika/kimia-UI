@@ -5,10 +5,10 @@ import SuccessToast from '@/components/toast/examples/successToast';
 import InfoToast from '@/components/toast/examples/infoToast';
 import DangerToast from '@/components/toast/examples/dangerToast';
 import WarningToast from '@/components/toast/examples/warningToast';
-import SuccessToastSnippet from '@/website/snippets/toast/success.mdx';
-import InfoToastSnippet from '@/website/snippets/toast/info.mdx';
-import DangerToastSnippet from '@/website/snippets/toast/danger.mdx';
-import WarningToastSnippet from '@/website/snippets/toast/warning.mdx';
+import SuccessToastSnippet from '@/components/toast/snippets/success.mdx';
+import InfoToastSnippet from '@/components/toast/snippets/info.mdx';
+import DangerToastSnippet from '@/components/toast/snippets/danger.mdx';
+import WarningToastSnippet from '@/components/toast/snippets/warning.mdx';
 
 export default function ToastPage() {
   return (

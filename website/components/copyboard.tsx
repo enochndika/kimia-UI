@@ -67,7 +67,7 @@ export function Copyboard({ codeString, language }: CopyboardProps) {
         <Highlight
           {...defaultProps}
           code={codeString}
-          language={language}
+          language="javascript"
           theme={dracula}
         >
           {({ className, style, tokens, getLineProps, getTokenProps }) => (

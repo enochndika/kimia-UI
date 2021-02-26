@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { Container } from '@/website/components/container';
 import Layout from '@/website/components/layout/desktop';
-import TailwindConfig from '@/website/snippets/tailwindConfig.mdx';
+import TailwindConfig from '@/website/components/tailwindConfig.mdx';
 
 export default function ConfigurationPage() {
   return (

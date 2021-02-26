@@ -1,12 +1,12 @@
 import Head from 'next/head';
 import { Container } from '@/website/components/container';
+import MobileLayout from '@/website/components/layout/mobile';
 import {
   CurtainMenuLeft,
   CurtainMenuTop,
 } from '@/components/curtain-menu/example';
-import MobileLayout from '@/website/components/layout/mobile';
-import CurtainMenuLeftSnippet from '@/website/snippets/curtain_menu/left.mdx';
-import CurtainMenuTopSnippet from '@/website/snippets/curtain_menu/top.mdx';
+import CurtainMenuLeftSnippet from '@/components/curtain-menu/snippets/left.mdx';
+import CurtainMenuTopSnippet from '@/components/curtain-menu/snippets/top.mdx';
 
 export default function CurtainMenuPage() {
   return (

@@ -19,9 +19,9 @@ const positions = {
 };
 
 const animations = {
-  left: 'animate-modal-left',
-  right: 'animate-modal-right',
-  top: 'animate-modal-top',
+  left: 'animate-snippets-left',
+  right: 'animate-snippets-right',
+  top: 'animate-snippets-top',
 };
 
 /* Modal logic*/

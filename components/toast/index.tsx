@@ -15,7 +15,7 @@ const triggerToast = (messageType, message, placement, duration) => {
     >
       {message}
     </ToastContainer>,
-    document.getElementById('toast'),
+    document.getElementById('snippets'),
   );
 };
 

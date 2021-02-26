@@ -17,10 +17,10 @@ export const DropdownPage = () => (
 );
 
 const Dropdown = ({ children }) => {
-  /* First child contains the dropdown toggle */
+  /* First child contains the snippets toggle */
   const firstChild = children[0];
 
-  /* Second child contains the dropdown menu with his children */
+  /* Second child contains the snippets menu with his children */
   const secondChild = children[1];
 
   const [show, setShow] = useState(false);

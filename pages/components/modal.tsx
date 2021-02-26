@@ -1,14 +1,14 @@
 import Head from 'next/head';
+import MobileLayout from '@/website/components/layout/mobile';
+import { Container } from '@/website/components/container';
 import { ModalRight } from '@/components/modal/example/right';
 import { ModalLeft } from '@/components/modal/example/left';
 import { ModalTop } from '@/components/modal/example/top';
-import MobileLayout from '@/website/components/layout/mobile';
-import { Container } from '@/website/components/container';
 import { ModalNotClosedOutside } from '@/components/modal/example/notClosedOutside';
-import ModalTopSnippet from '@/website/snippets/modal/top.mdx';
-import ModalLeftSnippet from '@/website/snippets/modal/left.mdx';
-import ModalRightSnippet from '@/website/snippets/modal/right.mdx';
-import ModalNotClosedOutsideSnippet from '@/website/snippets/modal/notClosedOutside.mdx';
+import ModalTopSnippet from '@/components/modal/snippets/top.mdx';
+import ModalLeftSnippet from '@/components/modal/snippets/left.mdx';
+import ModalRightSnippet from '@/components/modal/snippets/right.mdx';
+import ModalNotClosedOutsideSnippet from '@/components/modal/snippets/notClosedOutside.mdx';
 
 export default function ModalPage() {
   return (

@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import { Container } from '@/website/components/container';
-import { PricingTable } from '@/components/ecommerce/pricing-table';
 import MobileLayout from '@/website/components/layout/mobile';
-import PricingTableSnippet from '@/website/snippets/ecommerce/pricing-table.mdx';
+import { PricingTable } from '@/components/ecommerce/pricing-table';
+import PricingTableSnippet from '@/components/ecommerce/snippets/pricing-table.mdx';
 
 export default function PricingTablePage() {
   return (

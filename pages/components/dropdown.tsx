@@ -1,8 +1,8 @@
 import Head from 'next/head';
-import { DropdownComponent } from '@/components/dropdown/example';
 import MobileLayout from '@/website/components/layout/mobile';
 import { Container } from '@/website/components/container';
-import DropdownSnippet from '@/website/snippets/dropdown/index.mdx';
+import { DropdownComponent } from '@/components/dropdown/example';
+import DropdownSnippet from '@/components/dropdown/snippets/index.mdx';
 
 export default function DropdownPage() {
   return (

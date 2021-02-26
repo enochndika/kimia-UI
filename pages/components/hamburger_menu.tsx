@@ -1,12 +1,12 @@
 import Head from 'next/head';
 import { Container } from '@/website/components/container';
-import { HamburgerMenuVariantOne } from '@/components/hamburger-menu/example/variantOne';
 import MobileLayout from '@/website/components/layout/mobile';
+import { HamburgerMenuVariantOne } from '@/components/hamburger-menu/example/variantOne';
 import { HamburgerMenuVariantThree } from '@/components/hamburger-menu/example/variantThree';
 import { HamburgerMenuVariantTwo } from '@/components/hamburger-menu/example/variantTwo';
-import HamburgerMenuVariantOneSnippet from '@/website/snippets/hamburger_menu/variantOne.mdx';
-import HamburgerMenuVariantTwoSnippet from '@/website/snippets/hamburger_menu/variantTwo.mdx';
-import HamburgerMenuVariantThreeSnippet from '@/website/snippets/hamburger_menu/variantThree.mdx';
+import HamburgerMenuVariantOneSnippet from '@/components/hamburger-menu/snippets/variantOne.mdx';
+import HamburgerMenuVariantTwoSnippet from '@/components/hamburger-menu/snippets/variantTwo.mdx';
+import HamburgerMenuVariantThreeSnippet from '@/components/hamburger-menu/snippets/variantThree.mdx';
 
 export default function HamburgerMenuPage() {
   return (

@@ -1,14 +1,14 @@
 import Head from 'next/head';
+import MobileLayout from '@/website/components/layout/mobile';
+import { Container } from '@/website/components/container';
 import {
   ColoredListGroupComponent,
   ListGroupComponent,
   ListGroupLinkComponent,
 } from '@/components/list-group/example';
-import MobileLayout from '@/website/components/layout/mobile';
-import { Container } from '@/website/components/container';
-import ListGroupSnippet from '@/website/snippets/list-group/simple.mdx';
-import ColoredListGroupSnippet from '@/website/snippets/list-group/colored.mdx';
-import LinkListGroupSnippet from '@/website/snippets/list-group/link.mdx';
+import ListGroupSnippet from '@/components/list-group/snippets/simple.mdx';
+import ColoredListGroupSnippet from '@/components/list-group/snippets/colored.mdx';
+import LinkListGroupSnippet from '@/components/list-group/snippets/link.mdx';
 
 export default function ListGroupPage() {
   return (

@@ -1,9 +1,9 @@
 import Head from 'next/head';
-import { Container } from '@/website/components/container';
 import { MultipleCard, SingleCard } from '@/components/card/example';
+import SingleCardSnippet from '@/components/card/snippets/single.mdx';
+import MultipleCardSnippet from '@/components/card/snippets/multiple.mdx';
+import { Container } from '@/website/components/container';
 import MobileLayout from '@/website/components/layout/mobile';
-import SingleCardSnippet from '@/website/snippets/card/single.mdx';
-import MultipleCardSnippet from '@/website/snippets/card/multiple.mdx';
 
 export default function CardPage() {
   return (
