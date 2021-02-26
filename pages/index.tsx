@@ -63,7 +63,7 @@ export default function Home() {
               Provides fully customizable React components compatible with
               Next.js, Gatsby and create-react-app.
             </p>
-            <div className="mt-12 mb-24 md:mb-12" id="lotie">
+            <div className="mt-12 mb-6 md:mb-12">
               <Link href="/configuration">
                 <a>
                   <button className="px-6 font-bold py-3 active:bg-purple-800 bg-purple-900 rounded-lg text-white focus:outline-none">
