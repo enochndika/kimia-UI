@@ -75,7 +75,7 @@ export default function Home() {
           </div>
           <div className="hidden md:w-6/12 md:block">
             <div className="relative w-full h-full">
-              <Image src="/animate.webp" layout="fill" objectFit="cover" />
+              <Image src="/animation.png" layout="fill" objectFit="cover" />
             </div>
           </div>
         </div>
