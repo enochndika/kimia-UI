@@ -2,7 +2,7 @@ import { Tooltip } from '@/components/tooltip';
 
 export const TooltipComponent = () => (
   <div className="flex justify-center md:justify-start">
-    <div className="m-4">
+    <div className="mb-4 mr-2 md:mr-4">
       <Tooltip
         className="bg-green-700 w-28"
         iconClassName="text-green-700"
@@ -12,7 +12,7 @@ export const TooltipComponent = () => (
         Enoch Ndika
       </Tooltip>
     </div>
-    <div className="m-4">
+    <div className="mb-4 mr-2 md:mr-4">
       <Tooltip
         className="bg-black w-24"
         iconClassName="text-black"
@@ -22,7 +22,7 @@ export const TooltipComponent = () => (
         Next.js
       </Tooltip>
     </div>
-    <div className="m-4">
+    <div className="mb-4">
       <Tooltip
         className="bg-blue-700 w-24"
         iconClassName="text-blue-700"
