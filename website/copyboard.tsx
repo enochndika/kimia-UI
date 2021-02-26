@@ -2,8 +2,8 @@ import React from 'react';
 import Highlight, { defaultProps, Language } from 'prism-react-renderer';
 import Confetti from 'react-dom-confetti';
 import s from './copyboard.module.css';
-import dracula from 'prism-react-renderer/themes/nightOwl';
-import { CodeWrapper } from '@/website/components/codeWrapper';
+import nightOwl from 'prism-react-renderer/themes/nightOwl';
+import { CodeWrapper } from './codeWrapper';
 
 export interface CopyboardProps {
   codeString: string;
@@ -58,7 +58,7 @@ const Button = (props) => (
   />
 );
 
-export function Copyboard({ codeString, language }: CopyboardProps) {
+export function Copyboard({ codeString }: CopyboardProps) {
   const [isCopied, setIsCopied] = React.useState(false);
 
   return (
@@ -67,8 +67,8 @@ export function Copyboard({ codeString, language }: CopyboardProps) {
         <Highlight
           {...defaultProps}
           code={codeString}
-          language="javascript"
-          theme={dracula}
+          language="jsx"
+          theme={nightOwl}
         >
           {({ className, style, tokens, getLineProps, getTokenProps }) => (
             <pre

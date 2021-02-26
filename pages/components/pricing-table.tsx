@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import { Container } from '@/website/components/container';
-import MobileLayout from '@/website/components/layout/mobile';
+import { Container } from '@/website/container';
+import MobileLayout from '@/website/layout/mobile';
 import { PricingTable } from '@/components/ecommerce/pricing-table';
 import PricingTableSnippet from '@/components/ecommerce/snippets/pricing-table.mdx';
 

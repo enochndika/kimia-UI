@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { Container } from '@/website/components/container';
-import Layout from '@/website/components/layout/desktop';
-import TailwindConfig from '@/website/components/tailwindConfig.mdx';
+import { Container } from '@/website/container';
+import Layout from '@/website/layout/desktop';
+import TailwindConfig from '@/website/tailwindConfig.mdx';
 
 export default function ConfigurationPage() {
   return (
