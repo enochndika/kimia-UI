@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { Container } from '@/website/container';
-import MobileLayout from '@/website/layout/mobile';
+import Layout from '@/website/layout/default';
 import { NavbarVariantOne } from '@/components/navbar/examples/variantOne';
 import { NavbarVariantTwo } from '@/components/navbar/examples/variantTwo';
 import { NavbarVariantThree } from '@/components/navbar/examples/variantThree';
@@ -33,4 +33,4 @@ export default function NavbarPage() {
   );
 }
 
-NavbarPage.Layout = MobileLayout;
+NavbarPage.Layout = Layout;

@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Layout from '@/website/layout/desktop';
+import CustomLayout from '@/website/layout/custom';
 import { Container } from '@/website/container';
 
 const Code = ({ children }) => (
@@ -74,4 +74,4 @@ export default function ConfigurationPage() {
   );
 }
 
-ConfigurationPage.Layout = Layout;
+ConfigurationPage.Layout = CustomLayout;

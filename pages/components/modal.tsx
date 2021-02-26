@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import MobileLayout from '@/website/layout/mobile';
+import Layout from '@/website/layout/default';
 import { Container } from '@/website/container';
 import { ModalRight } from '@/components/modal/example/right';
 import { ModalLeft } from '@/components/modal/example/left';
@@ -37,4 +37,4 @@ export default function ModalPage() {
   );
 }
 
-ModalPage.Layout = MobileLayout;
+ModalPage.Layout = Layout;

@@ -1,18 +1,22 @@
 import Link from 'next/link';
 import { useRef, useEffect } from 'react';
 import Image from 'next/image';
-import { Item } from '../../base';
+import { Item } from './base';
 
-interface Props {
+interface SidenavProps {
   isOpen: boolean;
   toggle: (event?: any) => void;
 }
-const active = `block h-full absolute z-40 top-0 right-0 w-7/12 md:w-40 bg-white text-gray-700 overflow-x-hidden transition-all ease duration-300`;
 
-const inactive = `block h-full absolute z-40 top-0 right-0 w-0  text-white overflow-x-hidden transition-all ease duration-300`;
+const classNames = {
+  default: `block h-full absolute z-40 top-0 right-0 bg-white overflow-x-hidden `,
+  active: `w-7/12 md:w-40 text-gray-700 transition-all ease duration-300`,
+  inactive: `w-0 transition-all ease duration-300`,
+};
 
-export const MobileNav = ({ isOpen, toggle }: Props) => {
-  const ref = useRef<HTMLDivElement>();
+export const Sidenav = ({ isOpen, toggle }: SidenavProps) => {
+  const ref = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const handleOutsideClick = (event) => {
       if (!ref.current?.contains(event.target)) {
@@ -25,7 +29,14 @@ export const MobileNav = ({ isOpen, toggle }: Props) => {
   }, [isOpen, ref]);
 
   return (
-    <aside className={isOpen ? active : inactive} ref={ref}>
+    <aside
+      className={
+        isOpen
+          ? `${classNames.default} ${classNames.active}`
+          : `${classNames.default} ${classNames.inactive}`
+      }
+      ref={ref}
+    >
       <div className="pl-6">
         <Link href="/">
           <a>

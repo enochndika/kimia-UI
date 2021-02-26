@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { Container } from '@/website/container';
-import Layout from '@/website/layout/desktop';
+import CustomLayout from '@/website/layout/custom';
 import TailwindConfig from '@/website/tailwindConfig.mdx';
 
 export default function ConfigurationPage() {
@@ -42,4 +42,4 @@ export default function ConfigurationPage() {
   );
 }
 
-ConfigurationPage.Layout = Layout;
+ConfigurationPage.Layout = CustomLayout;

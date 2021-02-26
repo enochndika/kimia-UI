@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { Container } from '@/website/container';
-import MobileLayout from '@/website/layout/mobile';
+import Layout from '@/website/layout/default';
 import { HamburgerMenuVariantOne } from '@/components/hamburger-menu/example/variantOne';
 import { HamburgerMenuVariantThree } from '@/components/hamburger-menu/example/variantThree';
 import { HamburgerMenuVariantTwo } from '@/components/hamburger-menu/example/variantTwo';
@@ -33,4 +33,4 @@ export default function HamburgerMenuPage() {
   );
 }
 
-HamburgerMenuPage.Layout = MobileLayout;
+HamburgerMenuPage.Layout = Layout;

@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { Container } from '@/website/container';
-import MobileLayout from '@/website/layout/mobile';
+import Layout from '@/website/layout/default';
 import SuccessToast from '@/components/toast/examples/successToast';
 import InfoToast from '@/components/toast/examples/infoToast';
 import DangerToast from '@/components/toast/examples/dangerToast';
@@ -37,4 +37,4 @@ export default function ToastPage() {
   );
 }
 
-ToastPage.Layout = MobileLayout;
+ToastPage.Layout = Layout;

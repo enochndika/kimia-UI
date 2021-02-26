@@ -1,6 +1,6 @@
 import Head from 'next/head';
+import Layout from '@/website/layout/default';
 import { Container } from '@/website/container';
-import MobileLayout from '@/website/layout/mobile';
 import DefaultButtons from '@/components/button/example/defaultButton';
 import AnimateButtons from '@/components/button/example/animateButton';
 import RoundedButtons from '@/components/button/example/RoundedButton';
@@ -45,4 +45,4 @@ export default function ButtonPage() {
   );
 }
 
-ButtonPage.Layout = MobileLayout;
+ButtonPage.Layout = Layout;

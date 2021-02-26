@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { Container } from '@/website/container';
-import MobileLayout from '@/website/layout/mobile';
+import Layout from '@/website/layout/default';
 import TabVariantOneSnippet from '@/components/tab/snippets/variantOne.mdx';
 import TabVariantTwoSnippet from '@/components/tab/snippets/variantTwo.mdx';
 import TabVariantThreeSnippet from '@/components/tab/snippets/variantThree.mdx';
@@ -35,4 +35,4 @@ export default function TabPage() {
   );
 }
 
-TabPage.Layout = MobileLayout;
+TabPage.Layout = Layout;

@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import Layout from '@/website/layout/desktop';
+import CustomLayout from '@/website/layout/custom';
 import { Container } from '@/website/container';
 import Image from 'next/image';
 
@@ -89,4 +89,4 @@ export default function Home() {
   );
 }
 
-Home.Layout = Layout;
+Home.Layout = CustomLayout;

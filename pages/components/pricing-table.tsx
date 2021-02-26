@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { Container } from '@/website/container';
-import MobileLayout from '@/website/layout/mobile';
+import Layout from '@/website/layout/default';
 import { PricingTable } from '@/components/ecommerce/pricing-table';
 import PricingTableSnippet from '@/components/ecommerce/snippets/pricing-table.mdx';
 
@@ -25,4 +25,4 @@ export default function PricingTablePage() {
   );
 }
 
-PricingTablePage.Layout = MobileLayout;
+PricingTablePage.Layout = Layout;

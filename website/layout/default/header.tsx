@@ -9,6 +9,7 @@ interface Props {
 interface TogglerProps {
   toggle: () => void;
 }
+
 const Navbar = ({ children }: Props) => (
   <nav className="font-light -mt-14 -mb-12 md:-mt-8 md:-mb-0 relative flex items-center py-3 flex-row justify-start md:hidden">
     {children}
@@ -34,7 +35,7 @@ Navbar.Toggler = ({ toggle }: TogglerProps) => (
   </button>
 );
 
-export const MobileHeader = ({ toggle }: TogglerProps) => {
+export const Header = ({ toggle }: TogglerProps) => {
   return (
     <Navbar>
       <Navbar.Brand>

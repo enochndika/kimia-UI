@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import MobileLayout from '@/website/layout/mobile';
+import Layout from '@/website/layout/default';
 import { Container } from '@/website/container';
 import {
   ColoredListGroupComponent,
@@ -35,4 +35,4 @@ export default function ListGroupPage() {
   );
 }
 
-ListGroupPage.Layout = MobileLayout;
+ListGroupPage.Layout = Layout;

@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import MobileLayout from '@/website/layout/mobile';
+import Layout from '@/website/layout/default';
 import { Container } from '@/website/container';
 import BasicDropdownSnippet from '@/components/dropdown/snippets/basic.mdx';
 import DropdownWithSeparatorSnippet from '@/components/dropdown/snippets/with-separator.mdx';
@@ -29,4 +29,4 @@ export default function DropdownPage() {
   );
 }
 
-DropdownPage.Layout = MobileLayout;
+DropdownPage.Layout = Layout;

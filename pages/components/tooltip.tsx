@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { TooltipComponent } from '@/components/tooltip/example';
-import MobileLayout from '@/website/layout/mobile';
+import Layout from '@/website/layout/default';
 import { Container } from '@/website/container';
 import TooltipSnippet from '@/components/tooltip/snippets/index.mdx';
 
@@ -25,4 +25,4 @@ export default function TooltipPage() {
   );
 }
 
-TooltipPage.Layout = MobileLayout;
+TooltipPage.Layout = Layout;

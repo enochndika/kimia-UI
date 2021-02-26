@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { Container } from '@/website/container';
-import MobileLayout from '@/website/layout/mobile';
+import Layout from '@/website/layout/default';
 import {
   LargeSpinnerComponent,
   SpinnerComponent,
@@ -31,4 +31,4 @@ export default function SpinnerPage() {
   );
 }
 
-SpinnerPage.Layout = MobileLayout;
+SpinnerPage.Layout = Layout;

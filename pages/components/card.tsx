@@ -3,7 +3,7 @@ import { MultipleCard, SingleCard } from '@/components/card/example';
 import SingleCardSnippet from '@/components/card/snippets/single.mdx';
 import MultipleCardSnippet from '@/components/card/snippets/multiple.mdx';
 import { Container } from '@/website/container';
-import MobileLayout from '@/website/layout/mobile';
+import Layout from '@/website/layout/default';
 
 export default function CardPage() {
   return (
@@ -28,4 +28,4 @@ export default function CardPage() {
   );
 }
 
-CardPage.Layout = MobileLayout;
+CardPage.Layout = Layout;

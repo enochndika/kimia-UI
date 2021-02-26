@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { Container } from '@/website/container';
-import MobileLayout from '@/website/layout/mobile';
+import Layout from '@/website/layout/default';
 import { ScrollIndicator } from '@/components/scroll-indicator';
 import ScrollIndicatorSnippet from '@/components/scroll-indicator/snippets/index.mdx';
 
@@ -25,4 +25,4 @@ export default function ScrollIndicatorPage() {
   );
 }
 
-ScrollIndicatorPage.Layout = MobileLayout;
+ScrollIndicatorPage.Layout = Layout;

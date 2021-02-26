@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { Container } from '@/website/container';
 import { SidenavLeft } from '@/components/sidenav/examples/left';
 import { SidenavRight } from '@/components/sidenav/examples/right';
-import MobileLayout from '@/website/layout/mobile';
+import Layout from '@/website/layout/default';
 import SidenavLeftSnippet from '@/components/sidenav/snippets/left.mdx';
 import SidenavRightSnippet from '@/components/sidenav/snippets/right.mdx';
 
@@ -29,4 +29,4 @@ export default function SidenavPage() {
   );
 }
 
-SidenavPage.Layout = MobileLayout;
+SidenavPage.Layout = Layout;
