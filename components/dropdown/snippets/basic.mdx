@@ -17,10 +17,10 @@ export const DropdownPage = () => (
 );
 
 const Dropdown = ({ children }) => {
-  /* First child contains the snippets toggle */
+  /* First child contains the dropdown toggle */
   const firstChild = children[0];
 
-  /* Second child contains the snippets menu with his children */
+  /* Second child contains the dropdown menu with his children */
   const secondChild = children[1];
 
   const [show, setShow] = useState(false);
@@ -55,7 +55,7 @@ const Dropdown = ({ children }) => {
 
   return (
     <div>
-      <div onClick={toggle} className="cursor-pointer">
+      <div onClick={toggle} className="inline">
         {firstChild}
       </div>
       {show && (
@@ -67,9 +67,7 @@ const Dropdown = ({ children }) => {
   );
 };
 
-Dropdown.Toggle = ({ children, className }) => (
-  <div className={className}>{children}</div>
-);
+Dropdown.Toggle = ({ children }) => <>{children}</>;
 
 Dropdown.Menu = ({ children }) => (
   <div

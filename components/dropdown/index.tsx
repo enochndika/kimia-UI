@@ -10,10 +10,6 @@ interface Props {
   children: ReactNode;
 }
 
-interface DropdownToggleProps extends Props {
-  className?: string;
-}
-
 interface DropdownItemProps extends LiHTMLAttributes<HTMLLIElement> {
   children: ReactNode;
 }
@@ -63,7 +59,7 @@ export const Dropdown = ({ children }: Props) => {
 
   return (
     <div>
-      <div onClick={toggle} className="cursor-pointer">
+      <div className="inline" onClick={toggle}>
         {firstChild}
       </div>
       {show && (
@@ -75,9 +71,7 @@ export const Dropdown = ({ children }: Props) => {
   );
 };
 
-Dropdown.Toggle = ({ children, className }: DropdownToggleProps) => (
-  <div className={className}>{children}</div>
-);
+Dropdown.Toggle = ({ children }: Props) => <>{children}</>;
 
 Dropdown.Menu = ({ children }: Props) => (
   <ul

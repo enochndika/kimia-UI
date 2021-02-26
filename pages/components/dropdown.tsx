@@ -1,8 +1,10 @@
 import Head from 'next/head';
 import MobileLayout from '@/website/layout/mobile';
 import { Container } from '@/website/container';
-import { DropdownComponent } from '@/components/dropdown/example';
-import DropdownSnippet from '@/components/dropdown/snippets/index.mdx';
+import BasicDropdownSnippet from '@/components/dropdown/snippets/basic.mdx';
+import DropdownWithSeparatorSnippet from '@/components/dropdown/snippets/with-separator.mdx';
+import { BasicDropdown } from '@/components/dropdown/example/basic';
+import { DropdownWithSeparator } from '@/components/dropdown/example/with-separator';
 
 export default function DropdownPage() {
   return (
@@ -18,8 +20,10 @@ export default function DropdownPage() {
         <h1 className="text-center text-3xl md:text-5xl font-bold text-gray-600 mb-16 mt-12">
           Dropdown
         </h1>
-        <DropdownComponent />
-        <DropdownSnippet />
+        <BasicDropdown />
+        <BasicDropdownSnippet />
+        <DropdownWithSeparator />
+        <DropdownWithSeparatorSnippet />
       </Container>
     </>
   );
