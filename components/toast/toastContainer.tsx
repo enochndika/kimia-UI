@@ -1,6 +1,5 @@
-import React, { useState, useEffect, ReactNode } from 'react';
+import React, { useState, useEffect, ReactNode, useCallback } from 'react';
 import ReactDOM from 'react-dom';
-import { setTimeout } from 'timers';
 
 interface MessageType {
   messageType: 'success' | 'info' | 'danger' | 'warning';
@@ -25,15 +24,15 @@ const ToastContainer = ({
 
   const closeSnackBar = () => {
     clearTimeout(closeTimeout);
-    ReactDOM.unmountComponentAtNode(document.getElementById('snippets'));
+    ReactDOM.unmountComponentAtNode(document.getElementById('toast'));
   };
 
-  const beginCloseTimeout = () => {
+  const beginCloseTimeout = useCallback(() => {
     if (duration) {
       const timeout = setTimeout(() => closeSnackBar(), duration);
       setCloseTimeout(timeout);
     }
-  };
+  }, []);
 
   const className = `${messageTypes[messageType]} ${
     placement ? placements[placement] : placements.topRight
@@ -53,7 +52,7 @@ const ToastContainer = ({
   );
 };
 
-/* The position of the snippets*/
+/* The position of the toast*/
 const placements = {
   topLeft: 'animate-left top-6 left-4',
   topRight: 'animate-right top-6 right-4',
@@ -61,7 +60,7 @@ const placements = {
   bottomRight: 'animate-right bottom-6 right-4',
 };
 
-/* Border color according to snippets variant*/
+/* Border color according to toast variant*/
 const messageTypes = {
   success: 'border-green-600',
   info: 'border-blue-700',
@@ -69,16 +68,19 @@ const messageTypes = {
   warning: 'border-yellow-400',
 };
 
-/* Display icon according to snippets variant*/
+/* Display icon according to toast variant*/
 const IconContainer = ({ messageType }: MessageType) => {
-  if (messageType === 'success') {
-    return <SuccessIcon />;
-  } else if (messageType === 'danger') {
-    return <DangerIcon />;
-  } else if (messageType === 'info') {
-    return <InfoIcon />;
-  } else if (messageType === 'warning') {
-    return <WarningIcon />;
+  switch (messageType) {
+    case 'success':
+      return <SuccessIcon />;
+    case 'info':
+      return <InfoIcon />;
+    case 'warning':
+      return <WarningIcon />;
+    case 'danger':
+      return <DangerIcon />;
+    default:
+      throw Error('Message Type invalid');
   }
 };
 
