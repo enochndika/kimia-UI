@@ -1,8 +1,8 @@
 import Head from 'next/head';
-import { CollapseComponent } from '@/components/collapse/example';
+import { CollapseComponent } from '../../packages/collapse/example';
 import Layout from '@/website/layout';
 import { Container } from '@/website/components/container';
-import CollapseSnippet from '@/components/collapse/snippets/index.mdx';
+import CollapseSnippet from '../../packages/collapse/snippets/index.mdx';
 
 export default function CollapsePage() {
   return (

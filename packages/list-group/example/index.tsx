@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { ListGroup } from '@/components/list-group';
+import { ListGroup } from '../../list-group';
 
 export const ListGroupComponent: FC = () => (
   <div className="mb-12">

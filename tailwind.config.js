@@ -7,7 +7,7 @@ module.exports = {
     purgeLayersByDefault: true,
   },
   purge: [
-    './components/**/*.{js,ts,jsx,tsx}',
+    './packages/**/*.{js,ts,jsx,tsx}',
     './pages/**/*.{js,ts,jsx,tsx}',
     './website/**/*.{js,ts,jsx,tsx}',
   ],

@@ -1,14 +1,14 @@
 import Head from 'next/head';
 import { Container } from '@/website/components/container';
 import Layout from '@/website/layout';
-import SuccessToast from '@/components/toast/examples/successToast';
-import InfoToast from '@/components/toast/examples/infoToast';
-import DangerToast from '@/components/toast/examples/dangerToast';
-import WarningToast from '@/components/toast/examples/warningToast';
-import SuccessToastSnippet from '@/components/toast/snippets/success.mdx';
-import InfoToastSnippet from '@/components/toast/snippets/info.mdx';
-import DangerToastSnippet from '@/components/toast/snippets/danger.mdx';
-import WarningToastSnippet from '@/components/toast/snippets/warning.mdx';
+import SuccessToast from '../../packages/toast/examples/successToast';
+import InfoToast from '../../packages/toast/examples/infoToast';
+import DangerToast from '../../packages/toast/examples/dangerToast';
+import WarningToast from '../../packages/toast/examples/warningToast';
+import SuccessToastSnippet from '../../packages/toast/snippets/success.mdx';
+import InfoToastSnippet from '../../packages/toast/snippets/info.mdx';
+import DangerToastSnippet from '../../packages/toast/snippets/danger.mdx';
+import WarningToastSnippet from '../../packages/toast/snippets/warning.mdx';
 
 export default function ToastPage() {
   return (

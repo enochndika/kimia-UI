@@ -1,8 +1,8 @@
 import Head from 'next/head';
-import { TooltipComponent } from '@/components/tooltip/example';
+import { TooltipComponent } from '../../packages/tooltip/example';
 import Layout from '@/website/layout';
 import { Container } from '@/website/components/container';
-import TooltipSnippet from '@/components/tooltip/snippets/index.mdx';
+import TooltipSnippet from '../../packages/tooltip/snippets/index.mdx';
 
 export default function TooltipPage() {
   return (

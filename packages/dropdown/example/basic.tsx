@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { Button } from '@/components/button';
-import { Dropdown } from '@/components/dropdown';
+import { Button } from '../../button';
+import { Dropdown } from '../../dropdown';
 
 export const BasicDropdown: FC = () => (
   <div className="mb-8">

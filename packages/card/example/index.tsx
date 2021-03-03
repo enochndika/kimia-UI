@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import Image from 'next/image';
-import { Card } from '@/components/card';
+import { Card } from '../../card';
 
 export const SingleCard: FC = () => (
   <div className="mb-12">

@@ -4,9 +4,9 @@ import Layout from '@/website/layout';
 import {
   JumbotronComponent,
   JumbotronWithBackgroundComponent,
-} from '@/components/jumbotron/example';
-import JumbotronSnippet from '@/components/jumbotron/snippets/simple.mdx';
-import JumbotronBackgroundSnippet from '@/components/jumbotron/snippets/withBackground.mdx';
+} from '../../packages/jumbotron/example';
+import JumbotronSnippet from '../../packages/jumbotron/snippets/simple.mdx';
+import JumbotronBackgroundSnippet from '../../packages/jumbotron/snippets/withBackground.mdx';
 
 export default function JumbotronPage() {
   return (

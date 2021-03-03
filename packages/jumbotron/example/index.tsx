@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Jumbotron } from '@/components/jumbotron';
+import { Jumbotron } from '../../jumbotron';
 
 export const JumbotronComponent: FC = () => (
   <div>

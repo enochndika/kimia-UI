@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Collapse } from '@/components/collapse';
+import { Collapse } from '../../collapse';
 
 export const CollapseComponent: FC = () => (
   <div className="mb-12">

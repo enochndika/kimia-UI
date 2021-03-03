@@ -1,10 +1,10 @@
 import Head from 'next/head';
 import Layout from '@/website/layout';
 import { Container } from '@/website/components/container';
-import BasicDropdownSnippet from '@/components/dropdown/snippets/basic.mdx';
-import DropdownWithSeparatorSnippet from '@/components/dropdown/snippets/with-separator.mdx';
-import { BasicDropdown } from '@/components/dropdown/example/basic';
-import { DropdownWithSeparator } from '@/components/dropdown/example/with-separator';
+import BasicDropdownSnippet from '../../packages/dropdown/snippets/basic.mdx';
+import DropdownWithSeparatorSnippet from '../../packages/dropdown/snippets/with-separator.mdx';
+import { BasicDropdown } from '../../packages/dropdown/example/basic';
+import { DropdownWithSeparator } from '../../packages/dropdown/example/with-separator';
 
 export default function DropdownPage() {
   return (

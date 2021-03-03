@@ -5,10 +5,10 @@ import {
   ColoredListGroupComponent,
   ListGroupComponent,
   ListGroupLinkComponent,
-} from '@/components/list-group/example';
-import ListGroupSnippet from '@/components/list-group/snippets/simple.mdx';
-import ColoredListGroupSnippet from '@/components/list-group/snippets/colored.mdx';
-import LinkListGroupSnippet from '@/components/list-group/snippets/link.mdx';
+} from '../../packages/list-group/example';
+import ListGroupSnippet from '../../packages/list-group/snippets/simple.mdx';
+import ColoredListGroupSnippet from '../../packages/list-group/snippets/colored.mdx';
+import LinkListGroupSnippet from '../../packages/list-group/snippets/link.mdx';
 
 export default function ListGroupPage() {
   return (

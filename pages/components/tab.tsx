@@ -1,14 +1,14 @@
 import Head from 'next/head';
 import { Container } from '@/website/components/container';
 import Layout from '@/website/layout';
-import TabVariantOneSnippet from '@/components/tab/snippets/variantOne.mdx';
-import TabVariantTwoSnippet from '@/components/tab/snippets/variantTwo.mdx';
-import TabVariantThreeSnippet from '@/components/tab/snippets/variantThree.mdx';
+import TabVariantOneSnippet from '../../packages/tab/snippets/variantOne.mdx';
+import TabVariantTwoSnippet from '../../packages/tab/snippets/variantTwo.mdx';
+import TabVariantThreeSnippet from '../../packages/tab/snippets/variantThree.mdx';
 import {
   TabVariantOne,
   TabVariantThree,
   TabVariantTwo,
-} from '@/components/tab/example';
+} from '../../packages/tab/example';
 
 export default function TabPage() {
   return (

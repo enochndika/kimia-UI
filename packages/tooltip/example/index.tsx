@@ -1,4 +1,4 @@
-import { Tooltip } from '@/components/tooltip';
+import { Tooltip } from '../../tooltip';
 
 export const TooltipComponent = () => (
   <div className="flex justify-center md:justify-start">

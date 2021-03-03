@@ -4,9 +4,9 @@ import Layout from '@/website/layout';
 import {
   CurtainMenuLeft,
   CurtainMenuTop,
-} from '@/components/curtain-menu/example';
-import CurtainMenuLeftSnippet from '@/components/curtain-menu/snippets/left.mdx';
-import CurtainMenuTopSnippet from '@/components/curtain-menu/snippets/top.mdx';
+} from '../../packages/curtain-menu/example';
+import CurtainMenuLeftSnippet from '../../packages/curtain-menu/snippets/left.mdx';
+import CurtainMenuTopSnippet from '../../packages/curtain-menu/snippets/top.mdx';
 
 export default function CurtainMenuPage() {
   return (

@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Spinner } from '@/components/spinner';
+import { Spinner } from '../../spinner';
 
 export const SpinnerComponent: FC = () => (
   <div className="mb-8">

@@ -1,4 +1,4 @@
-import { Tab, Tabs } from '@/components/tab';
+import { Tab, Tabs } from '../../tab';
 import { FC } from 'react';
 
 export const TabVariantOne: FC = () => (

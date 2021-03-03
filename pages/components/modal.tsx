@@ -1,14 +1,14 @@
 import Head from 'next/head';
 import Layout from '@/website/layout';
 import { Container } from '@/website/components/container';
-import { ModalRight } from '@/components/modal/example/right';
-import { ModalLeft } from '@/components/modal/example/left';
-import { ModalTop } from '@/components/modal/example/top';
-import { ModalNotClosedOutside } from '@/components/modal/example/notClosedOutside';
-import ModalTopSnippet from '@/components/modal/snippets/top.mdx';
-import ModalLeftSnippet from '@/components/modal/snippets/left.mdx';
-import ModalRightSnippet from '@/components/modal/snippets/right.mdx';
-import ModalNotClosedOutsideSnippet from '@/components/modal/snippets/notClosedOutside.mdx';
+import { ModalRight } from '../../packages/modal/example/right';
+import { ModalLeft } from '../../packages/modal/example/left';
+import { ModalTop } from '../../packages/modal/example/top';
+import { ModalNotClosedOutside } from '../../packages/modal/example/notClosedOutside';
+import ModalTopSnippet from '../../packages/modal/snippets/top.mdx';
+import ModalLeftSnippet from '../../packages/modal/snippets/left.mdx';
+import ModalRightSnippet from '../../packages/modal/snippets/right.mdx';
+import ModalNotClosedOutsideSnippet from '../../packages/modal/snippets/notClosedOutside.mdx';
 
 export default function ModalPage() {
   return (

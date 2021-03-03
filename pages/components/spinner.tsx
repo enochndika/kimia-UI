@@ -4,9 +4,9 @@ import Layout from '@/website/layout';
 import {
   LargeSpinnerComponent,
   SpinnerComponent,
-} from '@/components/spinner/example';
-import SpinnerSnippet from '@/components/spinner/snippets/normal.mdx';
-import LargeSpinnerSnippet from '@/components/spinner/snippets/large.mdx';
+} from '../../packages/spinner/example';
+import SpinnerSnippet from '../../packages/spinner/snippets/normal.mdx';
+import LargeSpinnerSnippet from '../../packages/spinner/snippets/large.mdx';
 
 export default function SpinnerPage() {
   return (

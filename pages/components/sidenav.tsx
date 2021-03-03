@@ -1,10 +1,10 @@
 import Head from 'next/head';
 import { Container } from '@/website/components/container';
-import { SidenavLeft } from '@/components/sidenav/examples/left';
-import { SidenavRight } from '@/components/sidenav/examples/right';
+import { SidenavLeft } from '../../packages/sidenav/examples/left';
+import { SidenavRight } from '../../packages/sidenav/examples/right';
 import Layout from '@/website/layout';
-import SidenavLeftSnippet from '@/components/sidenav/snippets/left.mdx';
-import SidenavRightSnippet from '@/components/sidenav/snippets/right.mdx';
+import SidenavLeftSnippet from '../../packages/sidenav/snippets/left.mdx';
+import SidenavRightSnippet from '../../packages/sidenav/snippets/right.mdx';
 
 export default function SidenavPage() {
   return (
