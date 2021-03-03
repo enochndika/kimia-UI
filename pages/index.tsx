@@ -1,8 +1,9 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import CustomLayout from '@/website/layout/custom';
-import { Container } from '@/website/container';
+import { Container } from '@/website/components/container';
 import Image from 'next/image';
+import Layout from '@/website/layout';
 
 export default function Home() {
   return (

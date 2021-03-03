@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 export const Footer: FC = () => (
-  <footer className="py-4 border-t mt-2 relative text-gray-500 bottom-0 left-0 right-0">
+  <footer className="py-4 border-t mt-6 relative text-gray-500 bottom-0 left-0 right-0">
     <div className="overflow-hidden text-center">
       <div className="container">
         <span className="mx-1">Made with love by</span>

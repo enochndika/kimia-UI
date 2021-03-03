@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import Layout from '@/website/layout/default';
-import { Container } from '@/website/container';
+import Layout from '@/website/layout';
+import { Container } from '@/website/components/container';
 import { ModalRight } from '@/components/modal/example/right';
 import { ModalLeft } from '@/components/modal/example/left';
 import { ModalTop } from '@/components/modal/example/top';

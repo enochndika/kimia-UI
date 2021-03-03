@@ -7,13 +7,13 @@ import { AppProps } from 'next/app';
 import { ComponentType, FC, useEffect } from 'react';
 import { preToCodeBlock } from 'mdx-utils';
 import { MDXProvider } from '@mdx-js/react';
-import * as gtag from '@/website/gtag';
+import * as gtag from '@/website/utils/gtag';
 import dynamic from 'next/dynamic';
-import { CopyboardProps } from '@/website/copyboard';
-import { Loader } from '@/website/loader';
+import { CopyboardProps } from '@/website/components/copyboard';
+import { Loader } from '@/website/components/loader';
 
 const Copyboard: ComponentType<CopyboardProps> = dynamic(
-  () => import('@/website/copyboard').then((mod) => mod.Copyboard),
+  () => import('@/website/components/copyboard').then((mod) => mod.Copyboard),
   { ssr: false, loading: () => <Loader /> },
 );
 

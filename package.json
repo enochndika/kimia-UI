@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "postbuild": "next-sitemap",
-    "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
+    "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
+    "format": "prettier '*/**/*.{js,ts,tsx}' --write"
   },
   "dependencies": {
     "@mdx-js/loader": "^1.6.22",

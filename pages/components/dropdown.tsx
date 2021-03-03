@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import Layout from '@/website/layout/default';
-import { Container } from '@/website/container';
+import Layout from '@/website/layout';
+import { Container } from '@/website/components/container';
 import BasicDropdownSnippet from '@/components/dropdown/snippets/basic.mdx';
 import DropdownWithSeparatorSnippet from '@/components/dropdown/snippets/with-separator.mdx';
 import { BasicDropdown } from '@/components/dropdown/example/basic';

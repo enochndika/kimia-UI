@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import Layout from '@/website/layout/default';
-import { Container } from '@/website/container';
+import Layout from '@/website/layout';
+import { Container } from '@/website/components/container';
 import {
   ColoredListGroupComponent,
   ListGroupComponent,

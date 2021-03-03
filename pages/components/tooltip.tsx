@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { TooltipComponent } from '@/components/tooltip/example';
-import Layout from '@/website/layout/default';
-import { Container } from '@/website/container';
+import Layout from '@/website/layout';
+import { Container } from '@/website/components/container';
 import TooltipSnippet from '@/components/tooltip/snippets/index.mdx';
 
 export default function TooltipPage() {

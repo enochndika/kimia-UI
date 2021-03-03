@@ -1,19 +1,15 @@
-import { Sidenav } from './sidenav';
-import { ReactNode, useState } from 'react';
-import { Header } from './header';
-import Base from './base';
+import { Sidenav } from './default/sidenav';
+import { ReactNode } from 'react';
+import { Header } from './default/header';
+import Base from './default/base';
+import { useToggle } from './default/toggle';
 
 interface Props {
   children: ReactNode;
 }
 
 const Layout = ({ children }: Props) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-
-  const toggle = () => {
-    setIsOpen(!isOpen);
-  };
-
+  const { isOpen, toggle } = useToggle();
   return (
     <>
       <Sidenav isOpen={isOpen} toggle={toggle} />

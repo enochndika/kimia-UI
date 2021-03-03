@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import { Container } from '@/website/container';
-import Layout from '@/website/layout/default';
+import { Container } from '@/website/components/container';
+import Layout from '@/website/layout';
 import { NavbarVariantOne } from '@/components/navbar/examples/variantOne';
 import { NavbarVariantTwo } from '@/components/navbar/examples/variantTwo';
 import { NavbarVariantThree } from '@/components/navbar/examples/variantThree';

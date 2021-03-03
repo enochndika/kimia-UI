@@ -1,7 +1,6 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { Container } from '../../container';
+import { Container } from '../../components/container';
 import { FC, ReactNode } from 'react';
 
 interface Props {
@@ -24,11 +23,11 @@ export const Item = ({ children, href, onClick }: ItemProps) => {
       : 'text-gray-700 font-medium hover:text-black';
 
   return (
-    <div className="mb-2">
+    <div className="mb-4">
       <Link href={href ? href : '/'}>
         <a
           onClick={click}
-          className={`${className} pl-6 pb-3 text-sm text-gray-700 cursor-pointer`}
+          className={`${className} pl-6 text-sm text-gray-700 cursor-pointer`}
         >
           {children}
         </a>
@@ -37,55 +36,40 @@ export const Item = ({ children, href, onClick }: ItemProps) => {
   );
 };
 
-const Sidenav: FC = () => (
-  <div>
-    <div className="pl-3">
-      <Link href="/">
-        <a>
-          <Image
-            src="/kimia.png"
-            width={100}
-            height={100}
-            priority={true}
-            alt="kimia-ui"
-          />
-        </a>
-      </Link>
+const Sidebar: FC = () => (
+  <Container>
+    <div className="hidden lg:block h-full mt-24 pt-8 pb-32 fixed top-0 lg:w-60 text-white overflow-y-auto">
+      <div className="pl-6 pb-2 mb-5 text-gray-500 font-bold">GENERAL</div>
+      <Item href="/components/buttons">Buttons</Item>
+      <Item href="/components/card">Card</Item>
+      <Item href="/components/collapse">Collapse</Item>
+      <Item href="/components/dropdown">Dropdown</Item>
+      <Item href="/components/jumbotron">Jumbotron</Item>
+      <Item href="/components/list_group">List Group</Item>
+      <Item href="/components/modal">Modal</Item>
+      <Item href="/components/spinner">Spinner</Item>
+      <Item href="/components/tab">Tab</Item>
+      <Item href="/components/tooltip">Tooltip</Item>
+      <div className="pl-6 pt-6 pb-2 mb-5 text-gray-500 font-bold">
+        NAVIGATION
+      </div>
+      <Item href="/components/curtain_menu">Curtain Menu</Item>
+      <Item href="/components/hamburger_menu">Hamburger Menu</Item>
+      <Item href="/components/navbar">Navbar</Item>
+      <Item href="/components/sidenav">Sidenav</Item>
+      <div className="pl-6 pt-6 pb-2 mb-5 text-gray-500 font-bold">EXTRAS</div>
+      <Item href="/components/toast">Toast</Item>
+      <Item href="/components/scroll-indicator">Scroll indicator</Item>
+      <Item href="/components/pricing-table">E-commerce</Item>
     </div>
-    <div className="pl-6 pb-2 mb-2 text-gray-800 font-bold">General</div>
-    <Item href="/components/buttons">Buttons</Item>
-    <Item href="/components/card">Card</Item>
-    <Item href="/components/collapse">Collapse</Item>
-    <Item href="/components/dropdown">Dropdown</Item>
-    <Item href="/components/jumbotron">Jumbotron</Item>
-    <Item href="/components/list_group">List Group</Item>
-    <Item href="/components/modal">Modal</Item>
-    <Item href="/components/spinner">Spinner</Item>
-    <Item href="/components/tab">Tab</Item>
-    <Item href="/components/tooltip">Tooltip</Item>
-    <div className="pl-6 pt-6 pb-2 mb-2 text-gray-800 font-bold">
-      Navigation
-    </div>
-    <Item href="/components/curtain_menu">Curtain Menu</Item>
-    <Item href="/components/hamburger_menu">Hamburger Menu</Item>
-    <Item href="/components/navbar">Navbar</Item>
-    <Item href="/components/sidenav">Sidenav</Item>
-    <div className="pl-6 pt-6 pb-2 mb-2 text-gray-800 font-bold">Extras</div>
-    <Item href="/components/toast">Toast</Item>
-    <Item href="/components/scroll-indicator">Scroll indicator</Item>
-    <Item href="/components/pricing-table">E-commerce</Item>
-  </div>
+  </Container>
 );
 
 const Base = ({ children }: Props) => {
   return (
     <>
-      <Container>
-        <div className="hidden md:block h-screen fixed top-0 md:w-60 border-r border-gray-200 hover:border-r-0 text-white overflow-hidden hover:overflow-y-auto">
-          <Sidenav />
-        </div>
-      </Container>
-      <div className="pl-0 md:pl-80">{children}</div>
+      <Sidebar />
+      <div className="lg:pl-96 lg:pr-20 pt-24">{children}</div>
     </>
   );
 };

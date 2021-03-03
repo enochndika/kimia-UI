@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import { Container } from '@/website/container';
-import Layout from '@/website/layout/default';
+import { Container } from '@/website/components/container';
+import Layout from '@/website/layout';
 import { HamburgerMenuVariantOne } from '@/components/hamburger-menu/example/variantOne';
 import { HamburgerMenuVariantThree } from '@/components/hamburger-menu/example/variantThree';
 import { HamburgerMenuVariantTwo } from '@/components/hamburger-menu/example/variantTwo';

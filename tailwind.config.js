@@ -1,5 +1,8 @@
 module.exports = {
   darkMode: false,
+  corePlugins: {
+    container: false,
+  },
   future: {
     purgeLayersByDefault: true,
   },
@@ -11,7 +14,7 @@ module.exports = {
   theme: {
     extend: {
       padding: {
-        container: '6%',
+        container: '5%',
       },
       height: {
         xl: '500px',
