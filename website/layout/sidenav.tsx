@@ -9,7 +9,7 @@ interface SidenavProps {
 }
 
 const classNames = {
-  default: `block h-full absolute z-40 top-0 right-0 bg-white overflow-x-hidden `,
+  default: `block h-full absolute z-20 top-0 right-0 bg-white overflow-x-hidden `,
   active: `w-7/12 md:w-40 text-gray-700 transition-all ease duration-300`,
   inactive: `w-0 transition-all ease duration-300`,
 };
