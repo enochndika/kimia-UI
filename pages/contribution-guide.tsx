@@ -19,7 +19,7 @@ export default function ConfigurationPage() {
       </Head>
       <Container>
         <div>
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-800  mb-8">
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mt-12 mb-8">
             Contribution
           </h1>
           <p className="mb-5 md:mb-2.5 text-gray-600">
