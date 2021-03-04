@@ -1,5 +1,5 @@
 # React Components with Tailwindcss
-![Tailwind-Kit](https://res.cloudinary.com/beloved/image/upload/v1612391435/Assets/kimia_d8zp9s.png)
+![Tailwind-Kit](https://res.cloudinary.com/beloved/image/upload/v1614856936/Assets/Capture_d_%C3%A9cran_de_2021-03-04_12-19-47_adme3n.png)
 
 ## Why using Kimia-UI?
 
