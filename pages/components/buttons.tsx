@@ -1,18 +1,17 @@
 import Head from 'next/head';
-import Layout from '@/website/layout';
 import { Container } from '@/website/components/container';
-import DefaultButtons from '../../packages/button/example/defaultButton';
-import AnimateButtons from '../../packages/button/example/animateButton';
-import RoundedButtons from '../../packages/button/example/RoundedButton';
-import SizedButtons from '../../packages/button/example/SizedButton';
-import DisabledButtons from '../../packages/button/example/disabledButton';
-import OutlineButtons from '../../packages/button/example/outlineButton';
-import DefaultButtonSnippet from '../../packages/button/snippets/default.mdx';
-import AnimateButtonSnippet from '../../packages/button/snippets/animate.mdx';
-import RoundedButtonSnippet from '../../packages/button/snippets/rounded.mdx';
-import SizesButtonSnippet from '../../packages/button/snippets/sizes.mdx';
-import DisabledButtonSnippet from '../../packages/button/snippets/disabled.mdx';
-import OutlineButtonSnippet from '../../packages/button/snippets/outline.mdx';
+import DefaultButtons from '@/packages/button/example/defaultButton';
+import AnimateButtons from '@/packages/button/example/animateButton';
+import RoundedButtons from '@/packages/button/example/RoundedButton';
+import SizedButtons from '@/packages/button/example/SizedButton';
+import DisabledButtons from '@/packages/button/example/disabledButton';
+import OutlineButtons from '@/packages/button/example/outlineButton';
+import DefaultButtonSnippet from '@/packages/button/snippets/default.mdx';
+import AnimateButtonSnippet from '@/packages/button/snippets/animate.mdx';
+import RoundedButtonSnippet from '@/packages/button/snippets/rounded.mdx';
+import SizesButtonSnippet from '@/packages/button/snippets/sizes.mdx';
+import DisabledButtonSnippet from '@/packages/button/snippets/disabled.mdx';
+import OutlineButtonSnippet from '@/packages/button/snippets/outline.mdx';
 
 export default function ButtonPage() {
   return (
@@ -44,5 +43,3 @@ export default function ButtonPage() {
     </>
   );
 }
-
-ButtonPage.Layout = Layout;

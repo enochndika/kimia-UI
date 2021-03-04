@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { Container } from '../../components/container';
+import { Container } from '../components/container';
 import { FC, ReactNode } from 'react';
+import { useFilterRoutes } from '@/website/utils/filterRoutes';
 
 interface Props {
   children: ReactNode;
@@ -66,10 +67,13 @@ const Sidebar: FC = () => (
 );
 
 const Base = ({ children }: Props) => {
+  const { pathname } = useRouter();
+  const routes = useFilterRoutes(pathname);
+  const classNames = routes ? 'pt-24' : 'lg:pl-96 lg:pr-20 pt-24';
   return (
     <>
-      <Sidebar />
-      <div className="lg:pl-96 lg:pr-20 pt-24">{children}</div>
+      {!routes && <Sidebar />}
+      <div className={classNames}>{children}</div>
     </>
   );
 };

@@ -1,12 +1,11 @@
 import Head from 'next/head';
 import { Container } from '@/website/components/container';
-import Layout from '@/website/layout';
-import { HamburgerMenuVariantOne } from '../../packages/hamburger-menu/example/variantOne';
-import { HamburgerMenuVariantThree } from '../../packages/hamburger-menu/example/variantThree';
-import { HamburgerMenuVariantTwo } from '../../packages/hamburger-menu/example/variantTwo';
-import HamburgerMenuVariantOneSnippet from '../../packages/hamburger-menu/snippets/variantOne.mdx';
-import HamburgerMenuVariantTwoSnippet from '../../packages/hamburger-menu/snippets/variantTwo.mdx';
-import HamburgerMenuVariantThreeSnippet from '../../packages/hamburger-menu/snippets/variantThree.mdx';
+import { HamburgerMenuVariantOne } from '@/packages/hamburger-menu/example/variantOne';
+import { HamburgerMenuVariantThree } from '@/packages/hamburger-menu/example/variantThree';
+import { HamburgerMenuVariantTwo } from '@/packages/hamburger-menu/example/variantTwo';
+import HamburgerMenuVariantOneSnippet from '@/packages/hamburger-menu/snippets/variantOne.mdx';
+import HamburgerMenuVariantTwoSnippet from '@/packages/hamburger-menu/snippets/variantTwo.mdx';
+import HamburgerMenuVariantThreeSnippet from '@/packages/hamburger-menu/snippets/variantThree.mdx';
 
 export default function HamburgerMenuPage() {
   return (
@@ -32,5 +31,3 @@ export default function HamburgerMenuPage() {
     </>
   );
 }
-
-HamburgerMenuPage.Layout = Layout;

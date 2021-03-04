@@ -1,12 +1,11 @@
 import Head from 'next/head';
 import { Container } from '@/website/components/container';
-import Layout from '@/website/layout';
 import {
   LargeSpinnerComponent,
   SpinnerComponent,
-} from '../../packages/spinner/example';
-import SpinnerSnippet from '../../packages/spinner/snippets/normal.mdx';
-import LargeSpinnerSnippet from '../../packages/spinner/snippets/large.mdx';
+} from '@/packages/spinner/example';
+import SpinnerSnippet from '@/packages/spinner/snippets/normal.mdx';
+import LargeSpinnerSnippet from '@/packages/spinner/snippets/large.mdx';
 
 export default function SpinnerPage() {
   return (
@@ -30,5 +29,3 @@ export default function SpinnerPage() {
     </>
   );
 }
-
-SpinnerPage.Layout = Layout;

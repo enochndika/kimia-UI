@@ -1,9 +1,8 @@
 import Head from 'next/head';
-import { MultipleCard, SingleCard } from '../../packages/card/example';
-import SingleCardSnippet from '../../packages/card/snippets/single.mdx';
-import MultipleCardSnippet from '../../packages/card/snippets/multiple.mdx';
+import { MultipleCard, SingleCard } from '@/packages/card/example';
+import SingleCardSnippet from '@/packages/card/snippets/single.mdx';
+import MultipleCardSnippet from '@/packages/card/snippets/multiple.mdx';
 import { Container } from '@/website/components/container';
-import Layout from '@/website/layout';
 
 export default function CardPage() {
   return (
@@ -27,5 +26,3 @@ export default function CardPage() {
     </>
   );
 }
-
-CardPage.Layout = Layout;

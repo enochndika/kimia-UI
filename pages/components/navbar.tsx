@@ -1,12 +1,11 @@
 import Head from 'next/head';
 import { Container } from '@/website/components/container';
-import Layout from '@/website/layout';
-import { NavbarVariantOne } from '../../packages/navbar/examples/variantOne';
-import { NavbarVariantTwo } from '../../packages/navbar/examples/variantTwo';
-import { NavbarVariantThree } from '../../packages/navbar/examples/variantThree';
-import NavbarVariantOneSnippet from '../../packages/navbar/snippets/variantOne.mdx';
-import NavbarVariantTwoSnippet from '../../packages/navbar/snippets/variantTwo.mdx';
-import NavbarVariantThreeSnippet from '../../packages/navbar/snippets/variantThree.mdx';
+import { NavbarVariantOne } from '@/packages/navbar/examples/variantOne';
+import { NavbarVariantTwo } from '@/packages/navbar/examples/variantTwo';
+import { NavbarVariantThree } from '@/packages/navbar/examples/variantThree';
+import NavbarVariantOneSnippet from '@/packages/navbar/snippets/variantOne.mdx';
+import NavbarVariantTwoSnippet from '@/packages/navbar/snippets/variantTwo.mdx';
+import NavbarVariantThreeSnippet from '@/packages/navbar/snippets/variantThree.mdx';
 
 export default function NavbarPage() {
   return (
@@ -32,5 +31,3 @@ export default function NavbarPage() {
     </>
   );
 }
-
-NavbarPage.Layout = Layout;

@@ -1,12 +1,11 @@
 import Head from 'next/head';
 import { Container } from '@/website/components/container';
-import Layout from '@/website/layout';
 import {
   CurtainMenuLeft,
   CurtainMenuTop,
-} from '../../packages/curtain-menu/example';
-import CurtainMenuLeftSnippet from '../../packages/curtain-menu/snippets/left.mdx';
-import CurtainMenuTopSnippet from '../../packages/curtain-menu/snippets/top.mdx';
+} from '@/packages/curtain-menu/example';
+import CurtainMenuLeftSnippet from '@/packages/curtain-menu/snippets/left.mdx';
+import CurtainMenuTopSnippet from '@/packages/curtain-menu/snippets/top.mdx';
 
 export default function CurtainMenuPage() {
   return (
@@ -30,5 +29,3 @@ export default function CurtainMenuPage() {
     </>
   );
 }
-
-CurtainMenuPage.Layout = Layout;

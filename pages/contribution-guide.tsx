@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import CustomLayout from '@/website/layout/custom';
 import { Container } from '@/website/components/container';
 
 const Code = ({ children }) => (
@@ -73,5 +72,3 @@ export default function ConfigurationPage() {
     </>
   );
 }
-
-ConfigurationPage.Layout = CustomLayout;

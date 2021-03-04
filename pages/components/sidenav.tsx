@@ -1,10 +1,9 @@
 import Head from 'next/head';
 import { Container } from '@/website/components/container';
-import { SidenavLeft } from '../../packages/sidenav/examples/left';
-import { SidenavRight } from '../../packages/sidenav/examples/right';
-import Layout from '@/website/layout';
-import SidenavLeftSnippet from '../../packages/sidenav/snippets/left.mdx';
-import SidenavRightSnippet from '../../packages/sidenav/snippets/right.mdx';
+import { SidenavLeft } from '@/packages/sidenav/examples/left';
+import { SidenavRight } from '@/packages/sidenav/examples/right';
+import SidenavLeftSnippet from '@/packages/sidenav/snippets/left.mdx';
+import SidenavRightSnippet from '@/packages/sidenav/snippets/right.mdx';
 
 export default function SidenavPage() {
   return (
@@ -28,5 +27,3 @@ export default function SidenavPage() {
     </>
   );
 }
-
-SidenavPage.Layout = Layout;

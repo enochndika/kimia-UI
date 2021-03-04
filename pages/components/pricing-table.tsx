@@ -1,8 +1,7 @@
 import Head from 'next/head';
 import { Container } from '@/website/components/container';
-import Layout from '@/website/layout';
-import { PricingTable } from '../../packages/ecommerce/pricing-table';
-import PricingTableSnippet from '../../packages/ecommerce/snippets/pricing-table.mdx';
+import { PricingTable } from '@/packages/ecommerce/pricing-table';
+import PricingTableSnippet from '@/packages/ecommerce/snippets/pricing-table.mdx';
 
 export default function PricingTablePage() {
   return (
@@ -24,5 +23,3 @@ export default function PricingTablePage() {
     </>
   );
 }
-
-PricingTablePage.Layout = Layout;

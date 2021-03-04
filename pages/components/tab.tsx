@@ -1,14 +1,13 @@
 import Head from 'next/head';
 import { Container } from '@/website/components/container';
-import Layout from '@/website/layout';
-import TabVariantOneSnippet from '../../packages/tab/snippets/variantOne.mdx';
-import TabVariantTwoSnippet from '../../packages/tab/snippets/variantTwo.mdx';
-import TabVariantThreeSnippet from '../../packages/tab/snippets/variantThree.mdx';
+import TabVariantOneSnippet from '@/packages/tab/snippets/variantOne.mdx';
+import TabVariantTwoSnippet from '@/packages/tab/snippets/variantTwo.mdx';
+import TabVariantThreeSnippet from '@/packages/tab/snippets/variantThree.mdx';
 import {
   TabVariantOne,
   TabVariantThree,
   TabVariantTwo,
-} from '../../packages/tab/example';
+} from '@/packages/tab/example';
 
 export default function TabPage() {
   return (
@@ -34,5 +33,3 @@ export default function TabPage() {
     </>
   );
 }
-
-TabPage.Layout = Layout;

@@ -1,8 +1,7 @@
 import Head from 'next/head';
-import { TooltipComponent } from '../../packages/tooltip/example';
-import Layout from '@/website/layout';
+import { TooltipComponent } from '@/packages/tooltip/example';
 import { Container } from '@/website/components/container';
-import TooltipSnippet from '../../packages/tooltip/snippets/index.mdx';
+import TooltipSnippet from '@/packages/tooltip/snippets/index.mdx';
 
 export default function TooltipPage() {
   return (
@@ -24,5 +23,3 @@ export default function TooltipPage() {
     </>
   );
 }
-
-TooltipPage.Layout = Layout;

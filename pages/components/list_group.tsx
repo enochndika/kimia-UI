@@ -1,14 +1,13 @@
 import Head from 'next/head';
-import Layout from '@/website/layout';
 import { Container } from '@/website/components/container';
 import {
   ColoredListGroupComponent,
   ListGroupComponent,
   ListGroupLinkComponent,
-} from '../../packages/list-group/example';
-import ListGroupSnippet from '../../packages/list-group/snippets/simple.mdx';
-import ColoredListGroupSnippet from '../../packages/list-group/snippets/colored.mdx';
-import LinkListGroupSnippet from '../../packages/list-group/snippets/link.mdx';
+} from '@/packages/list-group/example';
+import ListGroupSnippet from '@/packages/list-group/snippets/simple.mdx';
+import ColoredListGroupSnippet from '@/packages/list-group/snippets/colored.mdx';
+import LinkListGroupSnippet from '@/packages/list-group/snippets/link.mdx';
 
 export default function ListGroupPage() {
   return (
@@ -34,5 +33,3 @@ export default function ListGroupPage() {
     </>
   );
 }
-
-ListGroupPage.Layout = Layout;

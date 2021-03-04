@@ -3,21 +3,20 @@ import 'tailwindcss/tailwind.css';
 import 'nprogress/nprogress.css';
 import Head from 'next/head';
 import Router, { useRouter } from 'next/router';
+import dynamic from 'next/dynamic';
 import { AppProps } from 'next/app';
-import { ComponentType, FC, useEffect } from 'react';
+import { ComponentType, useEffect } from 'react';
 import { preToCodeBlock } from 'mdx-utils';
 import { MDXProvider } from '@mdx-js/react';
 import * as gtag from '@/website/utils/gtag';
-import dynamic from 'next/dynamic';
 import { CopyboardProps } from '@/website/components/copyboard';
 import { Loader } from '@/website/components/loader';
+import Layout from '@/website/layout';
 
 const Copyboard: ComponentType<CopyboardProps> = dynamic(
   () => import('@/website/components/copyboard').then((mod) => mod.Copyboard),
   { ssr: false, loading: () => <Loader /> },
 );
-
-const Noop: FC = ({ children }) => <>{children}</>;
 
 Router.events.on('routeChangeStart', () => {
   NProgress.start();
@@ -33,7 +32,6 @@ const components = {
 };
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const Layout = (Component as any).Layout || Noop;
   const router = useRouter();
 
   useEffect(() => {

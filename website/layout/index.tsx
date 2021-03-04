@@ -1,8 +1,11 @@
-import { Sidenav } from './default/sidenav';
+import { Sidenav } from './sidenav';
 import { ReactNode } from 'react';
-import { Header } from './default/header';
-import Base from './default/base';
-import { useToggle } from './default/toggle';
+import { Header } from './header';
+import Base from './base';
+import { useToggle } from '../utils/toggle';
+import { useRouter } from 'next/router';
+import { useFilterRoutes } from '@/website/utils/filterRoutes';
+import { Footer } from '@/website/layout/footer';
 
 interface Props {
   children: ReactNode;
@@ -10,6 +13,8 @@ interface Props {
 
 const Layout = ({ children }: Props) => {
   const { isOpen, toggle } = useToggle();
+  const { pathname } = useRouter();
+  const routes = useFilterRoutes(pathname);
   return (
     <>
       <Sidenav isOpen={isOpen} toggle={toggle} />
@@ -21,6 +26,7 @@ const Layout = ({ children }: Props) => {
       <div className={isOpen ? 'fixed overflow-y-hidden w-full' : null}>
         <Header toggle={toggle} />
         <Base>{children}</Base>
+        {routes && <Footer />}
       </div>
     </>
   );

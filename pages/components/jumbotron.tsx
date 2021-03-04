@@ -1,12 +1,11 @@
 import Head from 'next/head';
 import { Container } from '@/website/components/container';
-import Layout from '@/website/layout';
 import {
   JumbotronComponent,
   JumbotronWithBackgroundComponent,
-} from '../../packages/jumbotron/example';
-import JumbotronSnippet from '../../packages/jumbotron/snippets/simple.mdx';
-import JumbotronBackgroundSnippet from '../../packages/jumbotron/snippets/withBackground.mdx';
+} from '@/packages/jumbotron/example';
+import JumbotronSnippet from '@/packages/jumbotron/snippets/simple.mdx';
+import JumbotronBackgroundSnippet from '@/packages/jumbotron/snippets/withBackground.mdx';
 
 export default function JumbotronPage() {
   return (
@@ -30,5 +29,3 @@ export default function JumbotronPage() {
     </>
   );
 }
-
-JumbotronPage.Layout = Layout;

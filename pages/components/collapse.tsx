@@ -1,8 +1,7 @@
 import Head from 'next/head';
-import { CollapseComponent } from '../../packages/collapse/example';
-import Layout from '@/website/layout';
+import { CollapseComponent } from '@/packages/collapse/example';
 import { Container } from '@/website/components/container';
-import CollapseSnippet from '../../packages/collapse/snippets/index.mdx';
+import CollapseSnippet from '@/packages/collapse/snippets/index.mdx';
 
 export default function CollapsePage() {
   return (
@@ -24,5 +23,3 @@ export default function CollapsePage() {
     </>
   );
 }
-
-CollapsePage.Layout = Layout;
