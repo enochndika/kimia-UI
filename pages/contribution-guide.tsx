@@ -26,8 +26,8 @@ export default function ConfigurationPage() {
             Kimia-ui is an open source project and anyone can contribute
           </p>
           <p className="mb-5 md:mb-2.5 text-gray-600">
-            You can do it by adding new components, fixing bugs or suggesting
-            ideas
+            You can do it by adding new components, fixing bugs, improving
+            accessibility or suggesting ideas
           </p>
         </div>
         <h2 className="text-2xl md:text-3xl font-bold text-gray-800  mt-16">

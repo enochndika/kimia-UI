@@ -73,7 +73,7 @@ const Base = ({ children }: Props) => {
   return (
     <>
       {!routes && <Sidebar />}
-      <div className={classNames}>{children}</div>
+      <main className={classNames}>{children}</main>
     </>
   );
 };
