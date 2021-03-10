@@ -10,7 +10,7 @@ export default function Home() {
         <title>Kimia-UI</title>
         <meta
           name="title"
-          content="Kimia-UI — A collection of React components built with tailwindcss"
+          content="Kimia-UI — A collection of UI Components for React built with tailwindcss"
           key="title"
         />
         <meta
