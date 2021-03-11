@@ -1,6 +1,6 @@
 ```jsx
 export const SingleCardPage = () => (
-  <Card className="w-full md:w-4/12" style={style}>
+  <Card className="w-full md:w-4/12">
     <img
       src="https://res.cloudinary.com/beloved/image/upload/v1608682938/Assets/632198_sgrp38.jpg"
       alt="image"
@@ -20,7 +20,7 @@ export const SingleCardPage = () => (
 
 const Card = ({ className, children }) => (
   <div
-    className={`${className} relative flex flex-col border-2 border-gray-200 rounded-lg`}
+    className={`${className} relative flex flex-col border-2 border-gray-200 rounded-lg`} style={style}
   >
     {children}
   </div>

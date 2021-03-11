@@ -1,6 +1,6 @@
 ```jsx
 export const CardPage = () => (
-  <div className="flex flex-wrap" style={style}>
+  <div className="flex flex-wrap">
     <div className="w-full md:w-4/12 mb-6 md:mb-0 md:p-3">
       <Card>
         <img
@@ -73,6 +73,7 @@ export const CardPage = () => (
 const Card = ({ children, className }) => (
   <div
     className={`${className} relative flex flex-col border-2 border-gray-200 rounded-lg`}
+    style={style}
   >
     {children}
   </div>
