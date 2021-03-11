@@ -1,5 +1,5 @@
 import {
-  LiHTMLAttributes,
+  AnchorHTMLAttributes,
   ReactNode,
   useEffect,
   useRef,
@@ -10,7 +10,7 @@ interface Props {
   children: ReactNode;
 }
 
-interface DropdownItemProps extends LiHTMLAttributes<HTMLLIElement> {
+interface DropdownItemProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   children: ReactNode;
 }
 
@@ -52,38 +52,57 @@ const useToggle = () => {
   };
 };
 
-export const Dropdown = ({ children }: Props) => {
-  const firstChild = children[0];
-  const secondChild = children[1];
-  const { ref, show, toggle } = useToggle();
+const Dropdown = ({ children }: Props) => {
+  const { show, toggle } = useToggle();
+  /* First child contains the dropdown toggle */
+  const dropdownToggle = children[0];
+
+  /* Second child contains the dropdown menu */
+  const dropdownMenu = children[1];
 
   return (
-    <div>
-      <div className="inline" onClick={toggle}>
-        {firstChild}
-      </div>
-      {show && (
-        <div className="relative block" ref={ref}>
-          {secondChild}
-        </div>
-      )}
-    </div>
+    <>
+      <button
+        onClick={toggle}
+        type="button"
+        className="bg-indigo-900 text-white focus:outline-none shadow rounded px-6 py-2 font-medium"
+        aria-expanded="true"
+        aria-haspopup="true"
+      >
+        {dropdownToggle}
+      </button>
+      {show && <>{dropdownMenu}</>}
+    </>
   );
 };
 
 Dropdown.Toggle = ({ children }: Props) => <>{children}</>;
 
-Dropdown.Menu = ({ children }: Props) => (
-  <ul
-    style={{ transform: 'translate3d(0px, 3px, 0px)' }}
-    className="block z-30 absolute top-0 left-0  bg-white float-left py-2 px-0 text-left border border-gray-300 rounded-sm mt-0.5 mb-0 mx-0 bg-clip-padding"
+Dropdown.Menu = ({ children }: Props) => {
+  return (
+    <div className="relative">
+      <div
+        style={{ transform: 'translate3d(0px, 3px, 0px)' }}
+        className="block z-30 absolute top-0 left-0  bg-white float-left py-2 px-0 text-left border border-gray-300 rounded-sm mt-0.5 mb-0 mx-0 bg-clip-padding"
+        role="menu"
+        aria-orientation="vertical"
+        aria-labelledby="options-menu"
+      >
+        {children}
+      </div>
+    </div>
+  );
+};
+
+/* You can wrap the a tag with Link if you are using either Create-React-App, Next.js or Gatsby */
+Dropdown.Item = ({ children }: DropdownItemProps) => (
+  <a
+    href="#"
+    className="block w-full py-1 px-8 mb-2 text-sm font-normal clear-both whitespace-nowrap border-0 hover:bg-gray-200 cursor-pointer"
+    role="menuitem"
   >
     {children}
-  </ul>
+  </a>
 );
 
-Dropdown.Item = ({ children }: DropdownItemProps) => (
-  <li className="block w-full py-1 px-8 mb-2 text-sm font-normal clear-both whitespace-nowrap border-0 hover:bg-gray-200 cursor-pointer">
-    {children}
-  </li>
-);
+export default Dropdown;
