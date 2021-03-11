@@ -1,6 +1,6 @@
 ```jsx
 export const CardPage = () => (
-  <div className="flex flex-wrap">
+  <div className="flex flex-wrap" style={style}>
     <div className="w-full md:w-4/12 mb-6 md:mb-0 md:p-3">
       <Card>
         <img
@@ -91,6 +91,10 @@ const CardTitle = ({ children, className }) => (
 const CardText = ({ children }) => (
   <div className="text-gray-500">{children}</div>
 );
+
+const style = {
+  boxShadow: '0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%)',
+};
 
 const ArrowIcon = () => (
   <svg

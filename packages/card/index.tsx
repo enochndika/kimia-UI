@@ -5,10 +5,12 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
 }
 
+const styles = {
+  boxShadow: '0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%)',
+};
+
 export const Card = ({ children, className }: Props) => (
-  <div
-    className={`${className} relative flex flex-col border-2 border-gray-200 rounded-lg`}
-  >
+  <div className={`${className} relative flex flex-col`} style={styles}>
     {children}
   </div>
 );

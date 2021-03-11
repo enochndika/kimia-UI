@@ -1,6 +1,6 @@
 ```jsx
 export const SingleCardPage = () => (
-  <Card className="w-full md:w-4/12">
+  <Card className="w-full md:w-4/12" style={style}>
     <img
       src="https://res.cloudinary.com/beloved/image/upload/v1608682938/Assets/632198_sgrp38.jpg"
       alt="image"
@@ -37,4 +37,8 @@ Card.Title = ({ className, children }) => (
 );
 
 Card.Text = ({ children }) => <div className="text-gray-500">{children}</div>;
+
+const style = {
+  boxShadow: '0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%)',
+};
 ```
