@@ -1,7 +1,7 @@
 # UI Components for React built with Tailwindcss
 ![Kimia-UI](https://res.cloudinary.com/beloved/image/upload/v1614856936/Assets/Capture_d_%C3%A9cran_de_2021-03-04_12-19-47_adme3n.png)
 
-## Why using Kimia-UI?
+## Why this approach?
 
 Tailwind CSS is a utility-first CSS framework for rapidly building custom user interfaces. Il allows you writing your style without leaving your HTML.
 
