@@ -1,5 +1,5 @@
 # UI Components for React built with Tailwindcss
-![Kimia-UI](https://res.cloudinary.com/beloved/image/upload/v1614856936/Assets/Capture_d_%C3%A9cran_de_2021-03-04_12-19-47_adme3n.png)
+![Kimia-UI](https://res.cloudinary.com/beloved/image/upload/v1615575738/Assets/kimia_i3edml.png)
 
 ## Why this approach?
 
