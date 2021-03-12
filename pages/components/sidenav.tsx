@@ -14,6 +14,10 @@ export default function SidenavPage() {
           name="description"
           content="Kimia-ui Sidenav component is vertical navigation that displays when you click a button"
         />
+        <link
+          rel="canonical"
+          href="https://kimia-ui.vercel.app/components/sidenav"
+        />
       </Head>
       <Container>
         <h1 className="text-center text-3xl md:text-5xl font-bold text-gray-600 mb-16 mt-12">

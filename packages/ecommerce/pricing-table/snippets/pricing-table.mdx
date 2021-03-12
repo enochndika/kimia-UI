@@ -84,7 +84,9 @@ export const PricingTable = () => {
   );
 };
 
-const Price = ({ children }) => <div className="flex mb-6">{children}</div>;
+const Price = ({ children }) => (
+  <div className="flex flex-wrap mb-6">{children}</div>
+);
 
 Price.Group = ({ children, title, titleBackground }) => (
   <div className="w-full md:w-4/12 p-2 mb-6 ">

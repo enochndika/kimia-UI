@@ -12,6 +12,10 @@ export default function TooltipPage() {
           name="description"
           content="Kimia-ui Tooltip is a component which displays an element when the user hovers the mouse cursor over the object"
         />
+        <link
+          rel="canonical"
+          href="https://kimia-ui.vercel.app/components/tooltip"
+        />
       </Head>
       <Container>
         <h1 className="text-center text-3xl md:text-5xl font-bold text-gray-600 mb-16 mt-12">

@@ -12,6 +12,10 @@ export default function ConfigurationPage() {
           name="description"
           content="The minimal tailwind configuration required to make some components to work properly"
         />
+        <link
+          rel="canonical"
+          href="https://kimia-ui.vercel.app/configuration"
+        />
       </Head>
       <Container>
         <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mt-12 mb-8">

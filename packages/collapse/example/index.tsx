@@ -5,23 +5,23 @@ export const CollapseComponent: FC = () => (
   <div className="flex flex-wrap mb-4">
     <div className="mr-5">
       <Collapse title="Click to see me" btnClassName="bg-blue-700">
-        <h2>Next.js</h2>
-        <h3>React</h3>
-        <h4>JavaScript</h4>
-        <h5>Chakra-UI</h5>
+        <div>Next.js</div>
+        <div>React</div>
+        <div>JavaScript</div>
+        <div>Chakra-UI</div>
       </Collapse>
     </div>
     <div className="mr-5">
       <Collapse title="Click to see me" btnClassName="bg-green-700">
-        <h2>Tailwindcss</h2>
-        <h3>Vercel</h3>
-        <h4>Docker</h4>
+        <div>Tailwindcss</div>
+        <div>Vercel</div>
+        <div>Docker</div>
       </Collapse>
     </div>
     <div className="mr-5">
       <Collapse title="Click to see me" btnClassName="bg-indigo-900">
-        <h1>Netlify</h1>
-        <h2>Typescript</h2>
+        <div>Netlify</div>
+        <div>Typescript</div>
       </Collapse>
     </div>
   </div>

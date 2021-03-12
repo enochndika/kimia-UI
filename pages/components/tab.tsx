@@ -18,6 +18,10 @@ export default function TabPage() {
           name="description"
           content="Kimia-ui Tab component allows the user to organize content within multiple tabs and set the first tab as active"
         />
+        <link
+          rel="canonical"
+          href="https://kimia-ui.vercel.app/components/tab"
+        />
       </Head>
       <Container>
         <h1 className="text-center text-3xl md:text-5xl font-bold text-gray-600 mb-16 mt-12">

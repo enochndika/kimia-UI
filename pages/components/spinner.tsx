@@ -16,6 +16,10 @@ export default function SpinnerPage() {
           name="description"
           content="Kimia-ui spinner is an animated circle that is used to keep users focused while the page is still loading, which provides a decent user experience "
         />
+        <link
+          rel="canonical"
+          href="https://kimia-ui.vercel.app/components/spinner"
+        />
       </Head>
       <Container>
         <h1 className="text-center text-3xl md:text-5xl font-bold text-gray-600 mb-16 mt-12">

@@ -16,6 +16,10 @@ export default function NavbarPage() {
           name="description"
           content="Kimia-ui navbar component is a navigation header that is placed at the top of the page which allows to navigate in different pages"
         />
+        <link
+          rel="canonical"
+          href="https://kimia-ui.vercel.app/components/navbar"
+        />
       </Head>
       <Container>
         <h1 className="text-center text-3xl md:text-5xl font-bold text-gray-600 mb-20 mt-12">

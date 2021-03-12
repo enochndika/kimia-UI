@@ -16,6 +16,10 @@ export default function HamburgerMenuPage() {
           name="description"
           content="Kimia-ui Hamburger menu is a collapsible menu using a button placed in an upper corner of the menu that allows it to be toggled"
         />
+        <link
+          rel="canonical"
+          href="https://kimia-ui.vercel.app/components/hamburger_menu"
+        />
       </Head>
       <Container>
         <h1 className="text-center text-3xl md:text-5xl font-bold text-gray-600 mb-20 mt-12">

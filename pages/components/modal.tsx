@@ -18,6 +18,10 @@ export default function ModalPage() {
           name="description"
           content="Kimia-ui provides very powerful modal component with different positions, on top, left and right"
         />
+        <link
+          rel="canonical"
+          href="https://kimia-ui.vercel.app/components/modal"
+        />
       </Head>
       <Container>
         <h1 className="text-center text-3xl md:text-5xl font-bold text-gray-600 mb-16 mt-12">

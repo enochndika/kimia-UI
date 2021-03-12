@@ -13,6 +13,10 @@ export default function CardPage() {
           name="description"
           content="Kimia-ui Cards are reusable react components which display content with shadow"
         />
+        <link
+          rel="canonical"
+          href="https://kimia-ui.vercel.app/components/card"
+        />
       </Head>
       <Container>
         <h1 className="text-center text-3xl md:text-5xl font-bold text-gray-600 mb-16 mt-12">

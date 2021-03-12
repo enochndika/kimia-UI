@@ -16,6 +16,10 @@ export default function CurtainMenuPage() {
           name="description"
           content="Kimia-ui curtain menu is a component which displays full screen navigation overlay"
         />
+        <link
+          rel="canonical"
+          href="https://kimia-ui.vercel.app/components/curtain_menu"
+        />
       </Head>
       <Container>
         <h1 className="text-center text-3xl md:text-5xl font-bold text-gray-600 mb-16 mt-12">

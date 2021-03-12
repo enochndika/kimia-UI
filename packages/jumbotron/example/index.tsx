@@ -7,9 +7,9 @@ export const JumbotronComponent: FC = () => (
       Simple Jumbotron
     </h2>
     <Jumbotron>
-      <h1 className="text-2xl md:text-4xl text-gray-800 mb-3">
+      <h2 className="text-2xl md:text-4xl text-gray-800 mb-3">
         Kimia-UI Tutorial
-      </h1>
+      </h2>
       <p className="text-gray-600">
         Kimia-ui is a collection of React components built with tailwindcss and
         fully customizable that allows you to be more productive

@@ -18,6 +18,10 @@ export default function ListGroupPage() {
           name="description"
           content="Kimia-ui list groups component displays list of elements in beautiful manner and very flexible"
         />
+        <link
+          rel="canonical"
+          href="https://kimia-ui.vercel.app/components/list_group"
+        />
       </Head>
       <Container>
         <h1 className="text-center text-3xl md:text-5xl font-bold text-gray-600 mb-16 mt-12">

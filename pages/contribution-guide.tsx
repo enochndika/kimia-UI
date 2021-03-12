@@ -16,6 +16,10 @@ export default function ConfigurationPage() {
           name="description"
           content="Kimia ui is an open source project and is open to contributions. you can contribute by adding new components, fixing bugs or suggesting ideas"
         />
+        <link
+          rel="canonical"
+          href="https://kimia-ui.vercel.app/contribution-guide"
+        />
       </Head>
       <Container>
         <div>

@@ -18,6 +18,10 @@ export default function ToastPage() {
           name="description"
           content="Kimia-ui toast component is a feedback message which are displayed after specific actions preceded by the user"
         />
+        <link
+          rel="canonical"
+          href="https://kimia-ui.vercel.app/components/toast"
+        />
       </Head>
       <Container>
         <h1 className="text-center text-3xl md:text-5xl font-bold text-gray-600 mb-16 mt-12">

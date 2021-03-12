@@ -12,6 +12,10 @@ export default function CollapsePage() {
           name="description"
           content="Kimia-ui Collapse component allows you to toggle content which helps you to reorganize your content and make it expand when toggle"
         />
+        <link
+          rel="canonical"
+          href="https://kimia-ui.vercel.app/components/collapse"
+        />
       </Head>
       <Container>
         <h1 className="text-center text-3xl md:text-5xl font-bold text-gray-600 mb-16 mt-12">
