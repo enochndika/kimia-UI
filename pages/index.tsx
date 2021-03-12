@@ -47,6 +47,7 @@ export default function Home() {
                 layout="fill"
                 objectFit="cover"
                 priority={true}
+                alt="Kimia-UI animation"
               />
             </div>
           </div>
