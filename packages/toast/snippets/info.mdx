@@ -54,6 +54,17 @@ const ToastContainer = ({ children, placement, duration }) => {
 
   useEffect(() => {
     beginCloseTimeout();
+
+    const handleEscape = (event) => {
+      if (event.key === 'Escape') {
+        ReactDOM.unmountComponentAtNode(document.getElementById('toast'));
+      }
+    };
+    document.addEventListener('keyup', handleEscape);
+
+    return () => {
+      document.removeEventListener('keyup', handleEscape);
+    };
   }, []);
 
   const closeSnackBar = () => {
@@ -72,7 +83,6 @@ const ToastContainer = ({ children, placement, duration }) => {
     <div
       className={`${placements[placement]} flex fixed bg-white shadow-lg rounded text-sm py-3 z-10 px-4 border-l-4 border-blue-700`}
       onMouseEnter={() => clearTimeout(closeTimeout)}
-      onMouseLeave={() => beginCloseTimeout()}
     >
       <div className="pr-1">
         <InfoIcon />

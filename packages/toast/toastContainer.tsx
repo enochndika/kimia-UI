@@ -20,6 +20,17 @@ const ToastContainer = ({
 
   useEffect(() => {
     beginCloseTimeout();
+
+    const handleEscape = (event) => {
+      if (event.key === 'Escape') {
+        ReactDOM.unmountComponentAtNode(document.getElementById('toast'));
+      }
+    };
+    document.addEventListener('keyup', handleEscape);
+
+    return () => {
+      document.removeEventListener('keyup', handleEscape);
+    };
   }, []);
 
   const closeSnackBar = () => {

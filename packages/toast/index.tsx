@@ -10,7 +10,7 @@ const triggerToast = (messageType, message, placement, duration) => {
   ReactDOM.render(
     <ToastContainer
       messageType={messageType}
-      duration={duration ? duration : 3000}
+      duration={duration || 4000}
       placement={placement}
     >
       {message}
