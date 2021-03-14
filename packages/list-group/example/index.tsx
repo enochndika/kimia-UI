@@ -33,13 +33,13 @@ export const ListGroupLinkComponent = () => (
       List Group as Link
     </h2>
     <ListGroup>
-      <ListGroup.Item className="cursor-pointer hover:bg-gray-300">
+      <ListGroup.Item className="cursor-pointer hover:bg-gray-300" href="#">
         First Item
       </ListGroup.Item>
-      <ListGroup.Item className="cursor-pointer hover:bg-gray-300">
+      <ListGroup.Item className="cursor-pointer hover:bg-gray-300" href="#">
         Second Item
       </ListGroup.Item>
-      <ListGroup.Item className="cursor-pointer hover:bg-gray-300">
+      <ListGroup.Item className="cursor-pointer hover:bg-gray-300" href="#">
         Third Item
       </ListGroup.Item>
     </ListGroup>

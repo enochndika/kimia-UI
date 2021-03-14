@@ -3,6 +3,7 @@ import { ReactNode } from 'react';
 interface Props {
   children: ReactNode;
   className?: string;
+  href?: string;
 }
 
 export const ListGroup = ({ children, className }: Props) => (
@@ -13,10 +14,11 @@ export const ListGroup = ({ children, className }: Props) => (
   </ul>
 );
 
-ListGroup.Item = ({ children, className }: Props) => (
-  <li
+ListGroup.Item = ({ children, className, href }: Props) => (
+  <a
+    href={href}
     className={`${className} relative block py-3 px-5 relative -mb-px block border border-grey`}
   >
     {children}
-  </li>
+  </a>
 );
