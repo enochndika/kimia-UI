@@ -69,7 +69,9 @@ const Sidebar: FC = () => (
 const Base = ({ children }: Props) => {
   const { pathname } = useRouter();
   const routes = useFilterRoutes(pathname);
-  const classNames = routes ? 'pt-24' : 'lg:pl-96 lg:pr-20 pt-24';
+  const classNames = routes
+    ? 'pt-24'
+    : 'lg:pl-72 lg:pr-8 xl:pl-96 xl:pr-20 pt-24';
   return (
     <>
       {!routes && <Sidebar />}
