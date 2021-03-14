@@ -9,8 +9,8 @@ export const HamburgerMenuVariantOne = () => {
   };
 
   return (
-    <HamburgerMenu color="bg-indigo-900" className="mb-8">
-      <HamburgerMenu.Brand>
+    <HamburgerMenu bgColor="bg-indigo-900" className="mb-8">
+      <HamburgerMenu.Brand href="#">
         <svg
           height="25"
           preserveAspectRatio="xMidYMid"
@@ -32,13 +32,13 @@ export const HamburgerMenuVariantOne = () => {
       <HamburgerMenu.Collapse isOpen={isOpen}>
         <HamburgerMenu.Nav>
           <HamburgerMenu.Item>
-            <HamburgerMenu.Link>Home</HamburgerMenu.Link>
+            <HamburgerMenu.Link href="#">Home</HamburgerMenu.Link>
           </HamburgerMenu.Item>
           <HamburgerMenu.Item>
-            <HamburgerMenu.Link>Documents</HamburgerMenu.Link>
+            <HamburgerMenu.Link href="#">Documents</HamburgerMenu.Link>
           </HamburgerMenu.Item>
           <HamburgerMenu.Item>
-            <HamburgerMenu.Link>React</HamburgerMenu.Link>
+            <HamburgerMenu.Link href="#">React</HamburgerMenu.Link>
           </HamburgerMenu.Item>
         </HamburgerMenu.Nav>
       </HamburgerMenu.Collapse>

@@ -4,6 +4,9 @@ interface Props {
   children: ReactNode;
 }
 
+interface LinkProps extends Props {
+  href: string;
+}
 interface SidenavProps extends Props {
   isOpen: boolean;
   position?: 'left' | 'right';
@@ -50,8 +53,11 @@ export const Sidenav = ({
   );
 };
 
-Sidenav.Item = ({ children }: Props) => (
-  <div className=" flex justify-start cursor-pointer font-medium hover:text-gray-400 ml-8 mb-10">
+Sidenav.Item = ({ children, href }: LinkProps) => (
+  <a
+    href={href}
+    className=" flex justify-start cursor-pointer font-medium hover:text-gray-400 ml-8 mb-10"
+  >
     {children}
-  </div>
+  </a>
 );

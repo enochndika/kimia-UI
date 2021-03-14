@@ -9,7 +9,7 @@ export const SidenavPage = () => {
   return (
     <>
       <Sidenav isOpen={isOpen} toggle={toggle}>
-        <Sidenav.Item>
+        <Sidenav.Item href="#">
           <svg
             stroke="currentColor"
             fill="currentColor"
@@ -23,7 +23,7 @@ export const SidenavPage = () => {
           </svg>
           <span className="pl-2">User Config</span>
         </Sidenav.Item>
-        <Sidenav.Item>
+        <Sidenav.Item href="#">
           <svg
             stroke="currentColor"
             fill="currentColor"
@@ -37,7 +37,7 @@ export const SidenavPage = () => {
           </svg>
           <span className="pl-2">Posts</span>
         </Sidenav.Item>
-        <Sidenav.Item>
+        <Sidenav.Item href="#">
           <svg
             stroke="currentColor"
             fill="currentColor"
@@ -51,7 +51,7 @@ export const SidenavPage = () => {
           </svg>
           <span className="pl-2">Likes</span>
         </Sidenav.Item>
-        <Sidenav.Item>
+        <Sidenav.Item href="#">
           <svg
             stroke="currentColor"
             fill="currentColor"
@@ -92,21 +92,32 @@ export const Sidenav = ({ isOpen, toggle, children }) => {
   }, [isOpen, ref]);
 
   return (
-    <aside className={isOpen ? className.active : className.inactive} ref={ref}>
+    <aside
+      className={
+        isOpen
+          ? `${className.default} ${className.enabled}`
+          : `${className.default} ${className.disabled}`
+      }
+      ref={ref}
+    >
       <div className="mt-12">{children}</div>
     </aside>
   );
 };
 
-Sidenav.Item = ({ children }) => (
-  <div className="flex justify-start cursor-pointer font-medium hover:text-gray-400 ml-8 mb-10">
+Sidenav.Item = ({ children, href }) => (
+  <a
+    href={href}
+    className="flex justify-start cursor-pointer font-medium hover:text-gray-400 ml-8 mb-10"
+  >
     {children}
-  </div>
+  </a>
 );
 
 /* Sidenav classNames*/
 const className = {
-  active: `block h-screen fixed z-20 top-0 right-0 transition-all ease duration-200 w-7/12 md:w-60 bg-gray-800 text-white overflow-x-hidden`,
-  inactive: `block h-screen fixed z-20 top-0 right-0 transition-all ease duration-200 w-0  bg-gray-800 text-white overflow-x-hidden`,
+  default: `flex h-screen fixed z-20 top-0 right-0 transition-all ease duration-200`,
+  enabled: `w-7/12 md:w-60 bg-gray-800 text-white overflow-x-hidden`,
+  disabled: `w-0  bg-gray-800 text-white overflow-x-hidden`,
 };
 ```

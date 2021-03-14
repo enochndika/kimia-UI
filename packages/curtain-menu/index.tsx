@@ -4,6 +4,9 @@ interface Props {
   children: ReactNode;
 }
 
+interface LinkProps extends Props {
+  href: string;
+}
 interface MenuProps extends Props {
   isOpen: boolean;
   top?: boolean;
@@ -33,9 +36,12 @@ Menu.Container = ({ children }: Props) => (
   <div className="relative top-1/4 w-full text-center mt-8">{children}</div>
 );
 
-Menu.Item = ({ children }: Props) => (
-  <div className="p-2 ">
-    <a className="text-3xl text-gray-400 cursor-pointer hover:text-white">
+Menu.Item = ({ children, href }: LinkProps) => (
+  <div className="p-2">
+    <a
+      className="text-3xl text-gray-400 cursor-pointer hover:text-white"
+      href={href}
+    >
       {children}
     </a>
   </div>

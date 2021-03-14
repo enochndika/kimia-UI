@@ -10,18 +10,18 @@ export const HamburgerMenuVariantThree = () => {
 
   return (
     <HamburgerMenu className="mb-8">
-      <HamburgerMenu.Brand>Navigation</HamburgerMenu.Brand>
+      <HamburgerMenu.Brand href="#">Navigation</HamburgerMenu.Brand>
       <HamburgerMenu.Toggler toggle={toggle} />
       <HamburgerMenu.Collapse isOpen={isOpen}>
         <HamburgerMenu.Nav>
           <HamburgerMenu.Item>
-            <HamburgerMenu.Link>Home</HamburgerMenu.Link>
+            <HamburgerMenu.Link href="#">Home</HamburgerMenu.Link>
           </HamburgerMenu.Item>
           <HamburgerMenu.Item>
-            <HamburgerMenu.Link>Documents</HamburgerMenu.Link>
+            <HamburgerMenu.Link href="#">Documents</HamburgerMenu.Link>
           </HamburgerMenu.Item>
           <HamburgerMenu.Item>
-            <HamburgerMenu.Link>React</HamburgerMenu.Link>
+            <HamburgerMenu.Link href="#">React</HamburgerMenu.Link>
           </HamburgerMenu.Item>
         </HamburgerMenu.Nav>
       </HamburgerMenu.Collapse>

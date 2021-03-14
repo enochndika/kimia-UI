@@ -4,9 +4,12 @@ interface Props {
   children: ReactNode;
 }
 
+interface LinkProps extends Props {
+  href: string;
+}
 interface HamburgerMenuProps extends HTMLAttributes<HTMLElement> {
   textColor?: string;
-  color?: string;
+  bgColor?: string;
   children: ReactNode;
   className?: string;
 }
@@ -18,14 +21,14 @@ interface HamburgerTogglerProps {
   toggle: () => void;
 }
 export const HamburgerMenu = ({
-  color,
+  bgColor,
   textColor,
   children,
   className,
 }: HamburgerMenuProps) => {
   return (
     <nav
-      className={`${color ? color : 'bg-black'} 
+      className={`${bgColor ? bgColor : 'bg-black'} 
       ${textColor ? textColor : 'text-white'} 
       ${className} font-light shadow py-2 px-4`}
     >
@@ -34,14 +37,21 @@ export const HamburgerMenu = ({
   );
 };
 
-HamburgerMenu.Brand = ({ children }: Props) => (
-  <div className="inline-block pt-1.5 pb-1.5 mr-4 cursor-pointer text-2xl font-bold whitespace-nowrap hover:text-gray-400">
+/* You can wrap the a tag with Link and pass href to Link if you are using either Create-React-App, Next.js or Gatsby */
+HamburgerMenu.Brand = ({ children, href }: LinkProps) => (
+  <a
+    href={href}
+    className="inline-block pt-1.5 pb-1.5 mr-4 cursor-pointer text-2xl font-bold whitespace-nowrap hover:text-gray-400"
+  >
     <strong>{children}</strong>
-  </div>
+  </a>
 );
 
 HamburgerMenu.Toggler = ({ toggle }: HamburgerTogglerProps) => (
   <button
+    type="button"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
     className="float-right pt-1.5 text-3xl focus:outline-none focus:shadow"
     onClick={toggle}
   >
@@ -50,7 +60,7 @@ HamburgerMenu.Toggler = ({ toggle }: HamburgerTogglerProps) => (
 );
 
 HamburgerMenu.Collapse = ({ children, isOpen }: HamburgerCollapseProps) => {
-  const ref = useRef<HTMLDivElement>();
+  const ref = useRef<HTMLDivElement>(null);
   const style: CSSProperties = isOpen
     ? { height: ref.current?.scrollHeight }
     : { height: 0, visibility: 'hidden', opacity: 0 };
@@ -72,8 +82,12 @@ HamburgerMenu.Nav = ({ children }: Props) => (
 
 HamburgerMenu.Item = ({ children }: Props) => <li>{children}</li>;
 
-HamburgerMenu.Link = ({ children }: Props) => (
-  <div className="cursor-pointer py-1.5 px-4  hover:text-gray-400 font-medium">
+/* You can wrap the a tag with Link and pass href to Link if you are using either Create-React-App, Next.js or Gatsby */
+HamburgerMenu.Link = ({ children, href }: LinkProps) => (
+  <a
+    href={href}
+    className="block cursor-pointer py-1.5 px-4  hover:text-gray-300 font-medium"
+  >
     {children}
-  </div>
+  </a>
 );

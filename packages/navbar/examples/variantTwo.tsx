@@ -9,8 +9,8 @@ export const NavbarVariantTwo = () => {
   };
 
   return (
-    <Navbar color="bg-green-700" className="mb-8">
-      <Navbar.Brand>
+    <Navbar bgColor="bg-green-700" className="mb-8">
+      <Navbar.Brand href="#">
         <svg
           width="25"
           height="23"
@@ -52,17 +52,17 @@ export const NavbarVariantTwo = () => {
       <Navbar.Collapse isOpen={isOpen}>
         <Navbar.Nav>
           <Navbar.Item>
-            <Navbar.Link>Home</Navbar.Link>
+            <Navbar.Link href="#">Home</Navbar.Link>
           </Navbar.Item>
         </Navbar.Nav>
         <Navbar.Nav center>
           <Navbar.Item>
-            <Navbar.Link>Tailwindcss</Navbar.Link>
+            <Navbar.Link href="#">Tailwindcss</Navbar.Link>
           </Navbar.Item>
         </Navbar.Nav>
         <Navbar.Nav right>
           <Navbar.Item>
-            <Navbar.Link>Next.js</Navbar.Link>
+            <Navbar.Link href="#">Next.js</Navbar.Link>
           </Navbar.Item>
         </Navbar.Nav>
       </Navbar.Collapse>

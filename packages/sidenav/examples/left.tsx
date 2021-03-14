@@ -11,7 +11,7 @@ export const SidenavLeft = () => {
     <div className="mb-8">
       <h2 className="font-bold text-gray-600 text-lg md:text-2xl mb-3">Left</h2>
       <Sidenav isOpen={isOpen} toggle={toggle}>
-        <Sidenav.Item>
+        <Sidenav.Item href="#">
           <svg
             stroke="currentColor"
             fill="currentColor"
@@ -25,7 +25,7 @@ export const SidenavLeft = () => {
           </svg>
           <span className="pl-2">User Config</span>
         </Sidenav.Item>
-        <Sidenav.Item>
+        <Sidenav.Item href="#">
           <svg
             stroke="currentColor"
             fill="currentColor"
@@ -39,7 +39,7 @@ export const SidenavLeft = () => {
           </svg>
           <span className="pl-2">Posts</span>
         </Sidenav.Item>
-        <Sidenav.Item>
+        <Sidenav.Item href="#">
           <svg
             stroke="currentColor"
             fill="currentColor"
@@ -53,7 +53,7 @@ export const SidenavLeft = () => {
           </svg>
           <span className="pl-2">Likes</span>
         </Sidenav.Item>
-        <Sidenav.Item>
+        <Sidenav.Item href="#">
           <svg
             stroke="currentColor"
             fill="currentColor"

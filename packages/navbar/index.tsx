@@ -6,7 +6,7 @@ interface Props {
 
 interface NavbarProps extends Props {
   textColor?: string;
-  color?: string;
+  bgColor?: string;
   className?: string;
 }
 
@@ -15,22 +15,28 @@ interface NavbarNavProps extends Props {
   right?: boolean;
   center?: boolean;
 }
+
 interface NavbarCollapseProps extends Props {
   isOpen: boolean;
 }
+
 interface NavbarTogglerProps {
   toggle: () => void;
 }
 
+interface LinkProps extends Props {
+  href: string;
+}
+
 export const Navbar = ({
-  color,
+  bgColor,
   textColor,
   children,
   className,
 }: NavbarProps) => {
   return (
     <nav
-      className={`${color ? color : 'bg-black'}
+      className={`${bgColor ? bgColor : 'bg-black'}
        ${textColor ? textColor : 'text-white'} 
        ${className} font-light text-white md:relative md:flex md:items-center shadow py-2 px-4 md:flex md:flex-row md:justify-start`}
     >
@@ -39,14 +45,21 @@ export const Navbar = ({
   );
 };
 
-Navbar.Brand = ({ children }: Props) => (
-  <div className="inline-block pt-1.5 pb-1.5 mr-4 cursor-pointer text-2xl font-bold whitespace-nowrap hover:text-gray-400">
+/* You can wrap the a tag with Link if you are using either Create-React-App, Next.js or Gatsby */
+Navbar.Brand = ({ children, href }: LinkProps) => (
+  <a
+    href={href}
+    className="inline-block pt-1.5 pb-1.5 mr-4 cursor-pointer text-2xl font-bold whitespace-nowrap hover:text-gray-400"
+  >
     <strong>{children}</strong>
-  </div>
+  </a>
 );
 
 Navbar.Toggler = ({ toggle }: NavbarTogglerProps) => (
   <button
+    type="button"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
     className="float-right block md:hidden pt-1.5 text-3xl focus:outline-none focus:shadow"
     onClick={toggle}
   >
@@ -78,8 +91,12 @@ Navbar.Nav = ({ children, left, right, center }: NavbarNavProps) => {
 
 Navbar.Item = ({ children }: Props) => <li>{children}</li>;
 
-Navbar.Link = ({ children }: Props) => (
-  <div className="cursor-pointer py-1.5 md:py-1 px-4 md:px-2 hover:text-gray-400 font-medium">
+/* You can wrap the a tag with Link and pass href to Link if you are using either Create-React-App, Next.js or Gatsby */
+Navbar.Link = ({ children, href }: LinkProps) => (
+  <a
+    href={href}
+    className="block cursor-pointer py-1.5 md:py-1 px-4 md:px-2 hover:text-gray-400 font-medium"
+  >
     {children}
-  </div>
+  </a>
 );

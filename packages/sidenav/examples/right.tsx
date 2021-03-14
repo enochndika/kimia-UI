@@ -13,7 +13,7 @@ export const SidenavRight = () => {
         Right
       </h2>
       <Sidenav isOpen={isOpen} toggle={toggle} position="right">
-        <Sidenav.Item>
+        <Sidenav.Item href="#">
           <svg
             stroke="currentColor"
             fill="currentColor"
@@ -27,7 +27,7 @@ export const SidenavRight = () => {
           </svg>
           <span className="pl-2">User Config</span>
         </Sidenav.Item>
-        <Sidenav.Item>
+        <Sidenav.Item href="#">
           <svg
             stroke="currentColor"
             fill="currentColor"
@@ -41,7 +41,7 @@ export const SidenavRight = () => {
           </svg>
           <span className="pl-2">Posts</span>
         </Sidenav.Item>
-        <Sidenav.Item>
+        <Sidenav.Item href="#">
           <svg
             stroke="currentColor"
             fill="currentColor"
@@ -55,7 +55,7 @@ export const SidenavRight = () => {
           </svg>
           <span className="pl-2">Likes</span>
         </Sidenav.Item>
-        <Sidenav.Item>
+        <Sidenav.Item href="#">
           <svg
             stroke="currentColor"
             fill="currentColor"
