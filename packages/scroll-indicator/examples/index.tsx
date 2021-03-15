@@ -1,9 +1,9 @@
-```jsx
-import { useState, useEffect } from 'react';
+import { FC } from 'react';
+import { ScrollIndicator } from '@/packages/scroll-indicator';
 
-export const ScrollIndicatorPage = () => (
+export const ScrollIndicatorExample: FC = () => (
   <ScrollIndicator>
-    <div className="container px-5">
+    <div className="mb-8">
       <h2 className="font-bold text-gray-600 text-lg md:text-2xl mt-12 mb-4">
         Just scroll
       </h2>
@@ -52,40 +52,3 @@ export const ScrollIndicatorPage = () => (
     </div>
   </ScrollIndicator>
 );
-
-const ScrollIndicator = ({ children }) => {
-  const [scroll, setScroll] = useState(0);
-
-  const onScrollProgress = () => {
-    const scrollPx = document.documentElement.scrollTop;
-    const winHeightPx =
-      document.documentElement.scrollHeight -
-      document.documentElement.clientHeight;
-    const scrolled = `${(scrollPx / winHeightPx) * 100}%`;
-
-    setScroll(scrolled);
-  };
-  useEffect(() => {
-    window.addEventListener('scroll', onScrollProgress);
-
-    return () => {
-      window.removeEventListener('scroll', onScrollProgress);
-    };
-  }, []);
-
-  const progressBarStyle = {
-    height: '6px',
-    background: '#4C1D95',
-    width: scroll,
-  };
-
-  return (
-    <>
-      <div className="top-0 left-0 w-screen h-1.5 fixed z-40 shadow-2xl bg-gray-300">
-        <div style={progressBarStyle} />
-      </div>
-      {children}
-    </>
-  );
-};
-```

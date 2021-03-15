@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { Container } from '@/website/components/container';
-import { ScrollIndicator } from '@/packages/scroll-indicator';
 import ScrollIndicatorSnippet from '@/packages/scroll-indicator/snippets/index.mdx';
+import { ScrollIndicatorExample } from '@/packages/scroll-indicator/examples';
 
 export default function ScrollIndicatorPage() {
   return (
@@ -21,7 +21,7 @@ export default function ScrollIndicatorPage() {
         <h1 className="text-center text-3xl md:text-5xl font-bold text-gray-600 mb-16 mt-12">
           Scroll Indicator
         </h1>
-        <ScrollIndicator />
+        <ScrollIndicatorExample />
         <ScrollIndicatorSnippet />
       </Container>
     </>
