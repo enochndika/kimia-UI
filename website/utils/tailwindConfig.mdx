@@ -4,17 +4,20 @@ module.exports = {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
   },
-  purge: ['./packages/**/*.{js,ts,jsx,tsx}', './pages/**/*.{js,ts,jsx,tsx}'],
+  purge: ['./pages/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       animation: {
-        left: 'left 0.3s',
-        right: 'right 0.3s',
-        'modal-right': 'modal-right 0.3s',
-        'modal-top': 'modal-top 0.3s',
-        'modal-left': 'modal-left 0.3s',
+        left: 'left 0.3s' /* If you are using Toast component*/,
+        right: 'right 0.3s' /* If you are using Toast component*/,
+        'modal-right':
+          'modal-right 0.3s' /* If you are using Modal position right*/,
+        'modal-top': 'modal-top 0.3s' /* If you are using Modal position top*/,
+        'modal-left':
+          'modal-left 0.3s' /* If you are using Modal position left*/,
       },
       keyframes: {
+        /* If you are using Toast component*/
         left: {
           '0%, 100%': { transform: 'translateX(-100%)' },
           '100%': { transform: 'translateX(0)' },
@@ -24,14 +27,19 @@ module.exports = {
           '100%': { transform: 'translateX(0)' },
         },
 
+        /* If you are using Modal position top*/
         'modal-top': {
           '0%, 100%': { top: '-500px' },
           '100%': { top: '0' },
         },
+
+        /* If you are using Modal position right*/
         'modal-right': {
           '0%, 100%': { right: '-500px' },
           '100%': { right: '0' },
         },
+
+        /* If you are using Modal position left*/
         'modal-left': {
           '0%, 100%': { left: '-500px' },
           '100%': { left: '0' },
@@ -39,6 +47,7 @@ module.exports = {
       },
     },
     variants: {
+      /* If you are using Collapse component*/
       transitionProperty: {
         height: 'height',
       },
@@ -47,10 +56,8 @@ module.exports = {
   variants: {
     extend: {
       backgroundColor: ['active'],
-      borderWidth: ['hover'],
       opacity: ['disabled'],
       textColor: ['active'],
-      overflow: ['hover'],
     },
   },
   plugins: [],

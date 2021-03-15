@@ -50,13 +50,6 @@ module.exports = {
         },
       },
     },
-    backgroundColor: (theme) => ({
-      ...theme('colors'),
-      modal: 'rgba(0, 0, 0, 0.7)',
-      parent: '#eceff1',
-      code: '#011627',
-      sidenav: 'rgba(0,0,0,0.4)',
-    }),
     variants: {
       transitionProperty: {
         height: 'height',
@@ -66,10 +59,8 @@ module.exports = {
   variants: {
     extend: {
       backgroundColor: ['active'],
-      borderWidth: ['hover'],
       opacity: ['disabled'],
       textColor: ['active'],
-      overflow: ['hover'],
     },
   },
   plugins: [],
