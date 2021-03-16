@@ -1,5 +1,5 @@
 ```jsx
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 
 export const SidenavPage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -81,18 +81,6 @@ export const SidenavPage = () => {
 
 /* Sidenav logic */
 export const Sidenav = ({ isOpen, toggle, children }) => {
-  const ref = useRef();
-  useEffect(() => {
-    const handleOutsideClick = (event) => {
-      if (!ref.current?.contains(event.target)) {
-        if (!isOpen) return;
-        toggle(false);
-      }
-    };
-    window.addEventListener('mousedown', handleOutsideClick);
-    return () => window.removeEventListener('mousedown', handleOutsideClick);
-  }, [isOpen, ref]);
-
   return (
     <aside
       className={
@@ -100,7 +88,6 @@ export const Sidenav = ({ isOpen, toggle, children }) => {
           ? `${className.default} ${className.enabled}`
           : `${className.default} ${className.disabled}`
       }
-      ref={ref}
     >
       <button
         aria-label="Close"

@@ -10,7 +10,8 @@ interface LinkProps extends Props {
 interface SidenavProps extends Props {
   isOpen: boolean;
   position?: 'left' | 'right';
-  toggle: (value: boolean) => void;
+  toggle: (value: any) => void;
+  closeOnClickOutside?: boolean;
 }
 const positions = {
   activeLeft: `block h-screen fixed z-20 top-0 left-0 w-7/12 md:w-60 bg-gray-800 text-white overflow-x-hidden transition-all ease duration-200`,
@@ -24,13 +25,14 @@ export const Sidenav = ({
   position,
   toggle,
   children,
+  closeOnClickOutside,
 }: SidenavProps) => {
   const ref = useRef<HTMLDivElement>();
 
   useEffect(() => {
     const handleOutsideClick = (event) => {
-      if (!ref.current?.contains(event.target)) {
-        if (!isOpen) return;
+      if (closeOnClickOutside && !ref.current?.contains(event.target)) {
+        if (closeOnClickOutside && !isOpen) return;
         toggle(false);
       }
     };
@@ -48,6 +50,13 @@ export const Sidenav = ({
     position === 'left' ? left : position === 'right' ? right : defaultPosition;
   return (
     <aside className={className} ref={ref}>
+      <button
+        aria-label="Close"
+        className="absolute top-1 focus:outline-none right-3 text-3xl text-white cursor-pointer"
+        onClick={toggle}
+      >
+        &times;
+      </button>
       <div className="mt-12">{children}</div>
     </aside>
   );

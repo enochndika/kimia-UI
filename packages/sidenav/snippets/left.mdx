@@ -8,6 +8,15 @@ export const SidenavPage = () => {
   };
   return (
     <>
+      <button
+        type="button"
+        aria-disabled={isOpen}
+        disabled={isOpen}
+        onClick={toggle}
+        className="text-white focus:outline-none m-1.5 rounded px-6 py-2 font-medium bg-gray-800"
+      >
+        Click to open me
+      </button>
       <Sidenav isOpen={isOpen} toggle={toggle}>
         <Sidenav.Item href="#">
           <svg
@@ -66,13 +75,6 @@ export const SidenavPage = () => {
           <span className="pl-2">Comments</span>
         </Sidenav.Item>
       </Sidenav>
-      <button
-        type="button"
-        onClick={toggle}
-        className="text-white focus:outline-none m-1.5 rounded px-6 py-2 font-medium bg-gray-800"
-      >
-        Click to open me
-      </button>
     </>
   );
 };
@@ -94,10 +96,19 @@ export const Sidenav = ({ isOpen, toggle, children }) => {
   return (
     <aside
       className={
-        isOpen ? `${className.default} ${className.enabled}` : `${className.default} ${className.disabled}`
+        isOpen
+          ? `${className.default} ${className.enabled}`
+          : `${className.default} ${className.disabled}`
       }
       ref={ref}
     >
+      <button
+        aria-label="Close"
+        className="absolute top-1 focus:outline-none right-3 text-3xl text-white cursor-pointer"
+        onClick={toggle}
+      >
+        &times;
+      </button>
       <div className="mt-12">{children}</div>
     </aside>
   );

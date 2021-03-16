@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { Sidenav } from '../index';
+import { Button } from '@/packages/button';
 
 export const SidenavLeft = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+
   const toggle = () => {
     setIsOpen(!isOpen);
   };
@@ -10,7 +12,15 @@ export const SidenavLeft = () => {
   return (
     <div className="mb-8">
       <h2 className="font-bold text-gray-600 text-lg md:text-2xl mb-3">Left</h2>
-      <Sidenav isOpen={isOpen} toggle={toggle}>
+      <Button
+        color="indigo"
+        onClick={toggle}
+        disabled={isOpen}
+        aria-disabled={isOpen}
+      >
+        Click to open me
+      </Button>
+      <Sidenav isOpen={isOpen} toggle={toggle} closeOnClickOutside={true}>
         <Sidenav.Item href="#">
           <svg
             stroke="currentColor"
@@ -68,13 +78,6 @@ export const SidenavLeft = () => {
           <span className="pl-2">Comments</span>
         </Sidenav.Item>
       </Sidenav>
-      <button
-        type="button"
-        onClick={toggle}
-        className="text-white focus:outline-none shadow m-1.5 rounded px-6 py-2 font-medium transition ease-in duration-200 bg-gray-800"
-      >
-        Click to open me
-      </button>
     </div>
   );
 };

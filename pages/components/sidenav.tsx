@@ -4,6 +4,8 @@ import { SidenavLeft } from '@/packages/sidenav/examples/left';
 import { SidenavRight } from '@/packages/sidenav/examples/right';
 import SidenavLeftSnippet from '@/packages/sidenav/snippets/left.mdx';
 import SidenavRightSnippet from '@/packages/sidenav/snippets/right.mdx';
+import SidenavNotClosedOutsideSnippet from '@/packages/sidenav/snippets/notClosedOutside.mdx';
+import { SidenavNotClosedOutside } from '@/packages/sidenav/examples/notClosedOutside';
 
 export default function SidenavPage() {
   return (
@@ -27,6 +29,8 @@ export default function SidenavPage() {
         <SidenavLeftSnippet />
         <SidenavRight />
         <SidenavRightSnippet />
+        <SidenavNotClosedOutside />
+        <SidenavNotClosedOutsideSnippet />
       </Container>
     </>
   );

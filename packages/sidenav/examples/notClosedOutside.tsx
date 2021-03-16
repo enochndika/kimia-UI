@@ -1,22 +1,27 @@
-```jsx
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
+import { Sidenav } from '../index';
+import { Button } from '@/packages/button';
 
-export const SidenavPage = () => {
-  const [isOpen, setIsOpen] = useState(false);
+export const SidenavNotClosedOutside = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
   const toggle = () => {
     setIsOpen(!isOpen);
   };
+
   return (
-    <>
-      <button
-        type="button"
-        aria-disabled={isOpen}
-        disabled={isOpen}
+    <div className="mb-8">
+      <h2 className="font-bold text-gray-600 text-lg md:text-2xl mb-3">
+        It won't close when you click outside
+      </h2>
+      <Button
+        color="indigo"
         onClick={toggle}
-        className="text-white focus:outline-none m-1.5 rounded px-6 py-2 font-medium bg-gray-800"
+        disabled={isOpen}
+        aria-disabled={isOpen}
       >
         Click to open me
-      </button>
+      </Button>
       <Sidenav isOpen={isOpen} toggle={toggle}>
         <Sidenav.Item href="#">
           <svg
@@ -75,58 +80,6 @@ export const SidenavPage = () => {
           <span className="pl-2">Comments</span>
         </Sidenav.Item>
       </Sidenav>
-    </>
+    </div>
   );
 };
-
-/* Sidenav logic */
-export const Sidenav = ({ isOpen, toggle, children }) => {
-  const ref = useRef();
-  useEffect(() => {
-    const handleOutsideClick = (event) => {
-      if (!ref.current?.contains(event.target)) {
-        if (!isOpen) return;
-        toggle(false);
-      }
-    };
-    window.addEventListener('mousedown', handleOutsideClick);
-    return () => window.removeEventListener('mousedown', handleOutsideClick);
-  }, [isOpen, ref]);
-
-  return (
-    <aside
-      className={
-        isOpen
-          ? `${className.default} ${className.enabled}`
-          : `${className.default} ${className.disabled}`
-      }
-      ref={ref}
-    >
-      <button
-        aria-label="Close"
-        className="absolute top-1 focus:outline-none right-3 text-3xl text-white cursor-pointer"
-        onClick={toggle}
-      >
-        &times;
-      </button>
-      <div className="mt-12">{children}</div>
-    </aside>
-  );
-};
-
-Sidenav.Item = ({ children, href }) => (
-  <a
-    href={href}
-    className="flex justify-start cursor-pointer font-medium hover:text-gray-400 ml-8 mb-10"
-  >
-    {children}
-  </a>
-);
-
-/* Sidenav classNames */
-const className = {
-  default: `flex h-screen fixed z-20 top-0 right-0 transition-all ease duration-200`,
-  enabled: `w-7/12 md:w-60 bg-gray-800 text-white overflow-x-hidden`,
-  disabled: `w-0  bg-gray-800 text-white overflow-x-hidden`,
-};
-```
