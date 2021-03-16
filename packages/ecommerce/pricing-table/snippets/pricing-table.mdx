@@ -23,7 +23,10 @@ export const PricingTable = () => {
           <span className="ml-2">24h Support</span>
         </Price.Item>
         <Price.Item>
-          <button className="text-sm px-6 py-1 text-white focus:outline-none bg-blue-600">
+          <button
+            type="button"
+            className="text-sm px-6 py-1 text-white focus:outline-none bg-blue-600"
+          >
             Sign up
           </button>
         </Price.Item>
@@ -49,7 +52,10 @@ export const PricingTable = () => {
           <span className="ml-2">24h Support</span>
         </Price.Item>
         <Price.Item>
-          <button className="text-sm px-6 py-1 text-white focus:outline-none bg-purple-900">
+          <button
+            type="button"
+            className="text-sm px-6 py-1 text-white focus:outline-none bg-purple-900"
+          >
             Sign Up
           </button>
         </Price.Item>
@@ -75,7 +81,10 @@ export const PricingTable = () => {
           <span className="ml-2">24h Support</span>
         </Price.Item>
         <Price.Item>
-          <button className="text-sm px-6 py-1 text-white focus:outline-none bg-green-700">
+          <button
+            type="button"
+            className="text-sm px-6 py-1 text-white focus:outline-none bg-green-700"
+          >
             Sign Up
           </button>
         </Price.Item>
@@ -103,6 +112,8 @@ Price.Group = ({ children, title, titleBackground }) => (
 
 Price.Item = ({ children, className }) => (
   <li
+    role="link"
+    tabIndex={0}
     className={`${className} flex justify-center p-5 border-b border-gray-100  text-sm`}
   >
     {children}

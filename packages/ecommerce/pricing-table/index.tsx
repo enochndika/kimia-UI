@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 
 interface Props {
   children: ReactNode;
@@ -30,11 +30,13 @@ Price.Group = ({ children, title, titleBackground }: PriceGroupProps) => (
 );
 
 Price.Item = ({ children, className }: PriceItemProps) => (
-  <li
+  <div
+    role="link"
+    tabIndex={0}
     className={`${className} flex justify-center p-5 border-b border-gray-100  text-sm`}
   >
     {children}
-  </li>
+  </div>
 );
 
 export const CheckIcon = () => (
