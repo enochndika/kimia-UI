@@ -15,7 +15,7 @@ interface TabProps extends Props {
 
 const variants = {
   first: {
-    active: `text-gray-700  border-b-2 border-indigo-700 -mb-2 px-4 md:px-8 text-sm  py-4 md:py-1 inline-block`,
+    active: `text-gray-700  border-b-2 border-indigo-700 -mb-2 px-4 md:px-8 text-sm  py-4 md:py-1 inline-block `,
     inactive: `-mb-2 px-4 md:px-8 text-sm  py-4 md:py-1 inline-block border-b`,
   },
   second: {
@@ -61,7 +61,7 @@ export const Tabs = ({ children, variant }: TabsProps) => {
           tabIndex={0}
           onClick={() => setCurrent(child.key)}
           key={child.key}
-          className={classNames(child, current)}
+          className={`${classNames(child, current)} focus:outline-none`}
         >
           {child.props.title}
         </div>

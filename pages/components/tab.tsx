@@ -3,11 +3,9 @@ import { Container } from '@/website/components/container';
 import TabVariantOneSnippet from '@/packages/tab/snippets/variantOne.mdx';
 import TabVariantTwoSnippet from '@/packages/tab/snippets/variantTwo.mdx';
 import TabVariantThreeSnippet from '@/packages/tab/snippets/variantThree.mdx';
-import {
-  TabVariantOne,
-  TabVariantThree,
-  TabVariantTwo,
-} from '@/packages/tab/example';
+import { TabVariantOne } from '@/packages/tab/example/variantOne';
+import { TabVariantTwo } from '@/packages/tab/example/variantTwo';
+import { TabVariantThree } from '@/packages/tab/example/variantThree';
 
 export default function TabPage() {
   return (

@@ -24,7 +24,7 @@ export const TabPage = () => (
   </Tabs>
 );
 
-/* Tab logic*/
+/_ Tab logic_/;
 const Tabs = ({ children }) => {
   const childrenArray = React.Children.toArray(children);
   const [current, setCurrent] = useState(childrenArray[0].key);
@@ -42,8 +42,8 @@ const Tabs = ({ children }) => {
           key={child.key}
           className={
             current === child.key
-              ? 'text-gray-700  border-b-2 border-indigo-700 -mb-2 px-4 md:px-8 text-sm  py-4 md:py-1 inline-block'
-              : '-mb-2 px-4 md:px-8 text-sm  py-4 md:py-1 inline-block border-b'
+              ? `${classNames.default} ${classNames.active}`
+              : `${classNames.default} ${classNames.inactive}`
           }
         >
           {child.props.title}
@@ -59,4 +59,10 @@ const Tab = ({ children, selected }) => (
     {children}
   </div>
 );
+
+const classNames = {
+  default: `-mb-2 px-4 md:px-8 py-4 md:py-1 inline-block focus:outline-none`,
+  active: `text-gray-700 text-sm border-b-2 border-indigo-700 `,
+  inactive: `border-b text-sm`,
+};
 ```

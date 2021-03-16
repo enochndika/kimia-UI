@@ -42,8 +42,8 @@ const Tabs = ({ children }) => {
           key={child.key}
           className={
             current === child.key
-              ? 'text-white py-2 px-4 mx-1 rounded bg-indigo-900 inline-block'
-              : '-mb-2 py-2 px-4 mx-1 bg-white text-black inline-block'
+              ? `${classNames.default} ${classNames.active}`
+              : `${classNames.default} ${classNames.inactive}`
           }
         >
           {child.props.title}
@@ -55,8 +55,14 @@ const Tabs = ({ children }) => {
 };
 
 const Tab = ({ children, selected }) => (
-  <div hidden={!selected} className="mt-4 ">
+  <div hidden={!selected} className="mt-4">
     {children}
   </div>
 );
+
+const classNames = {
+  default: `py-2 px-4 mx-1 inline-block`,
+  active: `text-white rounded bg-indigo-900 `,
+  inactive: `-mb-2 bg-white text-black`,
+};
 ```
