@@ -36,7 +36,8 @@ const Tabs = ({ children }) => {
     <nav>
       {childrenArray.map((child) => (
         <div
-          role="button"
+          role="link"
+          tabIndex={0}
           onClick={() => setCurrent(child.key)}
           key={child.key}
           className={

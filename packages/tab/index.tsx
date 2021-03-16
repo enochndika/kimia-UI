@@ -57,10 +57,11 @@ export const Tabs = ({ children, variant }: TabsProps) => {
     <nav>
       {childrenArray.map((child) => (
         <div
+          role="link"
+          tabIndex={0}
           onClick={() => setCurrent(child.key)}
           key={child.key}
           className={classNames(child, current)}
-          role="button"
         >
           {child.props.title}
         </div>
