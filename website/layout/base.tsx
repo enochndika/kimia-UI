@@ -41,8 +41,10 @@ const Sidebar: FC = () => (
   <Container>
     <div className="hidden lg:block h-full mt-24 pt-8 pb-32 fixed top-0 lg:w-60 text-white overflow-y-auto">
       <div className="pl-6 pb-2 mb-5 text-gray-500 font-bold">GENERAL</div>
+      <Item href="/components/accordion">Accordion</Item>
       <Item href="/components/buttons">Buttons</Item>
       <Item href="/components/card">Card</Item>
+      <Item href="/components/code">Code</Item>
       <Item href="/components/collapse">Collapse</Item>
       <Item href="/components/dropdown">Dropdown</Item>
       <Item href="/components/jumbotron">Jumbotron</Item>

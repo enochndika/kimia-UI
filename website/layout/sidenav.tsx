@@ -51,6 +51,9 @@ export const Sidenav = ({ isOpen, toggle }: SidenavProps) => {
         </Link>
       </div>
       <div className="pl-6 pb-6 text-gray-800 font-bold">General</div>
+      <Item href="/components/accordion" onClick={toggle}>
+        Accordion
+      </Item>
       <Item href="/components/buttons" onClick={toggle}>
         Buttons
       </Item>
@@ -59,6 +62,9 @@ export const Sidenav = ({ isOpen, toggle }: SidenavProps) => {
       </Item>
       <Item href="/components/collapse" onClick={toggle}>
         Collapse
+      </Item>
+      <Item href="/components/code" onClick={toggle}>
+        Code
       </Item>
       <Item href="/components/dropdown" onClick={toggle}>
         Dropdown
