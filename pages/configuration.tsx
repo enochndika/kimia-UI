@@ -30,7 +30,7 @@ export default function ConfigurationPage() {
           Some components require additional configuration to work properly.
         </p>
         <div className="my-10">
-          <Link href="/components/buttons">
+          <Link href="/components/accordion">
             <a>
               <button className="px-6 font-bold py-3 active:bg-purple-800 bg-purple-900 rounded-lg text-white focus:outline-none">
                 Components
