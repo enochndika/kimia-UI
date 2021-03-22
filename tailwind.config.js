@@ -14,7 +14,7 @@ module.exports = {
   theme: {
     extend: {
       padding: {
-        container: '5%',
+        container: '2%',
       },
       height: {
         xl: '500px',
