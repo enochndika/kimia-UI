@@ -107,7 +107,7 @@ export const Header = ({ toggle }: NavbarTogglerProps) => {
         </Navbar.Brand>
         <Navbar.Nav position="start">
           <Navbar.Item>
-            <Navbar.Link href="/components/buttons" title="Docs">
+            <Navbar.Link href="/components/accordion" title="Docs">
               <BookOpenIcon className="h-4 lg:h-5 mt-0.5" />
               <span className="pl-1">Docs</span>
             </Navbar.Link>
