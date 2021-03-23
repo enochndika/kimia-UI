@@ -1,7 +1,9 @@
 import Head from 'next/head';
-import { CollapseComponent } from '@/packages/collapse/example';
 import { Container } from '@/website/components/container';
-import CollapseSnippet from '@/packages/collapse/snippets/index.mdx';
+import { CollapseFirst } from '@/packages/collapse/example/first';
+import { CollapseSecond } from '@/packages/collapse/example/second';
+import CollapseFirstSnippet from '@/packages/collapse/snippets/first.mdx';
+import CollapseSecondSnippet from '@/packages/collapse/snippets/second.mdx';
 
 export default function CollapsePage() {
   return (
@@ -21,8 +23,10 @@ export default function CollapsePage() {
         <h1 className="text-center text-3xl md:text-5xl font-bold text-gray-600 mb-16 mt-12">
           Collapse
         </h1>
-        <CollapseComponent />
-        <CollapseSnippet />
+        <CollapseFirst />
+        <CollapseFirstSnippet />
+        <CollapseSecond />
+        <CollapseSecondSnippet />
       </Container>
     </>
   );

@@ -1,0 +1,53 @@
+```jsx
+import { useState, useRef } from 'react';
+
+export const CollapsePage = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  };
+  return (
+    <div className="m-8">
+      <button
+        className="bg-black flex px-4 py-1 focus:outline-none text-white rounded font-medium"
+        onClick={toggle}
+      >
+        Toggle
+        <svg
+          className="h-5 w-5 mt-1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fillRule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </button>
+      <Collapse isOpen={isOpen}>
+        <h2>Next.js</h2>
+        <h3>React</h3>
+        <h4>JavaScript</h4>
+        <h5>Chakra-UI</h5>
+      </Collapse>
+    </div>
+  );
+};
+const Collapse = ({ isOpen, children }) => {
+  const ref = useRef(null);
+  const style = isOpen ? { height: ref.current?.scrollHeight } : { height: 0 };
+
+  return (
+    <div
+      className="mt-2 overflow-hidden text-gray-600 transition-height ease duration-300"
+      ref={ref}
+      style={style}
+    >
+      {children}
+    </div>
+  );
+};
+```

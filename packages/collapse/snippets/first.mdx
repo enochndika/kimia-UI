@@ -1,0 +1,41 @@
+```jsx
+import { useState, useRef } from 'react';
+
+export const CollapsePage = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  };
+  return (
+    <div className="m-8">
+      <button
+        className="bg-black px-4 py-1 focus:outline-none text-white rounded font-medium"
+        onClick={toggle}
+      >
+        Toggle
+      </button>
+      <Collapse isOpen={isOpen}>
+        <h2>Next.js</h2>
+        <h3>React</h3>
+        <h4>JavaScript</h4>
+        <h5>Chakra-UI</h5>
+      </Collapse>
+    </div>
+  );
+};
+const Collapse = ({ isOpen, children }) => {
+  const ref = useRef(null);
+  const style = isOpen ? { height: ref.current?.scrollHeight } : { height: 0 };
+
+  return (
+    <div
+      className="mt-2 overflow-hidden text-gray-600 transition-height ease duration-300"
+      ref={ref}
+      style={style}
+    >
+      {children}
+    </div>
+  );
+};
+```
