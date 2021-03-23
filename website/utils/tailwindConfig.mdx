@@ -1,9 +1,5 @@
 ```js
 module.exports = {
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true,
-  },
   purge: ['./pages/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
@@ -54,7 +50,7 @@ module.exports = {
       },
     },
     variants: {
-      /* If you are using Collapse component*/
+      /* If you are using Collapse or Accordion component*/
       transitionProperty: {
         height: 'height',
       },

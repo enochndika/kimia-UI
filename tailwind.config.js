@@ -3,9 +3,6 @@ module.exports = {
   corePlugins: {
     container: false,
   },
-  future: {
-    purgeLayersByDefault: true,
-  },
   purge: [
     './packages/**/*.{js,ts,jsx,tsx}',
     './pages/**/*.{js,ts,jsx,tsx}',
