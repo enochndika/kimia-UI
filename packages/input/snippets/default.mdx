@@ -13,7 +13,7 @@ export const FormPage = () => (
  * ...rest : pass all other default props for input element
  *
  * */
-const Input = forwardRef(({ dot, label, name, placeholder, ...rest }, ref) => (
+const Input = forwardRef(({ label, name, placeholder, ...rest }, ref) => (
   <div className="relative mb-6">
     <label htmlFor={name} className="text-gray-700">
       {label}
