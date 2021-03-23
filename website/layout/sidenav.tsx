@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { Item } from './base';
+import { Arrival } from '@/website/components/arrival';
 
 interface SidenavProps {
   isOpen: boolean;
@@ -52,7 +53,7 @@ export const Sidenav = ({ isOpen, toggle }: SidenavProps) => {
       </div>
       <div className="pl-6 pb-6 text-gray-800 font-bold">General</div>
       <Item href="/components/accordion" onClick={toggle}>
-        Accordion
+        Accordion <Arrival />
       </Item>
       <Item href="/components/buttons" onClick={toggle}>
         Buttons
@@ -64,7 +65,7 @@ export const Sidenav = ({ isOpen, toggle }: SidenavProps) => {
         Collapse
       </Item>
       <Item href="/components/code" onClick={toggle}>
-        Code
+        Code <Arrival />
       </Item>
       <Item href="/components/dropdown" onClick={toggle}>
         Dropdown
