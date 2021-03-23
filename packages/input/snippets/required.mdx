@@ -1,0 +1,38 @@
+```jsx
+import { forwardRef } from 'react';
+
+export const FormPage = () => (
+  <Input label="Email" name="email" dot={true} aria-required={true} />
+);
+
+/* Input props*/
+/*
+ * dot: (boolean) if true, a dot will be displayed on the side of the label to indicate a required field
+ * label: HTML label
+ * name : HTML name
+ * placeholder: HTML input placeholder
+ * ...rest : pass all other default props for input element
+ *
+ * */
+const Input = forwardRef(({ dot, label, name, placeholder, ...rest }, ref) => (
+  <div className="relative mb-6">
+    <label htmlFor={name} className="text-gray-700">
+      {label}
+    </label>
+    {dot && <span className="text-red-500 pl-0.5">*</span>}
+    <input
+      {...rest}
+      ref={ref}
+      name={name}
+      placeholder={placeholder}
+      className={`${classes.default} ${classes.focusBorder} `}
+    />
+  </div>
+));
+
+/* All classes*/
+const classes = {
+  default: `rounded-lg flex-1 appearance-none w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base `,
+  focusBorder: `focus:outline-none focus:ring-2 focus:border-transparent border border-gray-300 border-transparent`,
+};
+```

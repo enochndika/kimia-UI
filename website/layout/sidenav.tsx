@@ -103,6 +103,21 @@ export const Sidenav = ({ isOpen, toggle }: SidenavProps) => {
       <Item href="/components/sidenav" onClick={toggle}>
         Sidenav
       </Item>
+      <div className="pl-6 py-6 text-gray-800 font-bold" onClick={toggle}>
+        Forms
+      </div>
+      <Item href="/components/input" onClick={toggle}>
+        Input
+        <Arrival />
+      </Item>
+      <Item href="/components/input/with-formik" onClick={toggle}>
+        With Formik
+        <Arrival />
+      </Item>
+      <Item href="/components/input/with-react-hook-form" onClick={toggle}>
+        With Hook Form
+        <Arrival />
+      </Item>
       <div className="pl-6 py-6 text-gray-800 font-bold">Extras</div>
       <Item href="/components/toast" onClick={toggle}>
         Toast
