@@ -1,8 +1,5 @@
 module.exports = {
   darkMode: false,
-  corePlugins: {
-    container: false,
-  },
   purge: [
     './packages/**/*.{js,ts,jsx,tsx}',
     './pages/**/*.{js,ts,jsx,tsx}',
