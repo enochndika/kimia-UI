@@ -38,7 +38,7 @@ export const Sidenav = ({ isOpen, toggle }: SidenavProps) => {
       }
       ref={ref}
     >
-      <div className="pl-6">
+      <div className="pl-6 transition-all ease duration-400">
         <Link href="/">
           <a>
             <Image
