@@ -7,9 +7,9 @@ Tailwind CSS is a utility-first CSS framework for rapidly building custom user i
 
 The biggest disadvantage of tailwindcss is the risk of having too long classes that will make our code not readable enough.
 
-As React is component-based, we can extract component logic with its classes and reuse them elsewhere which will result in more readable code with more components and less classes.
+As React is component-based, we can extract component logic with its classes and reuse them elsewhere which will result in more readable code with more components and fewer classes.
 
-That's why I created this collection of React components with Tailwindcss strictly typed with Typescript which allows you to focus on using the component. It's fully customizable.
+That's why I created this collection of UI components for React built with Tailwindcss strictly typed with Typescript. It's fully customizable, and you can just copy and paste a component you want to use
 
 ## Browser Support
 

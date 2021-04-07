@@ -26,9 +26,12 @@ export default function Home() {
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mt-8">
               A collection of UI Components for React built with Tailwind CSS
             </h1>
-            <p className="my-12 text-gray-500 font-medium">
+            <p className="mt-12 mb-4 text-gray-500 font-medium">
               Provides fully customizable UI Components compatible with Next.js,
               Gatsby and create-react-app.
+            </p>
+            <p className="text-gray-500 font-medium">
+              Just copy and paste a component you want to use
             </p>
             <div className="mt-12 mb-6 md:mb-12">
               <Link href="/configuration">
