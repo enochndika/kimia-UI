@@ -7,20 +7,12 @@
     "build": "next build",
     "start": "next start",
     "postbuild": "next-sitemap",
-    "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
-    "format": "prettier '*/**/*.{js,ts,tsx}' --write",
     "prepare": "husky install"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "lint-staged": {
     "*/**/*.{js,ts,tsx": [
-      "eslint --fix",
-      "prettier --write",
-      "git add"
+      "yarn eslint",
+      "yarn prettier --write"
     ]
   },
   "repository": {
