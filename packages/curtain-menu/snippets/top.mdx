@@ -12,7 +12,7 @@ export const CurtainMenuPage = () => {
     <>
       <button
         onClick={toggle}
-        className="text-white focus:outline-none shadow m-1.5 rounded px-6 py-2 font-medium transition ease-in duration-200 bg-indigo-900"
+        className="text-white focus:outline-none m-1.5 rounded px-6 py-2 font-medium bg-indigo-900"
       >
         Open
       </button>
@@ -35,26 +35,37 @@ export const CurtainMenuPage = () => {
   );
 };
 
-const Menu = ({ children, isOpen }) => {
-  const active = `bg-black h-full w-full fixed z-10 top-0 left-0 overflow-x-hidden md:overflow-hidden transition-all duration-500`;
-  const inactive = `bg-black w-full h-0 fixed z-10 top-0 left-0 overflow-x-hidden md:overflow-hidden transition-all duration-500 `;
-
-  return <div className={isOpen ? active : inactive}>{children}</div>;
+/* Logic*/
+const style = {
+  menu: {
+    open: `h-full w-full `,
+    close: `w-full h-0`,
+    default: `overflow-x-hidden md:overflow-hidden transition-all duration-500 fixed z-10 top-0 left-0 bg-black`,
+  },
+  container: `relative top-1/4 w-full text-center mt-8`,
+  item: `text-3xl text-gray-400 cursor-pointer hover:text-white`,
 };
 
-Menu.Container = ({ children }) => (
-  <div className="relative top-1/4 w-full text-center mt-8">{children}</div>
+const Menu = ({ children, isOpen }) => (
+  <div
+    className={`${isOpen ? style.menu.open : style.menu.close} 
+    ${style.menu.default}`}
+  >
+    {children}
+  </div>
 );
 
-/* You can wrap the a tag with Link and pass href to Link if you are using either Create-React-App, Next.js or Gatsby */
+Menu.Container = ({ children }) => (
+  <div className={style.container}>{children}</div>
+);
+
 Menu.Item = ({ children, href }) => (
-  <div className="p-2 ">
-    <a
-      href={href}
-      className="text-3xl text-gray-400 cursor-pointer hover:text-white"
-    >
+  <div className="p-2">
+    <a href={href} className={style.item}>
       {children}
     </a>
   </div>
 );
+
+export default Menu;
 ```

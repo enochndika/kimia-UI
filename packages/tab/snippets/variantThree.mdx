@@ -24,12 +24,19 @@ export const TabPage = () => (
   </Tabs>
 );
 
-/* Tab logic*/
+/* Tab logic */
+
+const style = {
+  default: `py-2 px-4 mx-1 inline-block focus:outline-none`,
+  selected: `text-white rounded bg-indigo-900 `,
+  notSelected: `-mb-2 bg-white text-black`,
+};
+
 const Tabs = ({ children }) => {
   const childrenArray = React.Children.toArray(children);
   const [current, setCurrent] = useState(childrenArray[0].key);
   const newChildren = childrenArray.map((child) =>
-    React.cloneElement(child, { selected: child.key === current }),
+    React.cloneElement(child, { selected: child?.key === current }),
   );
 
   return (
@@ -38,15 +45,15 @@ const Tabs = ({ children }) => {
         <div
           role="link"
           tabIndex={0}
-          onClick={() => setCurrent(child.key)}
-          key={child.key}
+          onClick={() => setCurrent(child?.key)}
+          key={child?.key}
           className={
-            current === child.key
-              ? `${classNames.default} ${classNames.active}`
-              : `${classNames.default} ${classNames.inactive}`
+            current === child?.key
+              ? `${style.default} ${style.selected}`
+              : `${style.default} ${style.notSelected}`
           }
         >
-          {child.props.title}
+          {child?.props.title}
         </div>
       ))}
       <section>{newChildren}</section>
@@ -59,10 +66,4 @@ const Tab = ({ children, selected }) => (
     {children}
   </div>
 );
-
-const classNames = {
-  default: `py-2 px-4 mx-1 inline-block`,
-  active: `text-white rounded bg-indigo-900 `,
-  inactive: `-mb-2 bg-white text-black`,
-};
 ```

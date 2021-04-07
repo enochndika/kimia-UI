@@ -29,18 +29,24 @@ export const HamburgerMenuPage = () => {
   );
 };
 
+/* Logic */
+
+const style = {
+  navbar: `font-light shadow py-2 px-4`,
+  brand: `inline-block pt-1.5 pb-1.5 mr-4 cursor-pointer text-2xl font-bold whitespace-nowrap hover:text-gray-400`,
+  toggler: `float-right pt-1.5 text-3xl focus:outline-none focus:shadow`,
+  collapse: `transition-height ease duration-300`,
+  nav: `block pl-0 mb-0`,
+  link: `block cursor-pointer py-1.5 px-4  hover:text-gray-400 font-medium`,
+};
+
 const Navbar = ({ children, bgColor, textColor }) => (
-  <nav className={`${bgColor} ${textColor} font-light shadow py-2 px-4`}>
-    {children}
-  </nav>
+  <nav className={`${bgColor} ${textColor} ${style.navbar}`}>{children}</nav>
 );
 
 /* You can wrap the a tag with Link and pass href to Link if you are using either Create-React-App, Next.js or Gatsby */
 Navbar.Brand = ({ children, href }) => (
-  <a
-    href={href}
-    className="inline-block pt-1.5 pb-1.5 mr-4 cursor-pointer text-2xl font-bold whitespace-nowrap hover:text-gray-400"
-  >
+  <a href={href} className={style.brand}>
     <strong>{children}</strong>
   </a>
 );
@@ -50,7 +56,7 @@ Navbar.Toggler = ({ toggle }) => (
     type="button"
     aria-expanded="false"
     aria-label="Toggle navigation"
-    className="float-right pt-1.5 text-3xl focus:outline-none focus:shadow"
+    className={style.toggler}
     onClick={toggle}
   >
     &#8801;
@@ -58,35 +64,27 @@ Navbar.Toggler = ({ toggle }) => (
 );
 
 Navbar.Collapse = ({ children, isOpen }) => {
-  const ref = useRef();
-  const style = isOpen
+  const ref = useRef(null);
+  const inlineStyle = isOpen
     ? { height: ref.current?.scrollHeight }
     : { height: 0, visibility: 'hidden', opacity: 0 };
 
   return (
-    <div
-      className="transition-height ease duration-300"
-      style={style}
-      ref={ref}
-    >
+    <div className={style.collapse} style={inlineStyle} ref={ref}>
       {children}
     </div>
   );
 };
 
-Navbar.Nav = ({ children }) => {
-  return <ul className="block pl-0 mb-0">{children}</ul>;
-};
-
+Navbar.Nav = ({ children }) => <ul className={style.nav}>{children}</ul>;
 Navbar.Item = ({ children }) => <li>{children}</li>;
 
 /* You can wrap the a tag with Link and pass href to Link if you are using either Create-React-App, Next.js or Gatsby */
 Navbar.Link = ({ children, href }) => (
-  <a
-    href={href}
-    className="block cursor-pointer py-1.5 px-4  hover:text-gray-400 font-medium"
-  >
+  <a href={href} className={style.link}>
     {children}
   </a>
 );
+
+export default Navbar;
 ```

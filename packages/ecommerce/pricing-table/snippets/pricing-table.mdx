@@ -93,13 +93,20 @@ export const PricingTable = () => {
   );
 };
 
-const Price = ({ children }) => (
-  <div className="flex flex-wrap mb-6">{children}</div>
-);
+const style = {
+  price: `flex flex-wrap mb-6`,
+  group: {
+    container: `w-full md:w-4/12 p-2 mb-6`,
+    list: `border border-solid border-gray-400 m-0 p-0 transition-all duration-300 ease-linear`,
+  },
+  item: `flex justify-center p-5 border-b border-gray-100 text-sm`,
+};
+
+const Price = ({ children }) => <div className={style.price}>{children}</div>;
 
 Price.Group = ({ children, title, titleBackground }) => (
-  <div className="w-full md:w-4/12 p-2 mb-6 ">
-    <ul className="border border-solid border-gray-400 m-0 p-0 transition-all duration-300 ease-linear">
+  <div className={style.group.container}>
+    <ul className={style.group.list}>
       <li
         className={`${titleBackground} text-2xl text-center p-5 border-b border-gray-300 text-white`}
       >
@@ -111,11 +118,7 @@ Price.Group = ({ children, title, titleBackground }) => (
 );
 
 Price.Item = ({ children, className }) => (
-  <li
-    role="link"
-    tabIndex={0}
-    className={`${className} flex justify-center p-5 border-b border-gray-100  text-sm`}
-  >
+  <li role="link" tabIndex={0} className={`${className} ${style.item}`}>
     {children}
   </li>
 );

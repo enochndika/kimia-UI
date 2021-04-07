@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 export const DropdownPage = () => (
   <Dropdown>
     <Dropdown.Toggle>
-      <span className="flex">
+      <span className="flex bg-indigo-900 text-white rounded px-6 py-2 font-medium">
         Options
         <svg
           className="-mr-1 ml-2 h-5 w-5"
@@ -33,6 +33,8 @@ export const DropdownPage = () => (
     </Dropdown.Menu>
   </Dropdown>
 );
+
+/* Logic*/
 
 const useToggle = () => {
   const [show, setShow] = useState(false);
@@ -72,6 +74,11 @@ const useToggle = () => {
   };
 };
 
+const style = {
+  menu: `block z-30 absolute top-0 left-0 bg-white float-left py-2 px-0 text-left border border-gray-300 rounded-sm mt-0.5 mb-0 mx-0 bg-clip-padding`,
+  item: `block w-full py-1 px-8 mb-2 text-sm font-normal clear-both whitespace-nowrap border-0 hover:bg-gray-200 cursor-pointer`,
+};
+
 const Dropdown = ({ children }) => {
   const { show, toggle } = useToggle();
   /* First child contains the dropdown toggle */
@@ -83,9 +90,9 @@ const Dropdown = ({ children }) => {
   return (
     <>
       <button
+        className="focus:outline-none"
         onClick={toggle}
         type="button"
-        className="bg-indigo-900 text-white focus:outline-none shadow rounded px-6 py-2 font-medium"
         id="options-menu"
         aria-expanded="true"
         aria-haspopup="true"
@@ -99,30 +106,26 @@ const Dropdown = ({ children }) => {
 
 Dropdown.Toggle = ({ children }) => <>{children}</>;
 
-Dropdown.Menu = ({ children }) => {
-  return (
-    <div className="relative">
-      <div
-        style={{ transform: 'translate3d(0px, 3px, 0px)' }}
-        className="block z-30 absolute top-0 left-0  bg-white float-left py-2 px-0 text-left border border-gray-300 rounded-sm mt-0.5 mb-0 mx-0 bg-clip-padding"
-        role="menu"
-        aria-orientation="vertical"
-        aria-labelledby="options-menu"
-      >
-        {children}
-      </div>
+Dropdown.Menu = ({ children }) => (
+  <div className="relative">
+    <div
+      style={{ transform: 'translate3d(0px, 3px, 0px)' }}
+      className={style.menu}
+      role="menu"
+      aria-orientation="vertical"
+      aria-labelledby="options-menu"
+    >
+      {children}
     </div>
-  );
-};
+  </div>
+);
 
 /* You can wrap the a tag with Link if you are using either Create-React-App, Next.js or Gatsby */
 Dropdown.Item = ({ children }) => (
-  <a
-    href="#"
-    className="block w-full py-1 px-8 mb-2 text-sm font-normal clear-both whitespace-nowrap border-0 hover:bg-gray-200 cursor-pointer"
-    role="menuitem"
-  >
+  <a href="#" className={style.item} role="menuitem">
     {children}
   </a>
 );
+
+export default Dropdown;
 ```
