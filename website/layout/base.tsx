@@ -66,14 +66,14 @@ const Sidebar: FC = () => (
       <Item href="/components/navbar">Navbar</Item>
       <Item href="/components/sidenav">Sidenav</Item>
       <div className="pl-6 pt-6 pb-2 mb-5 text-gray-500 font-bold">Forms</div>
-      <Item href="/components/input">
-        Input <Arrival />
+      <Item href="/components/field">
+        Field <Arrival />
       </Item>
-      <Item href="/components/input/with-formik">
+      <Item href="/components/field/with-formik">
         With Formik
         <Arrival />
       </Item>
-      <Item href="/components/input/with-react-hook-form">
+      <Item href="/components/field/with-react-hook-form">
         With Hook Form
         <Arrival />
       </Item>

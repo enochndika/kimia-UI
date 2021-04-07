@@ -1,8 +1,8 @@
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import Input from '../index';
+import Field from '../index';
 
-export const InputWithFormik = () => {
+export const FieldWithFormik = () => {
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -17,7 +17,7 @@ export const InputWithFormik = () => {
   return (
     <div className="mb-12 border p-6">
       <form onSubmit={formik.handleSubmit}>
-        <Input
+        <Field
           aria-required={true}
           aria-invalid={formik.errors.email && formik.touched.email}
           label="Email"
@@ -26,8 +26,9 @@ export const InputWithFormik = () => {
           errorMessage={formik?.errors?.email}
           onChange={formik.handleChange}
           dot={true}
+          type="text"
         />
-        <Input
+        <Field
           aria-required={true}
           aria-invalid={formik.errors.password && formik.touched.password}
           label="Mot de passe"
@@ -36,6 +37,7 @@ export const InputWithFormik = () => {
           errorMessage={formik?.errors?.password}
           onChange={formik.handleChange}
           dot={true}
+          type="password"
         />
         <button
           className="mt-8 bg-black focus:outline-none active:bg-gray-900 text-white shadow rounded px-4 py-1"

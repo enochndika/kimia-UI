@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
-import Input from '../index';
+import Field from '../index';
 
-export const InputWithReactHookForm = () => {
+export const FieldWithReactHookForm = () => {
   const { register, handleSubmit, errors } = useForm();
 
   const onSubmit = (data) => {
@@ -11,7 +11,8 @@ export const InputWithReactHookForm = () => {
   return (
     <div className="mb-12 border p-6">
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Input
+        <Field
+          type="text"
           aria-required={true}
           aria-invalid={errors && errors.email}
           label="Email"
@@ -21,7 +22,8 @@ export const InputWithReactHookForm = () => {
           ref={register({ required: 'Email is required' })}
           dot={true}
         />
-        <Input
+        <Field
+          type="password"
           aria-required={true}
           aria-invalid={errors && errors.password}
           label="Mot de passe"

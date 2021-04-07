@@ -52,7 +52,8 @@ module.exports = {
   },
   variants: {
     extend: {
-      backgroundColor: ['active'],
+      backgroundColor: ['active', 'checked'],
+      inset: ['checked'],
       opacity: ['disabled'],
       textColor: ['active'],
     },
