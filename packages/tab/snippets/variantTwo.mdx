@@ -47,11 +47,9 @@ const Tabs = ({ children }) => {
           tabIndex={0}
           onClick={() => setCurrent(child?.key)}
           key={child?.key}
-          className={
-            current === child?.key
-              ? `${style.default} ${style.selected}`
-              : `${style.default} ${style.notSelected}`
-          }
+          className={`${style.default} ${
+            current === child?.key ? style.selected : style.notSelected
+          }`}
         >
           {child?.props.title}
         </div>
