@@ -1,15 +1,23 @@
-# UI Components for React built with Tailwindcss
-![Kimia-UI](https://res.cloudinary.com/beloved/image/upload/v1615575738/Assets/kimia_i3edml.png)
+# UI Components for React built with Tailwind CSS
+![Kimia-UI](https://res.cloudinary.com/beloved/image/upload/v1618040187/Assets/kimia_lpqdlr.png)
 
 ## Why this approach?
 
 Tailwind CSS is a utility-first CSS framework for rapidly building custom user interfaces. Il allows you writing your style without leaving your HTML.
 
-The biggest disadvantage of tailwindcss is the risk of having too long classes that will make our code not readable enough.
+The biggest disadvantage of Tailwind CSS is the risk of having too long classes that will make our code not readable enough.
 
 As React is component-based, we can extract component logic with its classes and reuse them elsewhere which will result in more readable code with more components and fewer classes.
 
-That's why I created this collection of UI components for React built with Tailwindcss strictly typed with Typescript. It's fully customizable, and you can just copy and paste a component you want to use
+That's why I have created this collection of UI components fully customizable. Just copy and paste a component you want to use
+
+All the components are in the **packages** directory.
+
+Each component contains 2 sub-directories
+* **examples** : contains examples for each variant of the component in TypeScript
+  
+
+* **snippets** : contains examples for each variant  of the component in plain React
 
 ## Browser Support
 
