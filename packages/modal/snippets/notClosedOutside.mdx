@@ -1,5 +1,5 @@
 ```jsx
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 /* You'll need to install @reach/portal which simplify creating portal*/
 import Portal from '@reach/portal';
 
@@ -58,28 +58,20 @@ const style = {
 };
 
 /* Modal logic*/
-const Modal = ({ children, isOpen }) => {
-  const ref = useRef();
-  return (
-    <Portal>
-      {isOpen && (
-        <>
-          <div className={style.overlay} />
-          <div className={style.container}>
-            <div
-              className={style.orientation}
-              ref={ref}
-              role="dialogue"
-              aria-modal={true}
-            >
-              <div className={style.content}>{children}</div>
-            </div>
+const Modal = ({ children, isOpen }) => (
+  <Portal>
+    {isOpen && (
+      <>
+        <div className={style.overlay} />
+        <div className={style.container}>
+          <div className={style.orientation} role="dialogue" aria-modal={true}>
+            <div className={style.content}>{children}</div>
           </div>
-        </>
-      )}
-    </Portal>
-  );
-};
+        </div>
+      </>
+    )}
+  </Portal>
+);
 
 Modal.Header = ({ children }) => (
   <div className={style.header}>
