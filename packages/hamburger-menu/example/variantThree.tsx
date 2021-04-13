@@ -9,7 +9,7 @@ export const HamburgerMenuVariantThree = () => {
   };
 
   return (
-    <HamburgerMenu className="mb-8">
+    <HamburgerMenu className="mb-8" bgColor="bg-black" textColor="text-white">
       <HamburgerMenu.Brand href="#">Navigation</HamburgerMenu.Brand>
       <HamburgerMenu.Toggler toggle={toggle} />
       <HamburgerMenu.Collapse isOpen={isOpen}>

@@ -10,14 +10,25 @@ interface LinkProps extends Props {
 interface SidenavProps extends Props {
   isOpen: boolean;
   position?: 'left' | 'right';
-  toggle: (value: any) => void;
+  toggle: (value?: unknown) => void;
   closeOnClickOutside?: boolean;
 }
-const positions = {
-  activeLeft: `block h-screen fixed z-20 top-0 left-0 w-7/12 md:w-60 bg-gray-800 text-white overflow-x-hidden transition-all ease duration-200`,
-  inactiveLeft: `block h-screen fixed z-20 top-0 left-0 w-0  bg-gray-800 text-white overflow-x-hidden transition-all ease duration-200`,
-  activeRight: `block h-screen fixed z-20 top-0 right-0 w-7/12 md:w-60 bg-gray-800 text-white overflow-x-hidden transition-all ease duration-200`,
-  inactiveRight: `block h-screen fixed z-20 top-0 right-0 w-0  bg-gray-800 text-white overflow-x-hidden transition-all ease duration-200`,
+
+const style = {
+  position: {
+    left: {
+      open: `w-7/12 md:w-60 bg-gray-800 text-white overflow-x-hidden`,
+      close: `w-0 bg-gray-800 text-white overflow-x-hidden`,
+      default: `h-screen fixed z-20 top-0 left-0 transition-all ease duration-200`,
+    },
+    right: {
+      open: `w-7/12 md:w-60 bg-gray-800 text-white overflow-x-hidden`,
+      close: `w-0 bg-gray-800 text-white overflow-x-hidden`,
+      default: `right-0 h-screen fixed z-20 top-0 transition-all ease duration-200`,
+    },
+  },
+  item: `flex justify-start cursor-pointer font-medium hover:text-gray-400 ml-8 mb-10`,
+  closeIcon: `absolute top-1 focus:outline-none right-3 text-3xl text-white cursor-pointer`,
 };
 
 export const Sidenav = ({
@@ -40,21 +51,14 @@ export const Sidenav = ({
     return () => window.removeEventListener('mousedown', handleOutsideClick);
   }, [isOpen, ref]);
 
-  const left = isOpen ? positions.activeLeft : positions.inactiveLeft;
-  const right = isOpen ? positions.activeRight : positions.inactiveRight;
-  const defaultPosition = isOpen
-    ? positions.activeLeft
-    : positions.inactiveLeft;
-
-  const className =
-    position === 'left' ? left : position === 'right' ? right : defaultPosition;
   return (
-    <aside className={className} ref={ref}>
-      <button
-        aria-label="Close"
-        className="absolute top-1 focus:outline-none right-3 text-3xl text-white cursor-pointer"
-        onClick={toggle}
-      >
+    <aside
+      className={`${style.position[position].default} ${
+        isOpen ? style.position[position].open : style.position[position].close
+      }`}
+      ref={ref}
+    >
+      <button aria-label="Close" className={style.closeIcon} onClick={toggle}>
         &times;
       </button>
       <div className="mt-12">{children}</div>
@@ -62,11 +66,9 @@ export const Sidenav = ({
   );
 };
 
+/* You can wrap the a tag with Link and pass href to Link if you are using either Create-React-App, Next.js or Gatsby */
 Sidenav.Item = ({ children, href }: LinkProps) => (
-  <a
-    href={href}
-    className=" flex justify-start cursor-pointer font-medium hover:text-gray-400 ml-8 mb-10"
-  >
+  <a href={href} className={style.item}>
     {children}
   </a>
 );

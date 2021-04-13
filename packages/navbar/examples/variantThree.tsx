@@ -9,7 +9,7 @@ export const NavbarVariantThree = () => {
   };
 
   return (
-    <Navbar className="mb-8">
+    <Navbar className="mb-8" bgColor="bg-black" textColor="text-white">
       <Navbar.Brand href="#">Navbar</Navbar.Brand>
       <Navbar.Toggler toggle={toggle} />
       <Navbar.Collapse isOpen={isOpen}>

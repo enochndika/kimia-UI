@@ -17,7 +17,7 @@ export const CurtainMenuTop = () => {
       <Button color="indigo" onClick={toggle}>
         Open
       </Button>
-      <Menu isOpen={isOpen} top={true}>
+      <Menu isOpen={isOpen} transition="top">
         <button
           aria-label="Close"
           className="absolute top-3 right-3 text-5xl text-white cursor-pointer"

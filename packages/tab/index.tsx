@@ -13,18 +13,18 @@ interface TabProps extends Props {
   title: string;
 }
 
-const variants = {
+const style = {
   first: {
-    active: `text-gray-700  border-b-2 border-indigo-700 -mb-2 px-4 md:px-8 text-sm  py-4 md:py-1 inline-block `,
-    inactive: `-mb-2 px-4 md:px-8 text-sm  py-4 md:py-1 inline-block border-b`,
+    selected: `text-gray-700  border-b-2 border-indigo-700 -mb-2 px-4 md:px-8 text-sm  py-4 md:py-1 inline-block `,
+    notSelected: `-mb-2 px-4 md:px-8 text-sm  py-4 md:py-1 inline-block border-b`,
   },
   second: {
-    active: `inline-block py-2 px-4 border-gray-300 border-t bg-white border-b-0 border-l border-r text-blue-700`,
-    inactive: 'inline-block py-2 px-4 text-gray-800 border-b',
+    selected: `inline-block py-2 px-4 border-gray-300 border-t bg-white border-b-0 border-l border-r text-blue-700`,
+    notSelected: 'inline-block py-2 px-4 text-gray-800 border-b',
   },
   third: {
-    active: `text-white py-2 px-4 mx-1 rounded bg-indigo-900 inline-block`,
-    inactive: `-mb-2 py-2 px-4 mx-1 bg-white text-black inline-block `,
+    selected: `text-white py-2 px-4 mx-1 rounded bg-indigo-900 inline-block`,
+    notSelected: `-mb-2 py-2 px-4 mx-1 bg-white text-black inline-block `,
   },
 };
 
@@ -36,23 +36,26 @@ export const Tabs = ({ children, variant }: TabsProps) => {
       selected: child.key === current,
     }),
   );
-  const classNames = (child, current) => {
-    if (variant === 1) {
-      return current === child.key
-        ? variants.first.active
-        : variants.first.inactive;
-    } else if (variant === 2) {
-      return current === child.key
-        ? variants.second.active
-        : variants.second.inactive;
-    } else if (variant === 3) {
-      return current === child.key
-        ? variants.third.active
-        : variants.third.inactive;
-    } else {
-      throw Error('Please choose a variant');
+
+  const className = (child, current) => {
+    switch (variant) {
+      case 1:
+        return current === child.key
+          ? style.first.selected
+          : style.first.notSelected;
+      case 2:
+        return current === child.key
+          ? style.second.selected
+          : style.second.notSelected;
+      case 3:
+        return current === child.key
+          ? style.third.selected
+          : style.third.notSelected;
+      default:
+        throw Error('Please choose a variant');
     }
   };
+
   return (
     <nav>
       {childrenArray.map((child) => (
@@ -61,7 +64,7 @@ export const Tabs = ({ children, variant }: TabsProps) => {
           tabIndex={0}
           onClick={() => setCurrent(child.key)}
           key={child.key}
-          className={`${classNames(child, current)} focus:outline-none`}
+          className={`${className(child, current)} focus:outline-none`}
         >
           {child.props.title}
         </div>
@@ -71,10 +74,8 @@ export const Tabs = ({ children, variant }: TabsProps) => {
   );
 };
 
-export const Tab = ({ children, selected }: TabProps) => {
-  return (
-    <div hidden={!selected} className="mt-4">
-      {children}
-    </div>
-  );
-};
+export const Tab = ({ children, selected }: TabProps) => (
+  <div hidden={!selected} className="mt-4">
+    {children}
+  </div>
+);

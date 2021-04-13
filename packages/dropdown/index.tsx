@@ -52,6 +52,11 @@ const useToggle = () => {
   };
 };
 
+const style = {
+  menu: `block z-30 absolute top-0 left-0 bg-white float-left py-2 px-0 text-left border border-gray-300 rounded-sm mt-0.5 mb-0 mx-0 bg-clip-padding`,
+  item: `block w-full py-1 px-8 mb-2 text-sm font-normal clear-both whitespace-nowrap border-0 hover:bg-gray-200 cursor-pointer`,
+};
+
 const Dropdown = ({ children }: Props) => {
   const { show, toggle } = useToggle();
   /* First child contains the dropdown toggle */
@@ -83,7 +88,7 @@ Dropdown.Menu = ({ children }: Props) => {
     <div className="relative">
       <div
         style={{ transform: 'translate3d(0px, 3px, 0px)' }}
-        className="block z-30 absolute top-0 left-0  bg-white float-left py-2 px-0 text-left border border-gray-300 rounded-sm mt-0.5 mb-0 mx-0 bg-clip-padding"
+        className={style.menu}
         role="menu"
         aria-orientation="vertical"
         aria-labelledby="options-menu"
@@ -96,11 +101,7 @@ Dropdown.Menu = ({ children }: Props) => {
 
 /* You can wrap the a tag with Link if you are using either Create-React-App, Next.js or Gatsby */
 Dropdown.Item = ({ children }: DropdownItemProps) => (
-  <a
-    href="#"
-    className="block w-full py-1 px-8 mb-2 text-sm font-normal clear-both whitespace-nowrap border-0 hover:bg-gray-200 cursor-pointer"
-    role="menuitem"
-  >
+  <a href="#" className={style.item} role="menuitem">
     {children}
   </a>
 );

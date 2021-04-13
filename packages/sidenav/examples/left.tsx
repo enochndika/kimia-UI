@@ -20,7 +20,12 @@ export const SidenavLeft = () => {
       >
         Click to open me
       </Button>
-      <Sidenav isOpen={isOpen} toggle={toggle} closeOnClickOutside={true}>
+      <Sidenav
+        isOpen={isOpen}
+        toggle={toggle}
+        closeOnClickOutside={true}
+        position="left"
+      >
         <Sidenav.Item href="#">
           <svg
             stroke="currentColor"

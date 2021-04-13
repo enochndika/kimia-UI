@@ -17,7 +17,7 @@ export const CurtainMenuLeft = () => {
       <Button color="dark" onClick={toggle}>
         Open
       </Button>
-      <Menu isOpen={isOpen}>
+      <Menu isOpen={isOpen} transition="left">
         <button
           aria-label="Close"
           className="absolute top-3 right-3 text-5xl text-white cursor-pointer"

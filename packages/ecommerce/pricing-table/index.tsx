@@ -12,29 +12,32 @@ interface PriceGroupProps extends Props {
 interface PriceItemProps extends Props {
   className?: string;
 }
+
+const style = {
+  price: `flex flex-wrap mb-6`,
+  group: {
+    container: `w-full md:w-4/12 p-2 mb-6`,
+    list: `border border-solid border-gray-400 m-0 p-0 transition-all duration-300 ease-linear`,
+    item: `text-2xl text-center p-5 border-b border-gray-300 text-white`,
+  },
+  item: `flex justify-center p-5 border-b border-gray-100 text-sm`,
+};
+
 export const Price = ({ children }: Props) => (
-  <div className="flex flex-wrap mb-6">{children}</div>
+  <div className={style.price}>{children}</div>
 );
 
 Price.Group = ({ children, title, titleBackground }: PriceGroupProps) => (
-  <div className="w-full md:w-4/12 p-2 md:mb-0">
-    <ul className="border border-solid border-gray-400 m-0 p-0 transition-all duration-300 ease-linear">
-      <li
-        className={`${titleBackground} text-2xl text-center p-5 border-b border-gray-300 text-white`}
-      >
-        {title}
-      </li>
+  <div className={style.group.container}>
+    <ul className={style.group.list}>
+      <li className={`${titleBackground} ${style.group.item}`}>{title}</li>
       {children}
     </ul>
   </div>
 );
 
 Price.Item = ({ children, className }: PriceItemProps) => (
-  <div
-    role="link"
-    tabIndex={0}
-    className={`${className} flex justify-center p-5 border-b border-gray-100  text-sm`}
-  >
+  <div role="link" tabIndex={0} className={`${className} ${style.item}`}>
     {children}
   </div>
 );
