@@ -1,9 +1,7 @@
 import Head from 'next/head';
 import { Container } from '@/website/components/container';
-import {
-  JumbotronComponent,
-  JumbotronWithBackgroundComponent,
-} from '@/packages/jumbotron/example';
+import JumbotronComponent from '@/packages/jumbotron/example/simple';
+import JumbotronWithBackgroundComponent from '@/packages/jumbotron/example/withBackground';
 import JumbotronSnippet from '@/packages/jumbotron/snippets/simple.mdx';
 import JumbotronBackgroundSnippet from '@/packages/jumbotron/snippets/withBackground.mdx';
 

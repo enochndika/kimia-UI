@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import Dropdown from '../../dropdown';
 
-export const DropdownWithSeparator: FC = () => (
+const DropdownWithSeparator: FC = () => (
   <div className="mb-8">
     <h2 className="font-bold text-gray-600 text-lg md:text-2xl mb-4">
       Dropdown with separator
@@ -38,3 +38,5 @@ export const DropdownWithSeparator: FC = () => (
     </Dropdown>
   </div>
 );
+
+export default DropdownWithSeparator;

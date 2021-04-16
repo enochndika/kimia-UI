@@ -1,11 +1,11 @@
 import Head from 'next/head';
 import { Container } from '@/website/components/container';
-import { SidenavLeft } from '@/packages/sidenav/examples/left';
-import { SidenavRight } from '@/packages/sidenav/examples/right';
+import SidenavLeft from '@/packages/sidenav/examples/left';
+import SidenavRight from '@/packages/sidenav/examples/right';
+import SidenavNotClosedOutside from '@/packages/sidenav/examples/notClosedOutside';
 import SidenavLeftSnippet from '@/packages/sidenav/snippets/left.mdx';
 import SidenavRightSnippet from '@/packages/sidenav/snippets/right.mdx';
 import SidenavNotClosedOutsideSnippet from '@/packages/sidenav/snippets/notClosedOutside.mdx';
-import { SidenavNotClosedOutside } from '@/packages/sidenav/examples/notClosedOutside';
 
 export default function SidenavPage() {
   return (

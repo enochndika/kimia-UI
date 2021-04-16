@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { HamburgerMenu } from '../index';
+import HamburgerMenu from '../index';
 
-export const HamburgerMenuVariantOne = () => {
+const HamburgerMenuVariantOne = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const toggle = () => {
@@ -9,7 +9,11 @@ export const HamburgerMenuVariantOne = () => {
   };
 
   return (
-    <HamburgerMenu bgColor="bg-indigo-900" className="mb-8">
+    <HamburgerMenu
+      bgColor="bg-indigo-900"
+      textColor="text-white"
+      className="mb-8"
+    >
       <HamburgerMenu.Brand href="#">
         <svg
           height="25"
@@ -45,3 +49,5 @@ export const HamburgerMenuVariantOne = () => {
     </HamburgerMenu>
   );
 };
+
+export default HamburgerMenuVariantOne;

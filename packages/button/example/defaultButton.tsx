@@ -1,5 +1,5 @@
-import { Button } from '../index';
 import { FC } from 'react';
+import Button from '../index';
 
 const DefaultButtons: FC = () => (
   <div className="mb-12">

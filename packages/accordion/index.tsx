@@ -15,13 +15,14 @@ interface AccordionHeaderProps extends HTMLAttributes<HTMLElement> {
   variant: 'gray' | 'indigo';
 }
 
-const classes = {
+const style = {
   gray: `block focus:outline-none bg-gray-800 text-white border-b my-2 p-3`,
   indigo: `block focus:outline-none bg-indigo-800 text-white border-b my-2 p-3`,
 };
+
 export const Accordion = ({ children, id, isOpen }: AccordionProps) => {
   const ref = useRef<HTMLDivElement>(null);
-  const style =
+  const inlineStyle =
     isOpen === id ? { height: ref.current?.scrollHeight } : { height: 0 };
 
   return (
@@ -29,7 +30,7 @@ export const Accordion = ({ children, id, isOpen }: AccordionProps) => {
       id={id}
       className="overflow-hidden md:overflow-x-hidden transition-height ease duration-300 text-gray-600"
       ref={ref}
-      style={style}
+      style={inlineStyle}
     >
       {children}
     </div>
@@ -45,7 +46,7 @@ export const AccordionHeader = ({
   variant,
   ...rest
 }: AccordionHeaderProps) => (
-  <div role="button" {...rest} className={classes[variant]}>
+  <div role="button" {...rest} className={style[variant]}>
     {children}
     <span className="float-right">
       {accordionId === id ? upIcon : downIcon}

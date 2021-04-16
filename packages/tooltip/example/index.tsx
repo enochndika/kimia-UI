@@ -1,6 +1,6 @@
-import { Tooltip } from '../../tooltip';
+import Tooltip from '../index';
 
-export const TooltipComponent = () => (
+const TooltipComponent = () => (
   <div className="flex justify-center md:justify-start">
     <div className="mb-4 mr-2 md:mr-4">
       <Tooltip
@@ -34,3 +34,5 @@ export const TooltipComponent = () => (
     </div>
   </div>
 );
+
+export default TooltipComponent;

@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { Sidenav } from '../index';
-import { Button } from '@/packages/button';
+import Sidenav from '../index';
+import Button from '@/packages/button';
 
-export const SidenavRight = () => {
+const SidenavRight = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const toggle = () => {
     setIsOpen(!isOpen);
@@ -87,3 +87,5 @@ export const SidenavRight = () => {
     </div>
   );
 };
+
+export default SidenavRight;

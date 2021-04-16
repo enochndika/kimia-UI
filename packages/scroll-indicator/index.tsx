@@ -4,7 +4,7 @@ interface ScrollIndicatorProps {
   children: ReactNode;
 }
 
-export const ScrollIndicator = ({ children }: ScrollIndicatorProps) => {
+const ScrollIndicator = ({ children }: ScrollIndicatorProps) => {
   const [scroll, setScroll] = useState<number | string>(0);
 
   const onScrollProgress = () => {
@@ -39,3 +39,5 @@ export const ScrollIndicator = ({ children }: ScrollIndicatorProps) => {
     </>
   );
 };
+
+export default ScrollIndicator;

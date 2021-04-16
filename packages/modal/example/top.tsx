@@ -1,9 +1,9 @@
 import Modal from '../index';
 import { useOpenModal } from '../openModal';
 import { FC } from 'react';
-import { Button } from '../../button';
+import Button from '@/packages/button';
 
-export const ModalTop: FC = () => {
+const ModalTop: FC = () => {
   const { toggle, isOpen } = useOpenModal();
   return (
     <div className="mb-8">
@@ -38,3 +38,5 @@ export const ModalTop: FC = () => {
     </div>
   );
 };
+
+export default ModalTop;

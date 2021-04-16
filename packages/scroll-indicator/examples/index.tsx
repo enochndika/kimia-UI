@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import { ScrollIndicator } from '@/packages/scroll-indicator';
+import ScrollIndicator from '@/packages/scroll-indicator';
 
-export const ScrollIndicatorExample: FC = () => (
+const ScrollIndicatorExample: FC = () => (
   <ScrollIndicator>
     <div className="mb-8">
       <h2 className="font-bold text-gray-600 text-lg md:text-2xl mt-12 mb-4">
@@ -52,3 +52,5 @@ export const ScrollIndicatorExample: FC = () => (
     </div>
   </ScrollIndicator>
 );
+
+export default ScrollIndicatorExample;

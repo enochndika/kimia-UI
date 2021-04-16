@@ -31,7 +31,7 @@ const style = {
   closeIcon: `absolute top-1 focus:outline-none right-3 text-3xl text-white cursor-pointer`,
 };
 
-export const Sidenav = ({
+const Sidenav = ({
   isOpen,
   position,
   toggle,
@@ -72,3 +72,5 @@ Sidenav.Item = ({ children, href }: LinkProps) => (
     {children}
   </a>
 );
+
+export default Sidenav;

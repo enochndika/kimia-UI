@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Navbar } from '../index';
+import Navbar from '../index';
 
-export const NavbarVariantTwo = () => {
+const NavbarVariantTwo = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => {
@@ -55,12 +55,12 @@ export const NavbarVariantTwo = () => {
             <Navbar.Link href="#">Home</Navbar.Link>
           </Navbar.Item>
         </Navbar.Nav>
-        <Navbar.Nav center>
+        <Navbar.Nav position="center">
           <Navbar.Item>
             <Navbar.Link href="#">Tailwindcss</Navbar.Link>
           </Navbar.Item>
         </Navbar.Nav>
-        <Navbar.Nav right>
+        <Navbar.Nav position="right">
           <Navbar.Item>
             <Navbar.Link href="#">Next.js</Navbar.Link>
           </Navbar.Item>
@@ -69,3 +69,5 @@ export const NavbarVariantTwo = () => {
     </Navbar>
   );
 };
+
+export default NavbarVariantTwo;

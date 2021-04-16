@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { Container } from '@/website/components/container';
-import { AccordionGrayColor } from '@/packages/accordion/examples/gray';
-import { AccordionIndigoColor } from '@/packages/accordion/examples/indigo';
+import AccordionGrayColor from '@/packages/accordion/examples/gray';
+import AccordionIndigoColor from '@/packages/accordion/examples/indigo';
 import AccordionGrayColorSnippet from '@/packages/accordion/snippets/gray.mdx';
 import AccordionIndigoColorSnippet from '@/packages/accordion/snippets/indigo.mdx';
 

@@ -2,7 +2,16 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import Field from '../index';
 
-export const FieldWithFormik = () => {
+/* Yup validation schema*/
+const validateSchema = Yup.object().shape({
+  email: Yup.string().email('Invalid email').required('Email required'),
+  password: Yup.string()
+    .min(3, 'Too Short!')
+    .max(50, 'Too Long!')
+    .required('Password required'),
+});
+
+const FieldWithFormik = () => {
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -50,11 +59,4 @@ export const FieldWithFormik = () => {
   );
 };
 
-/* Yup validation schema*/
-const validateSchema = Yup.object().shape({
-  email: Yup.string().email('Invalid email').required('Email required'),
-  password: Yup.string()
-    .min(3, 'Too Short!')
-    .max(50, 'Too Long!')
-    .required('Password required'),
-});
+export default FieldWithFormik;

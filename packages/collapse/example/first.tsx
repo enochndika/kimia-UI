@@ -1,8 +1,8 @@
 import { FC, useState } from 'react';
-import { Collapse } from '../../collapse';
-import { Button } from '@/packages/button';
+import Collapse from '../index';
+import Button from '@/packages/button';
 
-export const CollapseFirst: FC = () => {
+const CollapseFirst: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => {
@@ -24,3 +24,5 @@ export const CollapseFirst: FC = () => {
     </div>
   );
 };
+
+export default CollapseFirst;

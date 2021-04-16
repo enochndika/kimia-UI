@@ -30,7 +30,7 @@ const style = {
   item: `text-3xl text-gray-400 cursor-pointer hover:text-white`,
 };
 
-export const Menu = ({ children, isOpen, transition }: MenuProps) => (
+const Menu = ({ children, isOpen, transition }: MenuProps) => (
   <div
     className={`${style.menu.default} ${
       isOpen
@@ -54,3 +54,5 @@ Menu.Item = ({ children, href }: LinkProps) => (
     </a>
   </div>
 );
+
+export default Menu;

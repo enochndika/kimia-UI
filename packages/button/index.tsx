@@ -70,37 +70,35 @@ const colors = (outline: boolean) => ({
   indigo: outline ? style.color.indigo.outline : style.color.indigo.bg,
 });
 
-export const Button = forwardRef(
+const Button = forwardRef(
   (
     {
-      block,
+      block = false,
       children,
       className,
       color,
-      disabled,
+      disabled = false,
       outline,
       rounded,
-      size,
+      size = 'md',
       submit,
       ...props
     }: BtnProps,
     ref: ButtonRef,
-  ) => {
-    return (
-      <button
-        ref={ref}
-        {...props}
-        type={submit ? 'submit' : 'button'}
-        disabled={disabled}
-        className={`${className} ${style.default} 
-          ${block ? style.block : ''} 
-          ${disabled ? style.disabled : ''} 
-          ${rounded ? style.rounded : 'rounded'}
-          ${color ? colors(outline)[color] : colors(outline).dark} 
-          ${size ? style.sizes[size] : style.sizes.md}`}
-      >
-        {children}
-      </button>
-    );
-  },
+  ) => (
+    <button
+      ref={ref}
+      {...props}
+      type={submit ? 'submit' : 'button'}
+      disabled={disabled}
+      className={`${className} ${block ? style.block : ''}
+        ${disabled ? style.disabled : ''} ${style.sizes[size]} 
+        ${style.default} ${rounded ? style.rounded : 'rounded'}
+        ${color ? colors(outline)[color] : colors(outline).dark}`}
+    >
+      {children}
+    </button>
+  ),
 );
+
+export default Button;

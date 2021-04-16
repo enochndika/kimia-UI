@@ -13,7 +13,7 @@ const positions = {
   bottom: 'top-full',
 };
 
-export const Tooltip = ({
+const Tooltip = ({
   position,
   title,
   children,
@@ -38,3 +38,5 @@ export const Tooltip = ({
     </div>
   </div>
 );
+
+export default Tooltip;

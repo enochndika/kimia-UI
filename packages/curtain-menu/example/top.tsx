@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Button } from '@/packages/button';
-import { Menu } from '../index';
+import Button from '@/packages/button';
+import Menu from '../index';
 
 export const CurtainMenuTop = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);

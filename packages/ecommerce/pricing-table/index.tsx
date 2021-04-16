@@ -23,7 +23,7 @@ const style = {
   item: `flex justify-center p-5 border-b border-gray-100 text-sm`,
 };
 
-export const Price = ({ children }: Props) => (
+const Price = ({ children }: Props) => (
   <div className={style.price}>{children}</div>
 );
 
@@ -41,6 +41,8 @@ Price.Item = ({ children, className }: PriceItemProps) => (
     {children}
   </div>
 );
+
+export default Price;
 
 export const CheckIcon = () => (
   <svg

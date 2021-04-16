@@ -1,9 +1,9 @@
 import Head from 'next/head';
 import { Container } from '@/website/components/container';
-import { ModalRight } from '@/packages/modal/example/right';
-import { ModalLeft } from '@/packages/modal/example/left';
-import { ModalTop } from '@/packages/modal/example/top';
-import { ModalNotClosedOutside } from '@/packages/modal/example/notClosedOutside';
+import ModalRight from '@/packages/modal/example/right';
+import ModalLeft from '@/packages/modal/example/left';
+import ModalTop from '@/packages/modal/example/top';
+import ModalNotClosedOutside from '@/packages/modal/example/notClosedOutside';
 import ModalTopSnippet from '@/packages/modal/snippets/top.mdx';
 import ModalLeftSnippet from '@/packages/modal/snippets/left.mdx';
 import ModalRightSnippet from '@/packages/modal/snippets/right.mdx';

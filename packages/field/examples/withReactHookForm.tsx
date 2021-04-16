@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 import Field from '../index';
 
-export const FieldWithReactHookForm = () => {
+const FieldWithReactHookForm = () => {
   const { register, handleSubmit, errors } = useForm();
 
   const onSubmit = (data) => {
@@ -43,3 +43,5 @@ export const FieldWithReactHookForm = () => {
     </div>
   );
 };
+
+export default FieldWithReactHookForm;

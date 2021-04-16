@@ -11,9 +11,7 @@ interface NavbarProps extends Props {
 }
 
 interface NavbarNavProps extends Props {
-  left?: boolean;
-  right?: boolean;
-  center?: boolean;
+  position?: 'left' | 'center' | 'right';
 }
 
 interface NavbarCollapseProps extends Props {
@@ -45,19 +43,11 @@ const style = {
   toggler: `float-right block md:hidden pt-1.5 text-3xl focus:outline-none focus:shadow`,
 };
 
-export const Navbar = ({
-  bgColor,
-  textColor,
-  children,
-  className,
-}: NavbarProps) => {
-  return (
-    <nav className={`${bgColor} ${textColor} ${className} ${style.navbar}`}>
-      {children}
-    </nav>
-  );
-};
-
+const Navbar = ({ bgColor, textColor, children, className }: NavbarProps) => (
+  <nav className={`${bgColor} ${textColor} ${className} ${style.navbar}`}>
+    {children}
+  </nav>
+);
 /* You can wrap the a tag with Link if you are using either Create-React-App, Next.js or Gatsby */
 Navbar.Brand = ({ children, href }: LinkProps) => (
   <a href={href} className={style.brand}>
@@ -86,16 +76,9 @@ Navbar.Collapse = ({ children, isOpen }: NavbarCollapseProps) => (
   </div>
 );
 
-Navbar.Nav = ({ children, left, right, center }: NavbarNavProps) => {
-  const className = left
-    ? style.nav.left
-    : right
-    ? style.nav.right
-    : center
-    ? style.nav.center
-    : style.nav.left;
-  return <ul className={className}>{children}</ul>;
-};
+Navbar.Nav = ({ children, position = 'left' }: NavbarNavProps) => (
+  <ul className={style.nav[position]}>{children}</ul>
+);
 
 Navbar.Item = ({ children }: Props) => <li>{children}</li>;
 
@@ -105,3 +88,5 @@ Navbar.Link = ({ children, href }: LinkProps) => (
     {children}
   </a>
 );
+
+export default Navbar;

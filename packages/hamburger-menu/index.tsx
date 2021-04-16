@@ -30,7 +30,7 @@ const style = {
   toggler: `float-right pt-1.5 text-3xl focus:outline-none focus:shadow`,
 };
 
-export const HamburgerMenu = ({
+const HamburgerMenu = ({
   bgColor,
   textColor,
   children,
@@ -85,3 +85,5 @@ HamburgerMenu.Link = ({ children, href }: LinkProps) => (
     {children}
   </a>
 );
+
+export default HamburgerMenu;

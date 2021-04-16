@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import { Container } from '@/website/components/container';
-import { NavbarVariantOne } from '@/packages/navbar/examples/variantOne';
-import { NavbarVariantTwo } from '@/packages/navbar/examples/variantTwo';
-import { NavbarVariantThree } from '@/packages/navbar/examples/variantThree';
+import NavbarVariantOne from '@/packages/navbar/examples/variantOne';
+import NavbarVariantTwo from '@/packages/navbar/examples/variantTwo';
+import NavbarVariantThree from '@/packages/navbar/examples/variantThree';
 import NavbarVariantOneSnippet from '@/packages/navbar/snippets/variantOne.mdx';
 import NavbarVariantTwoSnippet from '@/packages/navbar/snippets/variantTwo.mdx';
 import NavbarVariantThreeSnippet from '@/packages/navbar/snippets/variantThree.mdx';

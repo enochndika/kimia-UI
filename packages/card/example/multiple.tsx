@@ -1,33 +1,8 @@
 import { FC } from 'react';
+import Card from '../index';
 import Image from 'next/image';
-import { Card } from '../../card';
 
-export const SingleCard: FC = () => (
-  <div className="mb-12">
-    <h2 className="font-bold text-gray-600 text-lg md:text-2xl mt-12 mb-3">
-      Single Card
-    </h2>
-    <Card className="w-full md:w-4/12">
-      <Image
-        src="https://res.cloudinary.com/beloved/image/upload/v1608682938/Assets/632198_sgrp38.jpg"
-        alt="image"
-        width={1200}
-        height={600}
-        priority={true}
-        className="max-w-full h-auto"
-      />
-      <Card.Body>
-        <Card.Title>Card title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card&apos;s content.
-        </Card.Text>
-      </Card.Body>
-    </Card>
-  </div>
-);
-
-export const MultipleCard: FC = () => (
+const MultipleCard: FC = () => (
   <div className="mb-12">
     <h2 className="font-bold text-gray-600 text-lg md:text-2xl mt-20 mb-3">
       Multiple Cards
@@ -103,6 +78,8 @@ export const MultipleCard: FC = () => (
     </div>
   </div>
 );
+
+export default MultipleCard;
 
 const ArrowIcon = () => (
   <svg

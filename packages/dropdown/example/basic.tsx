@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import Dropdown from '../../dropdown';
 
-export const BasicDropdown: FC = () => (
+const BasicDropdown: FC = () => (
   <div className="mb-8">
     <h2 className="font-bold text-gray-600 text-lg md:text-2xl mb-4">
       Basic Dropdown
@@ -33,3 +33,5 @@ export const BasicDropdown: FC = () => (
     </Dropdown>
   </div>
 );
+
+export default BasicDropdown;

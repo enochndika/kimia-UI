@@ -83,21 +83,19 @@ const Dropdown = ({ children }: Props) => {
 
 Dropdown.Toggle = ({ children }: Props) => <>{children}</>;
 
-Dropdown.Menu = ({ children }: Props) => {
-  return (
-    <div className="relative">
-      <div
-        style={{ transform: 'translate3d(0px, 3px, 0px)' }}
-        className={style.menu}
-        role="menu"
-        aria-orientation="vertical"
-        aria-labelledby="options-menu"
-      >
-        {children}
-      </div>
+Dropdown.Menu = ({ children }: Props) => (
+  <div className="relative">
+    <div
+      style={{ transform: 'translate3d(0px, 3px, 0px)' }}
+      className={style.menu}
+      role="menu"
+      aria-orientation="vertical"
+      aria-labelledby="options-menu"
+    >
+      {children}
     </div>
-  );
-};
+  </div>
+);
 
 /* You can wrap the a tag with Link if you are using either Create-React-App, Next.js or Gatsby */
 Dropdown.Item = ({ children }: DropdownItemProps) => (

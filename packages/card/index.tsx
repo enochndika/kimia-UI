@@ -5,12 +5,12 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
 }
 
-const styles = {
+const inlineStyle = {
   boxShadow: '0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%)',
 };
 
-export const Card = ({ children, className }: Props) => (
-  <div className={`${className} relative flex flex-col`} style={styles}>
+const Card = ({ children, className }: Props) => (
+  <div className={`${className} relative flex flex-col`} style={inlineStyle}>
     {children}
   </div>
 );
@@ -30,3 +30,5 @@ Card.Title = ({ children, className }: Props) => (
 Card.Text = ({ children, className }: Props) => (
   <div className={`${className} text-gray-500`}>{children}</div>
 );
+
+export default Card;

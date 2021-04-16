@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { Container } from '@/website/components/container';
-import { FieldWithReactHookForm } from '@/packages/field/examples/withReactHookForm';
+import FieldWithReactHookForm from '@/packages/field/examples/withReactHookForm';
 import FieldWithReactHookFormSnippet from '@/packages/field/snippets/with-react-hook-form.mdx';
 
 export default function FieldWithHookFormPage() {

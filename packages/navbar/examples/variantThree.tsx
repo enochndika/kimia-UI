@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Navbar } from '../index';
+import Navbar from '../index';
 
-export const NavbarVariantThree = () => {
+const NavbarVariantThree = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const toggle = () => {
@@ -28,3 +28,5 @@ export const NavbarVariantThree = () => {
     </Navbar>
   );
 };
+
+export default NavbarVariantThree;

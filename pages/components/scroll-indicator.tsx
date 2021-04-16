@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { Container } from '@/website/components/container';
 import ScrollIndicatorSnippet from '@/packages/scroll-indicator/snippets/index.mdx';
-import { ScrollIndicatorExample } from '@/packages/scroll-indicator/examples';
+import ScrollIndicatorExample from '@/packages/scroll-indicator/examples';
 
 export default function ScrollIndicatorPage() {
   return (

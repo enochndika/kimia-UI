@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { Container } from '@/website/components/container';
 import PricingTableSnippet from '@/packages/ecommerce/pricing-table/snippets/pricing-table.mdx';
-import { PricingTableExample } from '@/packages/ecommerce/pricing-table/examples';
+import PricingTableExample from '@/packages/ecommerce/pricing-table/examples';
 
 export default function PricingTablePage() {
   return (

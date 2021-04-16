@@ -1,9 +1,9 @@
 import Modal from '../index';
 import { useOpenModal } from '../openModal';
 import { FC } from 'react';
-import { Button } from '../../button';
+import Button from '@/packages/button';
 
-export const ModalNotClosedOutside: FC = () => {
+const ModalNotClosedOutside: FC = () => {
   const { toggle, isOpen } = useOpenModal();
   return (
     <div className="mb-8">
@@ -42,3 +42,5 @@ export const ModalNotClosedOutside: FC = () => {
     </div>
   );
 };
+
+export default ModalNotClosedOutside;

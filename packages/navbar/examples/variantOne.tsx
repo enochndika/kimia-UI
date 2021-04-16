@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Navbar } from '../index';
+import Navbar from '../index';
 
-export const NavbarVariantOne = () => {
+const NavbarVariantOne = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const toggle = () => {
@@ -35,7 +35,7 @@ export const NavbarVariantOne = () => {
             <Navbar.Link href="#">Home</Navbar.Link>
           </Navbar.Item>
         </Navbar.Nav>
-        <Navbar.Nav right>
+        <Navbar.Nav position="right">
           <Navbar.Item>
             <Navbar.Link href="#">Documents</Navbar.Link>
           </Navbar.Item>
@@ -47,3 +47,5 @@ export const NavbarVariantOne = () => {
     </Navbar>
   );
 };
+
+export default NavbarVariantOne;

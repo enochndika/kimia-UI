@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { HamburgerMenu } from '../index';
+import HamburgerMenu from '../index';
 
-export const HamburgerMenuVariantThree = () => {
+const HamburgerMenuVariantThree = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const toggle = () => {
@@ -28,3 +28,5 @@ export const HamburgerMenuVariantThree = () => {
     </HamburgerMenu>
   );
 };
+
+export default HamburgerMenuVariantThree;

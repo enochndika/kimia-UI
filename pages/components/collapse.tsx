@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { Container } from '@/website/components/container';
-import { CollapseFirst } from '@/packages/collapse/example/first';
-import { CollapseSecond } from '@/packages/collapse/example/second';
+import CollapseFirst from '@/packages/collapse/example/first';
+import CollapseSecond from '@/packages/collapse/example/second';
 import CollapseFirstSnippet from '@/packages/collapse/snippets/first.mdx';
 import CollapseSecondSnippet from '@/packages/collapse/snippets/second.mdx';
 

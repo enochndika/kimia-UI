@@ -1,6 +1,6 @@
-import Field from '@/packages/field';
+import Field from '../index';
 
-export const DefaultFieldExample = () => (
+const DefaultFieldExample = () => (
   <div className="mt-16">
     <h2 className="font-bold text-gray-600 text-lg md:text-2xl mb-6">
       Example
@@ -26,3 +26,5 @@ export const DefaultFieldExample = () => (
     </Field>
   </div>
 );
+
+export default DefaultFieldExample;

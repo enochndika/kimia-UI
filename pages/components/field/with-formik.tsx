@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { Container } from '@/website/components/container';
-import { FieldWithFormik } from '@/packages/field/examples/withFormik';
+import FieldWithFormik from '@/packages/field/examples/withFormik';
 import FieldWithFormikSnippet from '@/packages/field/snippets/with-formik.mdx';
 
 export default function FieldWithFormikPage() {

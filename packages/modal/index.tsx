@@ -37,16 +37,9 @@ const Modal = ({
   isOpen,
   toggle,
   closeOnClickOutside,
-  position,
+  position = 'top',
 }: ModalProps) => {
   const ref = useRef<HTMLDivElement>(null);
-
-  const content =
-    position === 'left'
-      ? style.content.left
-      : position === 'right'
-      ? style.content.right
-      : style.content.top;
 
   useEffect(() => {
     const handleOutsideClick = (event) => {
@@ -71,7 +64,9 @@ const Modal = ({
               role="dialogue"
               aria-modal={true}
             >
-              <div className={`${content} ${style.content.default}`}>
+              <div
+                className={`${style.content[position]} ${style.content.default}`}
+              >
                 {children}
               </div>
             </div>

@@ -11,7 +11,7 @@ const DefaultCode: FC = () => (
     </Code>
     <div className="mb-5" />
     <Code acceptCopy={true} variant="default">
-      npm install next react react-dom
+      npm install @supabase/supabase-js
     </Code>
   </div>
 );

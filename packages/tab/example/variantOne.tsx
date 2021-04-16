@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Tab, Tabs } from '../index';
 
-export const TabVariantOne: FC = () => (
+const TabVariantOne: FC = () => (
   <div className="mb-8">
     <h2 className="font-bold text-gray-600 text-lg md:text-2xl mt-12 mb-6">
       Variant 1
@@ -28,3 +28,5 @@ export const TabVariantOne: FC = () => (
     </Tabs>
   </div>
 );
+
+export default TabVariantOne;
