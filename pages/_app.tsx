@@ -52,11 +52,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta property="og:url" content="https://kimia-ui.vercel.app" />
         <meta
           property="og:title"
-          content="Kimia-UI — A collection of React components built with tailwindcss"
+          content="Kimia-UI — A collection of UI components for React built with Tailwind CSS"
         />
         <meta
           property="og:description"
-          content="Kimia-UI provides fully customizable UI Components for React built with Tailwind CSS compatible with Next.js, Gatsby and create-react-app."
+          content="Kimia ui provides fully customizable UI components for React built with TailwindCSS. No installation needed, just copy and paste any component you want to use"
         />
         <meta
           property="og:image"
@@ -73,7 +73,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <meta
           property="twitter:description"
-          content="Kimia ui provides fully customizable UI Components for React built with Tailwind CSS compatible with Next.js, Gatsby and create-react-app."
+          content="Kimia ui provides fully customizable UI components for React built with TailwindCSS. No installation needed, just copy and paste any component you want to use"
         />
         <meta
           property="twitter:image"

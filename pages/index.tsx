@@ -15,7 +15,7 @@ export default function Home() {
         />
         <meta
           name="description"
-          content="Kimia ui provides fully customizable UI Components for React built with Tailwind CSS compatible with Next.js, Gatsby and create-react-app."
+          content="Kimia ui provides fully customizable UI components for React built with TailwindCSS. No installation needed, just copy and paste any component you want to use"
           key="description"
         />
         <link rel="canonical" href="https://kimia-ui.vercel.app" />

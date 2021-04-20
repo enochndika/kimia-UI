@@ -10,9 +10,9 @@
     "prepare": "husky install"
   },
   "lint-staged": {
-    "*/**/*.{js,ts,tsx": [
-      "yarn eslint",
-      "yarn prettier --write"
+    "*.{js,jsx,ts,tsx}": [
+      "eslint '*/**/*.{js,jsx,ts,tsx}' --fix",
+      "prettier '*/**/*.{js,jsx}' --write"
     ]
   },
   "repository": {
