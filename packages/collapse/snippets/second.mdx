@@ -36,15 +36,19 @@ export const CollapsePage = () => {
     </div>
   );
 };
+
+/* Logic */
 const Collapse = ({ isOpen, children }) => {
   const ref = useRef(null);
-  const style = isOpen ? { height: ref.current?.scrollHeight } : { height: 0 };
+  const inlineStyle = isOpen
+    ? { height: ref.current?.scrollHeight }
+    : { height: 0 };
 
   return (
     <div
       className="mt-2 overflow-hidden text-gray-600 transition-height ease duration-300"
       ref={ref}
-      style={style}
+      style={inlineStyle}
     >
       {children}
     </div>

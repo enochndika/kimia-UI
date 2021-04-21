@@ -10,7 +10,7 @@ const inlineStyle = {
 };
 
 const Card = ({ children, className }: Props) => (
-  <div className={`${className} relative flex flex-col`} style={inlineStyle}>
+  <div className={`${className} relative rounded-lg`} style={inlineStyle}>
     {children}
   </div>
 );

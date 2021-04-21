@@ -9,6 +9,9 @@ module.exports = withMDX({
   images: {
     domains: ['res.cloudinary.com'],
   },
+  future: {
+    webpack5: true,
+  },
   async redirects() {
     return [
       {

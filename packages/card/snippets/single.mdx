@@ -1,44 +1,45 @@
 ```jsx
-export const SingleCardPage = () => (
-  <Card className="w-full md:w-4/12">
-    <img
-      src="https://res.cloudinary.com/beloved/image/upload/v1608682938/Assets/632198_sgrp38.jpg"
-      alt="image"
-      width={1200}
-      height={600}
-      className="max-w-full h-auto"
-    />
-    <Card.Body>
-      <Card.Title>Card title</Card.Title>
-      <Card.Text>
-        Some quick example text to build on the card title and make up the bulk
-        of the card&apos;s content.
-      </Card.Text>
-    </Card.Body>
-  </Card>
-);
-
-const Card = ({ className, children }) => (
-  <div
-    className={`${className} relative flex flex-col border-2 border-gray-200 rounded-lg`} style={style}
-  >
-    {children}
+export const CardPage = () => (
+  <div className="w-full md:w-4/12">
+    <Card>
+      <img
+        src="https://res.cloudinary.com/beloved/image/upload/v1608682938/Assets/632198_sgrp38.jpg"
+        alt="image"
+        width={1200}
+        height={600}
+        className="max-w-full h-auto"
+      />
+      <Card.Body>
+        <Card.Title>Card title</Card.Title>
+        <Card.Text>
+          Some quick example text to build on the card title and make up the
+          bulk of the card&apos;s content.
+        </Card.Text>
+      </Card.Body>
+    </Card>
   </div>
 );
 
-Card.Body = ({ children }) => (
-  <div className="block flex-grow flex-shrink p-5">{children}</div>
-);
-
-Card.Title = ({ className, children }) => (
-  <div className={`${className} font-medium text-gray-700 mb-3`}>
-    {children}
-  </div>
-);
-
-Card.Text = ({ children }) => <div className="text-gray-500">{children}</div>;
-
+/* Logic */
 const style = {
+  card: `relative flex flex-col border-2 border-gray-200 rounded-lg`,
+  cardBody: `block flex-grow flex-shrink p-5`,
+  cardTitle: `font-medium text-gray-700 mb-3`,
+  cardText: `text-gray-500`,
+};
+const inlineStyle = {
   boxShadow: '0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%)',
 };
+
+const Card = ({ children }) => (
+  <div className={style.card} style={inlineStyle}>
+    {children}
+  </div>
+);
+
+Card.Body = ({ children }) => <div className={style.cardBody}>{children}</div>;
+Card.Title = ({ children }) => (
+  <div className={style.cardTitle}>{children}</div>
+);
+Card.Text = ({ children }) => <div className={style.cardText}>{children}</div>;
 ```

@@ -3,12 +3,12 @@ import useOpenModal from '../openModal';
 import { FC } from 'react';
 import Button from '@/packages/button';
 
-const ModalTop: FC = () => {
+const ModalTopLarge: FC = () => {
   const { toggle, isOpen } = useOpenModal();
   return (
     <div className="mb-8">
       <h2 className="font-bold text-gray-600 text-lg md:text-2xl mt-12 mb-3">
-        Top
+        Large
       </h2>
       <Button onClick={toggle} color="primary">
         Click to open me
@@ -16,7 +16,7 @@ const ModalTop: FC = () => {
       <Modal
         isOpen={isOpen}
         toggle={toggle}
-        position="top"
+        position="large"
         closeOnClickOutside={true}
       >
         <Modal.Header>Modal title</Modal.Header>
@@ -39,4 +39,4 @@ const ModalTop: FC = () => {
   );
 };
 
-export default ModalTop;
+export default ModalTopLarge;

@@ -78,29 +78,25 @@ export const AccordionPage = () => {
 };
 
 /* Logic */
+const style = {
+  accordion: `overflow-hidden md:overflow-x-hidden transition-height ease duration-300 text-gray-600`,
+  accordionHeader: `block focus:outline-none bg-gray-800 text-white border-b my-2 p-3`,
+};
+
 const Accordion = ({ children, id, isOpen }) => {
   const ref = useRef();
-  const style =
+  const inlineStyle =
     isOpen === id ? { height: ref.current?.scrollHeight } : { height: 0 };
 
   return (
-    <div
-      id={id}
-      className="overflow-hidden md:overflow-x-hidden transition-height ease duration-300 text-gray-600"
-      ref={ref}
-      style={style}
-    >
+    <div id={id} className={style.accordion} ref={ref} style={inlineStyle}>
       {children}
     </div>
   );
 };
 
 const AccordionHeader = ({ accordionId, id, children, ...rest }) => (
-  <div
-    role="button"
-    {...rest}
-    className="block focus:outline-none bg-gray-800 text-white border-b my-2 p-3"
-  >
+  <div role="button" {...rest} className={style.accordionHeader}>
     {children}
     <span className="float-right">
       {accordionId === id ? (

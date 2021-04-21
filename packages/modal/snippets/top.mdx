@@ -46,6 +46,7 @@ export const ModalPage = () => {
   );
 };
 
+/* Modal logic*/
 const style = {
   container: `fixed top-0 left-0 z-40 w-full h-full m-0`,
   content: `animate-modal-top relative flex flex-col bg-white pointer-events-auto`,
@@ -57,7 +58,6 @@ const style = {
   footer: `flex flex-wrap items-center justify-end p-3 border-t border-gray-300`,
 };
 
-/* Modal logic*/
 const Modal = ({ children, isOpen, toggle }) => {
   const ref = useRef();
 

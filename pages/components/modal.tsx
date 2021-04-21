@@ -4,10 +4,16 @@ import ModalRight from '@/packages/modal/example/right';
 import ModalLeft from '@/packages/modal/example/left';
 import ModalTop from '@/packages/modal/example/top';
 import ModalNotClosedOutside from '@/packages/modal/example/notClosedOutside';
+import ModalWithoutAnimation from '@/packages/modal/example/withoutAnimation';
+import ModalTopLarge from '@/packages/modal/example/large';
+import ModalTopExtraLarge from '@/packages/modal/example/extraLarge';
 import ModalTopSnippet from '@/packages/modal/snippets/top.mdx';
 import ModalLeftSnippet from '@/packages/modal/snippets/left.mdx';
 import ModalRightSnippet from '@/packages/modal/snippets/right.mdx';
 import ModalNotClosedOutsideSnippet from '@/packages/modal/snippets/notClosedOutside.mdx';
+import ModalWithoutAnimationSnippet from '@/packages/modal/snippets/withoutAnimation.mdx';
+import ModalLargeSnippet from '@/packages/modal/snippets/large.mdx';
+import ModalExtraLargeSnippet from '@/packages/modal/snippets/extraLarge.mdx';
 
 export default function ModalPage() {
   return (
@@ -27,6 +33,9 @@ export default function ModalPage() {
         <h1 className="text-center text-3xl md:text-5xl font-bold text-gray-600 mb-16 mt-12">
           Modal
         </h1>
+        <div className="text-gray-700">
+          * All variants of the modal will have the same width on mobile
+        </div>
         <ModalTop />
         <ModalTopSnippet />
         <ModalLeft />
@@ -35,6 +44,12 @@ export default function ModalPage() {
         <ModalRightSnippet />
         <ModalNotClosedOutside />
         <ModalNotClosedOutsideSnippet />
+        <ModalWithoutAnimation />
+        <ModalWithoutAnimationSnippet />
+        <ModalTopLarge />
+        <ModalLargeSnippet />
+        <ModalTopExtraLarge />
+        <ModalExtraLargeSnippet />
       </Container>
     </>
   );

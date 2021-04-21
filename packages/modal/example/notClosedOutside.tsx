@@ -1,5 +1,5 @@
 import Modal from '../index';
-import { useOpenModal } from '../openModal';
+import useOpenModal from '../openModal';
 import { FC } from 'react';
 import Button from '@/packages/button';
 

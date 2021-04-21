@@ -17,13 +17,8 @@ const Code = ({ children, variant, acceptCopy }: CodeProps) => {
   const [copied, setCopied] = useState(false);
   let resetCopy;
 
-  const onCopyCode = () => {
-    const el = document.createElement('textarea');
-    el.value = children;
-    document.body.appendChild(el);
-    el.select();
-    document.execCommand('copy');
-    document.body.removeChild(el);
+  const onCopyCode = async () => {
+    await navigator.clipboard.writeText(children);
     setCopied(true);
   };
 
