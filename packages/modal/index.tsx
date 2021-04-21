@@ -15,7 +15,7 @@ interface ModalProps extends Props {
 
 const style = {
   body: `flex-shrink flex-grow p-4`,
-  container: `fixed top-0 left-0 z-40 w-full h-full m-0`,
+  container: `fixed top-0 left-0 z-40 w-full h-full m-0 overflow-y-auto`,
   content: {
     default: `relative flex flex-col bg-white pointer-events-auto`,
     left: 'animate-modal-left',
@@ -28,11 +28,11 @@ const style = {
   orientation: {
     left: `mt-12 mx-8 md:flex md:w-96 md:h-full md:m-0 md:left-0 md:mx-0 md:my-0 md:absolute`,
     right: `mt-12 mx-8 md:flex md:w-96 md:h-full md:m-0 md:right-0 md:mx-0 md:my-0 md:absolute`,
-    top: 'mt-12 mx-8 md:m-auto md:w-6/12 lg:w-4/12 md:pt-12',
-    large: 'mt-12 mx-8 md:m-auto md:w-8/12 lg:w-8/12 md:pt-12',
-    extraLarge: 'mt-12 mx-8 md:w-12/12 md:pt-12',
+    top: 'mt-12 mx-8 pb-6 md:m-auto md:w-6/12 lg:w-4/12 md:pt-12',
+    large: 'mt-12 mx-8 pb-6 md:m-auto md:w-8/12 lg:w-8/12 md:pt-12',
+    extraLarge: 'mt-12 mx-8 pb-6 md:w-12/12 md:pt-12',
   },
-  overlay: `fixed top-0 left-0 z-40 w-screen h-screen bg-black opacity-50`,
+  overlay: `fixed top-0 left-0 z-30 w-screen h-screen bg-black opacity-50`,
 };
 
 const Modal = ({
