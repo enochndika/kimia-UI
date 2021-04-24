@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { AccordionHeader, Accordion } from '@/packages/accordion';
 
-const AccordionGrayColor = () => {
+const AccordionGreenColor = () => {
   const [activeItem, setActiveItem] = useState('');
 
   const toggleActiveItem = (id) => () => {
@@ -11,16 +11,9 @@ const AccordionGrayColor = () => {
   return (
     <div className="mb-12">
       <h2 className="font-bold text-gray-600 text-lg md:text-2xl mb-6">
-        Gray header
+        Green header without icon
       </h2>
-      <AccordionHeader
-        id="item-1"
-        activeItem={activeItem}
-        variant="gray"
-        onClick={toggleActiveItem('item-1')}
-        downIcon={<AngleDownIcon className="mt-1 h-4" />}
-        upIcon={<AngleUpIcon className="mt-1 h-4" />}
-      >
+      <AccordionHeader variant="green" onClick={toggleActiveItem('item-1')}>
         Accordion Group Item #1
       </AccordionHeader>
       <Accordion id="item-1" isOpen={activeItem}>
@@ -37,14 +30,7 @@ const AccordionGrayColor = () => {
           sunt explicabo.
         </p>
       </Accordion>
-      <AccordionHeader
-        id="item-2"
-        activeItem={activeItem}
-        variant="gray"
-        onClick={toggleActiveItem('item-2')}
-        downIcon={<AngleDownIcon className="mt-1 h-4" />}
-        upIcon={<AngleUpIcon className="mt-1 h-4" />}
-      >
+      <AccordionHeader variant="green" onClick={toggleActiveItem('item-2')}>
         Accordion Group Item #2
       </AccordionHeader>
       <Accordion id="item-2" isOpen={activeItem}>
@@ -61,14 +47,7 @@ const AccordionGrayColor = () => {
           similique sunt in culpa qui officia deserunt mollitia animi.
         </p>
       </Accordion>
-      <AccordionHeader
-        id="item-3"
-        activeItem={activeItem}
-        variant="gray"
-        onClick={toggleActiveItem('item-3')}
-        downIcon={<AngleDownIcon className="mt-1 h-4" />}
-        upIcon={<AngleUpIcon className="mt-1 h-4" />}
-      >
+      <AccordionHeader variant="green" onClick={toggleActiveItem('item-3')}>
         Accordion Group Item #3
       </AccordionHeader>
       <Accordion id="item-3" isOpen={activeItem}>
@@ -89,29 +68,4 @@ const AccordionGrayColor = () => {
   );
 };
 
-const AngleUpIcon = (props) => (
-  <svg
-    fill="white"
-    strokeWidth="0"
-    viewBox="0 0 320 512"
-    xmlns="http://www.w3.org/2000/svg"
-    {...props}
-  >
-    <path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z" />
-  </svg>
-);
-
-const AngleDownIcon = (props) => (
-  <svg
-    stroke="currentColor"
-    fill="white"
-    strokeWidth="0"
-    viewBox="0 0 320 512"
-    xmlns="http://www.w3.org/2000/svg"
-    {...props}
-  >
-    <path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z" />
-  </svg>
-);
-
-export default AccordionGrayColor;
+export default AccordionGreenColor;

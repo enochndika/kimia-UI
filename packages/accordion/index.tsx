@@ -7,12 +7,12 @@ interface AccordionProps {
 }
 
 interface AccordionHeaderProps extends HTMLAttributes<HTMLElement> {
-  accordionId: string;
-  id: string;
+  activeItem?: string;
+  id?: string;
   children: ReactNode;
-  upIcon: ReactNode;
-  downIcon: ReactNode;
-  variant: 'gray' | 'indigo';
+  upIcon?: ReactNode;
+  downIcon?: ReactNode;
+  variant: 'gray' | 'indigo' | 'green';
 }
 
 const style = {
@@ -20,6 +20,7 @@ const style = {
   accordionHeader: {
     gray: `block focus:outline-none bg-gray-800 text-white border-b my-2 p-3`,
     indigo: `block focus:outline-none bg-indigo-800 text-white border-b my-2 p-3`,
+    green: `block focus:outline-none bg-green-800 text-white border-b my-2 p-3`,
   },
 };
 
@@ -36,7 +37,7 @@ export const Accordion = ({ children, id, isOpen }: AccordionProps) => {
 };
 
 export const AccordionHeader = ({
-  accordionId,
+  activeItem,
   id,
   children,
   upIcon,
@@ -46,8 +47,6 @@ export const AccordionHeader = ({
 }: AccordionHeaderProps) => (
   <div role="button" {...rest} className={style.accordionHeader[variant]}>
     {children}
-    <span className="float-right">
-      {accordionId === id ? upIcon : downIcon}
-    </span>
+    <span className="float-right">{activeItem === id ? upIcon : downIcon}</span>
   </div>
 );

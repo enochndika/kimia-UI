@@ -2,22 +2,22 @@
 import { useState, useRef } from 'react';
 
 export const AccordionPage = () => {
-  const [accordionId, setAccordionId] = useState('');
+  const [activeItem, setActiveItem] = useState('');
 
-  const toggleCollapse = (id) => () => {
-    setAccordionId((prevState) => (prevState !== id ? id : ''));
+  const toggleActiveItem = (id) => () => {
+    setActiveItem((prevState) => (prevState !== id ? id : ''));
   };
 
   return (
     <div>
       <AccordionHeader
         id="item-1"
-        accordionId={accordionId}
-        onClick={toggleCollapse('item-1')}
+        activeItem={activeItem}
+        onClick={toggleActiveItem('item-1')}
       >
         Accordion Group Item #1
       </AccordionHeader>
-      <Accordion id="item-1" isOpen={accordionId}>
+      <Accordion id="item-1" isOpen={activeItem}>
         <p className="mb-4">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -33,12 +33,12 @@ export const AccordionPage = () => {
       </Accordion>
       <AccordionHeader
         id="item-2"
-        accordionId={accordionId}
-        onClick={toggleCollapse('item-2')}
+        activeItem={activeItem}
+        onClick={toggleActiveItem('item-2')}
       >
         Accordion Group Item #2
       </AccordionHeader>
-      <Accordion id="item-2" isOpen={accordionId}>
+      <Accordion id="item-2" isOpen={activeItem}>
         <p className="mb-4">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
           odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
@@ -54,12 +54,12 @@ export const AccordionPage = () => {
       </Accordion>
       <AccordionHeader
         id="item-3"
-        accordionId={accordionId}
-        onClick={toggleCollapse('item-3')}
+        activeItem={activeItem}
+        onClick={toggleActiveItem('item-3')}
       >
         Accordion Group Item #3
       </AccordionHeader>
-      <Accordion id="item-3" isOpen={accordionId}>
+      <Accordion id="item-3" isOpen={activeItem}>
         <p className="mb-4">
           dales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor.
           Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas
@@ -95,11 +95,11 @@ const Accordion = ({ children, id, isOpen }) => {
   );
 };
 
-const AccordionHeader = ({ accordionId, id, children, ...rest }) => (
+const AccordionHeader = ({ activeItem, id, children, ...rest }) => (
   <div role="button" {...rest} className={style.accordionHeader}>
     {children}
     <span className="float-right">
-      {accordionId === id ? (
+      {activeItem === id ? (
         <AngleUpIcon className="mt-1 h-4" />
       ) : (
         <AngleDownIcon className="mt-1 h-4" />

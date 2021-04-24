@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { AccordionHeader, Accordion } from '@/packages/accordion';
 
 const AccordionIndigoColor = () => {
-  const [accordionId, setAccordionId] = useState('');
+  const [activeItem, setActiveItem] = useState('');
 
-  const toggleCollapse = (id) => () => {
-    setAccordionId((prevState) => (prevState !== id ? id : ''));
+  const toggleActiveItem = (id) => () => {
+    setActiveItem((prevState) => (prevState !== id ? id : ''));
   };
 
   return (
@@ -15,15 +15,15 @@ const AccordionIndigoColor = () => {
       </h2>
       <AccordionHeader
         id="item-1"
-        accordionId={accordionId}
+        activeItem={activeItem}
         variant="indigo"
-        onClick={toggleCollapse('item-1')}
+        onClick={toggleActiveItem('item-1')}
         downIcon={<PlusCircleIcon className="mt-1 h-4" />}
         upIcon={<MinusCircleIcon className="mt-1 h-4" />}
       >
         Accordion Group Item #1
       </AccordionHeader>
-      <Accordion id="item-1" isOpen={accordionId}>
+      <Accordion id="item-1" isOpen={activeItem}>
         <p className="mb-4">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -39,15 +39,15 @@ const AccordionIndigoColor = () => {
       </Accordion>
       <AccordionHeader
         id="item-2"
-        accordionId={accordionId}
+        activeItem={activeItem}
         variant="indigo"
-        onClick={toggleCollapse('item-2')}
+        onClick={toggleActiveItem('item-2')}
         downIcon={<PlusCircleIcon className="mt-1 h-4" />}
         upIcon={<MinusCircleIcon className="mt-1 h-4" />}
       >
         Accordion Group Item #2
       </AccordionHeader>
-      <Accordion id="item-2" isOpen={accordionId}>
+      <Accordion id="item-2" isOpen={activeItem}>
         <p className="mb-4">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
           odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
@@ -63,15 +63,15 @@ const AccordionIndigoColor = () => {
       </Accordion>
       <AccordionHeader
         id="item-3"
-        accordionId={accordionId}
+        activeItem={activeItem}
         variant="indigo"
-        onClick={toggleCollapse('item-3')}
+        onClick={toggleActiveItem('item-3')}
         downIcon={<PlusCircleIcon className="mt-1 h-4" />}
         upIcon={<MinusCircleIcon className="mt-1 h-4" />}
       >
         Accordion Group Item #3
       </AccordionHeader>
-      <Accordion id="item-3" isOpen={accordionId}>
+      <Accordion id="item-3" isOpen={activeItem}>
         <p className="mb-4">
           dales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor.
           Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas

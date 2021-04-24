@@ -2,8 +2,10 @@ import Head from 'next/head';
 import { Container } from '@/website/components/container';
 import AccordionGrayColor from '@/packages/accordion/examples/gray';
 import AccordionIndigoColor from '@/packages/accordion/examples/indigo';
+import AccordionGreenColor from '@/packages/accordion/examples/green';
 import AccordionGrayColorSnippet from '@/packages/accordion/snippets/gray.mdx';
 import AccordionIndigoColorSnippet from '@/packages/accordion/snippets/indigo.mdx';
+import AccordionGreenColorSnippet from '@/packages/accordion/snippets/green.mdx';
 
 export default function AccordionPage() {
   return (
@@ -27,6 +29,8 @@ export default function AccordionPage() {
         <AccordionGrayColorSnippet />
         <AccordionIndigoColor />
         <AccordionIndigoColorSnippet />
+        <AccordionGreenColor />
+        <AccordionGreenColorSnippet />
       </Container>
     </>
   );
