@@ -42,14 +42,10 @@ const Sidebar: FC = () => (
   <Container>
     <div className="hidden lg:block h-full mt-24 pt-8 pb-32 fixed top-0 lg:w-60 text-white overflow-y-auto">
       <div className="pl-6 pb-2 mb-5 text-gray-500 font-bold">GENERAL</div>
-      <Item href="/components/accordion">
-        Accordion <Arrival />
-      </Item>
+      <Item href="/components/accordion">Accordion</Item>
       <Item href="/components/buttons">Buttons</Item>
       <Item href="/components/card">Card</Item>
-      <Item href="/components/code">
-        Code <Arrival />
-      </Item>
+      <Item href="/components/code">Code</Item>
       <Item href="/components/collapse">Collapse</Item>
       <Item href="/components/dropdown">Dropdown</Item>
       <Item href="/components/jumbotron">Jumbotron</Item>
@@ -66,17 +62,12 @@ const Sidebar: FC = () => (
       <Item href="/components/navbar">Navbar</Item>
       <Item href="/components/sidenav">Sidenav</Item>
       <div className="pl-6 pt-6 pb-2 mb-5 text-gray-500 font-bold">Forms</div>
-      <Item href="/components/field">
-        Field <Arrival />
+      <Item href="/components/field/autocomplete">
+        Autocomplete <Arrival />
       </Item>
-      <Item href="/components/field/with-formik">
-        With Formik
-        <Arrival />
-      </Item>
-      <Item href="/components/field/with-react-hook-form">
-        With Hook Form
-        <Arrival />
-      </Item>
+      <Item href="/components/field">Field</Item>
+      <Item href="/components/field/with-formik">With Formik</Item>
+      <Item href="/components/field/with-react-hook-form">With Hook Form</Item>
       <div className="pl-6 pt-6 pb-2 mb-5 text-gray-500 font-bold">EXTRAS</div>
       <Item href="/components/toast">Toast</Item>
       <Item href="/components/scroll-indicator">Scroll indicator</Item>

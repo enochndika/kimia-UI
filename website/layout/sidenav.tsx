@@ -53,7 +53,7 @@ export const Sidenav = ({ isOpen, toggle }: SidenavProps) => {
       </div>
       <div className="pl-6 pb-6 text-gray-800 font-bold">General</div>
       <Item href="/components/accordion" onClick={toggle}>
-        Accordion <Arrival />
+        Accordion
       </Item>
       <Item href="/components/buttons" onClick={toggle}>
         Buttons
@@ -65,7 +65,7 @@ export const Sidenav = ({ isOpen, toggle }: SidenavProps) => {
         Collapse
       </Item>
       <Item href="/components/code" onClick={toggle}>
-        Code <Arrival />
+        Code
       </Item>
       <Item href="/components/dropdown" onClick={toggle}>
         Dropdown
@@ -106,17 +106,18 @@ export const Sidenav = ({ isOpen, toggle }: SidenavProps) => {
       <div className="pl-6 py-6 text-gray-800 font-bold" onClick={toggle}>
         Forms
       </div>
+      <Item href="/components/field/autocomplete" onClick={toggle}>
+        Autocomplete
+        <Arrival />
+      </Item>
       <Item href="/components/field" onClick={toggle}>
         Field
-        <Arrival />
       </Item>
       <Item href="/components/field/with-formik" onClick={toggle}>
         With Formik
-        <Arrival />
       </Item>
       <Item href="/components/field/with-react-hook-form" onClick={toggle}>
         With Hook Form
-        <Arrival />
       </Item>
       <div className="pl-6 py-6 text-gray-800 font-bold">Extras</div>
       <Item href="/components/toast" onClick={toggle}>
