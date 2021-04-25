@@ -1,9 +1,9 @@
 import { ForwardedRef, forwardRef, HTMLAttributes } from 'react';
 
 interface FieldProps extends HTMLAttributes<HTMLElement> {
+  disabled?: boolean;
   dot?: boolean;
-  error?: boolean;
-  errorMessage?: string;
+  error?: string;
   label: string;
   name: string;
   type: string;
@@ -11,75 +11,106 @@ interface FieldProps extends HTMLAttributes<HTMLElement> {
 type Ref = ForwardedRef<never>;
 
 const style = {
-  container: `relative mb-6 mt-3`,
-  dot: `text-red-500 pl-0.5`,
-  default: `rounded-lg flex-1 mt-1 w-full py-1.5 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:border-transparent border border-gray-300 border-transparent`,
   checkbox: `checked:bg-blue-500 checked:right-0 focus:outline-none right-4 duration-200 ease-in absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer`,
   checkboxContainer: `relative w-10 mr-2 align-middle select-none mt-2`,
   checkboxLabel: `block overflow-hidden h-6 rounded-full bg-gray-300`,
+  container: `relative mb-6 mt-3`,
+  default: `rounded-lg flex-1 mt-1 w-full py-1.5 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:border-transparent border border-gray-300 border-transparent`,
+  disabled: `cursor-not-allowed`,
+  dot: `text-red-500 pl-0.5`,
   error: `ring-red-500 ring-2`,
   errorMessage: `text-sm text-red-500 mb-6 mt-1`,
 };
 
 const Field = forwardRef((props: FieldProps, ref: Ref) => {
-  const { dot, type, error, errorMessage, label, name, ...rest } = props;
+  const { disabled, dot, type = 'text', error, label, name, ...rest } = props;
+  let component;
+
+  // if you won't use select, you can delete this part
+  if (type === 'select') {
+    component = (
+      <select
+        aria-required={dot}
+        aria-invalid={!!error}
+        className={`${style.default} ${error && style.error} ${
+          disabled ? 'cursor-not-allowed' : ''
+        }`}
+        disabled={disabled}
+        name={name}
+        ref={ref}
+        {...rest}
+      />
+    );
+  }
+
+  // if you won't use textarea, you can delete this part
+  if (type === 'textarea') {
+    component = (
+      <textarea
+        aria-required={dot}
+        aria-invalid={!!error}
+        className={`${style.default} ${disabled ? style.disabled : ''} ${
+          error && style.error
+        }`}
+        disabled={disabled}
+        name={name}
+        ref={ref}
+        {...rest}
+      />
+    );
+  }
+
+  // if you won't use checkbox, you can delete this part
+  if (type === 'checkbox') {
+    component = (
+      <div className={style.checkboxContainer}>
+        <input
+          aria-required={dot}
+          aria-invalid={!!error}
+          className={`${style.checkbox} ${disabled ? style.disabled : ''}`}
+          disabled={disabled}
+          name={name}
+          type="checkbox"
+          {...rest}
+        />
+        <span className={style.checkboxLabel} />
+      </div>
+    );
+  }
+
+  // if you won't use input, you can delete this part
+  if (type !== 'checkbox' && type !== 'select' && type !== 'textarea') {
+    component = (
+      <input
+        aria-required={dot}
+        aria-invalid={!!error}
+        className={`${style.default} ${disabled ? style.disabled : ''} ${
+          error && style.error
+        }`}
+        disabled={disabled}
+        name={name}
+        type={type}
+        ref={ref}
+        {...rest}
+      />
+    );
+  }
+
   return (
-    <div className={style.container}>
+    <div className={`${style.container} ${disabled ? 'opacity-50' : ''}`}>
       <label htmlFor={name} className="text-gray-700">
         {label}
         {dot && <span className={style.dot}>*</span>}
       </label>
 
-      {/* if you won't use select, you can delete this part */}
-      {type === 'select' && (
-        <select
-          {...rest}
-          ref={ref}
-          name={name}
-          className={`${style.default} ${error && style.error}`}
-        />
-      )}
-
-      {/* if you won't use textarea, you can delete this part */}
-      {type === 'textarea' && (
-        <textarea
-          {...rest}
-          ref={ref}
-          name={name}
-          className={`${style.default} ${error && style.error}`}
-        />
-      )}
-
-      {/* if you won't use checkbox, you can delete this part and the classes checkbox, checkboxContainer and checkboxLabel */}
-      {type === 'checkbox' && (
-        <div className={style.checkboxContainer}>
-          <input
-            type="checkbox"
-            name={name}
-            className={style.checkbox}
-            {...rest}
-          />
-          <span className={style.checkboxLabel} />
-        </div>
-      )}
-
-      {/* if you won't use field, you can delete this part */}
-      {type !== 'checkbox' && type !== 'select' && type !== 'textarea' && (
-        <input
-          {...rest}
-          type={type}
-          ref={ref}
-          name={name}
-          className={`${style.default} ${error && style.error}`}
-        />
-      )}
+      {component}
 
       {error && (
         <>
           {type !== 'textarea' && type !== 'select' && type !== 'checkbox' && (
             <ErrorIcon />
           )}
-          <p className={style.errorMessage}>{errorMessage}</p>
+          <p className={style.errorMessage}>{error}</p>
         </>
       )}
     </div>

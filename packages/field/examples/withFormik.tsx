@@ -27,29 +27,23 @@ const FieldWithFormik = () => {
     <div className="mb-12 border p-6">
       <form onSubmit={formik.handleSubmit}>
         <Field
-          aria-required={true}
-          aria-invalid={formik.errors.email && formik.touched.email}
+          dot={true}
+          error={formik.touched?.email && formik.errors?.email}
           label="Email"
           name="email"
-          error={formik.errors.email && formik.touched.email}
-          errorMessage={formik?.errors?.email}
           onChange={formik.handleChange}
-          dot={true}
           type="text"
         />
         <Field
-          aria-required={true}
-          aria-invalid={formik.errors.password && formik.touched.password}
-          label="Mot de passe"
-          name="password"
-          error={formik.errors.password && formik.touched.password}
-          errorMessage={formik?.errors?.password}
-          onChange={formik.handleChange}
           dot={true}
+          error={formik.touched?.password && formik.errors?.password}
+          label="Password"
+          name="password"
+          onChange={formik.handleChange}
           type="password"
         />
         <button
-          className="mt-8 bg-black focus:outline-none active:bg-gray-900 text-white shadow rounded px-4 py-1"
+          className="mt-8 bg-black active:bg-gray-900 focus:outline-none text-white rounded px-4 py-1"
           type="submit"
         >
           Submit

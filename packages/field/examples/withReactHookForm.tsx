@@ -12,26 +12,20 @@ const FieldWithReactHookForm = () => {
     <div className="mb-12 border p-6">
       <form onSubmit={handleSubmit(onSubmit)}>
         <Field
-          type="text"
-          aria-required={true}
-          aria-invalid={errors && errors.email}
+          dot={true}
+          error={errors?.email?.message}
           label="Email"
           name="email"
-          error={errors && errors.email}
-          errorMessage={errors && errors.email?.message}
           ref={register({ required: 'Email is required' })}
-          dot={true}
+          type="text"
         />
         <Field
-          type="password"
-          aria-required={true}
-          aria-invalid={errors && errors.password}
-          label="Mot de passe"
-          name="password"
-          error={errors && errors.password}
-          errorMessage={errors && errors.password?.message}
-          ref={register({ required: 'Password required' })}
           dot={true}
+          error={errors?.password?.message}
+          label="Password"
+          name="password"
+          ref={register({ required: 'Password required' })}
+          type="password"
         />
         <button
           className="mt-8 bg-black active:bg-gray-900 focus:outline-none text-white shadow rounded px-4 py-1"
