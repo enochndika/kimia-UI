@@ -14,7 +14,7 @@ const AutoCompleteExample = () => {
         setValue={setValue}
         name="country"
         label="Country"
-        options={allCountries}
+        suggestions={allCountries}
         placeholder="where are you from?"
       />
     </div>

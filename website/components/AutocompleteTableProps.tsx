@@ -28,21 +28,23 @@ const AutocompleteTableProps = () => {
             </td>
           </tr>
           <tr>
-            <td className="border border-gray-300 text-left p-4">value</td>
+            <td className="border border-gray-300 text-left p-4">*value</td>
             <td className="border border-gray-300 text-left p-4">string</td>
             <td className="border border-gray-300 text-left p-4">
               value of the autocomplete input
             </td>
           </tr>
           <tr>
-            <td className="border border-gray-300 text-left p-4">setValue</td>
+            <td className="border border-gray-300 text-left p-4">*setValue</td>
             <td className="border border-gray-300 text-left p-4">Function</td>
             <td className="border border-gray-300 text-left p-4">
               a function for handling the autocomplete value
             </td>
           </tr>
           <tr>
-            <td className="border border-gray-300 text-left p-4">options</td>
+            <td className="border border-gray-300 text-left p-4">
+              *suggestions
+            </td>
             <td className="border border-gray-300 text-left p-4">
               Array[String]
             </td>
