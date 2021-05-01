@@ -38,6 +38,7 @@ const Autocomplete = ({
   const [filteredSuggestions, setFilteredSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const ref = useRef(null);
+
   useEffect(() => {
     const handleOutsideClick = (event) => {
       if (!ref.current?.contains(event.target)) {
@@ -48,6 +49,7 @@ const Autocomplete = ({
     window.addEventListener('click', handleOutsideClick);
     return () => window.removeEventListener('click', handleOutsideClick);
   }, [showSuggestions, ref]);
+
   const handleChange = useCallback(
     (e) => {
       const userInput = e.currentTarget.value;
@@ -62,12 +64,14 @@ const Autocomplete = ({
     },
     [value],
   );
+
   const onClick = (e) => {
     setActiveSuggestion(0);
     setFilteredSuggestions([]);
     setShowSuggestions(false);
     setValue(e.currentTarget.innerText);
   };
+
   const onKeyDown = (e) => {
     // User pressed the enter key
     if (e.keyCode === 13) {
@@ -90,7 +94,9 @@ const Autocomplete = ({
       setActiveSuggestion(activeSuggestion + 1);
     }
   };
+
   let suggestionsListComponent;
+
   if (showSuggestions && value) {
     if (filteredSuggestions.length) {
       suggestionsListComponent = (
@@ -119,6 +125,7 @@ const Autocomplete = ({
       );
     }
   }
+
   return (
     <div className={style.container}>
       <label htmlFor={name} className={style.label}>
