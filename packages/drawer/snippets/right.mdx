@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 /* You'll need to install @reach/portal which simplify creating portal*/
 import Portal from '@reach/portal';
 
-export const ModalPage = () => {
+export const DrawerPage = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => {
@@ -11,7 +11,7 @@ export const ModalPage = () => {
   };
 
   return (
-    <>
+    <div className="m-8">
       <button
         type="button"
         onClick={toggle}
@@ -19,15 +19,15 @@ export const ModalPage = () => {
       >
         Click to open me
       </button>
-      <Modal isOpen={isOpen} toggle={toggle}>
-        <Modal.Header>Modal title</Modal.Header>
-        <Modal.Body>
+      <Drawer isOpen={isOpen} toggle={toggle} position="left">
+        <Drawer.Header>Drawer title</Drawer.Header>
+        <Drawer.Body>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat.
-        </Modal.Body>
-        <Modal.Footer>
+        </Drawer.Body>
+        <Drawer.Footer>
           <button
             onClick={toggle}
             className="text-white focus:outline-none m-1.5 rounded px-6 py-2 font-medium bg-red-500"
@@ -40,29 +40,45 @@ export const ModalPage = () => {
           >
             Confirm
           </button>
-        </Modal.Footer>
-      </Modal>
-    </>
+        </Drawer.Footer>
+      </Drawer>
+    </div>
   );
 };
 
 /* Logic */
-
 const style = {
-  container: `fixed top-0 overflow-y-auto left-0 z-40 w-full h-full m-0`,
+  body: `flex-shrink flex-grow p-4`,
+  container: `fixed top-0 left-0 z-40 w-full h-full m-0 overflow-hidden`,
+  animation: {
+    right: 'animate-drawer-right',
+  },
   content: `relative flex flex-col bg-white pointer-events-auto`,
-  orientation: `mt-12 mx-8 pb-6 md:m-auto md:w-6/12 lg:w-4/12 md:pt-12 focus:outline-none`,
-  overlay: `fixed top-0 left-0 z-30 w-screen h-screen bg-black opacity-50`,
+  footer: `flex flex-wrap items-center justify-end p-3 border-t border-gray-300`,
   header: `items-start justify-between p-4 border-b border-gray-300`,
   headerTitle: `text-2xl md:text-3xl font-light`,
-  body: `flex-shrink flex-grow p-4`,
-  footer: `flex flex-wrap items-center justify-end p-3 border-t border-gray-300`,
+  orientation: {
+    right: `flex w-8/12 md:w-80 lg:w-96 h-full right-0 mx-0 my-0 absolute focus:outline-none `,
+  },
+  overlay: `fixed top-0 left-0 z-30 w-screen h-screen bg-black opacity-50`,
 };
 
-const Modal = ({ children, isOpen, toggle }) => {
-  const ref = useRef();
+const Drawer = ({ children, isOpen, toggle }) => {
+  const ref = useRef(null);
 
-  // close modal when you click on "ESC" key
+  // close drawer when you click outside the dialog
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (!ref?.current?.contains(event.target)) {
+        if (!isOpen) return;
+        toggle(false);
+      }
+    };
+    window.addEventListener('click', handleOutsideClick);
+    return () => window.removeEventListener('click', handleOutsideClick);
+  }, [isOpen, ref]);
+
+  // close drawer when you click on "ESC" key
   useEffect(() => {
     const handleEscape = (event) => {
       if (!isOpen) return;
@@ -74,10 +90,9 @@ const Modal = ({ children, isOpen, toggle }) => {
     return () => document.removeEventListener('keyup', handleEscape);
   }, [isOpen]);
 
-  // Put focus on modal dialogue, hide scrollbar and prevent body from moving when modal is open
+  // hide scrollbar and prevent body from moving when drawer is open
   useEffect(() => {
     if (!isOpen) return;
-    ref.current?.focus();
     const overflow = document.documentElement.style.overflow;
     const paddingRight = document.documentElement.style.paddingRight;
     const scrollbarWidth =
@@ -98,12 +113,14 @@ const Modal = ({ children, isOpen, toggle }) => {
           <div className={style.container}>
             <div
               aria-modal={true}
-              className={style.orientation}
+              className={style.orientation.right}
               ref={ref}
               role="dialogue"
               tabIndex={-1}
             >
-              <div className={style.content}>{children}</div>
+              <div className={`${style.animation.right} ${style.content}`}>
+                {children}
+              </div>
             </div>
           </div>
         </>
@@ -112,11 +129,15 @@ const Modal = ({ children, isOpen, toggle }) => {
   );
 };
 
-Modal.Header = ({ children }) => (
+Drawer.Header = ({ children }) => (
   <div className={style.header}>
     <h4 className={style.headerTitle}>{children}</h4>
   </div>
 );
-Modal.Body = ({ children }) => <div className={style.body}>{children}</div>;
-Modal.Footer = ({ children }) => <div className={style.footer}>{children}</div>;
+
+Drawer.Body = ({ children }) => <div className={style.body}>{children}</div>;
+
+Drawer.Footer = ({ children }) => (
+  <div className={style.footer}>{children}</div>
+);
 ```

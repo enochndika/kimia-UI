@@ -2,17 +2,17 @@ import { Sidenav } from './sidenav';
 import { ReactNode } from 'react';
 import { Header } from './header';
 import Base from './base';
-import { useToggle } from '../utils/toggle';
 import { useRouter } from 'next/router';
-import { useFilterRoutes } from '@/website/utils/filterRoutes';
-import { Footer } from '@/website/layout/footer';
+import { useFilterRoutes } from '../utils/filterRoutes';
+import { Footer } from '../layout/footer';
+import useDisclosure from '../utils/useDisclosure';
 
 interface Props {
   children: ReactNode;
 }
 
 const Layout = ({ children }: Props) => {
-  const { isOpen, toggle } = useToggle();
+  const { isOpen, toggle } = useDisclosure();
   const { pathname } = useRouter();
   const routes = useFilterRoutes(pathname);
   return (

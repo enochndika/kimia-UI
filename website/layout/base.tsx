@@ -47,6 +47,10 @@ const Sidebar: FC = () => (
       <Item href="/components/card">Card</Item>
       <Item href="/components/code">Code</Item>
       <Item href="/components/collapse">Collapse</Item>
+      <Item href="/components/drawer">
+        Drawer
+        <Arrival />
+      </Item>
       <Item href="/components/dropdown">Dropdown</Item>
       <Item href="/components/jumbotron">Jumbotron</Item>
       <Item href="/components/list_group">List Group</Item>

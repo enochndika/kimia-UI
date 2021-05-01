@@ -1,8 +1,6 @@
-import NProgress from 'nprogress';
 import 'tailwindcss/tailwind.css';
-import 'nprogress/nprogress.css';
 import Head from 'next/head';
-import Router, { useRouter } from 'next/router';
+import { useRouter } from 'next/router';
 import dynamic from 'next/dynamic';
 import { AppProps } from 'next/app';
 import { ComponentType, useEffect } from 'react';
@@ -12,17 +10,12 @@ import * as gtag from '@/website/utils/gtag';
 import { CopyboardProps } from '@/website/components/copyboard';
 import { Loader } from '@/website/components/loader';
 import Layout from '@/website/layout';
+import Alert from '@/website/components/alertUser';
 
 const Copyboard: ComponentType<CopyboardProps> = dynamic(
   () => import('@/website/components/copyboard').then((mod) => mod.Copyboard),
   { ssr: false, loading: () => <Loader /> },
 );
-
-Router.events.on('routeChangeStart', () => {
-  NProgress.start();
-});
-Router.events.on('routeChangeComplete', () => NProgress.done());
-Router.events.on('routeChangeError', () => NProgress.done());
 
 const components = {
   pre: (preProps) => {
@@ -44,6 +37,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       router.events.off('routeChangeComplete', handleRouteChange);
     };
   }, [router.events]);
+
   return (
     <>
       <Head>
@@ -88,6 +82,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="author" content="Enoch Ndika" key="author" />
       </Head>
       <MDXProvider components={components}>
+        <Alert />
         <Layout>
           <Component {...pageProps} />
         </Layout>

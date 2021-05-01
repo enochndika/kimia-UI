@@ -5,48 +5,46 @@ interface Props {
   children: ReactNode;
 }
 
-interface ModalProps extends Props {
+interface DrawerProps extends Props {
   isOpen: boolean;
-  position?: 'default' | 'large' | 'extraLarge';
+  position?: 'left' | 'right' | 'top' | 'bottom';
   toggle: (isOpen?: boolean) => void;
-  closeOnClickOutside: boolean;
-  animate?: boolean;
 }
 
 const style = {
   body: `flex-shrink flex-grow p-4`,
-  container: `fixed top-0 left-0 z-40 w-full h-full m-0 overflow-y-auto`,
-  animate: 'animate-modal',
-  content: {
-    default: `relative flex flex-col bg-white pointer-events-auto`,
+  container: `fixed top-0 left-0 z-40 w-full h-full m-0 overflow-hidden`,
+  animation: {
+    left: 'animate-drawer-left',
+    right: 'animate-drawer-right',
+    top: 'animate-drawer-top',
+    bottom: 'animate-drawer-bottom',
   },
+  content: `relative flex flex-col bg-white pointer-events-auto`,
   footer: `flex flex-wrap items-center justify-end p-3 border-t border-gray-300`,
   header: `items-start justify-between p-4 border-b border-gray-300`,
   headerTitle: `text-2xl md:text-3xl font-light`,
   orientation: {
-    default:
-      'mt-12 mx-8 pb-6 md:m-auto md:w-6/12 lg:w-4/12 md:pt-12 focus:outline-none',
-    large:
-      'mt-12 mx-8 pb-6 md:m-auto md:w-8/12 lg:w-8/12 md:pt-12 focus:outline-none',
-    extraLarge: 'mt-12 mx-8 pb-6 md:w-12/12 md:pt-12 focus:outline-none',
+    left: `flex w-8/12 md:w-80 lg:w-96 h-full left-0 mx-0 my-0 absolute focus:outline-none `,
+    right: `flex w-8/12 md:w-80 lg:w-96 h-full right-0 mx-0 my-0 absolute focus:outline-none `,
+    top: `flex w-full h-auto absolute top-0 focus:outline-none `,
+    bottom: `flex w-full h-auto absolute bottom-0 focus:outline-none `,
   },
   overlay: `fixed top-0 left-0 z-30 w-screen h-screen bg-black opacity-50`,
 };
 
-const Modal = ({
+const Drawer = ({
   children,
   isOpen,
   toggle,
-  closeOnClickOutside,
-  position = 'default',
-  animate = false,
-}: ModalProps) => {
+  position = 'left',
+}: DrawerProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
-  // close modal when you click outside the modal dialogue
+  // close modal when you click outside the dialog
   useEffect(() => {
     const handleOutsideClick = (event) => {
-      if (closeOnClickOutside && !ref.current?.contains(event.target)) {
+      if (!ref.current?.contains(event.target)) {
         if (!isOpen) return;
         toggle(false);
       }
@@ -59,6 +57,7 @@ const Modal = ({
   useEffect(() => {
     const handleEscape = (event) => {
       if (!isOpen) return;
+
       if (event.key === 'Escape') {
         toggle(false);
       }
@@ -67,16 +66,19 @@ const Modal = ({
     return () => document.removeEventListener('keyup', handleEscape);
   }, [isOpen]);
 
-  // Put focus on modal dialogue, hide scrollbar and prevent body from moving when modal is open
+  // hide scrollbar and prevent body from moving when modal is open
   useEffect(() => {
     if (!isOpen) return;
-    ref.current?.focus();
+
     const overflow = document.documentElement.style.overflow;
     const paddingRight = document.documentElement.style.paddingRight;
+
     const scrollbarWidth =
       window.innerWidth - document.documentElement.clientWidth;
+
     document.documentElement.style.overflow = 'hidden';
     document.documentElement.style.paddingRight = `${scrollbarWidth}px`;
+
     return () => {
       document.documentElement.style.overflow = overflow;
       document.documentElement.style.paddingRight = paddingRight;
@@ -90,16 +92,13 @@ const Modal = ({
           <div className={style.overlay} />
           <div className={style.container}>
             <div
-              className={style.orientation[position]}
-              ref={closeOnClickOutside ? ref : null}
-              role="dialogue"
               aria-modal={true}
+              className={style.orientation[position]}
+              ref={ref}
+              role="dialogue"
+              tabIndex={-1}
             >
-              <div
-                className={`${style.content[position]} ${
-                  style.content.default
-                } ${animate ? style.animate : ''}`}
-              >
+              <div className={`${style.animation[position]} ${style.content}`}>
                 {children}
               </div>
             </div>
@@ -110,18 +109,17 @@ const Modal = ({
   );
 };
 
-Modal.Header = ({ children }: Props) => (
+Drawer.Header = ({ children }: Props) => (
   <div className={style.header}>
     <h4 className={style.headerTitle}>{children}</h4>
   </div>
 );
-
-Modal.Body = ({ children }: Props) => (
+Drawer.Body = ({ children }: Props) => (
   <div className={style.body}>{children}</div>
 );
 
-Modal.Footer = ({ children }: Props) => (
+Drawer.Footer = ({ children }: Props) => (
   <div className={style.footer}>{children}</div>
 );
 
-export default Modal;
+export default Drawer;

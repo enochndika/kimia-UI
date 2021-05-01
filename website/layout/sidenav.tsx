@@ -67,6 +67,9 @@ export const Sidenav = ({ isOpen, toggle }: SidenavProps) => {
       <Item href="/components/code" onClick={toggle}>
         Code
       </Item>
+      <Item href="/components/drawer" onClick={toggle}>
+        Drawer <Arrival />
+      </Item>
       <Item href="/components/dropdown" onClick={toggle}>
         Dropdown
       </Item>

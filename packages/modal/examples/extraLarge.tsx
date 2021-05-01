@@ -1,14 +1,14 @@
 import Modal from '../index';
-import useOpenModal from '../openModal';
 import { FC } from 'react';
 import Button from '@/packages/button';
+import useDisclosure from '@/website/utils/useDisclosure';
 
-const ModalLeft: FC = () => {
-  const { toggle, isOpen } = useOpenModal();
+const ModalExtraLarge: FC = () => {
+  const { toggle, isOpen } = useDisclosure();
   return (
     <div className="mb-8">
       <h2 className="font-bold text-gray-600 text-lg md:text-2xl mt-12 mb-3">
-        Left
+        Extra Large
       </h2>
       <Button onClick={toggle} color="primary">
         Click to open me
@@ -16,7 +16,7 @@ const ModalLeft: FC = () => {
       <Modal
         isOpen={isOpen}
         toggle={toggle}
-        position="left"
+        position="extraLarge"
         closeOnClickOutside={true}
       >
         <Modal.Header>Modal title</Modal.Header>
@@ -39,4 +39,4 @@ const ModalLeft: FC = () => {
   );
 };
 
-export default ModalLeft;
+export default ModalExtraLarge;

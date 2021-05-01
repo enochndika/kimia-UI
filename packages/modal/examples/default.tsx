@@ -1,25 +1,19 @@
 import Modal from '../index';
-import useOpenModal from '../openModal';
 import { FC } from 'react';
 import Button from '@/packages/button';
+import useDisclosure from '@/website/utils/useDisclosure';
 
-const ModalWithoutAnimation: FC = () => {
-  const { toggle, isOpen } = useOpenModal();
+const ModalDefault: FC = () => {
+  const { toggle, isOpen } = useDisclosure();
   return (
     <div className="mb-8">
       <h2 className="font-bold text-gray-600 text-lg md:text-2xl mt-12 mb-3">
-        Without animation
+        Default
       </h2>
       <Button onClick={toggle} color="primary">
         Click to open me
       </Button>
-      <Modal
-        isOpen={isOpen}
-        toggle={toggle}
-        position="top"
-        closeOnClickOutside={true}
-        withoutAnimation={true}
-      >
+      <Modal isOpen={isOpen} toggle={toggle} closeOnClickOutside={true}>
         <Modal.Header>Modal title</Modal.Header>
         <Modal.Body>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -40,4 +34,4 @@ const ModalWithoutAnimation: FC = () => {
   );
 };
 
-export default ModalWithoutAnimation;
+export default ModalDefault;
