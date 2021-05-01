@@ -69,7 +69,7 @@ const Drawer = ({
   // hide scrollbar and prevent body from moving when modal is open
   useEffect(() => {
     if (!isOpen) return;
-
+    ref.current?.focus();
     const overflow = document.documentElement.style.overflow;
     const paddingRight = document.documentElement.style.paddingRight;
 

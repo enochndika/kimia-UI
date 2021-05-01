@@ -78,9 +78,11 @@ const Drawer = ({ children, isOpen, toggle }) => {
     return () => document.removeEventListener('keyup', handleEscape);
   }, [isOpen]);
 
-  // hide scrollbar and prevent body from moving when drawer is open
+  // Put focus on drawer, hide scrollbar and prevent body from moving when drawer is open
   useEffect(() => {
     if (!isOpen) return;
+
+    ref.current?.focus();
     const overflow = document.documentElement.style.overflow;
     const paddingRight = document.documentElement.style.paddingRight;
     const scrollbarWidth =
