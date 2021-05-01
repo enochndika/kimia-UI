@@ -30,13 +30,22 @@ export default function ConfigurationPage() {
             Kimia-ui is an open source project and anyone can contribute
           </p>
           <p className="mb-5 md:mb-2.5 text-gray-600">
-            You can do it by adding new components, fixing bugs, improving
-            accessibility or suggesting ideas
+            You can do it by adding new components, fixing bugs, grammar or
+            improving accessibility.
           </p>
         </div>
         <h2 className="text-2xl md:text-3xl font-bold text-gray-800  mt-16">
           How to contribute
         </h2>
+        <div className="text-gray-600 py-6 pl-6">
+          If you want to add a new component, please check out the{' '}
+          <a
+            className="text-blue-600"
+            href="https://github.com/enochndika/kimia-UI/blob/main/contributing.md"
+          >
+            Contribution guide
+          </a>
+        </div>
         <ul className="text-gray-600 pl-6 md:pl-12 mb-6">
           <li className="list-decimal mt-8 pb-4">
             Fork
