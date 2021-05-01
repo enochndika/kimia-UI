@@ -31,7 +31,8 @@ export default function Home() {
               Gatsby and create-react-app.
             </p>
             <p className="text-gray-500 font-medium">
-              Just copy and paste a component you want to use
+              No installation needed, Just copy and paste a component you want
+              to use
             </p>
             <div className="mt-12 mb-6 md:mb-12">
               <Link href="/configuration">
