@@ -23,6 +23,9 @@ export default function DropdownPage() {
         <h1 className="text-center text-3xl md:text-5xl font-bold text-gray-600 mb-16 mt-12">
           Dropdown
         </h1>
+        <div className="mb-16 text-gray-800">
+          * You can also close dropdown with <strong>ESC</strong> key
+        </div>
         <BasicDropdown />
         <BasicDropdownSnippet />
         <DropdownWithSeparator />

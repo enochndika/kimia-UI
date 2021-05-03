@@ -22,6 +22,7 @@ const useToggle = () => {
     setShow(!show);
   };
 
+  // close dropdown when you click outside
   useEffect(() => {
     const handleOutsideClick = (event) => {
       if (!ref.current?.contains(event.target)) {
@@ -33,6 +34,7 @@ const useToggle = () => {
     return () => window.removeEventListener('click', handleOutsideClick);
   }, [show, ref]);
 
+  // close dropdown when you click on "ESC" key
   useEffect(() => {
     const handleEscape = (event) => {
       if (!show) return;
