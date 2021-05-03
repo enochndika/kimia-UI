@@ -4,8 +4,8 @@ import Field from '../index';
 const FieldWithReactHookForm = () => {
   const { register, handleSubmit, errors } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = (values) => {
+    window.alert(JSON.stringify(values));
   };
 
   return (

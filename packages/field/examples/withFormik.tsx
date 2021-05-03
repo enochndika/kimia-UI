@@ -19,7 +19,7 @@ const FieldWithFormik = () => {
     },
     validationSchema: validateSchema,
     onSubmit: (values) => {
-      console.log(values);
+      window.alert(JSON.stringify(values));
     },
   });
 
