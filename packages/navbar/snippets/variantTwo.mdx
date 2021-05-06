@@ -50,17 +50,17 @@ export const NavbarPage = () => {
       </Navbar.Brand>
       <Navbar.Toggler toggle={toggle} />
       <Navbar.Collapse isOpen={isOpen}>
-        <Navbar.Nav>
+        <Navbar.Nav position="left">
           <Navbar.Item>
             <Navbar.Link href="#">Home</Navbar.Link>
           </Navbar.Item>
         </Navbar.Nav>
-        <Navbar.Nav center>
+        <Navbar.Nav position="center">
           <Navbar.Item>
             <Navbar.Link href="#">Tailwindcss</Navbar.Link>
           </Navbar.Item>
         </Navbar.Nav>
-        <Navbar.Nav right>
+        <Navbar.Nav position="right">
           <Navbar.Item>
             <Navbar.Link href="#">Next.js</Navbar.Link>
           </Navbar.Item>
@@ -120,16 +120,15 @@ Navbar.Collapse = ({ children, isOpen }) => (
   </div>
 );
 
-Navbar.Nav = ({ children, left, right, center }) => {
-  const className = left
-    ? style.nav.left
-    : right
-    ? style.nav.right
-    : center
-    ? style.nav.center
-    : style.nav.left;
-  return <ul className={className}>{children}</ul>;
-};
+/*
+The navbar nav has three positions
+ - left
+ - center
+ - right
+* */
+Navbar.Nav = ({ children, position }) => (
+  <ul className={style.nav[position]}>{children}</ul>
+);
 
 Navbar.Item = ({ children }) => <li>{children}</li>;
 
