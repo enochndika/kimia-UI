@@ -4,6 +4,7 @@ import {
   useState,
   useCallback,
   InputHTMLAttributes,
+  ReactNode,
 } from 'react';
 
 interface AutocompleteProps extends InputHTMLAttributes<HTMLInputElement> {
@@ -12,6 +13,7 @@ interface AutocompleteProps extends InputHTMLAttributes<HTMLInputElement> {
   suggestions: Array<string>;
   value: string;
   setValue: (value?: string | unknown) => void;
+  notFound?: string | ReactNode;
 }
 
 const style = {
@@ -32,6 +34,7 @@ const Autocomplete = ({
   suggestions,
   value,
   setValue,
+  notFound,
   ...rest
 }: AutocompleteProps) => {
   const [activeSuggestion, setActiveSuggestion] = useState(0);
@@ -120,7 +123,7 @@ const Autocomplete = ({
     } else {
       suggestionsListComponent = (
         <div className="mt-4 text-sm text-gray-700">
-          <em>No suggestions available!</em>
+          <em>{notFound}</em>
         </div>
       );
     }

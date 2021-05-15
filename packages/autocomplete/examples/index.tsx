@@ -16,6 +16,7 @@ const AutoCompleteExample = () => {
         label="Country"
         suggestions={allCountries}
         placeholder="where are you from?"
+        notFound="No suggestions available!"
       />
     </div>
   );

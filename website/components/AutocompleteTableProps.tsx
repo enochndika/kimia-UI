@@ -53,6 +53,15 @@ const AutocompleteTableProps = () => {
             </td>
           </tr>
           <tr>
+            <td className="border border-gray-300 text-left p-4">notFound</td>
+            <td className="border border-gray-300 text-left p-4">
+              String | JSX.Element
+            </td>
+            <td className="border border-gray-300 text-left p-4">
+              message to display when no suggestion is available
+            </td>
+          </tr>
+          <tr>
             <td className="border border-gray-300 text-left p-4">*label</td>
             <td className="border border-gray-300 text-left p-4">String</td>
             <td className="border border-gray-300 text-left p-4">
