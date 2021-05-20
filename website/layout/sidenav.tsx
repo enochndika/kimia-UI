@@ -64,7 +64,7 @@ export const Sidenav = ({ isOpen, toggle }: SidenavProps) => {
       <Item href="/components/code" onClick={toggle}>
         Code
       </Item>
-      <Item href="/components/copy-to-clipboard">
+      <Item href="/components/copy-to-clipboard" onClick={toggle}>
         Copy to clipboard <Arrival />
       </Item>
       <Item href="/components/collapse" onClick={toggle}>
