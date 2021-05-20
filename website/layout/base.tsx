@@ -46,6 +46,9 @@ const Sidebar: FC = () => (
       <Item href="/components/buttons">Buttons</Item>
       <Item href="/components/card">Card</Item>
       <Item href="/components/code">Code</Item>
+      <Item href="/components/copy-to-clipboard">
+        Copy to clipboard <Arrival />
+      </Item>
       <Item href="/components/collapse">Collapse</Item>
       <Item href="/components/drawer">
         Drawer

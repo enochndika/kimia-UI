@@ -10,9 +10,6 @@ module.exports = {
       padding: {
         container: '2%',
       },
-      height: {
-        xl: '500px',
-      },
       animation: {
         left: 'left 0.3s',
         right: 'right 0.3s',

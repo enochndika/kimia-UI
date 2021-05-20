@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { Container } from '@/website/components/container';
 import AutoCompleteExample from '@/packages/autocomplete/examples';
 import AutocompleteExampleSnippet from '@/packages/autocomplete/snippets/index.mdx';
-import AutocompleteTableProps from '@/website/components/AutocompleteTableProps';
+import Table from '@/website/components/table';
 
 export default function AutocompletePage() {
   return (
@@ -25,7 +25,7 @@ export default function AutocompletePage() {
         <h2 className="font-bold text-gray-700 text-lg md:text-2xl mb-12">
           Usage and props
         </h2>
-        <AutocompleteTableProps />
+        <Table name="autocomplete" />
         <AutoCompleteExample />
         <AutocompleteExampleSnippet />
       </Container>

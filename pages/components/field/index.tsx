@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { Container } from '@/website/components/container';
 import DefaultFieldExample from '@/packages/field/examples/default';
 import DefaultFieldExampleSnippet from '@/packages/field/snippets/default.mdx';
-import FieldTableProps from '@/website/components/fieldTableProps';
+import Table from '@/website/components/table';
 
 export default function FieldPage() {
   return (
@@ -29,7 +29,7 @@ export default function FieldPage() {
           The Field component can be used as input, select or textarea. it's
           fully accessible (a11y)
         </div>
-        <FieldTableProps />
+        <Table name="field" />
         <div className="text-gray-800 mt-8">
           You can also use all the default html attributes for each type of
           field such as (placeholder, onClick, onChange, onBlur and others ...)

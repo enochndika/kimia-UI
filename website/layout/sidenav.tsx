@@ -3,6 +3,8 @@ import { useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { Item } from './base';
 import { Arrival } from '@/website/components/arrival';
+import CopyToClipboardPage from '../../pages/components/copy-to-clipboard';
+import Layout from '@/website/layout/index';
 
 interface SidenavProps {
   isOpen: boolean;
@@ -61,11 +63,14 @@ export const Sidenav = ({ isOpen, toggle }: SidenavProps) => {
       <Item href="/components/card" onClick={toggle}>
         Card
       </Item>
-      <Item href="/components/collapse" onClick={toggle}>
-        Collapse
-      </Item>
       <Item href="/components/code" onClick={toggle}>
         Code
+      </Item>
+      <Item href="/components/copy-to-clipboard">
+        Copy to clipboard <Arrival />
+      </Item>
+      <Item href="/components/collapse" onClick={toggle}>
+        Collapse
       </Item>
       <Item href="/components/drawer" onClick={toggle}>
         Drawer <Arrival />

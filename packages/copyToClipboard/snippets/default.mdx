@@ -1,0 +1,51 @@
+```jsx
+import { useCallback, useEffect, useRef, useState } from 'react';
+
+export const CopyToClipboardPage = () => {
+  const { ref, copied, onCopy } = useCopyToClipboard();
+  return (
+    <div className="mb-8">
+      <button
+        className="text-white focus:outline-none shadow font-medium px-6 py-1 text-sm bg-blue-700"
+        onClick={onCopy}
+      >
+        {copied ? 'copied!' : 'Copy'}
+      </button>
+      <div ref={ref} className="mt-4">
+        <p>
+          Monday Monday Monday, open wide Dev Fans! get ready to stuff your face
+          with Javascript, css, node modules, barbecue tips, git workflow,
+          break-dancing, soft-skills, web development, the hastiest, the
+          craziest, the tastiest web development treats coming in hot. here is{' '}
+          <strong>Wes "Baracuda" Bos </strong> and{' '}
+          <strong>Scott "El Toro Loco" Tolinski</strong>
+        </p>
+      </div>
+    </div>
+  );
+};
+
+/* logic */
+const useCopyToClipboard = (props) => {
+  const [copied, setCopied] = useState(false);
+  const ref = useRef(null);
+  let resetCopy;
+
+  const onCopy = useCallback(() => {
+    navigator.clipboard.writeText(ref.current?.innerText);
+    setCopied(true);
+  }, [ref, copied]);
+
+  useEffect(() => {
+    if (copied) {
+      resetCopy = setTimeout(() => setCopied(false), props?.duration || 3000);
+    }
+
+    return () => {
+      clearTimeout(resetCopy);
+    };
+  }, [copied]);
+
+  return { copied, ref, onCopy };
+};
+```
