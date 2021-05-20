@@ -3,8 +3,6 @@ import { useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { Item } from './base';
 import { Arrival } from '@/website/components/arrival';
-import CopyToClipboardPage from '../../pages/components/copy-to-clipboard';
-import Layout from '@/website/layout/index';
 
 interface SidenavProps {
   isOpen: boolean;
