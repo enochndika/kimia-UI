@@ -2,7 +2,11 @@ import { useForm } from 'react-hook-form';
 import Field from '../index';
 
 const FieldWithReactHookForm = () => {
-  const { register, handleSubmit, errors } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
   const onSubmit = (values) => {
     window.alert(JSON.stringify(values));
@@ -12,19 +16,19 @@ const FieldWithReactHookForm = () => {
     <div className="mb-12 border p-6">
       <form onSubmit={handleSubmit(onSubmit)}>
         <Field
+          {...register('email', { required: 'Email is required' })}
           dot={true}
           error={errors?.email?.message}
           label="Email"
           name="email"
-          ref={register({ required: 'Email is required' })}
           type="text"
         />
         <Field
+          {...register('password', { required: 'Password required' })}
           dot={true}
           error={errors?.password?.message}
           label="Password"
           name="password"
-          ref={register({ required: 'Password required' })}
           type="password"
         />
         <button

@@ -3,7 +3,11 @@ import { forwardRef } from 'react';
 import { useForm } from 'react-hook-form';
 
 export const FormPage = () => {
-  const { register, handleSubmit, errors } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
   const onSubmit = (values) => {
     window.alert(JSON.stringify(values));
@@ -13,18 +17,18 @@ export const FormPage = () => {
     <div className="m-12 border p-6">
       <form onSubmit={handleSubmit(onSubmit)}>
         <Field
+          {...register('email', { required: 'Email is required' })}
           dot={true}
           error={errors?.email?.message}
           label="Email"
           name="email"
-          ref={register({ required: 'Email is required' })}
         />
         <Field
+          {...register('password', { required: 'Password required' })}
           dot={true}
           error={errors?.password?.message}
           label="Password"
           name="password"
-          ref={register({ required: 'Password required' })}
           type="password"
         />
         <button
@@ -63,7 +67,7 @@ const Field = forwardRef(
           aria-required={dot}
           aria-invalid={!!error}
           className={`${style.default} ${error && style.error} ${
-            disabled ? 'cursor-not-allowed' : ''
+            disabled ? style.disabled : ''
           }`}
           disabled={disabled}
           name={name}

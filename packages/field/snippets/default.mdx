@@ -48,7 +48,7 @@ const Field = forwardRef(
           aria-required={dot}
           aria-invalid={!!error}
           className={`${style.default} ${error && style.error} ${
-            disabled ? 'cursor-not-allowed' : ''
+            disabled ? style.disabled : ''
           }`}
           disabled={disabled}
           name={name}
