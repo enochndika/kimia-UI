@@ -46,9 +46,6 @@ const Sidebar: FC = () => (
       <Item href="/components/buttons">Buttons</Item>
       <Item href="/components/card">Card</Item>
       <Item href="/components/code">Code</Item>
-      <Item href="/components/copy-to-clipboard">
-        Copy to clipboard <Arrival />
-      </Item>
       <Item href="/components/collapse">Collapse</Item>
       <Item href="/components/drawer">
         Drawer
@@ -61,6 +58,9 @@ const Sidebar: FC = () => (
       <Item href="/components/spinner">Spinner</Item>
       <Item href="/components/tab">Tab</Item>
       <Item href="/components/tooltip">Tooltip</Item>
+      <Item href="/components/copy-to-clipboard">
+        useClipboard <Arrival />
+      </Item>
       <div className="pl-6 pt-6 pb-2 mb-5 text-gray-500 font-bold">
         NAVIGATION
       </div>

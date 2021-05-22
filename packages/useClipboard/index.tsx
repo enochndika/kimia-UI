@@ -4,7 +4,7 @@ type Props = {
   duration?: number;
 };
 
-const useCopyToClipboard = (props?: Props) => {
+const useClipboard = (props?: Props) => {
   const [copied, setCopied] = useState<boolean>(false);
   const ref = useRef<HTMLElement | HTMLDivElement | any>(null);
   let resetCopy;
@@ -27,4 +27,4 @@ const useCopyToClipboard = (props?: Props) => {
   return { copied, ref, onCopy };
 };
 
-export default useCopyToClipboard;
+export default useClipboard;

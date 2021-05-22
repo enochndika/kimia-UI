@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { Container } from '@/website/components/container';
-import DefaultCopyToClipboard from '@/packages/copyToClipboard/examples/default';
-import DefaultCopyToClipboardSnippet from '@/packages/copyToClipboard/snippets/default.mdx';
+import DefaultCopyToClipboard from '@/packages/useClipboard/examples/default';
+import DefaultCopyToClipboardSnippet from '@/packages/useClipboard/snippets/default.mdx';
 import Table from '@/website/components/table';
 
 export default function CopyToClipboardPage() {

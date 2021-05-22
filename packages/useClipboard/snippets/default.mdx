@@ -2,7 +2,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 export const CopyToClipboardPage = () => {
-  const { ref, copied, onCopy } = useCopyToClipboard({ duration: 4000 });
+  const { ref, copied, onCopy } = useClipboard({ duration: 4000 });
   return (
     <div className="mb-8">
       <button
@@ -26,7 +26,7 @@ export const CopyToClipboardPage = () => {
 };
 
 /* logic */
-const useCopyToClipboard = (props) => {
+const useClipboard = (props) => {
   const [copied, setCopied] = useState(false);
   const ref = useRef(null);
   let resetCopy;

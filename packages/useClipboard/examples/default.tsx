@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import Button from '@/packages/button';
-import useCopyToClipboard from '@/packages/copyToClipboard';
+import useClipboard from '../index';
 
 const DefaultCopyToClipboard: FC = () => {
-  const { ref, copied, onCopy } = useCopyToClipboard({ duration: 4000 });
+  const { ref, copied, onCopy } = useClipboard({ duration: 4000 });
   return (
     <div className="mb-8">
       <Button color="primary" onClick={onCopy} size="sm">
