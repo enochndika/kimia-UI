@@ -18,7 +18,7 @@ export default function FieldWithFormikPage() {
         />
       </Head>
       <Container>
-        <h1 className="text-center text-3xl md:text-5xl font-bold text-gray-600 mb-16 mt-12">
+        <h1 className="text-center text-3xl md:text-4xl font-bold text-gray-600 mb-16 mt-12">
           Using Field component with Formik and Yup
         </h1>
         <FieldWithFormik />

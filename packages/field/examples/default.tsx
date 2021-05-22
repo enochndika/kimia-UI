@@ -1,4 +1,4 @@
-import Field from '../index';
+import Field, { LockIcon } from '../index';
 
 const DefaultFieldExample = () => (
   <div className="mt-16">
@@ -10,8 +10,10 @@ const DefaultFieldExample = () => (
       <Field label="Fullname disabled" name="fullName" disabled type="text" />
       <Field
         dot={true}
-        label="password"
+        label="Password"
+        icon={<LockIcon />}
         name="password"
+        placeholder="password"
         type="password"
         error="Password is required"
       />

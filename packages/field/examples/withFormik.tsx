@@ -1,6 +1,6 @@
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import Field from '../index';
+import Field, { LockIcon } from '../index';
 
 /* Yup validation schema*/
 const validateSchema = Yup.object().shape({
@@ -37,6 +37,7 @@ const FieldWithFormik = () => {
         <Field
           dot={true}
           error={formik.touched?.password && formik.errors?.password}
+          icon={<LockIcon />}
           label="Password"
           name="password"
           onChange={formik.handleChange}

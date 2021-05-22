@@ -59,7 +59,12 @@ const table = {
       {
         prop: 'error',
         type: 'String',
-        description: `Will display an error message (when its value is not null)`,
+        description: `displays an error message (when its value is not null)`,
+      },
+      {
+        prop: 'icon',
+        type: 'JSX.Element',
+        description: `displays an icon to the left of the field`,
       },
       {
         prop: 'label',
@@ -67,7 +72,7 @@ const table = {
         description: 'label of the field',
       },
       {
-        prop: 'name',
+        prop: '*name',
         type: 'String',
         description: 'name of the field',
       },
