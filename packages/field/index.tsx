@@ -21,6 +21,8 @@ const style = {
   dot: `text-red-500 pl-0.5`,
   error: `ring-red-500 ring-1`,
   errorMessage: `text-sm text-red-500 mt-2`,
+  iconContainer: `absolute flex border border-transparent left-0 top-0 h-full w-10`,
+  icon: `flex items-center justify-center rounded-tl rounded-bl z-10 text-gray-400 text-lg h-full w-full`,
 };
 
 const Field = forwardRef((props: FieldProps, ref: Ref) => {
@@ -34,6 +36,7 @@ const Field = forwardRef((props: FieldProps, ref: Ref) => {
     name,
     ...rest
   } = props;
+
   let component;
 
   // if you won't use select, you can delete this part
@@ -93,10 +96,8 @@ const Field = forwardRef((props: FieldProps, ref: Ref) => {
   if (type !== 'checkbox' && type !== 'select' && type !== 'textarea') {
     component = (
       <div className="relative">
-        <div className="absolute flex border border-transparent left-0 top-0 h-full w-10">
-          <div className="flex items-center justify-center rounded-tl rounded-bl z-10 text-gray-400 text-lg h-full w-full">
-            {icon}
-          </div>
+        <div className={style.iconContainer}>
+          <div className={style.icon}>{icon}</div>
         </div>
         <input
           aria-required={dot}
@@ -111,13 +112,7 @@ const Field = forwardRef((props: FieldProps, ref: Ref) => {
           ref={ref}
           {...rest}
         />
-        {error && (
-          <>
-            {type !== 'textarea' &&
-              type !== 'select' &&
-              type !== 'checkbox' && <ErrorIcon />}
-          </>
-        )}
+        {error && <ErrorIcon />}
       </div>
     );
   }
