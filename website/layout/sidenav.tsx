@@ -76,7 +76,7 @@ export const Sidenav = ({ isOpen, toggle }: SidenavProps) => {
       <Item href="/components/jumbotron" onClick={toggle}>
         Jumbotron
       </Item>
-      <Item href="/components/list_group" onClick={toggle}>
+      <Item href="/components/list-group" onClick={toggle}>
         List Group
       </Item>
       <Item href="/components/modal" onClick={toggle}>
@@ -97,10 +97,10 @@ export const Sidenav = ({ isOpen, toggle }: SidenavProps) => {
       <div className="pl-6 py-6 text-gray-800 font-bold" onClick={toggle}>
         Navigation
       </div>
-      <Item href="/components/curtain_menu" onClick={toggle}>
+      <Item href="/components/curtain-menu" onClick={toggle}>
         Curtain Menu
       </Item>
-      <Item href="/components/hamburger_menu" onClick={toggle}>
+      <Item href="/components/hamburger-menu" onClick={toggle}>
         Hamburger Menu
       </Item>
       <Item href="/components/navbar" onClick={toggle}>
