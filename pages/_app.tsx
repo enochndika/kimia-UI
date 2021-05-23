@@ -10,7 +10,6 @@ import * as gtag from '@/website/utils/gtag';
 import { CopyboardProps } from '@/website/components/copyboard';
 import { Loader } from '@/website/components/loader';
 import Layout from '@/website/layout';
-import Alert from '@/website/components/alertUser';
 
 const Copyboard: ComponentType<CopyboardProps> = dynamic(
   () => import('@/website/components/copyboard').then((mod) => mod.Copyboard),
@@ -82,7 +81,6 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="author" content="Enoch Ndika" key="author" />
       </Head>
       <MDXProvider components={components}>
-        <Alert />
         <Layout>
           <Component {...pageProps} />
         </Layout>
