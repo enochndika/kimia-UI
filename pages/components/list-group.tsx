@@ -18,7 +18,7 @@ export default function ListGroupPage() {
         />
         <link
           rel="canonical"
-          href="https://kimia-ui.vercel.app/components/list_group"
+          href="https://kimia-ui.vercel.app/components/list-group"
         />
       </Head>
       <Container>

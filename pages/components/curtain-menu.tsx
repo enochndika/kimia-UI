@@ -16,7 +16,7 @@ export default function CurtainMenuPage() {
         />
         <link
           rel="canonical"
-          href="https://kimia-ui.vercel.app/components/curtain_menu"
+          href="https://kimia-ui.vercel.app/components/curtain-menu"
         />
       </Head>
       <Container>

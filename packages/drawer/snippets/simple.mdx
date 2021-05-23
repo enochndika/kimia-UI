@@ -39,6 +39,7 @@ export const DrawerPage = () => {
 };
 
 /* Logic */
+
 const style = {
   container: `fixed top-0 left-0 z-40 w-full h-full m-0 overflow-hidden`,
   animation: {
@@ -78,20 +79,25 @@ const Drawer = ({ children, isOpen, toggle }) => {
     return () => document.removeEventListener('keyup', handleEscape);
   }, [isOpen]);
 
-  // Put focus on drawer, hide scrollbar and prevent body from moving when drawer is open
+  //hide scrollbar and prevent body from moving when drawer is open
   useEffect(() => {
     if (!isOpen) return;
 
+    // Put focus on drawer
     ref.current?.focus();
-    const overflow = document.documentElement.style.overflow;
-    const paddingRight = document.documentElement.style.paddingRight;
-    const scrollbarWidth =
-      window.innerWidth - document.documentElement.clientWidth;
-    document.documentElement.style.overflow = 'hidden';
-    document.documentElement.style.paddingRight = `${scrollbarWidth}px`;
+
+    const html = document.documentElement;
+
+    const overflow = html.style.overflow;
+    const paddingRight = html.style.paddingRight;
+    const scrollbarWidth = window.innerWidth - html.clientWidth;
+
+    html.style.overflow = 'hidden';
+    html.style.paddingRight = `${scrollbarWidth}px`;
+
     return () => {
-      document.documentElement.style.overflow = overflow;
-      document.documentElement.style.paddingRight = paddingRight;
+      html.style.overflow = overflow;
+      html.style.paddingRight = paddingRight;
     };
   }, [isOpen]);
 

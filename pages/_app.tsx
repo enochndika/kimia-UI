@@ -1,4 +1,5 @@
 import 'tailwindcss/tailwind.css';
+
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import dynamic from 'next/dynamic';
@@ -6,6 +7,7 @@ import { AppProps } from 'next/app';
 import { ComponentType, useEffect } from 'react';
 import { preToCodeBlock } from 'mdx-utils';
 import { MDXProvider } from '@mdx-js/react';
+
 import * as gtag from '@/website/utils/gtag';
 import { CopyboardProps } from '@/website/components/copyboard';
 import { Loader } from '@/website/components/loader';

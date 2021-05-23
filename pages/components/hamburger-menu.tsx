@@ -18,7 +18,7 @@ export default function HamburgerMenuPage() {
         />
         <link
           rel="canonical"
-          href="https://kimia-ui.vercel.app/components/hamburger_menu"
+          href="https://kimia-ui.vercel.app/components/hamburger-menu"
         />
       </Head>
       <Container>

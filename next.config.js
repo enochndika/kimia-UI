@@ -29,6 +29,21 @@ module.exports = withMDX({
         destination: '/components/field/with-react-hook-form',
         permanent: true,
       },
+      {
+        source: '/components/curtain_menu',
+        destination: '/components/curtain-menu',
+        permanent: true,
+      },
+      {
+        source: '/components/hamburger_menu',
+        destination: '/components/hamburger-menu',
+        permanent: true,
+      },
+      {
+        source: '/components/list_group',
+        destination: '/components/list-group',
+        permanent: true,
+      },
     ];
   },
 });
