@@ -117,9 +117,9 @@ Dropdown.Menu = ({ children }) => (
   </div>
 );
 
-/* You can wrap the a tag with Link if you are using either Create-React-App, Next.js or Gatsby */
+/* You can wrap the a tag with Link and pass href prop to Link if you are using either Create-React-App, Next.js or Gatsby */
 Dropdown.Item = ({ children }) => (
-  <a href="#" className={style.item} role="menuitem">
+  <a tabIndex={0} className={style.item} role="menuitem">
     {children}
   </a>
 );

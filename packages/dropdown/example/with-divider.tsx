@@ -1,10 +1,10 @@
 import { FC } from 'react';
-import Dropdown from '../../dropdown';
+import Dropdown from '../index';
 
-const DropdownWithSeparator: FC = () => (
+const DropdownWithDivider: FC = () => (
   <div className="mb-8">
     <h2 className="font-bold text-gray-600 text-lg md:text-2xl mb-4">
-      Dropdown with separator
+      Dropdown with divider
     </h2>
     <Dropdown>
       <Dropdown.Toggle>
@@ -28,10 +28,10 @@ const DropdownWithSeparator: FC = () => (
       <Dropdown.Menu>
         <Dropdown.Item>Heroku</Dropdown.Item>
         <Dropdown.Item>Postgres</Dropdown.Item>
-        <hr className="my-2" />
+        <Dropdown.Divider />
         <Dropdown.Item>Digital Ocean</Dropdown.Item>
         <Dropdown.Item>Aws functions</Dropdown.Item>
-        <hr className="my-2" />
+        <Dropdown.Divider />
         <Dropdown.Item>Azure</Dropdown.Item>
         <Dropdown.Item>Strapi</Dropdown.Item>
       </Dropdown.Menu>
@@ -39,4 +39,4 @@ const DropdownWithSeparator: FC = () => (
   </div>
 );
 
-export default DropdownWithSeparator;
+export default DropdownWithDivider;

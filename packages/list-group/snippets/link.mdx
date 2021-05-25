@@ -19,8 +19,10 @@ const ListGroup = ({ children }) => (
   </ul>
 );
 
+/* You can wrap the a tag with Link and pass href prop to Link if you are using either Create-React-App, Next.js or Gatsby */
 ListGroup.Item = ({ children, className, href }) => (
-  <a href={href}
+  <a
+    href={href}
     className={`${className} relative block py-3 px-5 relative -mb-px block border border-grey`}
   >
     {children}

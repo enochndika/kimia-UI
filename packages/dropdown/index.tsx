@@ -101,9 +101,11 @@ Dropdown.Menu = ({ children }: Props) => (
 
 /* You can wrap the a tag with Link if you are using either Create-React-App, Next.js or Gatsby */
 Dropdown.Item = ({ children }: DropdownItemProps) => (
-  <a href="#" className={style.item} role="menuitem">
+  <a tabIndex={0} className={style.item} role="menuitem">
     {children}
   </a>
 );
+
+Dropdown.Divider = () => <hr className="my-2" />;
 
 export default Dropdown;

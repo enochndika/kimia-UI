@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import Dropdown from '../../dropdown';
+import Dropdown from '../index';
 
 const BasicDropdown: FC = () => (
   <div className="mb-8">

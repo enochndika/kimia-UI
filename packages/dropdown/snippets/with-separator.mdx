@@ -24,10 +24,10 @@ export const DropdownPage = () => (
     <Dropdown.Menu>
       <Dropdown.Item>Heroku</Dropdown.Item>
       <Dropdown.Item>Postgres</Dropdown.Item>
-      <hr className="my-2" />
+      <Dropdown.Divider />
       <Dropdown.Item>Digital Ocean</Dropdown.Item>
       <Dropdown.Item>Aws functions</Dropdown.Item>
-      <hr className="my-2" />
+      <Dropdown.Divider />
       <Dropdown.Item>Azure</Dropdown.Item>
       <Dropdown.Item>Strapi</Dropdown.Item>
     </Dropdown.Menu>
@@ -122,12 +122,14 @@ Dropdown.Menu = ({ children }) => (
   </div>
 );
 
-/* You can wrap the a tag with Link if you are using either Create-React-App, Next.js or Gatsby */
+/* You can wrap the a tag with Link and pass href prop to Link if you are using either Create-React-App, Next.js or Gatsby */
 Dropdown.Item = ({ children }) => (
-  <a href="#" className={style.item} role="menuitem">
+  <a tabIndex={0} className={style.item} role="menuitem">
     {children}
   </a>
 );
+
+Dropdown.Divider = () => <hr className="my-2" />;
 
 export default Dropdown;
 ```
