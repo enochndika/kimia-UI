@@ -53,7 +53,7 @@ const Sidebar: FC = () => (
       </Item>
       <Item href="/components/dropdown">Dropdown</Item>
       <Item href="/components/jumbotron">Jumbotron</Item>
-      <Item href="/components/list_group">List Group</Item>
+      <Item href="/components/list-group">List Group</Item>
       <Item href="/components/modal">Modal</Item>
       <Item href="/components/spinner">Spinner</Item>
       <Item href="/components/tab">Tab</Item>
@@ -64,8 +64,8 @@ const Sidebar: FC = () => (
       <div className="pl-6 pt-6 pb-2 mb-5 text-gray-500 font-bold">
         NAVIGATION
       </div>
-      <Item href="/components/curtain_menu">Curtain Menu</Item>
-      <Item href="/components/hamburger_menu">Hamburger Menu</Item>
+      <Item href="/components/curtain-menu">Curtain Menu</Item>
+      <Item href="/components/hamburger-menu">Hamburger Menu</Item>
       <Item href="/components/navbar">Navbar</Item>
       <Item href="/components/sidenav">Sidenav</Item>
       <div className="pl-6 pt-6 pb-2 mb-5 text-gray-500 font-bold">Forms</div>
