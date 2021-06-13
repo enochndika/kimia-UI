@@ -1,5 +1,5 @@
 ```jsx
-import { useCallback, useEffect, useRef, useState } from 'react';
+import React from 'react';
 
 export const CopyToClipboardPage = () => {
   const { ref, copied, onCopy } = useClipboard({ duration: 4000 });
@@ -27,16 +27,17 @@ export const CopyToClipboardPage = () => {
 
 /* logic */
 const useClipboard = (props) => {
-  const [copied, setCopied] = useState(false);
-  const ref = useRef(null);
+  const [copied, setCopied] = React.useState(false);
+  const ref = React.useRef(null);
   let resetCopy;
 
-  const onCopy = useCallback(() => {
-    navigator.clipboard.writeText(ref.current?.innerText);
-    setCopied(true);
+  const onCopy = React.useCallback(() => {
+    navigator.clipboard
+      .writeText(ref.current?.innerText)
+      .then(() => setCopied(true));
   }, [ref, copied]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (copied) {
       resetCopy = setTimeout(() => setCopied(false), props?.duration || 3000);
     }

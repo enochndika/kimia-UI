@@ -1,20 +1,21 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import React from 'react';
 
 type Props = {
   duration?: number;
 };
 
 const useClipboard = (props?: Props) => {
-  const [copied, setCopied] = useState<boolean>(false);
-  const ref = useRef<HTMLElement | HTMLDivElement | any>(null);
+  const [copied, setCopied] = React.useState<boolean>(false);
+  const ref = React.useRef<HTMLElement | HTMLDivElement | any>(null);
   let resetCopy;
 
-  const onCopy = useCallback(() => {
-    navigator.clipboard.writeText(ref.current?.innerText);
-    setCopied(true);
+  const onCopy = React.useCallback(() => {
+    navigator.clipboard
+      .writeText(ref.current?.innerText)
+      .then(() => setCopied(true));
   }, [ref, copied]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (copied) {
       resetCopy = setTimeout(() => setCopied(false), props?.duration || 3000);
     }
