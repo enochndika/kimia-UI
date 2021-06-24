@@ -1,7 +1,7 @@
 import Modal from '../index';
 import { FC } from 'react';
 import Button from '@/packages/button';
-import useDisclosure from '@/website/utils/useDisclosure';
+import useDisclosure from '@/website/hooks/useDisclosure';
 
 const ModalDefault: FC = () => {
   const { toggle, isOpen } = useDisclosure();

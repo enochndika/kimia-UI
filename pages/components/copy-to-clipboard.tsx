@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { Container } from '@/website/components/container';
 import DefaultCopyToClipboard from '@/packages/useClipboard/examples/default';
 import DefaultCopyToClipboardSnippet from '@/packages/useClipboard/snippets/default.mdx';
-import Table from '@/website/components/table';
+import Table from '@/website/components/DocumentationTable';
 
 export default function CopyToClipboardPage() {
   return (

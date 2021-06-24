@@ -7,23 +7,26 @@ type Props = {
 const useClipboard = (props?: Props) => {
   const [copied, setCopied] = React.useState<boolean>(false);
   const ref = React.useRef<HTMLElement | HTMLDivElement | any>(null);
-  let resetCopy;
+  const resetCopy = React.useRef<any>(null);
 
   const onCopy = React.useCallback(() => {
     navigator.clipboard
       .writeText(ref.current?.innerText)
       .then(() => setCopied(true));
-  }, [ref, copied]);
+  }, [ref]);
 
   React.useEffect(() => {
     if (copied) {
-      resetCopy = setTimeout(() => setCopied(false), props?.duration || 3000);
+      resetCopy.current = setTimeout(
+        () => setCopied(false),
+        props?.duration || 3000,
+      );
     }
 
     return () => {
-      clearTimeout(resetCopy);
+      clearTimeout(resetCopy.current);
     };
-  }, [copied]);
+  }, [copied, props.duration]);
 
   return { copied, ref, onCopy };
 };

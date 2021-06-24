@@ -1,10 +1,10 @@
+import React from 'react';
 import ContentLoader from 'react-content-loader';
-import { FC, useEffect, useState } from 'react';
 
-export const Loader: FC = (props) => {
-  const [mounted, setMounted] = useState(false);
+export default function SkeletonLoader(props) {
+  const [mounted, setMounted] = React.useState(false);
 
-  useEffect(() => {
+  React.useEffect(() => {
     setMounted(true);
   }, []);
 
@@ -22,4 +22,4 @@ export const Loader: FC = (props) => {
       )}
     </>
   );
-};
+}

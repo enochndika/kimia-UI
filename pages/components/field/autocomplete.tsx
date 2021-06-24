@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { Container } from '@/website/components/container';
 import AutoCompleteExample from '@/packages/autocomplete/examples';
 import AutocompleteExampleSnippet from '@/packages/autocomplete/snippets/index.mdx';
-import Table from '@/website/components/table';
+import Table from '@/website/components/DocumentationTable';
 
 export default function AutocompletePage() {
   return (

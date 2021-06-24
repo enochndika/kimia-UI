@@ -1,15 +1,16 @@
-import { useEffect } from 'react';
-import Button from '@/packages/button';
-import useDisclosure from '../utils/useDisclosure';
+import React from 'react';
+
 import Modal from '@/packages/modal';
-import useMounted from '../utils/useMounted';
+import Button from '@/packages/button';
+import useMounted from '../hooks/useMounted';
+import useDisclosure from '../hooks/useDisclosure';
 
 export const useAlertUser = () => {
   const isMounted = useMounted();
   const alertUser = isMounted && localStorage.getItem('alertUser');
   const userAlerted = isMounted && localStorage.getItem('userAlerted');
 
-  useEffect(() => {
+  React.useEffect(() => {
     localStorage.setItem(
       'alertUser',
       'Alert user to update the tailwind config',

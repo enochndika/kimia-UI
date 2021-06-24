@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import Button from '@/packages/button';
-import useDisclosure from '@/website/utils/useDisclosure';
+import useDisclosure from '@/website/hooks/useDisclosure';
 import Drawer from '../index';
 
 const DrawerBottom: FC = () => {

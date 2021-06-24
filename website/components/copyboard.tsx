@@ -1,9 +1,10 @@
 import React from 'react';
-import Highlight, { defaultProps, Language } from 'prism-react-renderer';
 import Confetti from 'react-dom-confetti';
-import s from './copyboard.module.css';
 import nightOwl from 'prism-react-renderer/themes/nightOwl';
-import { CodeWrapper } from './codeWrapper';
+import Highlight, { defaultProps, Language } from 'prism-react-renderer';
+
+import s from './copyboard.module.css';
+import CodeWrapper from './codeWrapper';
 
 export interface CopyboardProps {
   codeString: string;
@@ -58,7 +59,7 @@ const Button = (props) => (
   />
 );
 
-export function Copyboard({ codeString }: CopyboardProps) {
+export default function Copyboard({ codeString }: CopyboardProps) {
   const [isCopied, setIsCopied] = React.useState(false);
 
   return (

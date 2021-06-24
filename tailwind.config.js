@@ -50,6 +50,9 @@ module.exports = {
           '100%': { bottom: '0' },
         },
       },
+      fontFamily: {
+        body: ['Inter'],
+      },
     },
     variants: {
       transitionProperty: {

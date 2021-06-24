@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 interface CodeProps {
   variant: 'black' | 'default' | 'indigo' | 'blue-outline';
@@ -15,20 +15,19 @@ const classes = {
 
 const Code = ({ children, variant, acceptCopy }: CodeProps) => {
   const [copied, setCopied] = useState(false);
-  let resetCopy;
+  const resetCopy = useRef<any>();
 
-  const onCopyCode = async () => {
-    await navigator.clipboard.writeText(children);
-    setCopied(true);
+  const onCopyCode = () => {
+    navigator.clipboard.writeText(children).then(() => setCopied(true));
   };
 
   useEffect(() => {
     if (copied) {
-      resetCopy = setTimeout(() => setCopied(false), 2500);
+      resetCopy.current = setTimeout(() => setCopied(false), 2500);
     }
 
     return () => {
-      clearTimeout(resetCopy);
+      clearTimeout(resetCopy.current);
     };
   }, [copied]);
   return (

@@ -65,7 +65,7 @@ const Autocomplete = ({
       setShowSuggestions(true);
       setValue(e.currentTarget.value);
     },
-    [value],
+    [setValue, suggestions],
   );
 
   const onClick = (e) => {

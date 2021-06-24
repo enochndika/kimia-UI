@@ -1,0 +1,57 @@
+[
+  {
+    "id": "1",
+    "property": "og:type",
+    "content": "website"
+  },
+  {
+    "id": "2",
+    "property": "og:url",
+    "content": "https://kimia-ui.vercel.app"
+  },
+  {
+    "id": "3",
+    "property": "og:title",
+    "content": "Kimia-UI — A collection of UI components for React built with Tailwind CSS"
+  },
+  {
+    "id": "4",
+    "property": "og:description",
+    "content": "Kimia ui provides fully customizable UI components for React built with TailwindCSS. No installation needed, just copy and paste any component you want to use"
+  },
+  {
+    "id": "5",
+    "property": "og:image",
+    "content": "https://kimia-ui.vercel.app/kimia-facebook.png"
+  },
+  {
+    "id": "6",
+    "property": "og:image:alt",
+    "content": "Kimia-UI"
+  },
+  {
+    "id": "7",
+    "property": "twitter:card",
+    "content": "summary_large_image"
+  },
+  {
+    "id": "8",
+    "property": "twitter:url",
+    "content": "https://kimia-ui.vercel.app"
+  },
+  {
+    "id": "9",
+    "property": "twitter:title",
+    "content": "Kimia-UI — A collection of UI Components for React built with Tailwind CSS"
+  },
+  {
+    "id": "10",
+    "property": "twitter:description",
+    "content": "Kimia ui provides fully customizable UI components for React built with TailwindCSS. No installation needed, just copy and paste any component you want to use"
+  },
+  {
+    "id": "11",
+    "property": "twitter:image",
+    "content": "https://kimia-ui.vercel.app/kimia-twitter.png"
+  }
+]

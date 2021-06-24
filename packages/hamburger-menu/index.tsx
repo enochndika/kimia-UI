@@ -61,6 +61,7 @@ HamburgerMenu.Toggler = ({ toggle }: HamburgerTogglerProps) => (
 );
 
 HamburgerMenu.Collapse = ({ children, isOpen }: HamburgerCollapseProps) => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const ref = useRef<HTMLDivElement>(null);
   const inlineStyles: CSSProperties = isOpen
     ? { height: ref.current?.scrollHeight }

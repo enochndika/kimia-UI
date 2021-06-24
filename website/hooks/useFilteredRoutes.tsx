@@ -1,4 +1,4 @@
-export const useFilterRoutes = (pathname) => {
+export default function useFilteredRoutes(pathname) {
   switch (pathname) {
     case '/configuration':
     case '/':
@@ -7,4 +7,4 @@ export const useFilterRoutes = (pathname) => {
     default:
       return false;
   }
-};
+}

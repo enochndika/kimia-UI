@@ -1,7 +1,7 @@
-import React, { useState, ReactNode, ReactElement, ReactChild } from 'react';
+import React from 'react';
 
 interface Props {
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
 interface TabsProps extends Props {
@@ -28,33 +28,35 @@ const style = {
   },
 };
 
+const className = (child, current, variant) => {
+  switch (variant) {
+    case 1:
+      return current === child.key
+        ? style.first.selected
+        : style.first.notSelected;
+    case 2:
+      return current === child.key
+        ? style.second.selected
+        : style.second.notSelected;
+    case 3:
+      return current === child.key
+        ? style.third.selected
+        : style.third.notSelected;
+    default:
+      throw Error('Please choose a variant');
+  }
+};
+
 export const Tabs = ({ children, variant }: TabsProps) => {
   const childrenArray: Array<any> = React.Children.toArray(children);
-  const [current, setCurrent] = useState<ReactChild>(childrenArray[0].key);
+  const [current, setCurrent] = React.useState<React.ReactChild>(
+    childrenArray[0].key,
+  );
   const newChildren = childrenArray.map((child) =>
-    React.cloneElement(child as ReactElement, {
+    React.cloneElement(child as React.ReactElement, {
       selected: child.key === current,
     }),
   );
-
-  const className = (child, current) => {
-    switch (variant) {
-      case 1:
-        return current === child.key
-          ? style.first.selected
-          : style.first.notSelected;
-      case 2:
-        return current === child.key
-          ? style.second.selected
-          : style.second.notSelected;
-      case 3:
-        return current === child.key
-          ? style.third.selected
-          : style.third.notSelected;
-      default:
-        throw Error('Please choose a variant');
-    }
-  };
 
   return (
     <nav>
@@ -64,7 +66,7 @@ export const Tabs = ({ children, variant }: TabsProps) => {
           tabIndex={0}
           onClick={() => setCurrent(child.key)}
           key={child.key}
-          className={`${className(child, current)} focus:outline-none`}
+          className={`${className(child, current, variant)} focus:outline-none`}
         >
           {child.props.title}
         </div>

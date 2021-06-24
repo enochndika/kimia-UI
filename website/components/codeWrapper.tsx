@@ -1,4 +1,4 @@
-export function CodeWrapper({ children }) {
+export default function CodeWrapper({ children }) {
   return (
     <div
       className="overflow-y-scroll text-white mb-20 md:mb-20"

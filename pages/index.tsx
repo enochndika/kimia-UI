@@ -1,9 +1,10 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { Container } from '@/website/components/container';
 import Image from 'next/image';
 
-export default function Home() {
+import { Container } from '@/website/components/container';
+
+export default function HomePage() {
   return (
     <>
       <Head>

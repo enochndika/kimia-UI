@@ -8,6 +8,7 @@ interface IconProps extends Props {
   viewBox: string;
   children: ReactNode;
 }
+
 const Icon = ({ className, viewBox, children }: IconProps) => (
   <div>
     <svg

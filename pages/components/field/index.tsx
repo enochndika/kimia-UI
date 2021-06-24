@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { Container } from '@/website/components/container';
 import DefaultFieldExample from '@/packages/field/examples/default';
 import DefaultFieldExampleSnippet from '@/packages/field/snippets/default.mdx';
-import Table from '@/website/components/table';
+import Table from '@/website/components/DocumentationTable';
 
 export default function FieldPage() {
   return (

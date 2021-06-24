@@ -28,24 +28,27 @@ export const CopyToClipboardPage = () => {
 /* logic */
 const useClipboard = (props) => {
   const [copied, setCopied] = React.useState(false);
-  const ref = React.useRef(null);
-  let resetCopy;
+  const ref = React.useRef();
+  const resetCopy = React.useRef();
 
   const onCopy = React.useCallback(() => {
     navigator.clipboard
       .writeText(ref.current?.innerText)
       .then(() => setCopied(true));
-  }, [ref, copied]);
+  }, [ref]);
 
   React.useEffect(() => {
     if (copied) {
-      resetCopy = setTimeout(() => setCopied(false), props?.duration || 3000);
+      resetCopy.current = setTimeout(
+        () => setCopied(false),
+        props?.duration || 3000,
+      );
     }
 
     return () => {
-      clearTimeout(resetCopy);
+      clearTimeout(resetCopy.current);
     };
-  }, [copied]);
+  }, [copied, props.duration]);
 
   return { copied, ref, onCopy };
 };

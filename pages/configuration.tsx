@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
+
 import { Container } from '@/website/components/container';
 import TailwindConfig from '@/website/utils/tailwindConfig.mdx';
 

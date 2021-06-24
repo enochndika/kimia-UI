@@ -14,7 +14,7 @@ export default function PricingTablePage() {
         />
         <link
           rel="canonical"
-          href="https://kimia-ui.vercel.app/components/pricing-table"
+          href="https://kimia-ui.vercel.app/components/pricing-documentationTable"
         />
       </Head>
       <Container>

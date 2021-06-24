@@ -1,29 +1,27 @@
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { HTMLAttributes, ReactNode } from 'react';
+
 import {
   BookOpenIcon,
   CodeBranchIcon,
   ConfigIcon,
   GithubIcon,
-} from '../components/icons';
+} from '@/website/components/icons';
+import { useToggle } from '../helpers/context';
 
 interface Props {
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
 interface NavbarNavProps extends Props {
-  position: 'start' | 'middle' | 'end';
-}
-
-interface Props {
-  children: ReactNode;
+  position: 'left' | 'center' | 'right';
 }
 
 interface LinkPropsWithChildren {}
 
 interface NavLinkProps
-  extends HTMLAttributes<HTMLElement>,
+  extends React.HTMLAttributes<HTMLElement>,
     LinkPropsWithChildren {
   href: string;
   external?: boolean;
@@ -33,67 +31,10 @@ interface NavbarTogglerProps {
   toggle: () => void;
 }
 
-const orientation = (position: string) => {
-  switch (position) {
-    case 'start':
-      return 'hidden lg:pl-0 lg:mb-0 lg:mr-auto md:flex';
-    case 'middle':
-      return 'flex pl-0 mb-0 mx-auto pr-8 lg:hidden';
-    case 'end':
-      return 'hidden lg:pl-0 lg:mb-0 lg:ml-auto lg:flex';
-    default:
-      return 'hidden lg:pl-0 lg:mb-0 lg:mr-auto lg:flex';
-  }
-};
-
-const Navbar = ({ children }: Props) => (
-  <nav className="font-light h-16 relative flex items-center flex-row justify-start">
-    {children}
-  </nav>
-);
-
-Navbar.Brand = ({ children }: Props) => (
-  <div className="inline-block cursor-pointer">
-    <Link href="/">
-      <a>{children}</a>
-    </Link>
-  </div>
-);
-
-Navbar.Nav = ({ children, position }: NavbarNavProps) => (
-  <ul className={orientation(position)}>{children}</ul>
-);
-
-Navbar.Item = ({ children }: Props) => <li>{children}</li>;
-
-Navbar.Link = ({ children, href, external, ...props }: NavLinkProps) => (
-  <div className="cursor-pointer px-4 text-gray-700 hover:text-black font-medium">
-    {external ? (
-      <a className="flex" {...props} href={href}>
-        {children}
-      </a>
-    ) : (
-      <Link href={href}>
-        <a className="flex" {...props}>
-          {children}
-        </a>
-      </Link>
-    )}
-  </div>
-);
-
-Navbar.Toggler = ({ toggle }: NavbarTogglerProps) => (
-  <button
-    className="float-right block lg:hidden pr-3 text-3xl focus:outline-none focus:shadow"
-    onClick={toggle}
-  >
-    &#8801;
-  </button>
-);
-
-export const Header = ({ toggle }: NavbarTogglerProps) => {
+export default function TopNavigation() {
+  const { toggle } = useToggle();
   return (
-    <header className="lg:px-container overflow-hidden top-0 w-full fixed bg-white z-10">
+    <header className="lg:px-container absolute top-0 w-full lg:fixed bg-white z-10 ">
       <Navbar>
         <Navbar.Brand>
           <Image
@@ -105,7 +46,7 @@ export const Header = ({ toggle }: NavbarTogglerProps) => {
             alt="kimia-UI"
           />
         </Navbar.Brand>
-        <Navbar.Nav position="start">
+        <Navbar.Nav position="left">
           <Navbar.Item>
             <Navbar.Link href="/components/accordion" title="Docs">
               <BookOpenIcon className="h-4 lg:h-5 mt-0.5" />
@@ -113,7 +54,7 @@ export const Header = ({ toggle }: NavbarTogglerProps) => {
             </Navbar.Link>
           </Navbar.Item>
         </Navbar.Nav>
-        <Navbar.Nav position="middle">
+        <Navbar.Nav position="center">
           <Navbar.Item>
             <Navbar.Link href="/contribution-guide" title="Contribute">
               <CodeBranchIcon className="h-4 lg:h-5" />
@@ -134,7 +75,7 @@ export const Header = ({ toggle }: NavbarTogglerProps) => {
             </Navbar.Link>
           </Navbar.Item>
         </Navbar.Nav>
-        <Navbar.Nav position="end">
+        <Navbar.Nav position="right">
           <Navbar.Item>
             <Navbar.Link href="/contribution-guide" title="Contribute">
               <CodeBranchIcon className="h-4 lg:h-5" />
@@ -162,4 +103,56 @@ export const Header = ({ toggle }: NavbarTogglerProps) => {
       </Navbar>
     </header>
   );
+}
+
+const style = {
+  navbar: `font-light h-16 relative flex items-center flex-row justify-start`,
+  brand: `inline-block cursor-pointer`,
+  link: `cursor-pointer px-4 text-gray-900 hover:text-black font-medium`,
+  toggler: `float-right block lg:hidden pr-3 text-5xl -mt-3 focus:outline-none focus:shadow`,
+  position: {
+    center: `flex pl-0 mb-0 mx-auto pr-8 lg:hidden`,
+    left: `hidden lg:pl-0 lg:mb-0 lg:mr-auto md:flex`,
+    right: `hidden lg:pl-0 lg:mb-0 lg:ml-auto lg:flex`,
+  },
 };
+
+function Navbar({ children }: Props) {
+  return <nav className={style.navbar}>{children}</nav>;
+}
+
+Navbar.Brand = ({ children }: Props) => (
+  <div className={style.brand}>
+    <Link href="/">
+      <a>{children}</a>
+    </Link>
+  </div>
+);
+
+Navbar.Nav = ({ children, position }: NavbarNavProps) => (
+  <ul className={style.position[position]}>{children}</ul>
+);
+
+Navbar.Item = ({ children }: Props) => <li>{children}</li>;
+
+Navbar.Link = ({ children, href, external, ...props }: NavLinkProps) => (
+  <div className={style.link}>
+    {external ? (
+      <a className="flex" {...props} href={href}>
+        {children}
+      </a>
+    ) : (
+      <Link href={href}>
+        <a className="flex" {...props}>
+          {children}
+        </a>
+      </Link>
+    )}
+  </div>
+);
+
+Navbar.Toggler = ({ toggle }: NavbarTogglerProps) => (
+  <button className={style.toggler} onClick={toggle}>
+    &#8801;
+  </button>
+);

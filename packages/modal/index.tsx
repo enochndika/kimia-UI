@@ -53,7 +53,7 @@ const Modal = ({
     };
     window.addEventListener('click', handleOutsideClick);
     return () => window.removeEventListener('click', handleOutsideClick);
-  }, [isOpen, ref]);
+  }, [closeOnClickOutside, isOpen, ref, toggle]);
 
   // close modal when you click on "ESC" key
   useEffect(() => {
@@ -65,7 +65,7 @@ const Modal = ({
     };
     document.addEventListener('keyup', handleEscape);
     return () => document.removeEventListener('keyup', handleEscape);
-  }, [isOpen]);
+  }, [isOpen, toggle]);
 
   // Put focus on modal dialogue, hide scrollbar and prevent body from moving when modal is open
   useEffect(() => {

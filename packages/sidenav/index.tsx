@@ -49,7 +49,7 @@ const Sidenav = ({
     };
     window.addEventListener('mousedown', handleOutsideClick);
     return () => window.removeEventListener('mousedown', handleOutsideClick);
-  }, [isOpen, ref]);
+  }, [closeOnClickOutside, isOpen, ref, toggle]);
 
   return (
     <aside
