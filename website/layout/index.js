@@ -18,9 +18,11 @@ export default function Layout({ children }) {
   return (
     <LayoutProvider>
       <div className={style.container}>
-        <TopNavigation />
-        {!filtered && <SideNavigation />}
         <Overlay />
+        <TopNavigation />
+        <div className={filtered ? 'lg:hidden' : ''}>
+          <SideNavigation />
+        </div>
         <div
           className={`${style.mainContainer} ${
             filtered ? 'lg:pl-2' : 'lg:pl-72'
