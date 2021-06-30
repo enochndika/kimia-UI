@@ -9,6 +9,7 @@ import {
   GithubIcon,
 } from '@/website/components/icons';
 import { useToggle } from '../helpers/context';
+import { useRouter } from 'next/router';
 
 interface Props {
   children: React.ReactNode;
@@ -25,6 +26,7 @@ interface NavLinkProps
     LinkPropsWithChildren {
   href: string;
   external?: boolean;
+  active?: boolean;
 }
 
 interface NavbarTogglerProps {
@@ -36,7 +38,7 @@ export default function TopNavigation() {
   return (
     <header className="lg:px-container absolute top-0 w-full lg:fixed bg-white z-10 ">
       <Navbar>
-        <Navbar.Brand>
+        <NavbarBrand>
           <Image
             src="/kimia.png"
             height={110}
@@ -45,114 +47,149 @@ export default function TopNavigation() {
             priority={true}
             alt="kimia-UI"
           />
-        </Navbar.Brand>
-        <Navbar.Nav position="left">
-          <Navbar.Item>
-            <Navbar.Link href="/components/accordion" title="Docs">
+        </NavbarBrand>
+        <NavbarNav position="left">
+          <NavbarItem>
+            <NavbarLink href="/components/accordion" title="Docs">
               <BookOpenIcon className="h-4 lg:h-5 mt-0.5" />
               <span className="pl-1">Docs</span>
-            </Navbar.Link>
-          </Navbar.Item>
-        </Navbar.Nav>
-        <Navbar.Nav position="center">
-          <Navbar.Item>
-            <Navbar.Link href="/contribution-guide" title="Contribute">
+            </NavbarLink>
+          </NavbarItem>
+        </NavbarNav>
+        <NavbarNav position="center">
+          <NavbarItem>
+            <NavbarLink
+              href="/contribution-guide"
+              title="Contribute"
+              active={true}
+            >
               <CodeBranchIcon className="h-4 lg:h-5" />
-            </Navbar.Link>
-          </Navbar.Item>
-          <Navbar.Item>
-            <Navbar.Link
+            </NavbarLink>
+          </NavbarItem>
+          <NavbarItem>
+            <NavbarLink
               href="https://github.com/enochndika/kimia-UI"
               external={true}
               title="Github source"
             >
               <GithubIcon className="h-4 lg:h-5" />
-            </Navbar.Link>
-          </Navbar.Item>
-          <Navbar.Item>
-            <Navbar.Link href="/configuration" title="Configuration">
+            </NavbarLink>
+          </NavbarItem>
+          <NavbarItem>
+            <NavbarLink
+              href="/configuration"
+              title="Configuration"
+              active={true}
+            >
               <ConfigIcon className="h-4 lg:h-5" />
-            </Navbar.Link>
-          </Navbar.Item>
-        </Navbar.Nav>
-        <Navbar.Nav position="right">
-          <Navbar.Item>
-            <Navbar.Link href="/contribution-guide" title="Contribute">
+            </NavbarLink>
+          </NavbarItem>
+        </NavbarNav>
+        <NavbarNav position="right">
+          <NavbarItem>
+            <NavbarLink
+              href="/contribution-guide"
+              title="Contribute"
+              active={true}
+            >
               <CodeBranchIcon className="h-4 lg:h-5" />
               <span className="pl-1">Contribute</span>
-            </Navbar.Link>
-          </Navbar.Item>
-          <Navbar.Item>
-            <Navbar.Link
+            </NavbarLink>
+          </NavbarItem>
+          <NavbarItem>
+            <NavbarLink
               href="https://github.com/enochndika/kimia-UI"
               external={true}
               title="Github source"
             >
               <GithubIcon className="h-4 md:h-5" />
               <span className="pl-1">Github</span>
-            </Navbar.Link>
-          </Navbar.Item>
-          <Navbar.Item>
-            <Navbar.Link href="/configuration" title="Configuration">
+            </NavbarLink>
+          </NavbarItem>
+          <NavbarItem>
+            <NavbarLink
+              href="/configuration"
+              title="Configuration"
+              active={true}
+            >
               <ConfigIcon className="h-4 md:h-5" />
               <span className="pl-1">Config</span>
-            </Navbar.Link>
-          </Navbar.Item>
-        </Navbar.Nav>
-        <Navbar.Toggler toggle={toggle} />
+            </NavbarLink>
+          </NavbarItem>
+        </NavbarNav>
+        <NavbarToggler toggle={toggle} />
       </Navbar>
     </header>
   );
 }
 
 const style = {
-  navbar: `font-light h-16 relative flex items-center flex-row justify-start`,
-  brand: `inline-block cursor-pointer`,
-  link: `cursor-pointer px-4 text-gray-900 hover:text-black font-medium`,
-  toggler: `float-right block lg:hidden pr-3 text-5xl -mt-3 focus:outline-none focus:shadow`,
   position: {
     center: `flex pl-0 mb-0 mx-auto pr-8 lg:hidden`,
     left: `hidden lg:pl-0 lg:mb-0 lg:mr-auto md:flex`,
     right: `hidden lg:pl-0 lg:mb-0 lg:ml-auto lg:flex`,
   },
+  active: `text-purple-800`,
+  brand: `inline-block cursor-pointer`,
+  link: `cursor-pointer px-4 text-gray-900 hover:text-black font-medium`,
+  navbar: `font-light h-16 relative flex items-center flex-row justify-start`,
+  toggler: `float-right block lg:hidden pr-3 text-5xl -mt-3 focus:outline-none focus:shadow`,
 };
 
 function Navbar({ children }: Props) {
   return <nav className={style.navbar}>{children}</nav>;
 }
 
-Navbar.Brand = ({ children }: Props) => (
-  <div className={style.brand}>
-    <Link href="/">
-      <a>{children}</a>
-    </Link>
-  </div>
-);
+function NavbarBrand({ children }: Props) {
+  return (
+    <div className={style.brand}>
+      <Link href="/">
+        <a>{children}</a>
+      </Link>
+    </div>
+  );
+}
 
-Navbar.Nav = ({ children, position }: NavbarNavProps) => (
-  <ul className={style.position[position]}>{children}</ul>
-);
+function NavbarNav({ children, position }: NavbarNavProps) {
+  return <ul className={style.position[position]}>{children}</ul>;
+}
 
-Navbar.Item = ({ children }: Props) => <li>{children}</li>;
+function NavbarItem({ children }: Props) {
+  return <li>{children}</li>;
+}
 
-Navbar.Link = ({ children, href, external, ...props }: NavLinkProps) => (
-  <div className={style.link}>
-    {external ? (
-      <a className="flex" {...props} href={href}>
-        {children}
-      </a>
-    ) : (
-      <Link href={href}>
-        <a className="flex" {...props}>
+function NavbarLink({
+  children,
+  href,
+  external,
+  active,
+  ...props
+}: NavLinkProps) {
+  const { asPath } = useRouter();
+  return (
+    <div className={style.link}>
+      {external ? (
+        <a className="flex" {...props} href={href}>
           {children}
         </a>
-      </Link>
-    )}
-  </div>
-);
+      ) : (
+        <Link href={href}>
+          <a
+            className={`flex ${active && asPath === href && style.active}`}
+            {...props}
+          >
+            {children}
+          </a>
+        </Link>
+      )}
+    </div>
+  );
+}
 
-Navbar.Toggler = ({ toggle }: NavbarTogglerProps) => (
-  <button className={style.toggler} onClick={toggle}>
-    &#8801;
-  </button>
-);
+function NavbarToggler({ toggle }: NavbarTogglerProps) {
+  return (
+    <button className={style.toggler} onClick={toggle}>
+      &#8801;
+    </button>
+  );
+}

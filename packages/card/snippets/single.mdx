@@ -9,37 +9,47 @@ export const CardPage = () => (
         height={600}
         className="max-w-full h-auto"
       />
-      <Card.Body>
-        <Card.Title>Card title</Card.Title>
-        <Card.Text>
+      <CardBody>
+        <CardTitle>Card title</CardTitle>
+        <CardText>
           Some quick example text to build on the card title and make up the
           bulk of the card&apos;s content.
-        </Card.Text>
-      </Card.Body>
+        </CardText>
+      </CardBody>
     </Card>
   </div>
 );
 
 /* Logic */
+
 const style = {
   card: `relative flex flex-col border-2 border-gray-200 rounded-lg`,
   cardBody: `block flex-grow flex-shrink p-5`,
   cardTitle: `font-medium text-gray-700 mb-3`,
   cardText: `text-gray-500`,
 };
+
 const inlineStyle = {
   boxShadow: '0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%)',
 };
 
-const Card = ({ children }) => (
-  <div className={style.card} style={inlineStyle}>
-    {children}
-  </div>
-);
+function Card({ children }) {
+  return (
+    <div className={style.card} style={inlineStyle}>
+      {children}
+    </div>
+  );
+}
 
-Card.Body = ({ children }) => <div className={style.cardBody}>{children}</div>;
-Card.Title = ({ children }) => (
-  <div className={style.cardTitle}>{children}</div>
-);
-Card.Text = ({ children }) => <div className={style.cardText}>{children}</div>;
+function CardBody({ children }) {
+  return <div className={style.cardBody}>{children}</div>;
+}
+
+function CardTitle({ children }) {
+  return <div className={style.cardTitle}>{children}</div>;
+}
+
+function CardText({ children }) {
+  return <div className={style.cardText}>{children}</div>;
+}
 ```

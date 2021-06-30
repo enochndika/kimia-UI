@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import Image from 'next/image';
-import Card from '../index';
+import { Card, CardBody, CardText, CardTitle } from '../index';
 
 const SingleCard: FC = () => (
   <div className="mb-12">
@@ -16,13 +16,13 @@ const SingleCard: FC = () => (
         priority={true}
         className="max-w-full h-auto"
       />
-      <Card.Body>
-        <Card.Title>Card title</Card.Title>
-        <Card.Text>
+      <CardBody>
+        <CardTitle>Card title</CardTitle>
+        <CardText>
           Some quick example text to build on the card title and make up the
           bulk of the card&apos;s content.
-        </Card.Text>
-      </Card.Body>
+        </CardText>
+      </CardBody>
     </Card>
   </div>
 );

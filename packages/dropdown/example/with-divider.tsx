@@ -1,5 +1,11 @@
 import { FC } from 'react';
-import Dropdown from '../index';
+import {
+  Dropdown,
+  DropdownMenu,
+  DropdownToggle,
+  DropdownItem,
+  DropdownDivider,
+} from '../index';
 
 const DropdownWithDivider: FC = () => (
   <div className="mb-8">
@@ -7,7 +13,7 @@ const DropdownWithDivider: FC = () => (
       Dropdown with divider
     </h2>
     <Dropdown>
-      <Dropdown.Toggle>
+      <DropdownToggle>
         <span className="flex">
           Options
           <svg
@@ -24,17 +30,17 @@ const DropdownWithDivider: FC = () => (
             />
           </svg>
         </span>
-      </Dropdown.Toggle>
-      <Dropdown.Menu>
-        <Dropdown.Item>Heroku</Dropdown.Item>
-        <Dropdown.Item>Postgres</Dropdown.Item>
-        <Dropdown.Divider />
-        <Dropdown.Item>Digital Ocean</Dropdown.Item>
-        <Dropdown.Item>Aws functions</Dropdown.Item>
-        <Dropdown.Divider />
-        <Dropdown.Item>Azure</Dropdown.Item>
-        <Dropdown.Item>Strapi</Dropdown.Item>
-      </Dropdown.Menu>
+      </DropdownToggle>
+      <DropdownMenu>
+        <DropdownItem>Heroku</DropdownItem>
+        <DropdownItem>Postgres</DropdownItem>
+        <DropdownDivider />
+        <DropdownItem>Digital Ocean</DropdownItem>
+        <DropdownItem>Aws functions</DropdownItem>
+        <DropdownDivider />
+        <DropdownItem>Azure</DropdownItem>
+        <DropdownItem>Strapi</DropdownItem>
+      </DropdownMenu>
     </Dropdown>
   </div>
 );

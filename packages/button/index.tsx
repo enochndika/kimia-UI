@@ -1,17 +1,12 @@
-import {
-  ForwardedRef,
-  forwardRef,
-  ReactNode,
-  ButtonHTMLAttributes,
-} from 'react';
+import React from 'react';
 
 interface BtnPropsWithChildren {}
 
 interface BtnProps
-  extends ButtonHTMLAttributes<HTMLButtonElement>,
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     BtnPropsWithChildren {
   block?: boolean;
-  children: ReactNode;
+  children: React.ReactNode;
   className?: string;
   color?: 'primary' | 'success' | 'danger' | 'warning' | 'indigo' | 'dark';
   disabled?: boolean;
@@ -21,12 +16,12 @@ interface BtnProps
   submit?: boolean;
 }
 
-type ButtonRef = ForwardedRef<HTMLButtonElement>;
+type ButtonRef = React.ForwardedRef<HTMLButtonElement>;
 
 const style = {
-  default: `text-white focus:outline-none shadow font-medium transition ease-in duration-200`,
-  block: `flex justify-center w-full`,
   rounded: `rounded-full`,
+  block: `flex justify-center w-full`,
+  default: `text-white focus:outline-none shadow font-medium transition ease-in duration-200`,
   disabled: `opacity-60 cursor-not-allowed`,
   sizes: {
     sm: 'px-6 py-1 text-sm',
@@ -70,7 +65,7 @@ const colors = (outline: boolean) => ({
   indigo: outline ? style.color.indigo.outline : style.color.indigo.bg,
 });
 
-const Button = forwardRef(
+const Button = React.forwardRef(
   (
     {
       block = false,

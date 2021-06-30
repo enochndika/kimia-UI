@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import React from 'react';
 
 interface CodeProps {
   variant: 'black' | 'default' | 'indigo' | 'blue-outline';
@@ -6,22 +6,25 @@ interface CodeProps {
   acceptCopy?: boolean;
 }
 
-const classes = {
-  black: `bg-black text-white`,
-  indigo: 'bg-indigo-900 text-white',
-  'blue-outline': 'border border-blue-600 text-blue-600',
-  default: 'bg-gray-100 text-black border',
+const style = {
+  default: `inline-flex font-mono text-sm py-2.5 px-4 rounded overflow-x-auto max-w-full`,
+  variant: {
+    black: `bg-black text-white`,
+    indigo: 'bg-indigo-900 text-white',
+    default: 'bg-gray-100 text-black border',
+    'blue-outline': 'border border-blue-600 text-blue-600',
+  },
 };
 
-const Code = ({ children, variant, acceptCopy }: CodeProps) => {
-  const [copied, setCopied] = useState(false);
-  const resetCopy = useRef<any>();
+function Code({ children, variant, acceptCopy }: CodeProps) {
+  const [copied, setCopied] = React.useState(false);
+  const resetCopy = React.useRef<any>();
 
   const onCopyCode = () => {
     navigator.clipboard.writeText(children).then(() => setCopied(true));
   };
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (copied) {
       resetCopy.current = setTimeout(() => setCopied(false), 2500);
     }
@@ -31,9 +34,7 @@ const Code = ({ children, variant, acceptCopy }: CodeProps) => {
     };
   }, [copied]);
   return (
-    <pre
-      className={`${classes[variant]} inline-flex font-mono text-sm py-2.5 px-4 rounded overflow-x-auto max-w-full`}
-    >
+    <pre className={`${style.default} ${style.variant[variant]} `}>
       <span>{children}</span>
       <span className="ml-5">
         {acceptCopy
@@ -42,7 +43,7 @@ const Code = ({ children, variant, acceptCopy }: CodeProps) => {
       </span>
     </pre>
   );
-};
+}
 
 const CopyIcon = (props) => (
   <svg

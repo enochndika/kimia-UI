@@ -1,52 +1,105 @@
-import { HTMLAttributes, ReactNode, useRef } from 'react';
+import React from 'react';
 
 interface AccordionProps {
-  children: ReactNode;
-  id: string;
-  isOpen: string;
+  children: React.ReactNode;
+  defaultPanel?: string;
 }
 
-interface AccordionHeaderProps extends HTMLAttributes<HTMLElement> {
-  activeItem?: string;
-  id?: string;
-  children: ReactNode;
-  upIcon?: ReactNode;
-  downIcon?: ReactNode;
-  variant: 'gray' | 'indigo' | 'green';
+interface AccordionContextProps {
+  selected?: string;
+  toggleItem?: (id: string) => void;
+}
+
+interface AccordionItemProps extends React.HTMLAttributes<HTMLElement> {
+  toggle?: string;
+  children: React.ReactNode;
+  color: 'gray' | 'indigo' | 'green';
+}
+
+interface AccordionPanelProps extends React.HTMLAttributes<HTMLElement> {
+  children: React.ReactNode;
+  id: string;
 }
 
 const style = {
-  accordion: `overflow-hidden md:overflow-x-hidden transition-height ease duration-300 text-gray-600`,
-  accordionHeader: {
+  item: {
     gray: `block focus:outline-none bg-gray-800 text-white border-b my-2 p-3`,
     indigo: `block focus:outline-none bg-indigo-800 text-white border-b my-2 p-3`,
     green: `block focus:outline-none bg-green-800 text-white border-b my-2 p-3`,
   },
+  panel: `overflow-hidden md:overflow-x-hidden transition-height ease duration-300 text-gray-600`,
 };
 
-export const Accordion = ({ children, id, isOpen }: AccordionProps) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const inlineStyle =
-    isOpen === id ? { height: ref.current?.scrollHeight } : { height: 0 };
+/* Logic */
+const Context = React.createContext<AccordionContextProps>({});
+
+export function Accordion({ children, defaultPanel }: AccordionProps) {
+  const [selected, setSelected] = React.useState(defaultPanel || '');
+
+  const toggleItem = React.useCallback((id) => {
+    setSelected((prevState) => (prevState !== id ? id : ''));
+  }, []);
 
   return (
-    <div id={id} className={style.accordion} ref={ref} style={inlineStyle}>
+    <Context.Provider value={{ selected, toggleItem }}>
+      {children}
+    </Context.Provider>
+  );
+}
+
+//custom hook to consume all accordion values
+const useAccordion = () => React.useContext(Context);
+
+export function AccordionItem({ color, toggle, children }: AccordionItemProps) {
+  const { selected, toggleItem } = useAccordion();
+  return (
+    <div
+      role="button"
+      onClick={() => toggleItem(toggle)}
+      className={style.item[color]}
+    >
+      {children}
+      <span className="float-right">
+        {selected === toggle ? <AngleUpIcon /> : <AngleDownIcon />}
+      </span>
+    </div>
+  );
+}
+
+export function AccordionPanel({ children, id }: AccordionPanelProps) {
+  const { selected } = useAccordion();
+  const ref = React.useRef<HTMLDivElement>();
+  const inlineStyle =
+    selected === id ? { height: ref.current?.scrollHeight } : { height: 0 };
+
+  return (
+    <div ref={ref} id={id} className={style.panel} style={inlineStyle}>
       {children}
     </div>
   );
-};
+}
 
-export const AccordionHeader = ({
-  activeItem,
-  id,
-  children,
-  upIcon,
-  downIcon,
-  variant,
-  ...rest
-}: AccordionHeaderProps) => (
-  <div role="button" {...rest} className={style.accordionHeader[variant]}>
-    {children}
-    <span className="float-right">{activeItem === id ? upIcon : downIcon}</span>
-  </div>
+const AngleUpIcon = () => (
+  <svg
+    fill="white"
+    strokeWidth="0"
+    viewBox="0 0 320 512"
+    xmlns="http://www.w3.org/2000/svg"
+    className="mt-1 h-4"
+  >
+    <path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z" />
+  </svg>
+);
+
+const AngleDownIcon = () => (
+  <svg
+    stroke="currentColor"
+    fill="white"
+    strokeWidth="0"
+    viewBox="0 0 320 512"
+    xmlns="http://www.w3.org/2000/svg"
+    className="mt-1 h-4"
+  >
+    <path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z" />
+  </svg>
 );

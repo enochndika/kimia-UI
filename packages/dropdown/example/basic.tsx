@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import Dropdown from '../index';
+import { Dropdown, DropdownMenu, DropdownToggle, DropdownItem } from '../index';
 
 const BasicDropdown: FC = () => (
   <div className="mb-8">
@@ -7,7 +7,7 @@ const BasicDropdown: FC = () => (
       Basic Dropdown
     </h2>
     <Dropdown>
-      <Dropdown.Toggle>
+      <DropdownToggle>
         <span className="flex">
           Options
           <svg
@@ -24,12 +24,12 @@ const BasicDropdown: FC = () => (
             />
           </svg>
         </span>
-      </Dropdown.Toggle>
-      <Dropdown.Menu>
-        <Dropdown.Item>Enoch Ndika</Dropdown.Item>
-        <Dropdown.Item>Josue Kazenga</Dropdown.Item>
-        <Dropdown.Item>Business</Dropdown.Item>
-      </Dropdown.Menu>
+      </DropdownToggle>
+      <DropdownMenu>
+        <DropdownItem>Enoch Ndika</DropdownItem>
+        <DropdownItem>Josue Kazenga</DropdownItem>
+        <DropdownItem>Business</DropdownItem>
+      </DropdownMenu>
     </Dropdown>
   </div>
 );

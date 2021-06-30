@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import Button from '@/packages/button';
 import useDisclosure from '@/website/hooks/useDisclosure';
-import Drawer from '../index';
+import { Drawer } from '../index';
 
 const DrawerSimple: FC = () => {
   const { toggle, isOpen } = useDisclosure();

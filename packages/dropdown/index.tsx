@@ -1,29 +1,24 @@
-import {
-  AnchorHTMLAttributes,
-  ReactNode,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import React from 'react';
 
 interface Props {
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
-interface DropdownItemProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
-  children: ReactNode;
+interface DropdownItemProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  children: React.ReactNode;
 }
 
 const useToggle = () => {
-  const [show, setShow] = useState<boolean>(false);
-  const ref = useRef<HTMLDivElement>(null);
+  const [show, setShow] = React.useState<boolean>(false);
+  const ref = React.useRef<HTMLDivElement>(null);
 
-  const toggle = () => {
-    setShow(!show);
-  };
+  const toggle = React.useCallback(() => {
+    setShow((prevState) => !prevState);
+  }, []);
 
   // close dropdown when you click outside
-  useEffect(() => {
+  React.useEffect(() => {
     const handleOutsideClick = (event) => {
       if (!ref.current?.contains(event.target)) {
         if (!show) return;
@@ -35,7 +30,7 @@ const useToggle = () => {
   }, [show, ref]);
 
   // close dropdown when you click on "ESC" key
-  useEffect(() => {
+  React.useEffect(() => {
     const handleEscape = (event) => {
       if (!show) return;
 
@@ -59,7 +54,7 @@ const style = {
   item: `block w-full py-1 px-8 mb-2 text-sm font-normal clear-both whitespace-nowrap border-0 hover:bg-gray-200 cursor-pointer`,
 };
 
-const Dropdown = ({ children }: Props) => {
+export function Dropdown({ children }: Props) {
   const { show, toggle } = useToggle();
   /* First child contains the dropdown toggle */
   const dropdownToggle = children[0];
@@ -81,31 +76,37 @@ const Dropdown = ({ children }: Props) => {
       {show && <>{dropdownMenu}</>}
     </>
   );
-};
+}
 
-Dropdown.Toggle = ({ children }: Props) => <>{children}</>;
+export function DropdownToggle({ children }: Props) {
+  return <>{children}</>;
+}
 
-Dropdown.Menu = ({ children }: Props) => (
-  <div className="relative">
-    <div
-      style={{ transform: 'translate3d(0px, 3px, 0px)' }}
-      className={style.menu}
-      role="menu"
-      aria-orientation="vertical"
-      aria-labelledby="options-menu"
-    >
-      {children}
+export function DropdownMenu({ children }: Props) {
+  return (
+    <div className="relative">
+      <div
+        style={{ transform: 'translate3d(0px, 3px, 0px)' }}
+        className={style.menu}
+        role="menu"
+        aria-orientation="vertical"
+        aria-labelledby="options-menu"
+      >
+        {children}
+      </div>
     </div>
-  </div>
-);
+  );
+}
 
 /* You can wrap the a tag with Link if you are using either Create-React-App, Next.js or Gatsby */
-Dropdown.Item = ({ children }: DropdownItemProps) => (
-  <a tabIndex={0} className={style.item} role="menuitem">
-    {children}
-  </a>
-);
+export function DropdownItem({ children }: DropdownItemProps) {
+  return (
+    <a tabIndex={0} className={style.item} role="menuitem">
+      {children}
+    </a>
+  );
+}
 
-Dropdown.Divider = () => <hr className="my-2" />;
-
-export default Dropdown;
+export function DropdownDivider() {
+  return <hr className="my-2" />;
+}

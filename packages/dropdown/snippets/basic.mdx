@@ -1,9 +1,9 @@
 ```jsx
-import { useEffect, useRef, useState } from 'react';
+import React from 'react';
 
 export const DropdownPage = () => (
   <Dropdown>
-    <Dropdown.Toggle>
+    <DropdownToggle>
       <span className="flex bg-indigo-900 text-white rounded px-6 py-2 font-medium">
         Options
         <svg
@@ -20,27 +20,27 @@ export const DropdownPage = () => (
           />
         </svg>
       </span>
-    </Dropdown.Toggle>
-    <Dropdown.Menu>
-      <Dropdown.Item>Enoch Ndika</Dropdown.Item>
-      <Dropdown.Item>Josue Kazenga</Dropdown.Item>
-      <Dropdown.Item>Business</Dropdown.Item>
-    </Dropdown.Menu>
+    </DropdownToggle>
+    <DropdownMenu>
+      <DropdownItem>Enoch Ndika</DropdownItem>
+      <DropdownItem>Josue Kazenga</DropdownItem>
+      <DropdownItem>Business</DropdownItem>
+    </DropdownMenu>
   </Dropdown>
 );
 
 /* Logic*/
 
-const useToggle = () => {
-  const [show, setShow] = useState(false);
-  const ref = useRef(null);
+function useToggle() {
+  const [show, setShow] = React.useState(false);
+  const ref = React.useRef(null);
 
-  const toggle = () => {
-    setShow(!show);
-  };
+  const toggle = React.useCallback(() => {
+    setShow((prevState) => !prevState);
+  }, []);
 
   // close dropdown when you click outside
-  useEffect(() => {
+  React.useEffect(() => {
     const handleOutsideClick = (event) => {
       if (!ref.current?.contains(event.target)) {
         if (!show) return;
@@ -52,7 +52,7 @@ const useToggle = () => {
   }, [show, ref]);
 
   // close dropdown when you click on "ESC" key
-  useEffect(() => {
+  React.useEffect(() => {
     const handleEscape = (event) => {
       if (!show) return;
 
@@ -69,14 +69,14 @@ const useToggle = () => {
     toggle,
     ref,
   };
-};
+}
 
 const style = {
-  menu: `block z-30 absolute top-0 left-0 bg-white float-left py-2 px-0 text-left border border-gray-300 rounded-sm mt-0.5 mb-0 mx-0 bg-clip-padding`,
   item: `block w-full py-1 px-8 mb-2 text-sm font-normal clear-both whitespace-nowrap border-0 hover:bg-gray-200 cursor-pointer`,
+  menu: `block z-30 absolute top-0 left-0 bg-white float-left py-2 px-0 text-left border border-gray-300 rounded-sm mt-0.5 mb-0 mx-0 bg-clip-padding`,
 };
 
-const Dropdown = ({ children }) => {
+function Dropdown({ children }) {
   const { show, toggle } = useToggle();
   /* First child contains the dropdown toggle */
   const dropdownToggle = children[0];
@@ -99,30 +99,34 @@ const Dropdown = ({ children }) => {
       {show && <>{dropdownMenu}</>}
     </>
   );
-};
+}
 
-Dropdown.Toggle = ({ children }) => <>{children}</>;
+function DropdownToggle({ children }) {
+  return <>{children}</>;
+}
 
-Dropdown.Menu = ({ children }) => (
-  <div className="relative">
-    <div
-      style={{ transform: 'translate3d(0px, 3px, 0px)' }}
-      className={style.menu}
-      role="menu"
-      aria-orientation="vertical"
-      aria-labelledby="options-menu"
-    >
-      {children}
+function DropdownMenu({ children }) {
+  return (
+    <div className="relative">
+      <div
+        style={{ transform: 'translate3d(0px, 3px, 0px)' }}
+        className={style.menu}
+        role="menu"
+        aria-orientation="vertical"
+        aria-labelledby="options-menu"
+      >
+        {children}
+      </div>
     </div>
-  </div>
-);
+  );
+}
 
 /* You can wrap the a tag with Link and pass href prop to Link if you are using either Create-React-App, Next.js or Gatsby */
-Dropdown.Item = ({ children }) => (
-  <a tabIndex={0} className={style.item} role="menuitem">
-    {children}
-  </a>
-);
-
-export default Dropdown;
+function DropdownItem({ children }) {
+  return (
+    <a tabIndex={0} className={style.item} role="menuitem">
+      {children}
+    </a>
+  );
+}
 ```

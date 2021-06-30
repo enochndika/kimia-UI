@@ -1,42 +1,40 @@
 ```jsx
-import { useEffect, useState } from 'react';
+import React from 'react';
 
 export const CodePage = () => (
   <div className="m-8">
-    <Code>yarn add swr react-documentationTable</Code>
+    <Code>yarn add swr react-table</Code>
   </div>
 );
 
 /* logic */
-const Code = ({ children }) => {
-  const [copied, setCopied] = useState(false);
-  let resetCopy;
 
-  const onCopyCode = async () => {
-    await navigator.clipboard.writeText(children);
-    setCopied(true);
+function Code({ children }) {
+  const [copied, setCopied] = React.useState(false);
+  const resetCopy = React.useRef();
+
+  const onCopyCode = () => {
+    navigator.clipboard.writeText(children).then(() => setCopied(true));
   };
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (copied) {
-      resetCopy = setTimeout(() => setCopied(false), 2500);
+      resetCopy.current = setTimeout(() => setCopied(false), 2500);
     }
 
     return () => {
-      clearTimeout(resetCopy);
+      clearTimeout(resetCopy.current);
     };
   }, [copied]);
   return (
-    <pre
-      className={`inline-flex font-mono text-sm py-2.5 px-4 rounded overflow-x-auto max-w-full border border-blue-600 text-blue-600`}
-    >
+    <pre className="inline-flex font-mono text-sm py-2.5 px-4 rounded overflow-x-auto max-w-full border border-blue-600 text-blue-600">
       <span>{children}</span>
       <span className="ml-5">
         {copied ? <CopiedIcon /> : <CopyIcon onClick={onCopyCode} />}
       </span>
     </pre>
   );
-};
+}
 
 const CopyIcon = (props) => (
   <svg

@@ -1,24 +1,26 @@
 ```jsx
 export const ListGroupPage = () => (
-  <ListGroup>
-    <ListGroup.Item>First Item</ListGroup.Item>
-    <ListGroup.Item>Second Item</ListGroup.Item>
-    <ListGroup.Item>Third Item</ListGroup.Item>
-  </ListGroup>
+  <div className="w-full md:w-4/12">
+    <ListGroup>
+      <ListGroupItem>First Item</ListGroupItem>
+      <ListGroupItem>Second Item</ListGroupItem>
+      <ListGroupItem>Third Item</ListGroupItem>
+    </ListGroup>
+  </div>
 );
 
-const ListGroup = ({ children }) => (
-  <ul className="list-reset flex flex-col pl-0 mb-0 w-full md:w-4/12">
-    {children}
-  </ul>
-);
+function ListGroup({ children }) {
+  return <ul className="list-reset flex flex-col pl-0 mb-0 ">{children}</ul>;
+}
 
-ListGroup.Item = ({ children, className }) => (
-  <a
-    tabIndex={0}
-    className={`${className} relative block py-3 px-5 relative -mb-px block border border-grey`}
-  >
-    {children}
-  </a>
-);
+function ListGroupItem({ children }) {
+  return (
+    <a
+      tabIndex={0}
+      className="relative block py-3 px-5 relative -mb-px block border border-grey"
+    >
+      {children}
+    </a>
+  );
+}
 ```

@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import Card from '../index';
+import { Card, CardBody, CardTitle, CardText } from '../index';
 import Image from 'next/image';
 
 const MultipleCard: FC = () => (
@@ -18,17 +18,17 @@ const MultipleCard: FC = () => (
             height={800}
             priority={true}
           />
-          <Card.Body>
-            <Card.Title className="text-lg">Lamborghini</Card.Title>
-            <Card.Text>
+          <CardBody>
+            <CardTitle className="text-lg">Lamborghini</CardTitle>
+            <CardText>
               Joe made the sugar cookies; Susan decorated them. When motorists
               sped in and out of traffic.
-            </Card.Text>
+            </CardText>
             <a className="text-indigo-500 inline-flex items-center mt-4 cursor-pointer">
               View Details
               <ArrowIcon />
             </a>
-          </Card.Body>
+          </CardBody>
         </Card>
       </div>
       <div className="w-full md:w-4/12 mb-6 md:mb-0 md:p-3">
@@ -40,17 +40,17 @@ const MultipleCard: FC = () => (
             width={1200}
             height={800}
           />
-          <Card.Body>
-            <Card.Title className="text-lg">Bugatti</Card.Title>
-            <Card.Text>
+          <CardBody>
+            <CardTitle className="text-lg">Bugatti</CardTitle>
+            <CardText>
               Joe made the sugar cookies; Susan decorated them. When motorists
               sped in and out of traffic.
-            </Card.Text>
+            </CardText>
             <a className="text-indigo-500 inline-flex items-center mt-4 cursor-pointer">
               View Details
               <ArrowIcon />
             </a>
-          </Card.Body>
+          </CardBody>
         </Card>
       </div>
       <div className="w-full md:w-4/12 mb-6 md:mb-0 md:p-3">
@@ -62,17 +62,17 @@ const MultipleCard: FC = () => (
             width={1200}
             height={800}
           />
-          <Card.Body>
-            <Card.Title className="text-lg">Computer</Card.Title>
-            <Card.Text>
+          <CardBody>
+            <CardTitle className="text-lg">Computer</CardTitle>
+            <CardText>
               Joe made the sugar cookies; Susan decorated them. When motorists
               sped in and out of traffic.
-            </Card.Text>
+            </CardText>
             <a className="text-indigo-500 inline-flex items-center mt-4 cursor-pointer">
               View Details
               <ArrowIcon />
             </a>
-          </Card.Body>
+          </CardBody>
         </Card>
       </div>
     </div>

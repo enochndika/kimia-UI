@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import Button from '@/packages/button';
 import useDisclosure from '@/website/hooks/useDisclosure';
-import Drawer from '../index';
+import { Drawer, DrawerBody, DrawerFooter, DrawerHeader } from '../index';
 
 const DrawerTop: FC = () => {
   const { toggle, isOpen } = useDisclosure();
@@ -14,21 +14,21 @@ const DrawerTop: FC = () => {
         Click to open me
       </Button>
       <Drawer isOpen={isOpen} toggle={toggle} position="top">
-        <Drawer.Header>Drawer title</Drawer.Header>
-        <Drawer.Body>
+        <DrawerHeader>Drawer title</DrawerHeader>
+        <DrawerBody>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat.
-        </Drawer.Body>
-        <Drawer.Footer>
+        </DrawerBody>
+        <DrawerFooter>
           <Button onClick={toggle} color="danger" className="mr-1">
             Close
           </Button>
           <Button onClick={toggle} color="primary">
             Confirm
           </Button>
-        </Drawer.Footer>
+        </DrawerFooter>
       </Drawer>
     </div>
   );
