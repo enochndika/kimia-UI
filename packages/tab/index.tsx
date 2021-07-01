@@ -49,9 +49,11 @@ const className = (child, current, variant) => {
 
 export const Tabs = ({ children, variant }: TabsProps) => {
   const childrenArray: Array<any> = React.Children.toArray(children);
+
   const [current, setCurrent] = React.useState<React.ReactChild>(
     childrenArray[0].key,
   );
+
   const newChildren = childrenArray.map((child) =>
     React.cloneElement(child as React.ReactElement, {
       selected: child.key === current,
@@ -76,8 +78,10 @@ export const Tabs = ({ children, variant }: TabsProps) => {
   );
 };
 
-export const Tab = ({ children, selected }: TabProps) => (
-  <div hidden={!selected} className="mt-4">
-    {children}
-  </div>
-);
+export function Tab({ children, selected }: TabProps) {
+  return (
+    <div hidden={!selected} className="mt-4">
+      {children}
+    </div>
+  );
+}

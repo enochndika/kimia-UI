@@ -2,10 +2,10 @@
 import { useState } from 'react';
 
 export const CurtainMenuPage = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const toggle = () => {
-    setIsOpen(!isOpen);
+    setOpen((prevState) => !prevState);
   };
 
   return (
@@ -16,7 +16,7 @@ export const CurtainMenuPage = () => {
       >
         Open
       </button>
-      <Menu isOpen={isOpen}>
+      <Menu open={open}>
         <button
           aria-label="Close"
           className="absolute top-3 right-3 text-5xl text-white cursor-pointer"
@@ -24,12 +24,12 @@ export const CurtainMenuPage = () => {
         >
           &times;
         </button>
-        <Menu.Container>
-          <Menu.Item href="#">Home</Menu.Item>
-          <Menu.Item href="#">Contact</Menu.Item>
-          <Menu.Item href="#">Services</Menu.Item>
-          <Menu.Item href="#">Components</Menu.Item>
-        </Menu.Container>
+        <MenuContainer>
+          <MenuItem href="#">Home</MenuItem>
+          <MenuItem href="#">Contact</MenuItem>
+          <MenuItem href="#">Services</MenuItem>
+          <MenuItem href="#">Components</MenuItem>
+        </MenuContainer>
       </Menu>
     </>
   );
@@ -37,33 +37,37 @@ export const CurtainMenuPage = () => {
 
 /* Logic*/
 const style = {
+  container: `relative top-1/4 w-full text-center mt-8`,
+  item: `text-3xl text-gray-400 cursor-pointer hover:text-white`,
   menu: {
     open: `h-full w-full `,
     close: `w-0 h-full`,
-    default: `overflow-x-hidden md:overflow-hidden transition-all duration-500 fixed z-10 top-0 left-0 bg-black`,
+    default: `overflow-x-hidden md:overflow-hidden transition-all duration-700 fixed z-10 top-0 left-0 bg-black`,
   },
-  container: `relative top-1/4 w-full text-center mt-8`,
-  item: `text-3xl text-gray-400 cursor-pointer hover:text-white`,
 };
 
-const Menu = ({ children, isOpen }) => (
-  <div
-    className={`${isOpen ? style.menu.open : style.menu.close} 
-    ${style.menu.default}`}
-  >
-    {children}
-  </div>
-);
-
-Menu.Container = ({ children }) => (
-  <div className={style.container}>{children}</div>
-);
-
-Menu.Item = ({ children, href }) => (
-  <div className="p-2">
-    <a href={href} className={style.item}>
+function Menu({ children, open }) {
+  return (
+    <div
+      className={`${style.menu.default} 
+       ${open ? style.menu.open : style.menu.close}`}
+    >
       {children}
-    </a>
-  </div>
-);
+    </div>
+  );
+}
+
+function MenuContainer({ children }) {
+  return <div className={style.container}>{children}</div>;
+}
+
+function MenuItem({ children, href }) {
+  return (
+    <div className="p-2">
+      <a href={href} className={style.item}>
+        {children}
+      </a>
+    </div>
+  );
+}
 ```

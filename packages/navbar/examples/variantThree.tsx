@@ -1,30 +1,38 @@
 import { useState } from 'react';
-import Navbar from '../index';
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarCollapse,
+  NavbarNav,
+  NavbarItem,
+  NavbarLink,
+  NavbarToggler,
+} from '../index';
 
 const NavbarVariantThree = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [open, setOpen] = useState<boolean>(false);
 
   const toggle = () => {
-    setIsOpen(!isOpen);
+    setOpen((prevState) => !prevState);
   };
 
   return (
     <Navbar className="mb-8" bgColor="bg-black" textColor="text-white">
-      <Navbar.Brand href="#">Navbar</Navbar.Brand>
-      <Navbar.Toggler toggle={toggle} />
-      <Navbar.Collapse isOpen={isOpen}>
-        <Navbar.Nav>
-          <Navbar.Item>
-            <Navbar.Link href="#">Home</Navbar.Link>
-          </Navbar.Item>
-          <Navbar.Item>
-            <Navbar.Link href="#">Documents</Navbar.Link>
-          </Navbar.Item>
-          <Navbar.Item>
-            <Navbar.Link href="#">React</Navbar.Link>
-          </Navbar.Item>
-        </Navbar.Nav>
-      </Navbar.Collapse>
+      <NavbarBrand href="#">Navbar</NavbarBrand>
+      <NavbarToggler toggle={toggle} />
+      <NavbarCollapse open={open}>
+        <NavbarNav>
+          <NavbarItem>
+            <NavbarLink href="#">Home</NavbarLink>
+          </NavbarItem>
+          <NavbarItem>
+            <NavbarLink href="#">Documents</NavbarLink>
+          </NavbarItem>
+          <NavbarItem>
+            <NavbarLink href="#">React</NavbarLink>
+          </NavbarItem>
+        </NavbarNav>
+      </NavbarCollapse>
     </Navbar>
   );
 };

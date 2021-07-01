@@ -1,16 +1,24 @@
 import { useState } from 'react';
-import Navbar from '../index';
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarCollapse,
+  NavbarNav,
+  NavbarItem,
+  NavbarLink,
+  NavbarToggler,
+} from '../index';
 
 const NavbarVariantOne = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [open, setOpen] = useState<boolean>(false);
 
   const toggle = () => {
-    setIsOpen(!isOpen);
+    setOpen((prevState) => !prevState);
   };
 
   return (
     <Navbar bgColor="bg-indigo-900" className="mb-8">
-      <Navbar.Brand href="#">
+      <NavbarBrand href="#">
         <svg
           height="25"
           preserveAspectRatio="xMidYMid"
@@ -27,23 +35,23 @@ const NavbarVariantOne = () => {
             fill="url(#a)"
           />
         </svg>
-      </Navbar.Brand>
-      <Navbar.Toggler toggle={toggle} />
-      <Navbar.Collapse isOpen={isOpen}>
-        <Navbar.Nav>
-          <Navbar.Item>
-            <Navbar.Link href="#">Home</Navbar.Link>
-          </Navbar.Item>
-        </Navbar.Nav>
-        <Navbar.Nav position="right">
-          <Navbar.Item>
-            <Navbar.Link href="#">Documents</Navbar.Link>
-          </Navbar.Item>
-          <Navbar.Item>
-            <Navbar.Link href="#">React</Navbar.Link>
-          </Navbar.Item>
-        </Navbar.Nav>
-      </Navbar.Collapse>
+      </NavbarBrand>
+      <NavbarToggler toggle={toggle} />
+      <NavbarCollapse open={open}>
+        <NavbarNav>
+          <NavbarItem>
+            <NavbarLink href="#">Home</NavbarLink>
+          </NavbarItem>
+        </NavbarNav>
+        <NavbarNav position="right">
+          <NavbarItem>
+            <NavbarLink href="#">Documents</NavbarLink>
+          </NavbarItem>
+          <NavbarItem>
+            <NavbarLink href="#">React</NavbarLink>
+          </NavbarItem>
+        </NavbarNav>
+      </NavbarCollapse>
     </Navbar>
   );
 };

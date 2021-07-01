@@ -1,7 +1,7 @@
-import Modal from '../index';
 import { FC } from 'react';
 import Button from '@/packages/button';
 import useDisclosure from '@/website/hooks/useDisclosure';
+import { Modal, ModalBody, ModalHeader, ModalFooter } from '../index';
 
 const ModalDefault: FC = () => {
   const { toggle, isOpen } = useDisclosure();
@@ -14,21 +14,21 @@ const ModalDefault: FC = () => {
         Click to open me
       </Button>
       <Modal isOpen={isOpen} toggle={toggle} closeOnClickOutside={true}>
-        <Modal.Header>Modal title</Modal.Header>
-        <Modal.Body>
+        <ModalHeader>Modal title</ModalHeader>
+        <ModalBody>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat.
-        </Modal.Body>
-        <Modal.Footer>
+        </ModalBody>
+        <ModalFooter>
           <Button onClick={toggle} color="danger" className="mr-1">
             Close
           </Button>
           <Button onClick={toggle} color="primary">
             Confirm
           </Button>
-        </Modal.Footer>
+        </ModalFooter>
       </Modal>
     </div>
   );

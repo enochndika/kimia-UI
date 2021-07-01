@@ -1,31 +1,41 @@
 import { useState } from 'react';
-import HamburgerMenu from '../index';
+import {
+  HamburgerMenu,
+  HamburgerMenuBrand,
+  HamburgerMenuCollapse,
+  HamburgerMenuToggler,
+  HamburgerMenuNav,
+  HamburgerMenuItem,
+  HamburgerMenuLink,
+} from '../index';
 
 const HamburgerMenuVariantThree = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [open, setOpen] = useState<boolean>(false);
 
   const toggle = () => {
-    setIsOpen(!isOpen);
+    setOpen((prevState) => !prevState);
   };
 
   return (
-    <HamburgerMenu className="mb-8" bgColor="bg-black" textColor="text-white">
-      <HamburgerMenu.Brand href="#">Navigation</HamburgerMenu.Brand>
-      <HamburgerMenu.Toggler toggle={toggle} />
-      <HamburgerMenu.Collapse isOpen={isOpen}>
-        <HamburgerMenu.Nav>
-          <HamburgerMenu.Item>
-            <HamburgerMenu.Link href="#">Home</HamburgerMenu.Link>
-          </HamburgerMenu.Item>
-          <HamburgerMenu.Item>
-            <HamburgerMenu.Link href="#">Documents</HamburgerMenu.Link>
-          </HamburgerMenu.Item>
-          <HamburgerMenu.Item>
-            <HamburgerMenu.Link href="#">React</HamburgerMenu.Link>
-          </HamburgerMenu.Item>
-        </HamburgerMenu.Nav>
-      </HamburgerMenu.Collapse>
-    </HamburgerMenu>
+    <div className="mb-12">
+      <HamburgerMenu className="mb-8" bgColor="bg-black" textColor="text-white">
+        <HamburgerMenuBrand href="#">Navigation</HamburgerMenuBrand>
+        <HamburgerMenuToggler toggle={toggle} />
+        <HamburgerMenuCollapse open={open}>
+          <HamburgerMenuNav>
+            <HamburgerMenuItem>
+              <HamburgerMenuLink href="#">Home</HamburgerMenuLink>
+            </HamburgerMenuItem>
+            <HamburgerMenuItem>
+              <HamburgerMenuLink href="#">Documents</HamburgerMenuLink>
+            </HamburgerMenuItem>
+            <HamburgerMenuItem>
+              <HamburgerMenuLink href="#">React</HamburgerMenuLink>
+            </HamburgerMenuItem>
+          </HamburgerMenuNav>
+        </HamburgerMenuCollapse>
+      </HamburgerMenu>
+    </div>
   );
 };
 

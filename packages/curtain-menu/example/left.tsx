@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import Button from '@/packages/button';
-import Menu from '../index';
+import { Menu, MenuContainer, MenuItem } from '../index';
 
 export const CurtainMenuLeft = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [open, setOpen] = useState<boolean>(false);
 
   const toggle = () => {
-    setIsOpen(!isOpen);
+    setOpen((prevState) => !prevState);
   };
 
   return (
@@ -17,7 +17,7 @@ export const CurtainMenuLeft = () => {
       <Button color="dark" onClick={toggle}>
         Open
       </Button>
-      <Menu isOpen={isOpen} transition="left">
+      <Menu open={open} transition="left">
         <button
           aria-label="Close"
           className="absolute top-3 right-3 text-5xl text-white cursor-pointer"
@@ -25,12 +25,12 @@ export const CurtainMenuLeft = () => {
         >
           &times;
         </button>
-        <Menu.Container>
-          <Menu.Item href="#">Home</Menu.Item>
-          <Menu.Item href="#">Contact</Menu.Item>
-          <Menu.Item href="#">Services</Menu.Item>
-          <Menu.Item href="#">Components</Menu.Item>
-        </Menu.Container>
+        <MenuContainer>
+          <MenuItem href="#">Home</MenuItem>
+          <MenuItem href="#">Contact</MenuItem>
+          <MenuItem href="#">Services</MenuItem>
+          <MenuItem href="#">Components</MenuItem>
+        </MenuContainer>
       </Menu>
     </div>
   );

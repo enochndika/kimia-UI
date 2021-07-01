@@ -58,17 +58,17 @@ const validateSchema = Yup.object().shape({
 /*  COMPONENT LOGIC */
 
 const style = {
-  checkbox: `checked:bg-blue-500 checked:right-0 focus:outline-none right-4 duration-200 ease-in absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer`,
-  checkboxContainer: `relative w-10 mr-2 align-middle select-none mt-2`,
-  checkboxLabel: `block overflow-hidden h-6 rounded-full bg-gray-300`,
-  container: `relative mb-6 mt-3`,
-  default: `text-base relative flex flex-1 w-full mt-1 rounded-md py-2 px-4 bg-white text-gray-700 placeholder-gray-400 text-base focus:outline-none focus:ring-1 focus:border-transparent border border-transparent`,
-  disabled: `cursor-not-allowed`,
   dot: `text-red-500 pl-0.5`,
   error: `ring-red-500 ring-1`,
+  disabled: `cursor-not-allowed`,
+  container: `relative mb-6 mt-3`,
   errorMessage: `text-sm text-red-500 mt-2`,
+  checkboxLabel: `block overflow-hidden h-6 rounded-full bg-gray-300`,
+  checkboxContainer: `relative w-10 mr-2 align-middle select-none mt-2`,
   iconContainer: `absolute flex border border-transparent left-0 top-0 h-full w-10`,
   icon: `flex items-center justify-center rounded-tl rounded-bl z-10 text-gray-400 text-lg h-full w-full`,
+  checkbox: `checked:bg-blue-500 checked:right-0 focus:outline-none right-4 duration-200 ease-in absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer`,
+  default: `text-base relative flex flex-1 w-full mt-1 rounded-md py-2 px-4 bg-white text-gray-700 placeholder-gray-400 text-base focus:outline-none focus:ring-1 focus:border-transparent border border-transparent`,
 };
 
 const Field = forwardRef(

@@ -1,5 +1,5 @@
 ```jsx
-import React, { useState } from 'react';
+import React from 'react';
 
 export const TabPage = () => (
   <Tabs>
@@ -27,14 +27,15 @@ export const TabPage = () => (
 /* Tab logic */
 
 const style = {
+  notSelected: `text-gray-800 border-b`,
   default: `py-2 px-4 inline-block focus:outline-none`,
   selected: `border-gray-300 border-t bg-white border-b-0 border-l border-r text-blue-700`,
-  notSelected: `text-gray-800 border-b`,
 };
 
-const Tabs = ({ children }) => {
+function Tabs({ children }) {
   const childrenArray = React.Children.toArray(children);
-  const [current, setCurrent] = useState(childrenArray[0].key);
+  const [current, setCurrent] = React.useState(childrenArray[0].key);
+
   const newChildren = childrenArray.map((child) =>
     React.cloneElement(child, { selected: child?.key === current }),
   );
@@ -57,11 +58,13 @@ const Tabs = ({ children }) => {
       <section>{newChildren}</section>
     </nav>
   );
-};
+}
 
-const Tab = ({ children, selected }) => (
-  <div hidden={!selected} className="mt-4">
-    {children}
-  </div>
-);
+function Tab({ children, selected }) {
+  return (
+    <div hidden={!selected} className="mt-4">
+      {children}
+    </div>
+  );
+}
 ```

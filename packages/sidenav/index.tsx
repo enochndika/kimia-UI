@@ -1,20 +1,22 @@
-import { ReactNode, useEffect, useRef } from 'react';
+import React from 'react';
 
 interface Props {
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
 interface LinkProps extends Props {
   href: string;
 }
 interface SidenavProps extends Props {
-  isOpen: boolean;
+  open: boolean;
   position?: 'left' | 'right';
   toggle: (value?: unknown) => void;
   closeOnClickOutside?: boolean;
 }
 
 const style = {
+  item: `flex justify-start cursor-pointer font-medium hover:text-gray-400 ml-8 mb-10`,
+  closeIcon: `absolute top-1 focus:outline-none right-3 text-3xl text-white cursor-pointer`,
   position: {
     left: {
       open: `w-7/12 md:w-60 bg-gray-800 text-white overflow-x-hidden`,
@@ -27,34 +29,33 @@ const style = {
       default: `right-0 h-screen fixed z-20 top-0 transition-all ease duration-200`,
     },
   },
-  item: `flex justify-start cursor-pointer font-medium hover:text-gray-400 ml-8 mb-10`,
-  closeIcon: `absolute top-1 focus:outline-none right-3 text-3xl text-white cursor-pointer`,
 };
 
-const Sidenav = ({
-  isOpen,
-  position,
+export function Sidenav({
+  open,
   toggle,
+  position,
   children,
   closeOnClickOutside,
-}: SidenavProps) => {
-  const ref = useRef<HTMLDivElement>();
+}: SidenavProps) {
+  const ref = React.useRef<HTMLDivElement>();
 
-  useEffect(() => {
+  //close on click outside
+  React.useEffect(() => {
     const handleOutsideClick = (event) => {
       if (closeOnClickOutside && !ref.current?.contains(event.target)) {
-        if (closeOnClickOutside && !isOpen) return;
+        if (closeOnClickOutside && !open) return;
         toggle(false);
       }
     };
     window.addEventListener('mousedown', handleOutsideClick);
     return () => window.removeEventListener('mousedown', handleOutsideClick);
-  }, [closeOnClickOutside, isOpen, ref, toggle]);
+  }, [closeOnClickOutside, open, ref, toggle]);
 
   return (
     <aside
       className={`${style.position[position].default} ${
-        isOpen ? style.position[position].open : style.position[position].close
+        open ? style.position[position].open : style.position[position].close
       }`}
       ref={ref}
     >
@@ -64,13 +65,13 @@ const Sidenav = ({
       <div className="mt-12">{children}</div>
     </aside>
   );
-};
+}
 
 /* You can wrap the a tag with Link and pass href to Link if you are using either Create-React-App, Next.js or Gatsby */
-Sidenav.Item = ({ children, href }: LinkProps) => (
-  <a href={href} className={style.item}>
-    {children}
-  </a>
-);
-
-export default Sidenav;
+export function SidenavItem({ children, href }: LinkProps) {
+  return (
+    <a href={href} className={style.item}>
+      {children}
+    </a>
+  );
+}

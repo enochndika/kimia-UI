@@ -1,16 +1,16 @@
 ```jsx
-import { useState, useRef } from 'react';
+import React from 'react';
 
 export const HamburgerMenuPage = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [open, setOpen] = React.useState(false);
 
   const toggle = () => {
-    setIsOpen(!isOpen);
+    setOpen((prevState) => !prevState);
   };
 
   return (
-    <Navbar bgColor="bg-green-700" textColor="text-white">
-      <Navbar.Brand href="#">
+    <HamburgerMenu bgColor="bg-green-700" textColor="text-white">
+      <HamburgerMenuBrand href="#">
         <svg
           width="25"
           height="23"
@@ -47,62 +47,69 @@ export const HamburgerMenuPage = () => {
             fill="#E24329"
           />
         </svg>
-      </Navbar.Brand>
-      <Navbar.Toggler toggle={toggle} />
-      <Navbar.Collapse isOpen={isOpen}>
-        <Navbar.Nav>
-          <Navbar.Item>
-            <Navbar.Link href="#">Home</Navbar.Link>
-          </Navbar.Item>
-          <Navbar.Item>
-            <Navbar.Link href="#">Documents</Navbar.Link>
-          </Navbar.Item>
-          <Navbar.Item>
-            <Navbar.Link href="#">React</Navbar.Link>
-          </Navbar.Item>
-        </Navbar.Nav>
-      </Navbar.Collapse>
-    </Navbar>
+      </HamburgerMenuBrand>
+      <HamburgerMenuToggler toggle={toggle} />
+      <HamburgerMenuCollapse open={open}>
+        <HamburgerMenuNav>
+          <HamburgerMenuItem>
+            <HamburgerMenuLink href="#">Home</HamburgerMenuLink>
+          </HamburgerMenuItem>
+          <HamburgerMenuItem>
+            <HamburgerMenuLink href="#">Documents</HamburgerMenuLink>
+          </HamburgerMenuItem>
+          <HamburgerMenuItem>
+            <HamburgerMenuLink href="#">React</HamburgerMenuLink>
+          </HamburgerMenuItem>
+        </HamburgerMenuNav>
+      </HamburgerMenuCollapse>
+    </HamburgerMenu>
   );
 };
 
 /* Logic */
 
 const style = {
-  navbar: `font-light shadow py-2 px-4`,
-  brand: `inline-block pt-1.5 pb-1.5 mr-4 cursor-pointer text-2xl font-bold whitespace-nowrap hover:text-gray-400`,
-  toggler: `float-right pt-1.5 text-3xl focus:outline-none focus:shadow`,
-  collapse: `transition-height ease duration-300`,
   nav: `block pl-0 mb-0`,
+  navbar: `font-light shadow py-2 px-4`,
+  collapse: `transition-height ease duration-300`,
+  toggler: `float-right pt-1.5 text-3xl focus:outline-none focus:shadow`,
   link: `block cursor-pointer py-1.5 px-4  hover:text-gray-400 font-medium`,
+  brand: `inline-block pt-1.5 pb-1.5 mr-4 cursor-pointer text-2xl font-bold whitespace-nowrap hover:text-gray-400`,
 };
 
-const Navbar = ({ children, bgColor, textColor }) => (
-  <nav className={`${bgColor} ${textColor} ${style.navbar}`}>{children}</nav>
-);
+function HamburgerMenu({ children, bgColor, textColor }) {
+  return (
+    <nav className={`${bgColor} ${textColor} ${style.navbar}`}>{children}</nav>
+  );
+}
 
 /* You can wrap the a tag with Link and pass href to Link if you are using either Create-React-App, Next.js or Gatsby */
-Navbar.Brand = ({ children, href }) => (
-  <a href={href} className={style.brand}>
-    <strong>{children}</strong>
-  </a>
-);
+function HamburgerMenuBrand({ children, href }) {
+  return (
+    <a href={href} className={style.brand}>
+      <strong>{children}</strong>
+    </a>
+  );
+}
 
-Navbar.Toggler = ({ toggle }) => (
-  <button
-    type="button"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
-    className={style.toggler}
-    onClick={toggle}
-  >
-    &#8801;
-  </button>
-);
+function HamburgerMenuToggler({ toggle }) {
+  return (
+    <button
+      type="button"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      className={style.toggler}
+      onClick={toggle}
+    >
+      &#8801;
+    </button>
+  );
+}
 
-Navbar.Collapse = ({ children, isOpen }) => {
-  const ref = useRef(null);
-  const inlineStyle = isOpen
+function HamburgerMenuCollapse({ children, open }) {
+  const ref = React.useRef(null);
+
+  const inlineStyle = open
     ? { height: ref.current?.scrollHeight }
     : { height: 0, visibility: 'hidden', opacity: 0 };
 
@@ -111,16 +118,22 @@ Navbar.Collapse = ({ children, isOpen }) => {
       {children}
     </div>
   );
-};
+}
 
-Navbar.Nav = ({ children }) => <ul className={style.nav}>{children}</ul>;
-Navbar.Item = ({ children }) => <li>{children}</li>;
+function HamburgerMenuNav({ children }) {
+  return <ul className={style.nav}>{children}</ul>;
+}
+
+function HamburgerMenuItem({ children }) {
+  return <li>{children}</li>;
+}
 
 /* You can wrap the a tag with Link and pass href to Link if you are using either Create-React-App, Next.js or Gatsby */
-Navbar.Link = ({ children, href }) => (
-  <a href={href} className={style.link}>
-    {children}
-  </a>
-);
-export default Navbar;
+function HamburgerMenuLink({ children, href }) {
+  return (
+    <a href={href} className={style.link}>
+      {children}
+    </a>
+  );
+}
 ```

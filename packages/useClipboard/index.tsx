@@ -4,7 +4,7 @@ type Props = {
   duration?: number;
 };
 
-const useClipboard = (props?: Props) => {
+export default function useClipboard(props?: Props) {
   const [copied, setCopied] = React.useState<boolean>(false);
   const ref = React.useRef<HTMLElement | HTMLDivElement | any>(null);
   const resetCopy = React.useRef<any>(null);
@@ -29,6 +29,4 @@ const useClipboard = (props?: Props) => {
   }, [copied, props.duration]);
 
   return { copied, ref, onCopy };
-};
-
-export default useClipboard;
+}

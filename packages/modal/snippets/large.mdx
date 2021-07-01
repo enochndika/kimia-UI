@@ -1,11 +1,11 @@
 ```jsx
-import { useEffect, useRef, useState } from 'react';
+import React from 'react';
 
 /* You'll need to install @reach/portal which simplify creating portal*/
 import Portal from '@reach/portal';
 
 export const ModalPage = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = React.useState(false);
 
   const toggle = () => {
     setIsOpen(!isOpen);
@@ -21,14 +21,14 @@ export const ModalPage = () => {
         Click to open me
       </button>
       <Modal isOpen={isOpen} toggle={toggle}>
-        <Modal.Header>Modal title</Modal.Header>
-        <Modal.Body>
+        <ModalHeader>Modal title</ModalHeader>
+        <ModalBody>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat.
-        </Modal.Body>
-        <Modal.Footer>
+        </ModalBody>
+        <ModalFooter>
           <button
             onClick={toggle}
             className="text-white focus:outline-none m-1.5 rounded px-6 py-2 font-medium bg-red-500"
@@ -41,30 +41,30 @@ export const ModalPage = () => {
           >
             Confirm
           </button>
-        </Modal.Footer>
+        </ModalFooter>
       </Modal>
     </>
   );
 };
 
-/* Logic */
+/*Logic*/
 
 const style = {
-  container: `fixed top-0 overflow-y-auto left-0 z-40 w-full h-full m-0`,
-  content: `relative flex flex-col bg-white pointer-events-auto`,
-  orientation: `mt-12 mx-8 pb-6 md:m-auto md:w-8/12 md:pt-12 focus:outline-none`,
-  overlay: `fixed top-0 left-0 z-30 w-screen h-screen bg-black opacity-50`,
-  header: `items-start justify-between p-4 border-b border-gray-300`,
-  headerTitle: `text-2xl md:text-3xl font-light`,
   body: `flex-shrink flex-grow p-4`,
+  headerTitle: `text-2xl md:text-3xl font-light`,
+  content: `relative flex flex-col bg-white pointer-events-auto`,
+  header: `items-start justify-between p-4 border-b border-gray-300`,
+  container: `fixed top-0 overflow-y-auto left-0 z-40 w-full h-full m-0`,
+  overlay: `fixed top-0 left-0 z-30 w-screen h-screen bg-black opacity-50`,
   footer: `flex flex-wrap items-center justify-end p-3 border-t border-gray-300`,
+  orientation: `mt-12 mx-8 pb-6 md:m-auto md:w-8/12 md:pt-12 focus:outline-none`,
 };
 
-const Modal = ({ children, isOpen, toggle }) => {
-  const ref = useRef();
+function Modal({ children, isOpen, toggle }) {
+  const ref = React.useRef();
 
-  // close modal when you click outside the dialog
-  useEffect(() => {
+  // close modal on click outside
+  React.useEffect(() => {
     const handleOutsideClick = (event) => {
       if (!ref.current?.contains(event.target)) {
         if (!isOpen) return;
@@ -73,10 +73,10 @@ const Modal = ({ children, isOpen, toggle }) => {
     };
     window.addEventListener('click', handleOutsideClick);
     return () => window.removeEventListener('click', handleOutsideClick);
-  }, [isOpen, ref]);
+  }, [isOpen, ref, toggle]);
 
   // close modal when you click on "ESC" key
-  useEffect(() => {
+  React.useEffect(() => {
     const handleEscape = (event) => {
       if (!isOpen) return;
       if (event.key === 'Escape') {
@@ -85,27 +85,24 @@ const Modal = ({ children, isOpen, toggle }) => {
     };
     document.addEventListener('keyup', handleEscape);
     return () => document.removeEventListener('keyup', handleEscape);
-  }, [isOpen]);
+  }, [isOpen, toggle]);
 
-  //hide scrollbar and prevent body from moving when modal is open
-  useEffect(() => {
+  // hide scrollbar and prevent body from moving when modal is open
+  //put focus on modal dialogue
+  React.useEffect(() => {
     if (!isOpen) return;
 
-    // Put focus on modal dialogue
     ref.current?.focus();
 
     const html = document.documentElement;
-
-    const overflow = html.style.overflow;
-    const paddingRight = html.style.paddingRight;
     const scrollbarWidth = window.innerWidth - html.clientWidth;
 
     html.style.overflow = 'hidden';
     html.style.paddingRight = `${scrollbarWidth}px`;
 
     return () => {
-      html.style.overflow = overflow;
-      html.style.paddingRight = paddingRight;
+      html.style.overflow = '';
+      html.style.paddingRight = '';
     };
   }, [isOpen]);
 
@@ -129,13 +126,21 @@ const Modal = ({ children, isOpen, toggle }) => {
       )}
     </Portal>
   );
-};
+}
 
-Modal.Header = ({ children }) => (
-  <div className={style.header}>
-    <h4 className={style.headerTitle}>{children}</h4>
-  </div>
-);
-Modal.Body = ({ children }) => <div className={style.body}>{children}</div>;
-Modal.Footer = ({ children }) => <div className={style.footer}>{children}</div>;
+function ModalHeader({ children }) {
+  return (
+    <div className={style.header}>
+      <h4 className={style.headerTitle}>{children}</h4>
+    </div>
+  );
+}
+
+function ModalBody({ children }) {
+  return <div className={style.body}>{children}</div>;
+}
+
+function ModalFooter({ children }) {
+  return <div className={style.footer}>{children}</div>;
+}
 ```

@@ -60,6 +60,7 @@ const style = {
 function Drawer({ children, isOpen, toggle }) {
   const ref = React.useRef(null);
 
+  // close drawer on click outside
   React.useEffect(() => {
     const handleOutsideClick = (event) => {
       if (!ref.current?.contains(event.target)) {
@@ -84,16 +85,15 @@ function Drawer({ children, isOpen, toggle }) {
     return () => document.removeEventListener('keyup', handleEscape);
   }, [isOpen, toggle]);
 
-  // hide scrollbar and prevent body from moving when modal is open
-  //put focus on modal dialogue
+  // hide scrollbar and prevent body from moving when drawer is open
+  //put focus on drawer dialogue
   React.useEffect(() => {
     if (!isOpen) return;
+
     ref.current?.focus();
 
     const html = document.documentElement;
-
-    const scrollbarWidth =
-      window.innerWidth - document.documentElement.clientWidth;
+    const scrollbarWidth = window.innerWidth - html.clientWidth;
 
     html.style.overflow = 'hidden';
     html.style.paddingRight = `${scrollbarWidth}px`;

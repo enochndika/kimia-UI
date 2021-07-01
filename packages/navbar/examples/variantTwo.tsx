@@ -1,16 +1,24 @@
 import { useState } from 'react';
-import Navbar from '../index';
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarCollapse,
+  NavbarNav,
+  NavbarItem,
+  NavbarLink,
+  NavbarToggler,
+} from '../index';
 
 const NavbarVariantTwo = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
 
   const toggle = () => {
-    setIsOpen(!isOpen);
+    setOpen((prevState) => !prevState);
   };
 
   return (
     <Navbar bgColor="bg-green-700" className="mb-8">
-      <Navbar.Brand href="#">
+      <NavbarBrand href="#">
         <svg
           width="25"
           height="23"
@@ -47,25 +55,25 @@ const NavbarVariantTwo = () => {
             fill="#E24329"
           />
         </svg>
-      </Navbar.Brand>
-      <Navbar.Toggler toggle={toggle} />
-      <Navbar.Collapse isOpen={isOpen}>
-        <Navbar.Nav>
-          <Navbar.Item>
-            <Navbar.Link href="#">Home</Navbar.Link>
-          </Navbar.Item>
-        </Navbar.Nav>
-        <Navbar.Nav position="center">
-          <Navbar.Item>
-            <Navbar.Link href="#">Tailwindcss</Navbar.Link>
-          </Navbar.Item>
-        </Navbar.Nav>
-        <Navbar.Nav position="right">
-          <Navbar.Item>
-            <Navbar.Link href="#">Next.js</Navbar.Link>
-          </Navbar.Item>
-        </Navbar.Nav>
-      </Navbar.Collapse>
+      </NavbarBrand>
+      <NavbarToggler toggle={toggle} />
+      <NavbarCollapse open={open}>
+        <NavbarNav>
+          <NavbarItem>
+            <NavbarLink href="#">Home</NavbarLink>
+          </NavbarItem>
+        </NavbarNav>
+        <NavbarNav position="center">
+          <NavbarItem>
+            <NavbarLink href="#">Tailwindcss</NavbarLink>
+          </NavbarItem>
+        </NavbarNav>
+        <NavbarNav position="right">
+          <NavbarItem>
+            <NavbarLink href="#">Next.js</NavbarLink>
+          </NavbarItem>
+        </NavbarNav>
+      </NavbarCollapse>
     </Navbar>
   );
 };

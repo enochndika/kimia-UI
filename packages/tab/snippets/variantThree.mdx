@@ -1,5 +1,5 @@
 ```jsx
-import React, { useState } from 'react';
+import React from 'react';
 
 export const TabPage = () => (
   <Tabs>
@@ -27,14 +27,15 @@ export const TabPage = () => (
 /* Tab logic */
 
 const style = {
-  default: `py-2 px-4 mx-1 inline-block focus:outline-none`,
-  selected: `text-white rounded bg-indigo-900 `,
   notSelected: `-mb-2 bg-white text-black`,
+  selected: `text-white rounded bg-indigo-900 `,
+  default: `py-2 px-4 mx-1 inline-block focus:outline-none`,
 };
 
-const Tabs = ({ children }) => {
+function Tabs({ children }) {
   const childrenArray = React.Children.toArray(children);
-  const [current, setCurrent] = useState(childrenArray[0].key);
+  const [current, setCurrent] = React.useState(childrenArray[0].key);
+
   const newChildren = childrenArray.map((child) =>
     React.cloneElement(child, { selected: child?.key === current }),
   );
@@ -47,9 +48,8 @@ const Tabs = ({ children }) => {
           tabIndex={0}
           onClick={() => setCurrent(child?.key)}
           key={child?.key}
-          className={`${style.default} ${
-            current === child?.key ? style.selected : style.notSelected
-          }`}
+          className={`${style.default} 
+             ${current === child?.key ? style.selected : style.notSelected}`}
         >
           {child?.props.title}
         </div>
@@ -57,11 +57,13 @@ const Tabs = ({ children }) => {
       <section>{newChildren}</section>
     </nav>
   );
-};
+}
 
-const Tab = ({ children, selected }) => (
-  <div hidden={!selected} className="mt-4">
-    {children}
-  </div>
-);
+function Tab({ children, selected }) {
+  return (
+    <div hidden={!selected} className="mt-4">
+      {children}
+    </div>
+  );
+}
 ```

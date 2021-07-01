@@ -1,11 +1,11 @@
 import React from 'react';
 
-import Modal from '@/packages/modal';
 import Button from '@/packages/button';
 import useMounted from '../hooks/useMounted';
 import useDisclosure from '../hooks/useDisclosure';
+import { Modal, ModalBody, ModalFooter } from '@/packages/modal';
 
-export const useAlertUser = () => {
+export function useAlertUser() {
   const isMounted = useMounted();
   const alertUser = isMounted && localStorage.getItem('alertUser');
   const userAlerted = isMounted && localStorage.getItem('userAlerted');
@@ -20,9 +20,9 @@ export const useAlertUser = () => {
   if (isMounted) {
     return alertUser && !userAlerted;
   }
-};
+}
 
-const ModalAlert = () => {
+function ModalAlert() {
   const { toggle, isOpen } = useDisclosure();
 
   const onClose = () => {
@@ -33,12 +33,12 @@ const ModalAlert = () => {
   return (
     <div className="mb-8">
       <Modal
-        isOpen={!isOpen}
+        isOpen={isOpen}
         toggle={toggle}
         animate={true}
         closeOnClickOutside={false}
       >
-        <Modal.Body>
+        <ModalBody>
           <div className="flex justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -65,16 +65,16 @@ const ModalAlert = () => {
             file by copying the new config in the configuration page. some major
             changes have been made
           </div>
-        </Modal.Body>
-        <Modal.Footer>
+        </ModalBody>
+        <ModalFooter>
           <Button onClick={onClose} color="primary" block={true}>
             I get it!
           </Button>
-        </Modal.Footer>
+        </ModalFooter>
       </Modal>
     </div>
   );
-};
+}
 
 export default function Alert() {
   const showAlert = useAlertUser();
