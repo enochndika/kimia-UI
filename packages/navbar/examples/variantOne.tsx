@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import {
   Navbar,
   NavbarBrand,
@@ -9,20 +8,13 @@ import {
   NavbarToggler,
 } from '../index';
 
-const NavbarVariantOne = () => {
-  const [open, setOpen] = useState<boolean>(false);
-
-  const toggle = () => {
-    setOpen((prevState) => !prevState);
-  };
-
-  return (
-    <Navbar bgColor="bg-indigo-900" className="mb-8">
+const NavbarVariantOne = () => (
+  <div className="mb-8">
+    <Navbar className="bg-indigo-900 text-white">
       <NavbarBrand href="#">
         <svg
-          height="25"
+          className="w-9 h-9"
           preserveAspectRatio="xMidYMid"
-          width="25"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 256 153.6"
         >
@@ -36,24 +28,27 @@ const NavbarVariantOne = () => {
           />
         </svg>
       </NavbarBrand>
-      <NavbarToggler toggle={toggle} />
-      <NavbarCollapse open={open}>
-        <NavbarNav>
+      <NavbarToggler />
+      <NavbarCollapse>
+        <NavbarNav orientation="start">
           <NavbarItem>
-            <NavbarLink href="#">Home</NavbarLink>
+            <NavbarLink href="#">Get Started</NavbarLink>
+          </NavbarItem>
+          <NavbarItem>
+            <NavbarLink href="#">Core Concepts</NavbarLink>
           </NavbarItem>
         </NavbarNav>
-        <NavbarNav position="right">
+        <NavbarNav orientation="end">
           <NavbarItem>
-            <NavbarLink href="#">Documents</NavbarLink>
+            <NavbarLink href="#">Base Styles</NavbarLink>
           </NavbarItem>
           <NavbarItem>
-            <NavbarLink href="#">React</NavbarLink>
+            <NavbarLink href="#">Customization</NavbarLink>
           </NavbarItem>
         </NavbarNav>
       </NavbarCollapse>
     </Navbar>
-  );
-};
+  </div>
+);
 
 export default NavbarVariantOne;

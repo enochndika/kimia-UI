@@ -105,6 +105,32 @@
         "type": "number",
         "description": "timeout value (in milliseconds) to reset the copied value. default to 3s"
       }
+    ],
+    "Navbar": [
+      {
+        "prop": "className",
+        "type": "string",
+        "description": "Sets custom classes"
+      }
+    ],
+    "NavbarNav": [
+      {
+        "prop": "orientation",
+        "type": "string",
+        "description": "The orientation of the nav-items. possibles values (start, middle, end)"
+      }
+    ],
+    "NavbarLink": [
+      {
+        "prop": "active",
+        "type": "boolean",
+        "description": "Sets active state of the NavBarLink"
+      },
+      {
+        "prop": "activeClass",
+        "type": "string",
+        "description": "Sets custom classes when active is true. this is useful when you want to set additional classes on an active-link"
+      }
     ]
   }
 }

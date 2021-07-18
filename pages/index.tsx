@@ -8,12 +8,10 @@ export default function HomePage() {
   return (
     <>
       <Head>
-        <title>Kimia-UI</title>
-        <meta
-          name="title"
-          content="Kimia-UI — A collection of UI Components for React built with tailwindcss"
-          key="title"
-        />
+        <title>
+          Kimia-UI - A collection of UI Components for React built with
+          TailwindCSS
+        </title>
         <meta
           name="description"
           content="Kimia ui provides fully customizable UI components for React built with TailwindCSS. No installation needed, just copy and paste any component you want to use"

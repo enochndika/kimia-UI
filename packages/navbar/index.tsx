@@ -1,63 +1,90 @@
-import { ReactNode } from 'react';
+import React from 'react';
 
 interface Props {
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
-interface NavbarProps extends Props {
-  textColor?: string;
-  bgColor?: string;
+interface INavbarContextProps {
+  open?: boolean;
+  toggle?: any;
+}
+
+interface INavbarProps extends Props {
   className?: string;
 }
 
-interface NavbarNavProps extends Props {
-  position?: 'left' | 'center' | 'right';
-}
-
-interface NavbarCollapseProps extends Props {
-  open: boolean;
-}
-
-interface NavbarTogglerProps {
-  toggle: () => void;
-}
-
-interface LinkProps extends Props {
+interface INavbarBrandProps extends Props {
   href: string;
 }
 
+interface INavbarNavProps extends Props {
+  orientation?: 'start' | 'middle' | 'end';
+}
+
+interface INavbarLinkProps extends INavbarBrandProps {
+  active?: boolean;
+  activeClass?: string;
+}
+
 const style = {
-  toggler: `float-right block md:hidden pt-1.5 text-3xl focus:outline-none focus:shadow`,
-  link: `block cursor-pointer py-1.5 md:py-1 px-4 md:px-2 hover:text-gray-400 font-medium`,
-  brand: `inline-block pt-1.5 pb-1.5 mr-4 cursor-pointer text-2xl font-bold whitespace-nowrap hover:text-gray-400`,
-  navbar: `font-light text-white md:relative md:flex md:items-center shadow py-2 px-4 md:flex md:flex-row md:justify-start`,
+  navbar: `relative px-4 py-2 shadow top-0 w-full lg:flex lg:flex-row lg:items-center lg:justify-start lg:relative`,
+  brand: `cursor-pointer font-bold inline-block mr-4 py-1.5 text-2xl whitespace-nowrap hover:text-gray-200`,
+  toggler: `block float-right text-4xl lg:hidden focus:outline-none focus:shadow`,
+  item: `whitespace-pre cursor-pointer px-4 py-3 hover:text-gray-200`,
   collapse: {
-    default: `md:flex-grow md:items-center md:flex`,
-    open: `visible opacity-1 transition-all ease-out duration-500 md:transition-none`,
-    close: `invisible h-0 opacity-0 md:visible md:opacity-100 md:h-auto `,
+    default: `border-t border-gray-500 fixed left-0 mt-2 shadow py-2 text-center lg:border-none lg:flex lg:flex-grow lg:items-center lg:mt-0 lg:py-0 lg:relative lg:shadow-none`,
+    open: `h-auto visible transition-all duration-500 ease-out w-full opacity-100 lg:transition-none`,
+    close: `h-auto invisible w-0 transition-all duration-300 ease-in lg:opacity-100 lg:transition-none lg:visible`,
   },
   nav: {
-    center: `block pl-0 mb-0 ml-auto md:flex md:pl-0 md:mb-0 md:mx-auto`,
-    left: `block pl-0 mb-0 mr-auto md:flex md:pl-0 md:mb-0`,
-    right: `block pl-0 mb-0 ml-auto md:flex md:pl-0 md:mb-0`,
+    start: `block mb-0 mr-auto pl-0 lg:flex lg:mb-0 lg:pl-0`,
+    middle: `block mb-0 ml-auto pl-0 lg:flex lg:pl-0 lg:mb-0 lg:mx-auto`,
+    end: `block pl-0 mb-0 ml-auto lg:flex lg:pl-0 lg:mb-0`,
   },
 };
 
-export function Navbar({
-  bgColor,
-  textColor,
-  children,
-  className,
-}: NavbarProps) {
+const Context = React.createContext<INavbarContextProps>({});
+
+function Navbar({ children, className }: INavbarProps) {
+  const [open, setOpen] = React.useState(false);
+  const navbarRef = React.useRef(null);
+
+  // this is done intentionally to prevent nav-items to show up.
+  // when viewport is less than 1024px, the navbar will be fixed and be positioned to the top
+  // because of that, we can't show navbar toggle on website to prevent all navbar examples to be display on the same position.
+  const toggle = React.useCallback(() => {
+    if (window.innerWidth > 1024) {
+      setOpen((prevState) => !prevState);
+    }
+  }, []);
+
+  // close navbar on click outside when viewport is less than 1024px
+  React.useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (window.innerWidth < 1024) {
+        if (!navbarRef.current?.contains(event.target)) {
+          if (!open) return;
+          setOpen(false);
+        }
+      }
+    };
+    window.addEventListener('click', handleOutsideClick);
+    return () => window.removeEventListener('click', handleOutsideClick);
+  }, [open, navbarRef]);
+
   return (
-    <nav className={`${bgColor} ${textColor} ${className} ${style.navbar}`}>
-      {children}
-    </nav>
+    <Context.Provider value={{ open, toggle }}>
+      <nav ref={navbarRef} className={`${className} ${style.navbar}`}>
+        {children}
+      </nav>
+    </Context.Provider>
   );
 }
 
-/* You can wrap the a tag with Link if you are using either Create-React-App, Next.js or Gatsby */
-export function NavbarBrand({ children, href }: LinkProps) {
+const useToggle = () => React.useContext(Context);
+
+/* You can wrap the a tag with Link and pass href to Link if you are using either Create-React-App, Next.js or Gatsby */
+function NavbarBrand({ children, href }: INavbarBrandProps) {
   return (
     <a href={href} className={style.brand}>
       <strong>{children}</strong>
@@ -65,7 +92,8 @@ export function NavbarBrand({ children, href }: LinkProps) {
   );
 }
 
-export function NavbarToggler({ toggle }: NavbarTogglerProps) {
+function NavbarToggler() {
+  const { toggle } = useToggle();
   return (
     <button
       type="button"
@@ -79,30 +107,42 @@ export function NavbarToggler({ toggle }: NavbarTogglerProps) {
   );
 }
 
-export function NavbarCollapse({ children, open }: NavbarCollapseProps) {
+function NavbarCollapse({ children }: Props) {
+  const { open } = useToggle();
   return (
     <div
-      className={`${style.collapse.default} 
-        ${open ? style.collapse.open : style.collapse.close}  `}
+      style={{ backgroundColor: 'inherit' }}
+      className={`${style.collapse.default}
+        ${open ? style.collapse.open : style.collapse.close}`}
     >
       {children}
     </div>
   );
 }
 
-export function NavbarNav({ children, position = 'left' }: NavbarNavProps) {
-  return <ul className={style.nav[position]}>{children}</ul>;
+function NavbarNav({ children, orientation }: INavbarNavProps) {
+  return <ul className={style.nav[orientation]}>{children}</ul>;
 }
 
-export function NavbarItem({ children }: Props) {
-  return <li>{children}</li>;
+function NavbarItem({ children }: Props) {
+  return <li className={style.item}>{children}</li>;
 }
 
 /* You can wrap the a tag with Link and pass href to Link if you are using either Create-React-App, Next.js or Gatsby */
-export function NavbarLink({ children, href }: LinkProps) {
+function NavbarLink({ children, href, active, activeClass }: INavbarLinkProps) {
   return (
-    <a href={href} className={style.link}>
+    <a href={href} className={active ? activeClass : ''}>
       {children}
     </a>
   );
 }
+
+export {
+  Navbar,
+  NavbarBrand,
+  NavbarCollapse,
+  NavbarNav,
+  NavbarItem,
+  NavbarLink,
+  NavbarToggler,
+};

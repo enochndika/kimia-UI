@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import {
   Navbar,
   NavbarBrand,
@@ -9,32 +8,37 @@ import {
   NavbarToggler,
 } from '../index';
 
-const NavbarVariantThree = () => {
-  const [open, setOpen] = useState<boolean>(false);
-
-  const toggle = () => {
-    setOpen((prevState) => !prevState);
-  };
-
-  return (
-    <Navbar className="mb-8" bgColor="bg-black" textColor="text-white">
-      <NavbarBrand href="#">Navbar</NavbarBrand>
-      <NavbarToggler toggle={toggle} />
-      <NavbarCollapse open={open}>
-        <NavbarNav>
+const NavbarVariantThree = () => (
+  <div className="mb-8">
+    <Navbar className="bg-white text-gray-600">
+      <NavbarBrand href="#">
+        <img
+          src="https://seeklogo.com/images/N/next-js-logo-8FCFF51DD2-seeklogo.com.png"
+          alt="Next.js"
+          className="w-9 h-9"
+        />
+      </NavbarBrand>
+      <NavbarToggler />
+      <NavbarCollapse>
+        <NavbarNav orientation="start">
           <NavbarItem>
-            <NavbarLink href="#">Home</NavbarLink>
+            <NavbarLink href="#">Documentation</NavbarLink>
+          </NavbarItem>
+        </NavbarNav>
+        <NavbarNav orientation="end">
+          <NavbarItem>
+            <NavbarLink href="#">Deployment</NavbarLink>
           </NavbarItem>
           <NavbarItem>
-            <NavbarLink href="#">Documents</NavbarLink>
+            <NavbarLink href="#">Basic Features</NavbarLink>
           </NavbarItem>
           <NavbarItem>
-            <NavbarLink href="#">React</NavbarLink>
+            <NavbarLink href="#">Advanced Features</NavbarLink>
           </NavbarItem>
         </NavbarNav>
       </NavbarCollapse>
     </Navbar>
-  );
-};
+  </div>
+);
 
 export default NavbarVariantThree;

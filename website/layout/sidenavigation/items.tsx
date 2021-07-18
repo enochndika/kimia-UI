@@ -4,9 +4,9 @@ import { useRouter } from 'next/router';
 import data from '@/website/data/sidenavItems.json';
 
 const style = {
-  link: `flex font-medium items-center justify-start my-1 p-3 text-sm w-full hover:text-purple-800`,
-  active: `text-purple-800 hover:text-purple-800`,
-  inactive: `text-gray-900 hover:text-black`,
+  link: `flex font-medium items-center justify-start my-1 p-3 text-sm w-full lg:hover:text-purple-800`,
+  active: `text-purple-800 lg:hover:text-purple-800`,
+  inactive: `text-gray-900 lg:hover:text-black`,
   section: `font-bold mb-3 pl-6 pb-2 text-gray-500 uppercase`,
 };
 

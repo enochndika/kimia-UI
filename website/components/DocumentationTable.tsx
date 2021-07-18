@@ -1,7 +1,13 @@
 import documentation from '../data/documentation.json';
 
 interface Props {
-  name: 'autocomplete' | 'field' | 'copyToClipboard';
+  name:
+    | 'autocomplete'
+    | 'field'
+    | 'copyToClipboard'
+    | 'Navbar'
+    | 'NavbarNav'
+    | 'NavbarLink';
 }
 
 export default function Table({ name }: Props) {
