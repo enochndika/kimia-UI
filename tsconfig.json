@@ -3,6 +3,7 @@
     "baseUrl": ".",
     "paths": {
       "@/packages/*": ["packages/*"],
+      "@/public/*": ["public/*"],
       "@/website/*": ["website/*"]
     },
     "target": "es5",

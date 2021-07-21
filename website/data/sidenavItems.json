@@ -1,5 +1,15 @@
 [
   {
+    "section": "Templates",
+    "content": [
+      {
+        "title": "Dashboards",
+        "link": "/templates/dashboards",
+        "icon": true
+      }
+    ]
+  },
+  {
     "section": "General",
     "content": [
       {

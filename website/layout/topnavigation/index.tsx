@@ -36,7 +36,7 @@ interface NavbarTogglerProps {
 export default function TopNavigation() {
   const { toggle } = useToggle();
   return (
-    <header className="lg:px-container absolute top-0 w-full lg:fixed bg-white z-10 ">
+    <header className="lg:px-container absolute top-0 w-full lg:fixed bg-white z-10 z">
       <Navbar>
         <NavbarBrand>
           <Image
