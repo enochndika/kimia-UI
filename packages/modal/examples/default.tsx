@@ -7,7 +7,7 @@ const ModalDefault: FC = () => {
   const { toggle, isOpen } = useDisclosure();
   return (
     <div className="mb-8">
-      <h2 className="font-bold text-gray-600 text-lg md:text-2xl mt-12 mb-3">
+      <h2 className="mb-3 mt-12 text-gray-600 text-lg font-bold md:text-2xl">
         Default
       </h2>
       <Button onClick={toggle} color="primary">

@@ -12,12 +12,12 @@ interface Props {
 
 export default function Table({ name }: Props) {
   return (
-    <div className="max-w-full pr-1 overflow-x-auto">
+    <div className="pr-1 max-w-full overflow-x-auto">
       <table className="w-full border-collapse">
         <thead>
           <tr>
             {documentation.headers.map((column) => (
-              <th key={column.id} className="text-left p-4">
+              <th key={column.id} className="p-4 text-left">
                 {column.name}
               </th>
             ))}
@@ -26,13 +26,13 @@ export default function Table({ name }: Props) {
         <tbody className="text-sm">
           {documentation.body[name].map((item, index) => (
             <tr key={index}>
-              <td className="border border-gray-300 text-left p-4">
+              <td className="p-4 text-left border border-gray-300">
                 {item.prop}
               </td>
-              <td className="border border-gray-300 text-left p-4">
+              <td className="p-4 text-left border border-gray-300">
                 {item.type}
               </td>
-              <td className="border border-gray-300 text-left p-4">
+              <td className="p-4 text-left border border-gray-300">
                 {item.description}
               </td>
             </tr>

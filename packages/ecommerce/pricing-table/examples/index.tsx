@@ -22,7 +22,7 @@ const PricingTableExample: FC = () => (
         <span className="ml-2">24h Support</span>
       </Price.Item>
       <Price.Item>
-        <button className="text-sm px-6 py-1 text-white focus:outline-none bg-blue-600">
+        <button className="px-6 py-1 text-white text-sm bg-blue-600 focus:outline-none">
           Sign up
         </button>
       </Price.Item>
@@ -48,7 +48,7 @@ const PricingTableExample: FC = () => (
         <span className="ml-2">24h Support</span>
       </Price.Item>
       <Price.Item>
-        <button className="text-sm px-6 py-1 text-white focus:outline-none bg-purple-900">
+        <button className="px-6 py-1 text-white text-sm bg-purple-900 focus:outline-none">
           Sign Up
         </button>
       </Price.Item>
@@ -74,7 +74,7 @@ const PricingTableExample: FC = () => (
         <span className="ml-2">24h Support</span>
       </Price.Item>
       <Price.Item>
-        <button className="text-sm px-6 py-1 text-white focus:outline-none bg-green-700">
+        <button className="px-6 py-1 text-white text-sm bg-green-700 focus:outline-none">
           Sign Up
         </button>
       </Price.Item>

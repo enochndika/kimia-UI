@@ -18,7 +18,7 @@ export default function FieldWithHookFormPage() {
         />
       </Head>
       <Container>
-        <h1 className="text-center text-3xl md:text-4xl font-bold text-gray-600 mb-16 mt-12">
+        <h1 className="mb-16 mt-12 text-center text-gray-600 text-3xl font-bold md:text-4xl">
           Using Field Component with React Hook Form
         </h1>
         <FieldWithReactHookForm />

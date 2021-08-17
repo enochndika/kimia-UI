@@ -13,7 +13,7 @@ const Collapse = ({ children, isOpen }: Props) => {
 
   return (
     <div
-      className="mt-2 overflow-hidden text-gray-600 transition-height ease duration-300"
+      className="transition-height ease mt-2 text-gray-600 overflow-hidden duration-300"
       ref={ref}
       style={inlineStyle}
     >

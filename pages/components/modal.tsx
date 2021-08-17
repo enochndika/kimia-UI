@@ -26,10 +26,10 @@ export default function ModalPage() {
         />
       </Head>
       <Container>
-        <h1 className="text-center text-3xl md:text-5xl font-bold text-gray-600 mb-16 mt-12">
+        <h1 className="mb-16 mt-12 text-center text-gray-600 text-3xl font-bold md:text-5xl">
           Modal
         </h1>
-        <div className="text-gray-700 mb-3">
+        <div className="mb-3 text-gray-700">
           * All variants of the modal will have the same width on mobile
         </div>
         <div className="mb-3 text-gray-800">

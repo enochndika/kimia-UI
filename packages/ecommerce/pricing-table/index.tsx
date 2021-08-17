@@ -63,5 +63,5 @@ export const CheckIcon = () => (
 );
 
 export const CloseIcon = () => (
-  <div className="text-3xl -mt-2.5 text-red-600">&times;</div>
+  <div className="-mt-2.5 text-red-600 text-3xl">&times;</div>
 );

@@ -1,6 +1,6 @@
 export default function Arrival() {
   return (
-    <div className="bg-indigo-800 px-1 ml-2 font-medium py-0.5 text-xs inline text-white">
+    <div className="inline ml-2 px-1 py-0.5 text-white text-xs font-medium bg-indigo-800">
       new
     </div>
   );

@@ -4,11 +4,11 @@ import Image from 'next/image';
 
 const MultipleCard: FC = () => (
   <div className="mb-12">
-    <h2 className="font-bold text-gray-600 text-lg md:text-2xl mt-20 mb-3">
+    <h2 className="mb-3 mt-20 text-gray-600 text-lg font-bold md:text-2xl">
       Multiple Cards
     </h2>
     <div className="flex flex-wrap">
-      <div className="w-full md:w-4/12 mb-6 md:mb-0 md:p-3">
+      <div className="mb-6 w-full md:mb-0 md:p-3 md:w-4/12">
         <Card>
           <Image
             className="max-w-full h-auto md:h-48"
@@ -24,14 +24,14 @@ const MultipleCard: FC = () => (
               Joe made the sugar cookies; Susan decorated them. When motorists
               sped in and out of traffic.
             </CardText>
-            <a className="text-indigo-500 inline-flex items-center mt-4 cursor-pointer">
+            <a className="inline-flex items-center mt-4 text-indigo-500 cursor-pointer">
               View Details
               <ArrowIcon />
             </a>
           </CardBody>
         </Card>
       </div>
-      <div className="w-full md:w-4/12 mb-6 md:mb-0 md:p-3">
+      <div className="mb-6 w-full md:mb-0 md:p-3 md:w-4/12">
         <Card>
           <Image
             className="max-w-full h-auto md:h-48"
@@ -46,14 +46,14 @@ const MultipleCard: FC = () => (
               Joe made the sugar cookies; Susan decorated them. When motorists
               sped in and out of traffic.
             </CardText>
-            <a className="text-indigo-500 inline-flex items-center mt-4 cursor-pointer">
+            <a className="inline-flex items-center mt-4 text-indigo-500 cursor-pointer">
               View Details
               <ArrowIcon />
             </a>
           </CardBody>
         </Card>
       </div>
-      <div className="w-full md:w-4/12 mb-6 md:mb-0 md:p-3">
+      <div className="mb-6 w-full md:mb-0 md:p-3 md:w-4/12">
         <Card>
           <Image
             className="max-w-full h-auto md:h-48"
@@ -68,7 +68,7 @@ const MultipleCard: FC = () => (
               Joe made the sugar cookies; Susan decorated them. When motorists
               sped in and out of traffic.
             </CardText>
-            <a className="text-indigo-500 inline-flex items-center mt-4 cursor-pointer">
+            <a className="inline-flex items-center mt-4 text-indigo-500 cursor-pointer">
               View Details
               <ArrowIcon />
             </a>
@@ -83,7 +83,7 @@ export default MultipleCard;
 
 const ArrowIcon = () => (
   <svg
-    className="w-4 h-4 ml-2"
+    className="ml-2 w-4 h-4"
     viewBox="0 0 24 24"
     stroke="currentColor"
     strokeWidth="2"

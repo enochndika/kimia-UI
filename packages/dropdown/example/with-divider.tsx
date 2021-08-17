@@ -9,7 +9,7 @@ import {
 
 const DropdownWithDivider: FC = () => (
   <div className="mb-8">
-    <h2 className="font-bold text-gray-600 text-lg md:text-2xl mb-4">
+    <h2 className="mb-4 text-gray-600 text-lg font-bold md:text-2xl">
       Dropdown with divider
     </h2>
     <Dropdown>
@@ -17,7 +17,7 @@ const DropdownWithDivider: FC = () => (
         <span className="flex">
           Options
           <svg
-            className="-mr-1 ml-2 h-5 w-5"
+            className="-mr-1 ml-2 w-5 h-5"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
             fill="currentColor"

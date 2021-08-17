@@ -13,7 +13,7 @@ const CollapseSecond: FC = () => {
       <Button color="dark" onClick={toggle} className="flex">
         Toggle
         <svg
-          className="h-5 w-5 mt-1"
+          className="mt-1 w-5 h-5"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
           fill="currentColor"

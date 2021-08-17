@@ -6,7 +6,7 @@ const AutoCompleteExample = () => {
   const allCountries = countries.map((country) => country.name);
   return (
     <div className="mt-16">
-      <h2 className="font-bold text-gray-600 text-lg md:text-2xl mb-6">
+      <h2 className="mb-6 text-gray-600 text-lg font-bold md:text-2xl">
         Example
       </h2>
       <Autocomplete

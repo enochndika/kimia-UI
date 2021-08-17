@@ -11,7 +11,7 @@ export const CurtainMenuTop = () => {
 
   return (
     <div className="mb-8">
-      <h2 className="font-bold text-gray-600 text-lg md:text-2xl mb-3">
+      <h2 className="mb-3 text-gray-600 text-lg font-bold md:text-2xl">
         Transition from top
       </h2>
       <Button color="indigo" onClick={toggle}>
@@ -20,7 +20,7 @@ export const CurtainMenuTop = () => {
       <Menu open={open} transition="top">
         <button
           aria-label="Close"
-          className="absolute top-3 right-3 text-5xl text-white cursor-pointer"
+          className="absolute right-3 top-3 text-white text-5xl cursor-pointer"
           onClick={toggle}
         >
           &times;

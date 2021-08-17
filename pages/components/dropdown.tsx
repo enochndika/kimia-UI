@@ -20,7 +20,7 @@ export default function DropdownPage() {
         />
       </Head>
       <Container>
-        <h1 className="text-center text-3xl md:text-5xl font-bold text-gray-600 mb-16 mt-12">
+        <h1 className="mb-16 mt-12 text-center text-gray-600 text-3xl font-bold md:text-5xl">
           Dropdown
         </h1>
         <div className="mb-16 text-gray-800">

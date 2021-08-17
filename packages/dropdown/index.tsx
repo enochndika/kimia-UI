@@ -67,7 +67,7 @@ export function Dropdown({ children }: Props) {
       <button
         onClick={toggle}
         type="button"
-        className="bg-indigo-900 text-white focus:outline-none shadow rounded px-6 py-2 font-medium"
+        className="px-6 py-2 text-white font-medium bg-indigo-900 rounded focus:outline-none shadow"
         aria-expanded="true"
         aria-haspopup="true"
       >

@@ -7,7 +7,7 @@ const ModalNotClosedOutside: FC = () => {
   const { toggle, isOpen } = useDisclosure();
   return (
     <div className="mb-8">
-      <h2 className="font-bold text-gray-600 text-lg md:text-2xl mt-12 mb-3">
+      <h2 className="mb-3 mt-12 text-gray-600 text-lg font-bold md:text-2xl">
         Not closed on Click Outside
       </h2>
       <Button onClick={toggle} color="primary">
@@ -16,7 +16,7 @@ const ModalNotClosedOutside: FC = () => {
       <Modal isOpen={isOpen} toggle={toggle} closeOnClickOutside={false}>
         <ModalHeader>Modal title</ModalHeader>
         <ModalBody>
-          <span className="font-bold text-lg text-gray-700">
+          <span className="text-gray-700 text-lg font-bold">
             This modal will not be closed when clicked outside
           </span>
           <br />

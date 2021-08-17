@@ -24,7 +24,7 @@ const FieldWithFormik = () => {
   });
 
   return (
-    <div className="mb-12 border p-6">
+    <div className="mb-12 p-6 border">
       <form onSubmit={formik.handleSubmit}>
         <Field
           dot={true}
@@ -44,7 +44,7 @@ const FieldWithFormik = () => {
           type="password"
         />
         <button
-          className="mt-8 bg-black active:bg-gray-900 focus:outline-none text-white rounded px-4 py-1"
+          className="mt-8 px-4 py-1 text-white bg-black active:bg-gray-900 rounded focus:outline-none"
           type="submit"
         >
           Submit

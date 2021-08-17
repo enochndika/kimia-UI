@@ -3,7 +3,7 @@ import Code from '../index';
 
 const DefaultCode: FC = () => (
   <div className="mb-12">
-    <h2 className="font-bold text-gray-600 text-lg md:text-2xl mb-5">
+    <h2 className="mb-5 text-gray-600 text-lg font-bold md:text-2xl">
       Default
     </h2>
     <Code acceptCopy={true} variant="default">

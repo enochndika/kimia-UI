@@ -3,7 +3,7 @@ import { Accordion, AccordionItem, AccordionPanel } from '@/packages/accordion';
 export default function AccordionGrayColor() {
   return (
     <div className="mb-12">
-      <h2 className="font-bold text-gray-600 text-lg md:text-2xl mb-6">
+      <h2 className="mb-6 text-gray-600 text-lg font-bold md:text-2xl">
         Variant 1
       </h2>
       <Accordion>

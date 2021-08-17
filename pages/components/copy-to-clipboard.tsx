@@ -19,14 +19,14 @@ export default function CopyToClipboardPage() {
         />
       </Head>
       <Container>
-        <h1 className="text-center text-3xl md:text-5xl font-bold text-gray-600 mb-16 mt-12">
+        <h1 className="mb-16 mt-12 text-center text-gray-600 text-3xl font-bold md:text-5xl">
           Copy to clipboard
         </h1>
-        <h2 className="font-bold text-gray-700 text-lg md:text-2xl mb-12">
+        <h2 className="mb-12 text-gray-700 text-lg font-bold md:text-2xl">
           Usage and props
         </h2>
         <Table name="copyToClipboard" />
-        <h2 className="font-bold text-gray-600 text-lg md:text-2xl mt-12 mb-3">
+        <h2 className="mb-3 mt-12 text-gray-600 text-lg font-bold md:text-2xl">
           example
         </h2>
         <DefaultCopyToClipboard />

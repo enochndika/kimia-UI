@@ -22,7 +22,7 @@ export default function HamburgerMenuPage() {
         />
       </Head>
       <Container>
-        <h1 className="text-center text-3xl md:text-5xl font-bold text-gray-600 mb-20 mt-12">
+        <h1 className="mb-20 mt-12 text-center text-gray-600 text-3xl font-bold md:text-5xl">
           Hamburger Menu
         </h1>
         <HamburgerMenuVariantOne />

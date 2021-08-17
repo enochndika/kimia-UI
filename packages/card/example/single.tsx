@@ -4,7 +4,7 @@ import { Card, CardBody, CardText, CardTitle } from '../index';
 
 const SingleCard: FC = () => (
   <div className="mb-12">
-    <h2 className="font-bold text-gray-600 text-lg md:text-2xl mt-12 mb-3">
+    <h2 className="mb-3 mt-12 text-gray-600 text-lg font-bold md:text-2xl">
       Single Card
     </h2>
     <Card className="w-full md:w-4/12">

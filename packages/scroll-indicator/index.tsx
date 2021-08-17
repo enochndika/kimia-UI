@@ -31,7 +31,7 @@ const ScrollIndicator = ({ children }: ScrollIndicatorProps) => {
 
   return (
     <>
-      <div className="top-0 left-0 w-screen h-1.5 fixed z-40 shadow-2xl bg-gray-300">
+      <div className="fixed z-40 left-0 top-0 w-screen h-1.5 bg-gray-300 shadow-2xl">
         <div style={inlineStyle} />
       </div>
       {children}

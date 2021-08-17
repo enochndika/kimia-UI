@@ -10,7 +10,7 @@ import {
 
 const NavbarVariantTwo = () => (
   <div className="mb-8">
-    <Navbar className="bg-gray-900 text-white">
+    <Navbar className="text-white bg-gray-900">
       <NavbarBrand href="#">
         <svg
           xmlns="http://www.w3.org/2000/svg"

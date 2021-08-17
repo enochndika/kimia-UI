@@ -3,7 +3,7 @@ import { Tab, Tabs } from '../index';
 
 const TabVariantThree: FC = () => (
   <div className="mb-8">
-    <h2 className="font-bold text-gray-600 text-lg md:text-2xl mt-12 mb-6">
+    <h2 className="mb-6 mt-12 text-gray-600 text-lg font-bold md:text-2xl">
       Tab as Pill
     </h2>
     <Tabs variant={3}>

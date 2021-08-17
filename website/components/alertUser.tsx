@@ -43,7 +43,7 @@ function ModalAlert() {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 512 512"
-              className="h-12 w-12"
+              className="w-12 h-12"
             >
               <path
                 fill="#1d4ed8"
@@ -55,10 +55,10 @@ function ModalAlert() {
               />
             </svg>
           </div>
-          <div className="mt-8 mb-4 px-4 leading-8">
+          <div className="mb-4 mt-8 px-4 leading-8">
             <span className="md:pr-4" /> If you are already using Kimia-UI,
             please update your{' '}
-            <strong className="text-indigo-900 pl-1">
+            <strong className="pl-1 text-indigo-900">
               {' '}
               tailwind.config.js{' '}
             </strong>{' '}

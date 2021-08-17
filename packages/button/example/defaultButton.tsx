@@ -3,8 +3,8 @@ import Button from '../index';
 
 const DefaultButtons: FC = () => (
   <div className="mb-12">
-    <h2 className="font-bold text-gray-600 text-lg md:text-2xl mb-3">Normal</h2>
-    <div className="space-x-1 mb-4 md:space-x-6 space-y-3">
+    <h2 className="mb-3 text-gray-600 text-lg font-bold md:text-2xl">Normal</h2>
+    <div className="mb-4 space-x-1 space-y-3 md:space-x-6">
       <Button color="primary">Primary</Button>
       <Button color="success">Success</Button>
       <Button color="danger">Danger</Button>

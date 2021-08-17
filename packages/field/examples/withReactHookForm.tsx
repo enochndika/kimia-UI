@@ -13,7 +13,7 @@ const FieldWithReactHookForm = () => {
   };
 
   return (
-    <div className="mb-12 border p-6">
+    <div className="mb-12 p-6 border">
       <form onSubmit={handleSubmit(onSubmit)}>
         <Field
           {...register('email', { required: 'Email is required' })}
@@ -32,7 +32,7 @@ const FieldWithReactHookForm = () => {
           type="password"
         />
         <button
-          className="mt-8 bg-black active:bg-gray-900 focus:outline-none text-white shadow rounded px-4 py-1"
+          className="mt-8 px-4 py-1 text-white bg-black active:bg-gray-900 rounded focus:outline-none shadow"
           type="submit"
         >
           Submit

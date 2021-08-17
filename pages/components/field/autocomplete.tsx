@@ -19,10 +19,10 @@ export default function AutocompletePage() {
         />
       </Head>
       <Container>
-        <h1 className="text-center text-3xl md:text-5xl font-bold text-gray-600 mb-16 mt-12">
+        <h1 className="mb-16 mt-12 text-center text-gray-600 text-3xl font-bold md:text-5xl">
           Autocomplete
         </h1>
-        <h2 className="font-bold text-gray-700 text-lg md:text-2xl mb-12">
+        <h2 className="mb-12 text-gray-700 text-lg font-bold md:text-2xl">
           Usage and props
         </h2>
         <Table name="autocomplete" />

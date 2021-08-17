@@ -2,10 +2,10 @@ import Field, { LockIcon } from '../index';
 
 const DefaultFieldExample = () => (
   <div className="mt-16">
-    <h2 className="font-bold text-gray-600 text-lg md:text-2xl mb-6">
+    <h2 className="mb-6 text-gray-600 text-lg font-bold md:text-2xl">
       Example
     </h2>
-    <div className="p-6 mb-6 border">
+    <div className="mb-6 p-6 border">
       <Field label="Name" name="name" placeholder="name" type="text" />
       <Field label="Fullname disabled" name="fullName" disabled type="text" />
       <Field

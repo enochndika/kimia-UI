@@ -11,7 +11,7 @@ const SidenavRight = () => {
 
   return (
     <div className="mb-8">
-      <h2 className="font-bold text-gray-600 text-lg md:text-2xl mb-3">
+      <h2 className="mb-3 text-gray-600 text-lg font-bold md:text-2xl">
         Right
       </h2>
       <Button

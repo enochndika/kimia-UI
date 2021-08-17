@@ -3,10 +3,10 @@ import Button from '../index';
 
 const OutlineButtons: FC = () => (
   <div className="mb-12">
-    <h2 className="font-bold text-gray-600 text-lg md:text-2xl mb-3">
+    <h2 className="mb-3 text-gray-600 text-lg font-bold md:text-2xl">
       Outline
     </h2>
-    <div className="space-x-3 mb-4 md:space-x-6 space-y-3">
+    <div className="mb-4 space-x-3 space-y-3 md:space-x-6">
       <Button color="primary" outline={true}>
         Primary
       </Button>

@@ -20,7 +20,7 @@ const Tooltip = ({
   className,
   iconClassName,
 }: Props) => (
-  <div className="group cursor-pointer relative  w-28 text-center">
+  <div className="group relative w-28 text-center cursor-pointer">
     {title}
     <div
       className={`${positions[position]} ${className} opacity-0 text-white text-center text-xs rounded-lg py-2 absolute z-10 group-hover:opacity-100 -left-1/2 ml-14 px-3 pointer-events-none`}

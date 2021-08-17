@@ -10,7 +10,7 @@ import {
 
 const NavbarVariantThree = () => (
   <div className="mb-8">
-    <Navbar className="bg-white text-gray-600">
+    <Navbar className="text-gray-600 bg-white">
       <NavbarBrand href="#">
         <img
           src="https://seeklogo.com/images/N/next-js-logo-8FCFF51DD2-seeklogo.com.png"

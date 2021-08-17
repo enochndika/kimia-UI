@@ -122,7 +122,7 @@ const Autocomplete = ({
       );
     } else {
       suggestionsListComponent = (
-        <div className="mt-4 text-sm text-gray-700">
+        <div className="mt-4 text-gray-700 text-sm">
           <em>{notFound}</em>
         </div>
       );
