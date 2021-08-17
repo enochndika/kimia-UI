@@ -12,7 +12,7 @@
   {
     "id": "3",
     "property": "og:title",
-    "content": "Kimia-UI — A collection of UI components for React built with Tailwind CSS"
+    "content": "Kimia-UI — UI Components for React built with Tailwind CSS"
   },
   {
     "id": "4",
@@ -22,7 +22,7 @@
   {
     "id": "5",
     "property": "og:image",
-    "content": "https://kimia-ui.vercel.app/kimia-facebook.png"
+    "content": "https://kimia-ui.vercel.app/images/kimia-facebook.png"
   },
   {
     "id": "6",
@@ -52,6 +52,6 @@
   {
     "id": "11",
     "property": "twitter:image",
-    "content": "https://kimia-ui.vercel.app/kimia-twitter.png"
+    "content": "https://kimia-ui.vercel.app/images/kimia-twitter.png"
   }
 ]

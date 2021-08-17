@@ -1,8 +1,9 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import dashV4 from '@/public/dashv4.jpg';
-import dashv6 from '@/public/dashv6.jpg';
+import dashV4 from '@/public/images/dashv4.jpg';
+import dashv9 from '@/public/images/dashv9.png';
 import { Container } from '@/website/components/container';
+import ExternalLink from '@/website/components/externalLink';
 
 export default function DashboardsPage() {
   return (
@@ -19,17 +20,13 @@ export default function DashboardsPage() {
         />
       </Head>
       <Container>
-        <div className="text-gray-900 font-medium ">
-          <h1 className="text-center text-3xl md:text-5xl font-bold text-gray-600 mb-16 mt-12">
+        <div className="text-gray-900 font-medium">
+          <h1 className="mb-16 mt-12 text-center text-gray-600 text-3xl font-bold md:text-5xl">
             Dashboards
           </h1>
-          <div className="flex flex-wrap lg:space-x-4">
-            <div className="w-full lg:w-4/12">
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.salvia-kit.com/dashboard-v4"
-              >
+          <div className="flex flex-wrap justify-center md:space-x-4">
+            <div className="w-full md:w-5/12">
+              <ExternalLink href="https://www.salvia-kit.com/dashboard-v4">
                 <Image
                   src={dashV4}
                   height={600}
@@ -37,25 +34,21 @@ export default function DashboardsPage() {
                   placeholder="blur"
                   alt="Salvia-kit Dashboard v4"
                 />
-              </a>
+              </ExternalLink>
             </div>
-            <div className="w-full lg:w-4/12">
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.salvia-kit.com/dashboard-v6"
-              >
+            <div className="w-full md:w-5/12">
+              <ExternalLink href="https://www.salvia-kit.com/dashboard-v9">
                 <Image
-                  src={dashv6}
+                  src={dashv9}
                   height={600}
                   width={1080}
                   placeholder="blur"
-                  alt="Salvia-kit Dashboard v6"
+                  alt="Salvia-kit Dashboard v9"
                 />
-              </a>
+              </ExternalLink>
             </div>
           </div>
-          <section className="mb-12 mt-6">
+          <section className="mb-12 mt-8">
             <p className="mb-3">
               I decided to separate components and dashboard templates in two
               different websites in order not to overload this one. So I created{' '}
@@ -72,7 +65,7 @@ export default function DashboardsPage() {
               fully customizable.
             </p>
           </section>
-          <h2 className="font-bold text-gray-600 text-lg md:text-2xl mb-6">
+          <h2 className="mb-6 text-gray-600 text-lg font-bold md:text-2xl">
             No vendor lock-in
           </h2>
           <section className="pb-12">

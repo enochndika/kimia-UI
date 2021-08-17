@@ -5,6 +5,7 @@ import TopNavigation from './topnavigation';
 import SideNavigation from './sidenavigation';
 import LayoutProvider from './helpers/context';
 import useFilteredRoutes from '@/website/hooks/useFilteredRoutes';
+import Footer from '@/website/components/footer';
 
 const style = {
   container: `flex font-body items-start`,
@@ -28,7 +29,10 @@ export default function Layout({ children }) {
             filtered ? 'lg:pl-2' : 'lg:pl-72'
           }`}
         >
-          <main className={style.main}>{children}</main>
+          <main className={style.main}>
+            {children}
+            <Footer />
+          </main>
         </div>
       </div>
     </LayoutProvider>

@@ -11,27 +11,16 @@ module.exports = {
         container: '2%',
       },
       animation: {
-        left: 'left 0.3s',
-        right: 'right 0.3s',
-        modal: 'modal 0.3s',
+        modal: 'modal 0.5s',
         'drawer-right': 'drawer-right 0.3s',
         'drawer-left': 'drawer-left 0.3s',
         'drawer-top': 'drawer-top 0.3s',
         'drawer-bottom': 'drawer-bottom 0.3s',
       },
       keyframes: {
-        left: {
-          '0%, 100%': { transform: 'translateX(-100%)' },
-          '100%': { transform: 'translateX(0)' },
-        },
-        right: {
-          '0%, 100%': { transform: 'translateX(100%)' },
-          '100%': { transform: 'translateX(0)' },
-        },
-
         modal: {
-          '0%, 100%': { top: '-500px' },
-          '100%': { top: '0' },
+          '0%, 100%': { opacity: 0 },
+          '100%': { opacity: 1 },
         },
         'drawer-right': {
           '0%, 100%': { right: '-500px' },
@@ -51,7 +40,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        body: ['Inter'],
+        inter: ['Inter'],
+        body: ['Open Sans'],
       },
     },
     variants: {

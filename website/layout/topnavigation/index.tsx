@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 import {
   BookOpenIcon,
@@ -8,8 +9,9 @@ import {
   ConfigIcon,
   GithubIcon,
 } from '@/website/components/icons';
+
+import kimiaImg from '@/public/images/kimia.png';
 import { useToggle } from '../helpers/context';
-import { useRouter } from 'next/router';
 
 interface Props {
   children: React.ReactNode;
@@ -36,13 +38,14 @@ interface NavbarTogglerProps {
 export default function TopNavigation() {
   const { toggle } = useToggle();
   return (
-    <header className="lg:px-container absolute top-0 w-full lg:fixed bg-white z-10 z">
+    <header className="z absolute z-10 top-0 w-full font-inter bg-white lg:fixed lg:px-container">
       <Navbar>
         <NavbarBrand>
           <Image
-            src="/kimia.png"
+            src={kimiaImg}
             height={110}
             width={110}
+            placeholder="blur"
             objectFit="cover"
             priority={true}
             alt="kimia-UI"
@@ -51,7 +54,7 @@ export default function TopNavigation() {
         <NavbarNav position="left">
           <NavbarItem>
             <NavbarLink href="/components/accordion" title="Docs">
-              <BookOpenIcon className="h-4 lg:h-5 mt-0.5" />
+              <BookOpenIcon className="mt-0.5 h-4 lg:h-5" />
               <span className="pl-1">Docs</span>
             </NavbarLink>
           </NavbarItem>

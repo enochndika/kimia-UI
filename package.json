@@ -1,5 +1,8 @@
 {
   "name": "kimia-ui",
+  "author": {
+    "name": "Enoch Ndika"
+  },
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
@@ -10,12 +13,18 @@
     "lint": "next lint",
     "prepare": "husky install"
   },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "eslint '*/**/*.{js,jsx,ts,tsx}' --fix",
-      "prettier '*/**/*.{js,jsx}' --write"
-    ]
-  },
+  "keywords": [
+    "ui library",
+    "react",
+    "components",
+    "tailwindcss",
+    "next",
+    "Next.js",
+    "layout",
+    "postcss",
+    "dashboard",
+    "admin dashboard"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/enochndika/kimia-UI.git"
@@ -23,36 +32,42 @@
   "dependencies": {
     "@mdx-js/loader": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
-    "@next/mdx": "^10.0.7",
+    "@next/mdx": "^11.1.0",
     "@reach/portal": "^0.13.0",
-    "formik": "^2.2.6",
+    "formik": "^2.2.9",
     "mdx-utils": "^0.2.0",
-    "next": "^11.0.1",
+    "next": "^11.1.0",
     "react": "^17.0.2",
     "react-content-loader": "^6.0.1",
-    "react-div-100vh": "^0.6.0",
     "react-dom": "^17.0.2",
     "react-dom-confetti": "^0.2.0",
     "react-hook-form": "^7.6.4",
-    "react-live": "^2.2.3",
+    "react-live": "^2.3.0",
     "yup": "^0.32.9"
   },
   "devDependencies": {
-    "@types/node": "^15.12.4",
-    "@types/react": "^17.0.11",
-    "@typescript-eslint/parser": "^4.28.0",
-    "autoprefixer": "^10.2.6",
-    "eslint": "^7.29.0",
-    "eslint-config-next": "^11.0.1",
+    "@types/node": "^16.6.1",
+    "@types/react": "^17.0.18",
+    "@typescript-eslint/parser": "^4.29.2",
+    "autoprefixer": "^10.3.1",
+    "eslint": "^7.32.0",
+    "eslint-config-next": "^11.1.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
-    "eslint-plugin-unused-imports": "^1.1.1",
-    "husky": "^6.0.0",
-    "lint-staged": "^11.0.0",
-    "next-sitemap": "^1.6.124",
-    "postcss": "^8.3.5",
-    "prettier": "^2.3.1",
-    "tailwindcss": "^2.2.4",
-    "typescript": "^4.3.4"
+    "eslint-plugin-unused-imports": "^1.1.4",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.1.2",
+    "next-sitemap": "^1.6.157",
+    "postcss": "^8.3.6",
+    "prettier": "^2.3.2",
+    "prettier-plugin-tailwind": "^2.2.12",
+    "tailwindcss": "^2.2.7",
+    "typescript": "^4.3.5"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint '*/**/*.{js,jsx,ts,tsx}' --fix",
+      "prettier '*/**/*.{js,jsx}' --write"
+    ]
   }
 }
