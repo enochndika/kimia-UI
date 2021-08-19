@@ -160,4 +160,6 @@ export const LockIcon = () => (
   </svg>
 );
 
+Field.displayName = 'Field';
+
 export default Field;
