@@ -142,8 +142,9 @@ const Field = forwardRef(
             aria-required={dot}
             aria-invalid={!!error}
             className={`${style.default} ${icon ? 'pl-12' : ''}
-            ${error ? style.error : 'border-gray-300'}
-            ${disabled ? style.disabled : ''} `}
+               ${error ? style.error : 'border-gray-300'}
+               ${disabled ? style.disabled : ''}
+            `}
             disabled={disabled}
             id={name}
             name={name}
@@ -163,7 +164,7 @@ const Field = forwardRef(
           {dot && <span className={style.dot}>*</span>}
         </label>
         {component}
-        {error && <p className={style.errorMessage}>{error}</p>}
+        {error && <span role="alert" className={style.errorMessage}>{error}</span>}
       </div>
     );
   },

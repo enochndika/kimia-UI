@@ -8,7 +8,7 @@ export const FormPage = () => (
     <Field
       error="Password is required"
       icon={<LockIcon />}
-      label="password"
+      label="Password"
       name="password"
       placeholder="password"
       type="password"
@@ -54,7 +54,8 @@ const Field = forwardRef(
           aria-required={dot}
           aria-invalid={!!error}
           className={`${style.default} ${disabled ? style.disabled : ''}
-           ${error ? style.error : 'border-gray-300'}`}
+             ${error ? style.error : 'border-gray-300'}
+          `}
           disabled={disabled}
           id={name}
           name={name}
@@ -70,8 +71,9 @@ const Field = forwardRef(
         <textarea
           aria-required={dot}
           aria-invalid={!!error}
-          className={`${style.default} ${disabled ? style.disabled : ''} 
-          ${error ? style.error : 'border-gray-300'}`}
+          className={`${style.default} ${disabled ? style.disabled : ''}
+             ${error ? style.error : 'border-gray-300'}
+          `}
           disabled={disabled}
           id={name}
           name={name}
@@ -110,9 +112,10 @@ const Field = forwardRef(
           <input
             aria-required={dot}
             aria-invalid={!!error}
-            className={`${style.default} ${icon ? 'pl-12' : ''}  
-            ${error ? style.error : 'border-gray-300'} 
-            ${disabled ? style.disabled : ''} `}
+            className={`${style.default} ${icon ? 'pl-12' : ''}
+               ${error ? style.error : 'border-gray-300'}
+               ${disabled ? style.disabled : ''}
+            `}
             disabled={disabled}
             id={name}
             name={name}
@@ -132,7 +135,7 @@ const Field = forwardRef(
           {dot && <span className={style.dot}>*</span>}
         </label>
         {component}
-        {error && <p className={style.errorMessage}>{error}</p>}
+        {error && <span role="alert" className={style.errorMessage}>{error}</span>}
       </div>
     );
   },

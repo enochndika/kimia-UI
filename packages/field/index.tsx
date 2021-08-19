@@ -124,7 +124,11 @@ const Field = forwardRef((props: FieldProps, ref: Ref) => {
         {dot && <span className={style.dot}>*</span>}
       </label>
       {component}
-      {error && <p className={style.errorMessage}>{error}</p>}
+      {error && (
+        <span role="alert" className={style.errorMessage}>
+          {error}
+        </span>
+      )}
     </div>
   );
 });
