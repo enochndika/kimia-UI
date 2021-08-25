@@ -6,8 +6,9 @@ const CollapseFirst: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => {
-    setIsOpen(!isOpen);
+    setIsOpen((prevState) => !prevState);
   };
+
   return (
     <div className="mb-12">
       <Button color="dark" onClick={toggle}>

@@ -7,15 +7,17 @@ interface Props {
 
 const Collapse = ({ children, isOpen }: Props) => {
   const ref = useRef<HTMLDivElement>(null);
+
   const inlineStyle = isOpen
     ? { height: ref.current?.scrollHeight }
     : { height: 0 };
 
   return (
     <div
-      className="transition-height ease mt-2 text-gray-600 overflow-hidden duration-300"
       ref={ref}
+      aria-hidden={!isOpen}
       style={inlineStyle}
+      className="transition-height ease mt-2 text-gray-600 overflow-hidden duration-300"
     >
       {children}
     </div>

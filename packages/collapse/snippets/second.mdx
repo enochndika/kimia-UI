@@ -7,15 +7,16 @@ export const CollapsePage = () => {
   const toggle = () => {
     setIsOpen(!isOpen);
   };
+
   return (
     <div className="m-8">
       <button
-        className="bg-black flex px-4 py-1 focus:outline-none text-white rounded font-medium"
+        className="flex px-4 py-1 text-white font-medium bg-black rounded focus:outline-none"
         onClick={toggle}
       >
         Toggle
         <svg
-          className="h-5 w-5 mt-1"
+          className="mt-1 w-5 h-5"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
           fill="currentColor"
@@ -40,15 +41,17 @@ export const CollapsePage = () => {
 /* Logic */
 const Collapse = ({ isOpen, children }) => {
   const ref = useRef(null);
+
   const inlineStyle = isOpen
     ? { height: ref.current?.scrollHeight }
     : { height: 0 };
 
   return (
     <div
-      className="mt-2 overflow-hidden text-gray-600 transition-height ease duration-300"
       ref={ref}
+      aria-hidden={!isOpen}
       style={inlineStyle}
+      className="transition-height ease mt-2 text-gray-600 overflow-hidden duration-300"
     >
       {children}
     </div>
