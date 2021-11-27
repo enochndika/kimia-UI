@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Tab, Tabs } from '../index';
+import { Tab, Tabs } from '../tab';
 
 const TabVariantThree: FC = () => (
   <div className="mb-8">

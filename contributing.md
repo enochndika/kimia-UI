@@ -18,7 +18,7 @@ Create your new directory in **packages/{yourComponentName}** Inside your folder
 
 - **examples** : will contains examples for your component in TypeScript**
 - **snippets** : Will contains examples in plain React and will be used as code snippet to copy
-- **index.tsx** will contains the logic of your components
+- **accordion.tsx** will contains the logic of your components
 
 
 Create your new file(route) in **pages/components/{yourComponentName}**. Then you will import all the examples and snippets for your component

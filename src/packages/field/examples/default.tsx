@@ -1,4 +1,4 @@
-import Field, { LockIcon } from '../index';
+import Field, { LockIcon } from '../field';
 
 const DefaultFieldExample = () => (
   <div className="mt-16">

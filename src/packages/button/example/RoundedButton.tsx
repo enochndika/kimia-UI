@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import Button from '../index';
+import Button from '../button';
 
 const RoundedButtons: FC = () => (
   <div className="mb-12">

@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import Image from 'next/image';
-import { Card, CardBody, CardText, CardTitle } from '../index';
+import { Card, CardBody, CardText, CardTitle } from '../card';
 
 const SingleCard: FC = () => (
   <div className="mb-12">

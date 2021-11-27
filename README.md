@@ -23,14 +23,14 @@ Each component contains 2 sub-directories
 ## 📋 Add a new component
 To add a new component :
 
-Create your new directory in **packages/{yourComponentName}** Inside your folder, you will create 2 subfolders and one file
+Create your new directory in **src/packages/{yourComponentName}** Inside your folder, you will create 2 subfolders and one file
   
 - **examples** : will contains examples for your component in TypeScript**  
 - **snippets** : Will contains examples in plain React and will be used as code snippet to copy
-- **index.tsx** will contains the logic of your components
+- **{your component name}.tsx** will contains the logic of your components
     
 
-Create your new file(route) in **pages/components/{yourComponentName}**. Then you will import all the examples and snippets for your component
+Create your new file(route) in **src/pages/components/{your component name}**. Then you will import all the examples and snippets for your component
 
 
 ## Browser Support

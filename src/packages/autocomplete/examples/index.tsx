@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Autocomplete from '../index';
+import Autocomplete from '../autocomplete';
 
 const AutoCompleteExample = () => {
   const [value, setValue] = useState('');

@@ -1,4 +1,8 @@
-import { Accordion, AccordionItem, AccordionPanel } from '@/packages/accordion';
+import {
+  Accordion,
+  AccordionItem,
+  AccordionPanel,
+} from '@/packages/accordion/accordion';
 
 export default function AccordionIndigoColor() {
   return (

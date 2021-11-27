@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Card, CardBody, CardTitle, CardText } from '../index';
+import { Card, CardBody, CardTitle, CardText } from '../card';
 import Image from 'next/image';
 
 const MultipleCard: FC = () => (

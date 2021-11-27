@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import Jumbotron from '../index';
+import Jumbotron from '../jumbotron';
 
 const JumbotronComponent: FC = () => (
   <div>

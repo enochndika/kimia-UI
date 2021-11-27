@@ -1,4 +1,4 @@
-import Button from '../index';
+import Button from '../button';
 import { FC } from 'react';
 
 const Icon = () => (

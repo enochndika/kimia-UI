@@ -1,10 +1,10 @@
 import { FC } from 'react';
-import Button from '@/packages/button';
-import useDisclosure from '@/website/hooks/useDisclosure';
-import { Modal, ModalBody, ModalHeader, ModalFooter } from '../index';
+import Button from '@/packages/button/button';
+import useToggle from '@/packages/_utils/useToggle';
+import { Modal, ModalBody, ModalHeader, ModalFooter } from '../modal';
 
 const ModalNotClosedOutside: FC = () => {
-  const { toggle, isOpen } = useDisclosure();
+  const { toggle, isOpen } = useToggle();
   return (
     <div className="mb-8">
       <h2 className="mb-3 mt-12 text-gray-600 text-lg font-bold md:text-2xl">

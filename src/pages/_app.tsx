@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 import { preToCodeBlock } from 'mdx-utils';
 import { MDXProvider } from '@mdx-js/react';
 
-import Layout from '@/website/layout';
+import Layout from '@/website/layout/layout';
 import * as gtag from '@/website/utils/gtag';
 import { CopyboardProps } from '@/website/components/copyboard';
 import globalMetaTags from '@/website/data/globalMetaTags.json';

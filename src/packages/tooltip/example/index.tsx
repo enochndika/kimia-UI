@@ -1,4 +1,4 @@
-import Tooltip from '../index';
+import Tooltip from '../tooltip';
 
 const TooltipComponent = () => (
   <div className="flex justify-center md:justify-start">

@@ -1,4 +1,4 @@
-import { ListGroup, ListGroupItem } from '../index';
+import { ListGroup, ListGroupItem } from '../listGroup';
 
 const ListGroupLinkComponent = () => (
   <div className="mb-12">

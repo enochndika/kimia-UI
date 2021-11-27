@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form';
-import Field from '../index';
+import Field from '../field';
 
 const FieldWithReactHookForm = () => {
   const {

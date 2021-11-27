@@ -1,6 +1,6 @@
 import { FC, useState } from 'react';
-import Collapse from '../index';
-import Button from '@/packages/button';
+import Collapse from '../collapse';
+import Button from '@/packages/button/button';
 
 const CollapseFirst: FC = () => {
   const [isOpen, setIsOpen] = useState(false);

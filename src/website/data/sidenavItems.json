@@ -4,8 +4,7 @@
     "content": [
       {
         "title": "Dashboards",
-        "link": "/templates/dashboards",
-        "icon": true
+        "link": "/templates/dashboards"
       }
     ]
   },

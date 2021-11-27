@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import Button from '@/packages/button';
-import { Sidenav, SidenavItem } from '../index';
+import Button from '@/packages/button/button';
+import { Sidenav, SidenavItem } from '../sidenav';
 
 const SidenavRight = () => {
   const [open, setOpen] = useState<boolean>(false);

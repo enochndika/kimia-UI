@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Button from '@/packages/button';
+import Button from '@/packages/button/button';
 import useMounted from '../hooks/useMounted';
-import useDisclosure from '../hooks/useDisclosure';
-import { Modal, ModalBody, ModalFooter } from '@/packages/modal';
+import useToggle from '@/packages/_utils/useToggle';
+import { Modal, ModalBody, ModalFooter } from '@/packages/modal/modal';
 
 export function useAlertUser() {
   const isMounted = useMounted();
@@ -23,7 +23,7 @@ export function useAlertUser() {
 }
 
 function ModalAlert() {
-  const { toggle, isOpen } = useDisclosure();
+  const { toggle, isOpen } = useToggle();
 
   const onClose = () => {
     toggle();

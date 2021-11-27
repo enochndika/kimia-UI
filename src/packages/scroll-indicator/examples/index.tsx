@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import ScrollIndicator from '@/packages/scroll-indicator';
+import ScrollIndicator from '@/packages/scroll-indicator/scrollIndicator';
 
 const ScrollIndicatorExample: FC = () => (
   <ScrollIndicator>

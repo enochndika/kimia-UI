@@ -6,7 +6,7 @@ import {
   NavbarItem,
   NavbarLink,
   NavbarToggler,
-} from '../index';
+} from '../navbar';
 
 const NavbarVariantThree = () => (
   <div className="mb-8">

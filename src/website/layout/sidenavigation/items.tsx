@@ -1,8 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-
 import data from '@/website/data/sidenavItems.json';
-import Arrival from '@/website/components/arrival';
 
 const style = {
   link: `flex font-medium items-center justify-start my-1 p-3 text-sm w-full lg:hover:text-purple-800`,
@@ -26,9 +24,7 @@ const SidenavItems = () => {
                 className={`${style.link} 
                   ${item.link === asPath ? style.active : style.inactive}`}
               >
-                <span className="mx-4">
-                  {item.title} {item.icon && <Arrival />}
-                </span>
+                <span className="mx-4">{item.title}</span>
               </a>
             </Link>
           ))}

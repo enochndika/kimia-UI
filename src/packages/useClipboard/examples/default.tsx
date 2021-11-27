@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import Button from '@/packages/button';
-import useClipboard from '../index';
+import Button from '@/packages/button/button';
+import useClipboard from '../useClipboard';
 
 const DefaultCopyToClipboard: FC = () => {
   const { ref, copied, onCopy } = useClipboard({ duration: 4000 });

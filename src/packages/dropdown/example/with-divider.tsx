@@ -5,7 +5,7 @@ import {
   DropdownToggle,
   DropdownItem,
   DropdownDivider,
-} from '../index';
+} from '../dropdown';
 
 const DropdownWithDivider: FC = () => (
   <div className="mb-8">

@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import Price, { CheckIcon, CloseIcon } from '../index';
+import Price, { CheckIcon, CloseIcon } from '../pricingTable';
 
 const PricingTableExample: FC = () => (
   <Price>

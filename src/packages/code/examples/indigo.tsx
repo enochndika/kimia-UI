@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import Code from '../index';
+import Code from '../code';
 
 const IndigoCode: FC = () => (
   <div className="mb-12">

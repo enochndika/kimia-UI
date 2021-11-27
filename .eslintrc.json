@@ -1,4 +1,5 @@
 {
+  "root": true,
   "extends": ["plugin:prettier/recommended", "next/core-web-vitals"],
   "plugins": ["unused-imports"],
   "rules": {
