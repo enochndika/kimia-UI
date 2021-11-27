@@ -1,10 +1,6 @@
 module.exports = {
   darkMode: false,
-  purge: [
-    './packages/**/*.{js,ts,jsx,tsx}',
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './website/**/*.{js,ts,jsx,tsx}',
-  ],
+  purge: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       padding: {
