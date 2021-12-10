@@ -1,17 +1,17 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 
+import { useToggle } from '../helpers/context';
+import kimiaImg from '@/public/images/kimia.png';
 import {
   BookOpenIcon,
   CodeBranchIcon,
   ConfigIcon,
   GithubIcon,
 } from '@/website/components/icons';
-
-import kimiaImg from '@/public/images/kimia.png';
-import { useToggle } from '../helpers/context';
 
 interface Props {
   children: React.ReactNode;
@@ -35,10 +35,15 @@ interface NavbarTogglerProps {
   toggle: () => void;
 }
 
+const Alert = dynamic(() => import('../alert'), {
+  ssr: false,
+});
+
 export default function TopNavigation() {
   const { toggle } = useToggle();
   return (
-    <header className="absolute z-10 top-0 w-full font-inter bg-white lg:fixed lg:px-[2%]">
+    <header className="z absolute z-10 top-0 w-full font-inter bg-white lg:fixed lg:px-container">
+      <Alert />
       <Navbar>
         <NavbarBrand>
           <Image

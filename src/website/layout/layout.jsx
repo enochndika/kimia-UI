@@ -1,11 +1,10 @@
 import { useRouter } from 'next/router';
-
 import Overlay from './helpers/overlay';
 import TopNavigation from './topnavigation';
 import SideNavigation from './sidenavigation';
 import LayoutProvider from './helpers/context';
-import useFilteredRoutes from '@/website/hooks/useFilteredRoutes';
 import Footer from '@/website/components/footer';
+import useFilteredRoutes from '@/website/hooks/useFilteredRoutes';
 
 const style = {
   container: `flex font-body items-start`,
