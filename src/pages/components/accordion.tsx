@@ -1,11 +1,11 @@
 import Head from 'next/head';
 import { Container } from '@/website/components/container';
-import AccordionGrayColor from '@/packages/accordion/examples/gray';
-import AccordionIndigoColor from '@/packages/accordion/examples/indigo';
-import AccordionGreenColor from '@/packages/accordion/examples/green';
-import AccordionGrayColorSnippet from '@/packages/accordion/snippets/gray.mdx';
-import AccordionIndigoColorSnippet from '@/packages/accordion/snippets/indigo.mdx';
-import AccordionGreenColorSnippet from '@/packages/accordion/snippets/green.mdx';
+import AccordionFirstExample from '@/packages/accordion/examples/first';
+import AccordionSecondExample from '@/packages/accordion/examples/second';
+import AccordionThirdExample from '@/packages/accordion/examples/third';
+import AccordionFirstExampleSnippet from '@/packages/accordion/snippets/first.mdx';
+import AccordionSecondExampleSnippet from '@/packages/accordion/snippets/second.mdx';
+import AccordionThirdExampleSnippet from '@/packages/accordion/snippets/third.mdx';
 
 export default function AccordionPage() {
   return (
@@ -25,12 +25,12 @@ export default function AccordionPage() {
         <h1 className="mb-16 mt-12 text-center text-gray-600 text-3xl font-bold md:text-5xl">
           Accordion
         </h1>
-        <AccordionGrayColor />
-        <AccordionGrayColorSnippet />
-        <AccordionIndigoColor />
-        <AccordionIndigoColorSnippet />
-        <AccordionGreenColor />
-        <AccordionGreenColorSnippet />
+        <AccordionFirstExample />
+        <AccordionFirstExampleSnippet />
+        <AccordionSecondExample />
+        <AccordionSecondExampleSnippet />
+        <AccordionThirdExample />
+        <AccordionThirdExampleSnippet />
       </Container>
     </>
   );

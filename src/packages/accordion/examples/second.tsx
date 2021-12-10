@@ -4,14 +4,14 @@ import {
   AccordionPanel,
 } from '@/packages/accordion/accordion';
 
-export default function AccordionIndigoColor() {
+export default function AccordionSecondExample() {
   return (
     <div className="mb-12">
       <h2 className="mb-6 text-gray-600 text-lg font-bold md:text-2xl">
         Variant 2
       </h2>
       <Accordion>
-        <AccordionItem toggle="panel-1" color="indigo">
+        <AccordionItem toggle="panel-1" className="bg-blue-600 text-white">
           Accordion Group Item #1
         </AccordionItem>
         <AccordionPanel id="panel-1">
@@ -28,7 +28,7 @@ export default function AccordionIndigoColor() {
             dicta sunt explicabo.
           </p>
         </AccordionPanel>
-        <AccordionItem toggle="panel-2" color="indigo">
+        <AccordionItem toggle="panel-2" className="bg-teal-600 text-white">
           Accordion Group Item #2
         </AccordionItem>
         <AccordionPanel id="panel-2">
@@ -46,7 +46,7 @@ export default function AccordionIndigoColor() {
             animi.
           </p>
         </AccordionPanel>
-        <AccordionItem toggle="panel-3" color="indigo">
+        <AccordionItem toggle="panel-3" className="bg-stone-900 text-white">
           Accordion Group Item #3
         </AccordionItem>
         <AccordionPanel id="panel-3">
