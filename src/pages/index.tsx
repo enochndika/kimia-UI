@@ -3,7 +3,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import codePicture from '@/public/images/code.png';
 import designerPicture from '@/public/images/designer.png';
-
 import { Container } from '@/website/components/container';
 
 export default function HomePage() {
@@ -11,11 +10,11 @@ export default function HomePage() {
     <>
       <Head>
         <title>
-          Kimia-UI - UI Components for React built with Tailwind CSS
+          Kimia-UI - UI Components for React built with Tailwind CSS 3
         </title>
         <meta
           name="title"
-          content="Kimia-UI - UI Components for React built with Tailwind CSS"
+          content="Kimia-UI - UI Components for React built with Tailwind CSS 3"
         />
         <meta
           name="description"
@@ -27,12 +26,12 @@ export default function HomePage() {
         <div className="flex flex-wrap mt-12">
           <div className="p-2 w-full md:w-6/12">
             <h1 className="text-gray-900 font-inter text-4xl font-bold lg:text-5xl">
-              A collection of UI Components for React built with Tailwind CSS
+              A collection of UI Components for React built with Tailwind CSS 3
             </h1>
             <div className="text-gray-700 text-lg font-medium">
               <h2 className="mb-4 mt-12">
                 Provides fully customizable UI Components compatible with
-                Next.js, Gatsby and create-react-app.
+                Next.js, Remix, Gatsby, and others React meta frameworks.
               </h2>
               <h3 className="font-medium">
                 No installation needed, Just copy and paste a component you want

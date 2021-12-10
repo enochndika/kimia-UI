@@ -1,4 +1,4 @@
-# UI Components for React built with Tailwind CSS
+# UI Components for React built with Tailwind CSS 3
 ![Kimia-UI](https://res.cloudinary.com/beloved/image/upload/v1618040187/Assets/kimia_lpqdlr.png)
 
 ## Why this approach?
