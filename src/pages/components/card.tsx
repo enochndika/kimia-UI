@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import SingleCard from '@/packages/card/example/single';
-import MultipleCard from '@/packages/card/example/multiple';
+import SingleCard from '@/packages/card/examples/single';
+import MultipleCard from '@/packages/card/examples/multiple';
 import SingleCardSnippet from '@/packages/card/snippets/single.mdx';
 import MultipleCardSnippet from '@/packages/card/snippets/multiple.mdx';
 import { Container } from '@/website/components/container';

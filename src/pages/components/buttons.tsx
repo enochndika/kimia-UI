@@ -1,11 +1,11 @@
 import Head from 'next/head';
 import { Container } from '@/website/components/container';
-import DefaultButtons from '@/packages/button/example/defaultButton';
-import AnimateButtons from '@/packages/button/example/animateButton';
-import RoundedButtons from '@/packages/button/example/RoundedButton';
-import SizedButtons from '@/packages/button/example/SizedButton';
-import DisabledButtons from '@/packages/button/example/disabledButton';
-import OutlineButtons from '@/packages/button/example/outlineButton';
+import DefaultButtons from '@/packages/button/examples/defaultButton';
+import AnimateButtons from '@/packages/button/examples/animateButton';
+import RoundedButtons from '@/packages/button/examples/RoundedButton';
+import SizedButtons from '@/packages/button/examples/SizedButton';
+import DisabledButtons from '@/packages/button/examples/disabledButton';
+import OutlineButtons from '@/packages/button/examples/outlineButton';
 import DefaultButtonSnippet from '@/packages/button/snippets/default.mdx';
 import AnimateButtonSnippet from '@/packages/button/snippets/animate.mdx';
 import RoundedButtonSnippet from '@/packages/button/snippets/rounded.mdx';

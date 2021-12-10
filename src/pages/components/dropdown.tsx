@@ -2,8 +2,8 @@ import Head from 'next/head';
 import { Container } from '@/website/components/container';
 import BasicDropdownSnippet from '@/packages/dropdown/snippets/basic.mdx';
 import DropdownWithSeparatorSnippet from '@/packages/dropdown/snippets/with-separator.mdx';
-import BasicDropdown from '@/packages/dropdown/example/basic';
-import DropdownWithSeparator from '@/packages/dropdown/example/with-divider';
+import BasicDropdown from '@/packages/dropdown/examples/basic';
+import DropdownWithSeparator from '@/packages/dropdown/examples/with-divider';
 
 export default function DropdownPage() {
   return (

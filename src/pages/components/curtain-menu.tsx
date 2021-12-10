@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { Container } from '@/website/components/container';
-import { CurtainMenuLeft } from '@/packages/curtain-menu/example/left';
-import { CurtainMenuTop } from '@/packages/curtain-menu/example/top';
+import { CurtainMenuLeft } from '@/packages/curtain-menu/examples/left';
+import { CurtainMenuTop } from '@/packages/curtain-menu/examples/top';
 import CurtainMenuLeftSnippet from '@/packages/curtain-menu/snippets/left.mdx';
 import CurtainMenuTopSnippet from '@/packages/curtain-menu/snippets/top.mdx';
 

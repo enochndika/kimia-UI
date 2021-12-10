@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import TooltipComponent from '@/packages/tooltip/example';
+import TooltipComponent from '@/packages/tooltip/examples';
 import { Container } from '@/website/components/container';
 import TooltipSnippet from '@/packages/tooltip/snippets/index.mdx';
 

@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { Container } from '@/website/components/container';
-import SpinnerComponent from '@/packages/spinner/example/normal';
-import LargeSpinnerComponent from '@/packages/spinner/example/large';
+import SpinnerComponent from '@/packages/spinner/examples/normal';
+import LargeSpinnerComponent from '@/packages/spinner/examples/large';
 import SpinnerSnippet from '@/packages/spinner/snippets/normal.mdx';
 import LargeSpinnerSnippet from '@/packages/spinner/snippets/large.mdx';
 

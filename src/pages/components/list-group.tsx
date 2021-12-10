@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import { Container } from '@/website/components/container';
-import ListGroupComponent from '@/packages/list-group/example/simple';
-import ColoredListGroupComponent from '@/packages/list-group/example/colored';
-import ListGroupLinkComponent from '@/packages/list-group/example/link';
+import ListGroupComponent from '@/packages/list-group/examples/simple';
+import ColoredListGroupComponent from '@/packages/list-group/examples/colored';
+import ListGroupLinkComponent from '@/packages/list-group/examples/link';
 import ListGroupSnippet from '@/packages/list-group/snippets/simple.mdx';
 import ColoredListGroupSnippet from '@/packages/list-group/snippets/colored.mdx';
 import LinkListGroupSnippet from '@/packages/list-group/snippets/link.mdx';

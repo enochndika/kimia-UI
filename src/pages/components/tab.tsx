@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import { Container } from '@/website/components/container';
-import TabVariantOne from '@/packages/tab/example/variantOne';
-import TabVariantTwo from '@/packages/tab/example/variantTwo';
-import TabVariantThree from '@/packages/tab/example/variantThree';
+import TabVariantOne from '@/packages/tab/examples/variantOne';
+import TabVariantTwo from '@/packages/tab/examples/variantTwo';
+import TabVariantThree from '@/packages/tab/examples/variantThree';
 import TabVariantOneSnippet from '@/packages/tab/snippets/variantOne.mdx';
 import TabVariantTwoSnippet from '@/packages/tab/snippets/variantTwo.mdx';
 import TabVariantThreeSnippet from '@/packages/tab/snippets/variantThree.mdx';
