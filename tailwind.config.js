@@ -1,6 +1,5 @@
 module.exports = {
-  darkMode: false,
-  purge: ['./src/**/*.{js,ts,jsx,tsx}'],
+  content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       padding: {
@@ -40,19 +39,7 @@ module.exports = {
         body: ['Open Sans'],
       },
     },
-    variants: {
-      transitionProperty: {
-        height: 'height',
-      },
-    },
   },
-  variants: {
-    extend: {
-      backgroundColor: ['active', 'checked'],
-      inset: ['checked'],
-      opacity: ['disabled'],
-      textColor: ['active'],
-    },
-  },
+  variants: {},
   plugins: [],
 };
