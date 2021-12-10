@@ -18,11 +18,11 @@ interface AutocompleteProps extends InputHTMLAttributes<HTMLInputElement> {
 
 const style = {
   container: `relative mb-6 mt-3`,
-  default: `rounded-lg w-full flex-1 mt-1 py-1.5 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:border-transparent border border-gray-300 border-transparent`,
+  default: `rounded-lg w-full flex-1 mt-1 py-1.5 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:border-transparent border border-gray-300`,
   disabled: `cursor-not-allowed`,
   label: `text-gray-700`,
   suggestion: {
-    list: `shadow-xl absolute top-full left-0 right-0 border w-auto md:max-w-xs overflow-y-auto max-h-80 mt-2 bg-white p-3 z-20`,
+    list: `shadow-xl absolute top-full left-0 right-0 border w-auto md:max-w-full overflow-y-auto max-h-80 mt-2 bg-white p-3 z-20`,
     item: `px-4 py-3 focus text-sm text-gray-700 cursor-pointer hover:bg-gray-200`,
     activeItem: 'bg-gray-300',
   },

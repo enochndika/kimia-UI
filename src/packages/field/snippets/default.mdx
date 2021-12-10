@@ -3,7 +3,7 @@ import { forwardRef } from 'react';
 
 export const FormPage = () => (
   <div className="m-12 p-6 border">
-    <Field label="Name" name="name" placeholder="name" />
+    <Field label="Name" name="name" placeholder="name" dot />
     <Field disabled={true} label="Fullname disabled" name="fullName" />
     <Field
       error="Password is required"
@@ -27,7 +27,7 @@ export const FormPage = () => (
 /*  COMPONENT LOGIC */
 
 const style = {
-  dot: `text-red-500 pl-0.5`,
+  dot: `after:content-['*'] after:ml-0.5 after:text-red-500`,
   error: `ring-red-500 ring-1`,
   disabled: `cursor-not-allowed`,
   container: `relative mb-6 mt-3`,
@@ -37,7 +37,7 @@ const style = {
   iconContainer: `absolute flex border border-transparent left-0 top-0 h-full w-10`,
   icon: `flex items-center justify-center rounded-tl rounded-bl z-10 text-gray-400 text-lg h-full w-full`,
   checkbox: `checked:bg-blue-500 checked:right-0 focus:outline-none right-4 duration-200 ease-in absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer`,
-  default: `text-base relative flex flex-1 w-full mt-1 rounded-md py-2 px-4 bg-white text-gray-700 placeholder-gray-400 text-base focus:outline-none focus:ring-1 focus:border-transparent border border-transparent`,
+  default: `text-base relative flex flex-1 w-full mt-1 rounded-md py-2 px-4 bg-white text-gray-700 placeholder-gray-400 text-base focus:outline-none focus:ring-1 focus:border-transparent border`,
 };
 
 const Field = forwardRef(
@@ -130,9 +130,8 @@ const Field = forwardRef(
 
     return (
       <div className={`${style.container} ${disabled ? 'opacity-50' : ''}`}>
-        <label htmlFor={name} className="text-gray-700">
+        <label htmlFor={name} className={`text-gray-700 ${dot && style.dot}`}>
           {label}
-          {dot && <span className={style.dot}>*</span>}
         </label>
         {component}
         {error && (
