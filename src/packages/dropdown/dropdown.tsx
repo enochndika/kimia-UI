@@ -108,5 +108,5 @@ export function DropdownItem({ children }: DropdownItemProps) {
 }
 
 export function DropdownDivider() {
-  return <hr className="my-2" />;
+  return <hr className="my-2 text-gray-300" />;
 }
