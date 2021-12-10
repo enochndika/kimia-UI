@@ -3,9 +3,11 @@ import React from 'react';
 
 export const AccordionPage = () => {
   return (
-    <Accordion defaultPanel="section-1">
-      <AccordionItem toggle="section-1">Accordion Group Item #1</AccordionItem>
-      <AccordionPanel id="section-1">
+    <Accordion>
+      <AccordionItem toggle="panel-1" className="bg-blue-600 text-white">
+        Accordion Group Item #1
+      </AccordionItem>
+      <AccordionPanel id="panel-1">
         <p className="mb-4">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -19,8 +21,10 @@ export const AccordionPage = () => {
           sunt explicabo.
         </p>
       </AccordionPanel>
-      <AccordionItem toggle="section-2">Accordion Group Item #2</AccordionItem>
-      <AccordionPanel id="section-2">
+      <AccordionItem toggle="panel-2" className="bg-teal-600 text-white">
+        Accordion Group Item #2
+      </AccordionItem>
+      <AccordionPanel id="panel-2">
         <p className="mb-4">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
           odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
@@ -34,8 +38,10 @@ export const AccordionPage = () => {
           similique sunt in culpa qui officia deserunt mollitia animi.
         </p>
       </AccordionPanel>
-      <AccordionItem toggle="section-3">Accordion Group Item #3</AccordionItem>
-      <AccordionPanel id="section-3">
+      <AccordionItem toggle="panel-3" className="bg-stone-900 text-white">
+        Accordion Group Item #3
+      </AccordionItem>
+      <AccordionPanel id="panel-3">
         <p className="mb-4">
           dales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor.
           Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas
@@ -54,10 +60,11 @@ export const AccordionPage = () => {
 };
 
 /* Logic */
+
 const Context = React.createContext({});
 
-function Accordion({ children, defaultPanel }) {
-  const [selected, setSelected] = React.useState(defaultPanel || '');
+function Accordion({ children }) {
+  const [selected, setSelected] = React.useState();
 
   const toggleItem = React.useCallback(
     (id) => () => {
@@ -65,26 +72,29 @@ function Accordion({ children, defaultPanel }) {
     },
     [],
   );
-
-  const values = React.useMemo(
-    () => [selected, toggleItem],
-    [selected, toggleItem],
+  return (
+    <Context.Provider value={{ selected, toggleItem }}>
+      {children}
+    </Context.Provider>
   );
-  return <Context.Provider value={values}>{children}</Context.Provider>;
 }
 
 //custom hook to consume all accordion values
 const useAccordion = () => React.useContext(Context);
 
 const style = {
-  item: `block focus:outline-none bg-green-800 text-white border-b my-2 p-3`,
+  item: `block focus:outline-none border-b my-2 p-3`,
   panel: `overflow-hidden md:overflow-x-hidden transition-height ease duration-300 text-gray-600`,
 };
 
-function AccordionItem({ toggle, children }) {
-  const [selected, toggleItem] = useAccordion();
+function AccordionItem({ toggle, children, className }) {
+  const { selected, toggleItem } = useAccordion();
   return (
-    <div role="button" onClick={toggleItem(toggle)} className={style.item}>
+    <div
+      role="button"
+      onClick={toggleItem(toggle)}
+      className={`${style.item} ${className}`}
+    >
       {children}
       <span className="float-right">
         {selected === toggle ? <AngleUpIcon /> : <AngleDownIcon />}
@@ -94,7 +104,7 @@ function AccordionItem({ toggle, children }) {
 }
 
 function AccordionPanel({ children, id }) {
-  const [selected] = useAccordion();
+  const { selected } = useAccordion();
   const ref = React.useRef();
   const inlineStyle =
     selected === id ? { height: ref.current?.scrollHeight } : { height: 0 };

@@ -13,7 +13,7 @@ interface AccordionContextProps {
 interface AccordionItemProps extends React.HTMLAttributes<HTMLElement> {
   toggle?: string;
   children: React.ReactNode;
-  color: 'gray' | 'indigo' | 'green';
+  className?: string;
 }
 
 interface AccordionPanelProps extends React.HTMLAttributes<HTMLElement> {
@@ -22,11 +22,7 @@ interface AccordionPanelProps extends React.HTMLAttributes<HTMLElement> {
 }
 
 const style = {
-  item: {
-    gray: `block focus:outline-none bg-gray-800 text-white border-b my-2 p-3`,
-    indigo: `block focus:outline-none bg-indigo-800 text-white border-b my-2 p-3`,
-    green: `block focus:outline-none bg-green-800 text-white border-b my-2 p-3`,
-  },
+  item: 'focus:outline-none border-b my-2 p-3',
   panel: `overflow-hidden md:overflow-x-hidden transition-height ease duration-300 text-gray-600`,
 };
 
@@ -50,13 +46,17 @@ export function Accordion({ children, defaultPanel }: AccordionProps) {
 //custom hook to consume all accordion values
 const useAccordion = () => React.useContext(Context);
 
-export function AccordionItem({ color, toggle, children }: AccordionItemProps) {
+export function AccordionItem({
+  className,
+  toggle,
+  children,
+}: AccordionItemProps) {
   const { selected, toggleItem } = useAccordion();
   return (
     <div
       role="button"
       onClick={() => toggleItem(toggle)}
-      className={style.item[color]}
+      className={`${style.item} ${className}`}
     >
       {children}
       <span className="float-right">
@@ -68,7 +68,7 @@ export function AccordionItem({ color, toggle, children }: AccordionItemProps) {
 
 export function AccordionPanel({ children, id }: AccordionPanelProps) {
   const { selected } = useAccordion();
-  const ref = React.useRef<HTMLDivElement>();
+  const ref = React.useRef<HTMLDivElement>(null);
   const inlineStyle =
     selected === id ? { height: ref.current?.scrollHeight } : { height: 0 };
 
