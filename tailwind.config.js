@@ -2,9 +2,6 @@ module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
-      padding: {
-        container: '2%',
-      },
       animation: {
         modal: 'modal 0.5s',
         'drawer-right': 'drawer-right 0.3s',

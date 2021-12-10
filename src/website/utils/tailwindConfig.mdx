@@ -1,6 +1,7 @@
 ```js
 module.exports = {
-  purge: ['./pages/**/*.{js,ts,jsx,tsx}'],
+// the content sources for your project to preserve
+  content: ['./pages/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       animation: {
@@ -51,21 +52,8 @@ module.exports = {
         },
       },
     },
-    variants: {
-      /* If you are using Collapse or Accordion component*/
-      transitionProperty: {
-        height: 'height',
-      },
-    },
   },
-  variants: {
-    extend: {
-      backgroundColor: ['active', 'checked'],
-      inset: ['checked'],
-      opacity: ['disabled'],
-      textColor: ['active'],
-    },
-  },
+  variants: {},
   plugins: [],
 };
 ```
