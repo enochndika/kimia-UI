@@ -60,9 +60,9 @@ export default function DashboardsPage() {
             </p>
             <p>
               Salvia-kit provides 8 dashboards templates for React
-              (create-react-app), Next.js, Vue(vite.js) and Nuxt. Each dashboard
-              contains detailed documentation for each technology. They are
-              fully customizable.
+              (create-react-app), Next.js, Svelte, Vue(vite.js) and Nuxt. Each
+              dashboard contains detailed documentation for each technology.
+              They are fully customizable.
             </p>
           </section>
           <h2 className="mb-6 text-gray-600 text-lg font-bold md:text-2xl">

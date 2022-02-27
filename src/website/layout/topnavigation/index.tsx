@@ -42,7 +42,7 @@ const Alert = dynamic(() => import('../alert'), {
 export default function TopNavigation() {
   const { toggle } = useToggle();
   return (
-    <header className="z absolute z-10 top-0 w-full font-inter bg-white lg:fixed lg:px-container">
+    <header className="z absolute z-10 top-0 w-full font-inter bg-white lg:fixed lg:px-container 2xl:px-72">
       <Alert />
       <Navbar>
         <NavbarBrand>
