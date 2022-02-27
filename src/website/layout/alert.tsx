@@ -12,7 +12,7 @@ const Alert = () => {
   };
 
   useEffect(() => {
-    timeOut.current = setTimeout(() => onClose(), 12000);
+    timeOut.current = setTimeout(() => onClose(), 8000);
 
     return () => {
       clearTimeout(timeOut.current);

@@ -3,7 +3,7 @@ import SidenavHeader from './header';
 import { useToggle } from '../helpers/context';
 
 const style = {
-  default: `bg-white font-inter h-screen overflow-y-auto pt-0 pb-24 right-0 lg:flex lg:fixed lg:left-0 lg:pt-24 lg:w-72 lg:z-auto`,
+  default: `bg-white font-inter h-screen overflow-y-auto pt-0 pb-24 right-0 lg:flex lg:fixed lg:left-0 lg:pt-24 lg:w-72 lg:z-auto 2xl:left-64`,
   container: `lg:pt-8`,
   close: `hidden`,
   open: `fixed w-8/12 z-40 sm:w-5/12`,

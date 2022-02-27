@@ -23,7 +23,7 @@ export default function HomePage() {
         <link rel="canonical" href="https://kimia-ui.vercel.app" />
       </Head>
       <Container>
-        <div className="flex flex-wrap mt-12">
+        <div className="flex flex-wrap mt-12 2xl:mt-32">
           <div className="p-2 w-full md:w-6/12">
             <h1 className="text-gray-900 font-inter text-4xl font-bold lg:text-5xl">
               A collection of UI Components for React built with Tailwind CSS 3
@@ -64,7 +64,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="mt-16 px-2 md:mt-20 md:px-0 xl:mt-36">
+        <div className="mt-16 px-2 md:mt-20 md:px-0 xl:mt-36 2xl:mt-64">
           <h2 className="text-center text-gray-900 font-inter text-2xl font-bold md:text-4xl">
             Why Using Kimia-UI ?
           </h2>
